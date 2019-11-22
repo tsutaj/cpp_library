@@ -2,15 +2,13 @@ matrix:
   include:
     - language: bash
       before_install:
+        - pip3 install -U online-judge-tools=='7.2.*'
         - sudo add-apt-repository ppa:duggan/bats --yes
         - sudo apt-get update -qq
         - sudo apt-get install -qq bats
       script:
-        - bats ./verifying_test/verifying_test.bats
+        - bats ./verifying_test/verifying_test.bats        
 
-    - language: python
-      install:
-        - pip3 install -U online-judge-tools=='7.2.*'
 env:
   global:
     secure: "gJmPjxHbxKM2WHml64Giuo6kpnXzPp0bJfymeMst68Pjq7H4XgXzmmuN3Qbd+F/3WtaxD2n29C9I5Q1RJZyMhstOIw1khAdQFC1QzgycvbFkNmHAErf9O9yHIm85b0NAjQlZArNiwI4Bbiu944gyiVmvAyUHWsjtOEUq+d6Y5Li7IccY4E3eynzQWHopbmf2rPhN1rCj4ERzj6iLdBZYPe5tw2X6wq6LZp9Q2xNt6L9PBWyVxhJyhzttrOsGUXUS+YTZrgQVdgg4MuWcao8r9ngKj/Ii17KlrEZTX92sSaM4G3FN7FPZntVhVn9aIt2ilKnzVKoFN6OFlQyB0LeXAPs9mdCJzfaASzMQ5OfHWmGWH5N9BMmaLlrh6UgbxqgCj5Gt8K8zjDnyDOoSxcIpi7/taaUUKm+WL70YuQpKJbCCERhy1TbbTNh+WvsyZ1S50/rR7jqfP/0+JoVZgjPSzHMMcbUTnnQ3k3CnMzqSGuO8MR5gBcOO89Z2e3JuEW+jSBeg18GEYfd1vwOAh0CqG67rdkbs2KYXg8shDLLSscndgo4cYNK6lU0d91hJPgKLWEYsvNZ7s5gA76vAxi+Qy6V2n+MAEr6bsP3spkIkWaLDDsz6sgP9tn2UGP4KS1UPSs5lq94dUoH8xePSq8+QOW/DIoCbR9IoS4r0RvUEQ80="
