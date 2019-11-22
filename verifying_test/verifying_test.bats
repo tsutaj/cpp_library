@@ -21,5 +21,5 @@ teardown() {
     echo "${output}" >> $BATSLOG_DIR/$BATSLOG_NAME
     cd -
 
-    [ "${status}" -eq 0 ]
+    # [ "${status}" -eq 0 ]
 }
