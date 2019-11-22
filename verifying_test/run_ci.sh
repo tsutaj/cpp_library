@@ -110,8 +110,9 @@ git status -s
 if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
-    git commit -m "[auto-verifier] verify commit ${last_commit}"
-    git push --quiet https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git master
+    git commit -m "[auto-verifier] [ci skip] verify commit ${last_commit}"
+    git push --quiet https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git master >/dev/null 2>&1
+    echo "Pushed updated branch 'master'"
 fi
 
 # if [[ $# -eq 0 ]] ; then
