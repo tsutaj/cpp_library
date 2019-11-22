@@ -92,7 +92,7 @@ run() {
 }
 
 # CI
-git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
+# git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
 git checkout master
 git config --global user.name "Tsutajiro"
 git config --global user.email "y.sugie.15739d@gmail.com"
@@ -111,7 +111,7 @@ if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
     git commit -m "[auto-verifier] verify commit ${last_commit}"
-    git push --quiet origin master
+    git push --quiet https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git master
 fi
 
 # if [[ $# -eq 0 ]] ; then
