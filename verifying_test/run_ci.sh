@@ -111,7 +111,7 @@ if [ -n "$(git status -s)" ]; then
     git add ./test
     git commit -m "[auto-verifier] verify commit ${last_commit}"
     echo 'passed until this section'
-    git push --quiet origin HEAD
+    git push --quiet origin master
 fi
 
 # if [[ $# -eq 0 ]] ; then
