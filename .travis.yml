@@ -1,13 +1,13 @@
-matrix:
-  include:
-    - language: bash
-      before_install:
-        - pip3 install -U online-judge-tools=='7.2.*'
-        - sudo add-apt-repository ppa:duggan/bats --yes
-        - sudo apt-get update -qq
-        - sudo apt-get install -qq bats
-      script:
-        - bats ./verifying_test/verifying_test.bats        
+language: bash, python
+python:
+  "3.6"
+before_install:
+  - pip3 install -U online-judge-tools=='7.2.*'
+  - sudo add-apt-repository ppa:duggan/bats --yes
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq bats
+script:
+  - bats ./verifying_test/verifying_test.bats        
 
 env:
   global:
