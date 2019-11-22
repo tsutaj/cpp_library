@@ -1,0 +1,61 @@
+setup test_build_ci ...
+/home/tsutaj/Share/cpp_library/verifying_test
+Switched to a new branch 'master'
+----------------------------------------------------------------------
+## Testing './AOJ/ALDS_1_6_A_wavelet_matrix.test.cpp' ...
+----------------------------------------------------------------------
+fatal: your current branch 'master' does not have any commits yet
+./AOJ/ALDS_1_6_A_wavelet_matrix.test.cpp: In function ‘int main()’:
+./AOJ/ALDS_1_6_A_wavelet_matrix.test.cpp:47:17: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+     int N; scanf("%d", &N);
+            ~~~~~^~~~~~~~~~
+./AOJ/ALDS_1_6_A_wavelet_matrix.test.cpp:50:14: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+         scanf("%d", &A[i]);
+         ~~~~~^~~~~~~~~~~~~
+[*] 10 cases found
+
+[*] testcase_00
+[x] time: 0.004922 sec
+[+] AC
+
+[*] testcase_01
+[x] time: 0.005317 sec
+[+] AC
+
+[*] testcase_02
+[x] time: 0.005217 sec
+[+] AC
+
+[*] testcase_03
+[x] time: 0.004836 sec
+[+] AC
+
+[*] testcase_04
+[x] time: 0.004799 sec
+[+] AC
+
+[*] testcase_05
+[x] time: 0.004992 sec
+[+] AC
+
+[*] testcase_06
+[x] time: 0.005496 sec
+[+] AC
+
+[*] testcase_07
+[x] time: 0.013335 sec
+[+] AC
+
+[*] testcase_08
+[x] time: 1.087152 sec
+[+] AC
+
+[*] testcase_09
+[x] time: 1.019322 sec
+[+] AC
+
+[x] slowest: 1.087152 sec  (for testcase_08)
+[x] max memory: 72.292000 MB  (for testcase_09)
+[+] test success: 10 cases
+fatal: your current branch 'master' does not have any commits yet
+teardown test_build_ci ...

@@ -1,0 +1,4 @@
+# bashrc settings
+alias g='g++ -std=gnu++11 -O3 -Wall -Wextra -g'
+alias subl='/cygdrive/c/Program\ Files/Sublime\ Text\ 3/subl'
+ulimit -s 1048576 #stack size 1GB

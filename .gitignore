@@ -1,0 +1,6 @@
+*.out
+*.out.dSYM
+*.exe
+*.pdf
+.DS_Store
+*~

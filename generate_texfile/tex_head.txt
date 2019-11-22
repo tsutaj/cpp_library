@@ -1,0 +1,36 @@
+\documentclass[a4paper, dvipdfmx]{jsarticle}
+\usepackage{listings}
+\usepackage{jlisting}
+
+\lstset{%
+  language={C++},
+  basicstyle={\ttfamily\small},%
+  identifierstyle={\small},%
+  commentstyle={\small\itshape},%
+  keywordstyle={\small\bfseries},%
+  ndkeywordstyle={\small},%
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},%
+  numbers=left,%
+  xrightmargin=0zw,%
+  xleftmargin=3zw,%
+  numberstyle={\scriptsize},%
+  stepnumber=1,
+  numbersep=1zw,%
+  lineskip=-0.5ex%
+}
+
+\setlength{\columnsep}{9mm}
+\setlength{\topmargin}{4.6mm}
+\setlength{\oddsidemargin}{-0.4mm}
+\setlength{\textheight}{237mm}
+\setlength{\textwidth}{160mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+
+\title{}
+\author{for ACM-ICPC Contest}
+
+\begin{document}
