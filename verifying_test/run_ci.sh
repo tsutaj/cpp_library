@@ -108,7 +108,7 @@ if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
     git commit -m "[auto-verifier] verify commit ${last_commit}"
-    git push --quiet origin HEAD >/dev/null 2>&1
+    git push --quiet origin master >/dev/null 2>&1
 fi
 
 # if [[ $# -eq 0 ]] ; then
