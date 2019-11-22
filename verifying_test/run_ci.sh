@@ -92,12 +92,12 @@ run() {
 }
 
 # CI
-# git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
+git checkout master
+git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
 git config --global user.name "Tsutajiro"
 git config --global user.email "y.sugie.15739d@gmail.com"
 git config --global push.default simple
 
-# git checkout master
 git branch -a
 
 for f in $(find . -name \*.test.cpp) ; do
