@@ -112,7 +112,7 @@ if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
     git commit -m "[auto-verifier] [ci skip] verify commit ${last_commit}"
-    git push --quiet origin master >/dev/null 2>&1
+    git push --quiet origin master
     echo "Pushed updated branch 'master'"
 fi
 
