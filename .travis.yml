@@ -9,7 +9,7 @@ before_install:
 script:
   - pwd
   - cd ./verifying_test/
-  - ./run_ci.sh
+  - bash ./run_ci.sh
 #  - bats ./verifying_test/verifying_test.bats        
 
 env:
