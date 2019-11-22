@@ -91,37 +91,56 @@ run() {
     fi
 }
 
-if [[ $# -eq 0 ]] ; then
-    if [[ $CI ]] ; then
-        # CI
-        for f in $(list-recently-updated | grep aoj) ; do
-            run $f
-        done
-        exit 1 # test
-    else
-        # # local / github actions
-        git config --local user.name "Tsutajiro"
-        git config --local user.email "y.sugie.15739d@gmail.com"
-        git branch -a
+# CI
+git config --local user.name "Tsutajiro"
+git config --local user.email "y.sugie.15739d@gmail.com"
+git branch -a
 
-        for f in $(find . -name \*.test.cpp) ; do
-            echo "----------------------------------------------------------------------"
-            echo "## Testing '${f}' ..."
-            echo "----------------------------------------------------------------------"
-            run $f
-        done
+for f in $(find . -name \*.test.cpp) ; do
+    echo "----------------------------------------------------------------------"
+    echo "## Testing '${f}' ..."
+    echo "----------------------------------------------------------------------"
+    run $f
+done
 
-        git status -s
-        if [ -n "$(git status -s)" ]; then
-            last_commit="$(git log -1 | head -1 | awk '{print $2}')"
-            git add ./test
-            git commit -m "[auto-verifier] verify commit ${last_commit}"
-            git push --quiet origin HEAD >/dev/null 2>&1
-        fi
-    fi
-else
-    # specified
-    for f in "$@" ; do
-        run "$f"
-    done
+git status -s
+if [ -n "$(git status -s)" ]; then
+    last_commit="$(git log -1 | head -1 | awk '{print $2}')"
+    git add ./test
+    git commit -m "[auto-verifier] verify commit ${last_commit}"
+    git push --quiet origin HEAD >/dev/null 2>&1
 fi
+
+# if [[ $# -eq 0 ]] ; then
+#     if [[ $CI ]] ; then
+#         # CI
+#         for f in $(list-recently-updated | grep aoj) ; do
+#             run $f
+#         done
+#     else
+#         # # local / github actions
+#         git config --local user.name "Tsutajiro"
+#         git config --local user.email "y.sugie.15739d@gmail.com"
+#         git branch -a
+
+#         for f in $(find . -name \*.test.cpp) ; do
+#             echo "----------------------------------------------------------------------"
+#             echo "## Testing '${f}' ..."
+#             echo "----------------------------------------------------------------------"
+#             run $f
+#         done
+
+#         git status -s
+#         if [ -n "$(git status -s)" ]; then
+#             last_commit="$(git log -1 | head -1 | awk '{print $2}')"
+#             git add ./test
+#             git commit -m "[auto-verifier] verify commit ${last_commit}"
+#             git push --quiet origin HEAD >/dev/null 2>&1
+#         fi
+#     fi
+# else
+#     # specified
+#     for f in "$@" ; do
+#         run "$f"
+#     done
+# fi
