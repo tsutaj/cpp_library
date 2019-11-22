@@ -1,6 +1,6 @@
-language: bash, python
+language: python
 python:
-  "3.6"
+  "3.7"
 before_install:
   - pip3 install -U online-judge-tools=='7.2.*'
   - sudo add-apt-repository ppa:duggan/bats --yes
