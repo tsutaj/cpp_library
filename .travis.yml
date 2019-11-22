@@ -4,5 +4,6 @@ python:
 before_install:
   - pip3 install -U online-judge-tools=='7.2.*'
 script:
-  - cd ./verifying_test/
+  - git clone https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git verify
+  - cd ./verify/verifying_test/
   - bash ./run_ci.sh
