@@ -18,6 +18,7 @@ teardown() {
     echo "${output}" >> $BATSLOG_DIR/$BATSLOG_NAME
 
     run ./run_ci.sh
+    echo "${output}" # for looking on travis
     echo "${output}" >> $BATSLOG_DIR/$BATSLOG_NAME
     cd -
 
