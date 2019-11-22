@@ -7,7 +7,10 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq bats
 script:
-  - bats ./verifying_test/verifying_test.bats        
+  - pwd
+  - cd ./verifying_test/
+  - ./run_ci.sh
+#  - bats ./verifying_test/verifying_test.bats        
 
 env:
   global:
