@@ -97,6 +97,7 @@ if [[ $# -eq 0 ]] ; then
         for f in $(list-recently-updated | grep aoj) ; do
             run $f
         done
+        exit 1 # test
     else
         # # local / github actions
         git config --local user.name "Tsutajiro"
