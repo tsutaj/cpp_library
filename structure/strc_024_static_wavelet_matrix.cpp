@@ -33,12 +33,16 @@ public:
     
     // [l, r) の範囲内で k 番目 (1-indexed) に小さい要素が何か: O(w)
     value_type quantile(int l, int r, int k) const;
+
+    // <verified> ALDS_1_6_A (Count Sort)
     value_type quantile(int k) const;
 
     // [l, r) の範囲内の m 未満 / m を超える 要素はいくつか: O(w)
     int freq_less(int l, int r, value_type m) const;
     int freq_less(value_type m) const;
     int freq_greater(int l, int r, value_type m) const;
+
+    // <verified> ALDS_1_5_D (The Number of Inversions)
     int freq_greater(value_type m) const;
     
     // [l, r) の範囲内に x \in [mi, ma] を満たす x がいくつ出てきたか: O(w)
