@@ -102,7 +102,7 @@ if [[ $# -eq 0 ]] ; then
         git config --local user.name "Tsutajiro"
         git config --local user.email "y.sugie.15739d@gmail.com"
 
-        git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
+        git remote set-url origin https://Tsutajiro:$(GITHUB_TOKEN)@github.com/Tsutajiro/cpp_library.git
 
         git checkout -b master
         git branch -a
