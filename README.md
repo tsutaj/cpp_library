@@ -150,11 +150,11 @@
 
 :heavy_check_mark: は Verify 正常終了、:x: は異常終了
 
-* :x: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
-* :x: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
-* :x: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
-* :x: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
-* :x: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
-* :x: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
-* :x: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
+* :heavy_check_mark: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
+* :heavy_check_mark: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
+* :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
+* :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
+* :heavy_check_mark: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
+* :heavy_check_mark: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
+* :heavy_check_mark: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
 
