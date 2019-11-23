@@ -148,16 +148,13 @@
 
 ## Verify ファイル一覧
 
-とりあえず表示するだけ
+:heavy_check_mark: は Verify 正常終了、:x: は異常終了
 
-TODO: Verify されているかどうかのチェックを付ける
-
-### verifying_test
-* ./verifying\_test/AOJ/1549/static\_wavelet\_matrix.test.cpp
-* ./verifying\_test/AOJ/2426/static\_wavelet\_matrix.test.cpp
-* ./verifying\_test/AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
-* ./verifying\_test/AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
-* ./verifying\_test/AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
-* ./verifying\_test/AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
-* ./verifying\_test/AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
+* :x: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
+* :x: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
+* :x: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
+* :x: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
+* :x: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
+* :x: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
+* :x: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
 
