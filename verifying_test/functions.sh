@@ -1,3 +1,4 @@
+#!/bin/bash
 CXX=${CXX:-g++}
 CXXFLAGS="${CXXFLAGS:--std=c++14 -O3}"
 ulimit -s 65532
