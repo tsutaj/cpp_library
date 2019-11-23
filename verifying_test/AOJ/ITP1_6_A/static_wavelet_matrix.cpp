@@ -1,4 +1,4 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
@@ -40,17 +40,15 @@ const int INF = 1LL << 29;
 const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
-#include "../../structure/strc_023_compact_bitvector.cpp"
-#include "../../structure/strc_024_static_wavelet_matrix.cpp"
+#include "../../../structure/strc_023_compact_bitvector.cpp"
+#include "../../../structure/strc_024_static_wavelet_matrix.cpp"
 
 int main() {
     int N; scanf("%d", &N);
     vector<int> A(N);
-    for(int i=0; i<N; i++) {
-        scanf("%d", &A[i]);
-    }
+    for(int i=0; i<N; i++) scanf("%d", &A[i]);
 
-    WaveletMatrix<14> wm(A);
-    for(int i=0; i<N; i++) printf("%d%c", wm.quantile(i+1), " \n"[i + 1 == N]);
+    WaveletMatrix<10> wm(A);
+    for(int i=0; i<N; i++) printf("%d%c", wm[N-1-i], " \n"[i + 1 == N]);
     return 0;
 }

@@ -4,7 +4,7 @@ template <uint64_t word_size = 30, typename value_type = int,
           uint64_t ln_big = 10, uint64_t ln_sml = 4>
 struct WaveletMatrix {
 private:
-    using BitVector = CompactBitVector<ln_big, ln_sml>;
+    using BitVector = CompactBitVector<value_type, ln_big, ln_sml>;
     array<BitVector, word_size> vecs;
 
     // 要素数
@@ -15,12 +15,14 @@ private:
     // [l, r) の範囲内にある x と等しい要素は最下段のどの範囲に相当？
     // select するときに利用
     pair<int, int> rank_range(int l, int r, value_type x) const;    
+
 public:
     // クエリは特に注釈がない限り 0-indexed
     // 構築: O(N w)
     WaveletMatrix(vector<value_type> vec);
 
     // k 番目の値を復元: O(w)
+    // <verified> ITP1_6_A (Reversing Numbers)
     value_type at(int k) const;
     value_type operator[](int k) const;
 
@@ -32,30 +34,34 @@ public:
     tuple<int, int, int> rank_tuple(value_type x) const;
     
     // [l, r) の範囲内で k 番目 (1-indexed) に小さい要素が何か: O(w)
+    // <verified> AOJ ALDS1_6_A (Count Sort)
+    value_type quantile(int l, int r, value_type mi, value_type ma, int k) const;
     value_type quantile(int l, int r, int k) const;
-
-    // <verified> ALDS_1_6_A (Count Sort)
     value_type quantile(int k) const;
 
     // [l, r) の範囲内の m 未満 / m を超える 要素はいくつか: O(w)
+    // <verified> AOJ ALDS1_5_D (The Number of Inversions)
     int freq_less(int l, int r, value_type m) const;
     int freq_less(value_type m) const;
     int freq_greater(int l, int r, value_type m) const;
-
-    // <verified> ALDS_1_5_D (The Number of Inversions)
     int freq_greater(value_type m) const;
     
     // [l, r) の範囲内に x \in [mi, ma] を満たす x がいくつ出てきたか: O(w)
-    // [mi, ma] は閉区間！！ 
+    // [mi, ma] は閉区間！！
+    // <verified> AOJ 1549 (Hard Beans)
+    // <verified> AOJ 2426 (Treasure Hunt)
     int freq(int l, int r, value_type mi, value_type ma) const;
     int freq(int l, int r, value_type x) const;
     int freq(value_type mi, value_type ma) const;
     
     // [l, r) の範囲内にある要素の最小値 (quantile 再利用): O(w)
+    // <verified> AOJ DSL_3_D (Sliding Minimum Elements)
+    value_type min_value(int l, int r, value_type mi, value_type ma) const;
     value_type min_value(int l, int r) const;
     value_type min_value() const;
 
     // [l, r) の範囲内にある要素の最大値 (quantile 再利用): O(w)
+    value_type max_value(int l, int r, value_type mi, value_type ma) const;
     value_type max_value(int l, int r) const;
     value_type max_value() const;
 
@@ -64,8 +70,13 @@ public:
     int select(int k, value_type x) const;
 
     // k 番目の要素と値が等しいもので、k 番目の直後 / 直前の要素 idx: O(w log N)
-    int next(int k) const;
-    int prev(int k) const;
+    int next_idx(int k) const;
+    int prev_idx(int k) const;
+
+    // [l, r) の範囲内にある、x 未満 / x を超える要素のうち 最大 / 最小 であるもの: O(w)
+    // <verified> AOJ 1549 (Hard Beans)
+    value_type next_val(int l, int r, value_type x) const;
+    value_type prev_val(int l, int r, value_type x) const;
 };
 
 template <uint64_t word_size, typename value_type,
@@ -76,12 +87,6 @@ vector<value_type> WaveletMatrix<word_size, value_type, ln_big, ln_sml>::sort_kt
     for(size_t i=0; i<vec.size(); i++) {
         ((vec[i] >> k & 1) ? v1 : v0).emplace_back(vec[i]);
     }
-    /*
-    for(auto e : v0) cerr << e << " ";
-    cerr << "| ";
-    for(auto e : v1) cerr << e << " ";
-    cerr << endl;
-    */
     v0.insert(v0.end(), v1.begin(), v1.end());
     return v0;
 }
@@ -105,34 +110,10 @@ pair<int, int> WaveletMatrix<word_size, value_type, ln_big, ln_sml>::rank_range(
 template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
 WaveletMatrix<word_size, value_type, ln_big, ln_sml>::WaveletMatrix(vector<value_type> vec) : n(vec.size()) {
-    /*
-    fprintf(stderr, "raw: ");
-    for(auto e : vec) cerr << e << " ";
-    cerr << endl;
-    */    
-
     vecs[0] = BitVector(vec, word_size - 1);
-
-    /*
-    fprintf(stderr, "# ");
-    for(size_t i=0; i<vec.size(); i++) {
-        cerr << vecs[0][i] << " ";
-    }
-    cerr << endl;
-    */
-
     for(size_t i=1; i<word_size; i++) {
-        // fprintf(stderr, "bit = %zu: ", word_size - i);
         vec = sort_kth_bit(vec, word_size - i);
         vecs[i] = BitVector(vec, word_size - i - 1);
-
-        /*
-        fprintf(stderr, "# ");
-        for(size_t j=0; j<vec.size(); j++) {
-            cerr << vecs[i][j] << " ";
-        }
-        cerr << endl;
-        */
     }
 }
 
@@ -188,7 +169,16 @@ tuple<int, int, int> WaveletMatrix<word_size, value_type, ln_big, ln_sml>::rank_
 
 template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
+value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::quantile(int l, int r, value_type mi, value_type ma, int k) const {
+    int cnt_less = freq_less(l, r, mi), cnt_greater = freq_greater(l, r, ma);
+    if(r - l - cnt_less - cnt_greater < k) return -1;
+    return quantile(l, r, k + cnt_less);
+}
+
+template <uint64_t word_size, typename value_type,
+          uint64_t ln_big, uint64_t ln_sml>
 value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::quantile(int l, int r, int k) const {
+    if(r - l < k) return -1;
     value_type res = 0;
     for(size_t i=0; i<word_size; i++) {
         int all1 = vecs[i].rank(n-1), all0 = n - all1;
@@ -279,6 +269,12 @@ int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::freq(value_type mi, va
 
 template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
+value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::min_value(int l, int r, value_type mi, value_type ma) const {
+    return quantile(l, r, mi, ma, 1);
+}
+
+template <uint64_t word_size, typename value_type,
+          uint64_t ln_big, uint64_t ln_sml>
 value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::min_value(int l, int r) const {
     return quantile(l, r, 1);
 }
@@ -287,6 +283,12 @@ template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
 value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::min_value() const {
     return min_value(0, n);
+}
+
+template <uint64_t word_size, typename value_type,
+          uint64_t ln_big, uint64_t ln_sml>
+value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::max_value(int l, int r, value_type mi, value_type ma) const {
+    return quantile(l, r, mi, ma, freq(l, r, mi, ma));
 }
 
 template <uint64_t word_size, typename value_type,
@@ -308,21 +310,16 @@ int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::select(int l, int r, i
     tie(l, r) = rank_range(l, r, x);
     if(r - l < k) return -1;
 
-    // fprintf(stderr, "l = %d, r = %d\n", l, r);
     int pos = l + k - 1;
     for(size_t i=0; i<word_size; i++) {
         int b = x >> i & 1;
-        // fprintf(stderr, "pos = %d, b = %d\n", pos, b);
         int cnt1 = vecs[word_size - 1 - i].rank(n-1), cnt0 = n - cnt1;
-        // fprintf(stderr, "cnt1 = %d, cnt0 = %d\n", cnt1, cnt0);
         if(b == 0) {
             int m = pos;
-            // fprintf(stderr, "type 0: m = %d\n", m);
             pos = vecs[word_size - 1 - i].select0(m, n);
         }
         else {
             int m = pos - cnt0;
-            // fprintf(stderr, "type 1: m = %d\n", m);
             pos = vecs[word_size - 1 - i].select1(m, n);
         }
     }
@@ -337,14 +334,27 @@ int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::select(int k, value_ty
 
 template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
-int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::prev(int k) const {
+int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::next_idx(int k) const {
+    int m = freq(0, k+1, at(k));
+    return select(m+1, at(k));
+}
+
+template <uint64_t word_size, typename value_type,
+          uint64_t ln_big, uint64_t ln_sml>
+int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::prev_idx(int k) const {
     int m = freq(0, k+1, at(k));
     return select(m-1, at(k));
 }
 
 template <uint64_t word_size, typename value_type,
           uint64_t ln_big, uint64_t ln_sml>
-int WaveletMatrix<word_size, value_type, ln_big, ln_sml>::next(int k) const {
-    int m = freq(0, k+1, at(k));
-    return select(m+1, at(k));
+value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::next_val(int l, int r, value_type x) const {
+    int k = r - l - freq_greater(l, r, x) + 1;
+    return quantile(l, r, k);
+}
+
+template <uint64_t word_size, typename value_type,
+          uint64_t ln_big, uint64_t ln_sml>
+value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::prev_val(int l, int r, value_type x) const {
+    return quantile(l, r, freq_less(l, r, x));
 }

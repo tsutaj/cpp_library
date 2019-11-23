@@ -4,23 +4,23 @@
 // n_blk <- n_big を n_sml で割ったもの
 // ln_big, ln_sml には、それぞれ log(n_big), log(n_sml) をいれる
 
-template <uint64_t ln_big = 10, uint64_t ln_sml = 4>
+template <typename value_type = int,
+          uint64_t ln_big = 10, uint64_t ln_sml = 4>
 struct CompactBitVector {
 private:
-    using value_type = uint64_t;
     size_t n, n_big, n_sml, n_blk, ln_blk;
     vector<value_type> big, sml, bit;
     
     int popcount(value_type b) const {
         return __builtin_popcountll(b); // GCC builtin function
     }
-    void build(vector<int> vec);
+    void build(vector<value_type> vec);
 
 public:
     // 構築: O(N)
     CompactBitVector();
-    CompactBitVector(vector<int> vec);
-    CompactBitVector(vector<int> vec, int k);
+    CompactBitVector(vector<value_type> vec);
+    CompactBitVector(vector<value_type> vec, int k);
     // 数列のサイズ: O(1)
     size_t size() const;
     // 全体の 1 の個数: O(1)
@@ -64,8 +64,8 @@ public:
     }
 };
 
-template <uint64_t ln_big, uint64_t ln_sml>
-void CompactBitVector<ln_big, ln_sml>::build(vector<int> vec) {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+void CompactBitVector<value_type, ln_big, ln_sml>::build(vector<value_type> vec) {
     big.resize(((n + n_big - 1) >> ln_big) + 1); // O(N / log^2 N) memory
     sml.resize(big.size() << ln_blk); // O(N / log N) memory
     bit.resize(big.size() << ln_blk); // O(N / log N) memory
@@ -86,57 +86,57 @@ void CompactBitVector<ln_big, ln_sml>::build(vector<int> vec) {
     }
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-CompactBitVector<ln_big, ln_sml>::CompactBitVector() {}
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+CompactBitVector<value_type, ln_big, ln_sml>::CompactBitVector() {}
 
-template <uint64_t ln_big, uint64_t ln_sml>
-CompactBitVector<ln_big, ln_sml>::CompactBitVector(vector<int> vec)
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+CompactBitVector<value_type, ln_big, ln_sml>::CompactBitVector(vector<value_type> vec)
     : n(vec.size()), n_big(1ULL << ln_big), n_sml(1ULL << ln_sml),
       n_blk(n_big >> ln_sml), ln_blk(ln_big - ln_sml) {
     build(vec);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-CompactBitVector<ln_big, ln_sml>::CompactBitVector(vector<int> vec, int k)
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+CompactBitVector<value_type, ln_big, ln_sml>::CompactBitVector(vector<value_type> vec, int k)
     : n(vec.size()), n_big(1ULL << ln_big), n_sml(1ULL << ln_sml),
       n_blk(n_big >> ln_sml), ln_blk(ln_big - ln_sml) {
-    vector<int> n_vec;
+    vector<value_type> n_vec;
     for(auto e : vec) n_vec.emplace_back(e >> k & 1);
     build(n_vec);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-size_t CompactBitVector<ln_big, ln_sml>::size() const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+size_t CompactBitVector<value_type, ln_big, ln_sml>::size() const {
     return n;
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::count() const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::count() const {
     return rank(n-1);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::value(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::value(size_t k) const {
     if(k >= n) return 0;
     size_t m = k & (n_sml - 1);
     return bit[k >> ln_sml] >> m & 1;
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::rank(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::rank(size_t k) const {
     if(k >= n) return 0; // for range query
     size_t m = k & (n_sml - 1), mask = (1ULL << n_sml) - (1ULL << (m+1));
     return big[k >> ln_big] + sml[k >> ln_sml] - popcount(bit[k >> ln_sml] & mask);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::rank(size_t l, size_t r) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::rank(size_t l, size_t r) const {
     if(l >= r) return 0;
     return rank(r-1) - rank(l-1);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select1(int r, int k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select1(int r, int k) const {
     int ub = n+1, lb = -1;
     while(ub - lb > 1) {
         int mid = (ub + lb) / 2;
@@ -146,8 +146,8 @@ int CompactBitVector<ln_big, ln_sml>::select1(int r, int k) const {
     return (ub < k) ? ub : -1;
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select0(int r, int k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select0(int r, int k) const {
     int ub = n+1, lb = -1;
     while(ub - lb > 1) {
         int mid = (ub + lb) / 2;
@@ -157,32 +157,32 @@ int CompactBitVector<ln_big, ln_sml>::select0(int r, int k) const {
     return (ub < k) ? ub : -1;
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select1_nxt(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select1_nxt(size_t k) const {
     return select1(rank(k), n);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select0_nxt(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select0_nxt(size_t k) const {
     return select0(rank(k), n);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select1_pre(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select1_pre(size_t k) const {
     return select1(rank(k) - 1 - value(k), k);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::select0_pre(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::select0_pre(size_t k) const {
     return select0(rank(k) - 1 - value(k), k);
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::at(size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::at(size_t k) const {
     return bit[k >> ln_sml] >> (k & (n_sml - 1)) & 1;
 }
 
-template <uint64_t ln_big, uint64_t ln_sml>
-int CompactBitVector<ln_big, ln_sml>::operator[](size_t k) const {
+template <typename value_type, uint64_t ln_big, uint64_t ln_sml>
+int CompactBitVector<value_type, ln_big, ln_sml>::operator[](size_t k) const {
     return at(k);
 }
