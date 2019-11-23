@@ -1,6 +1,7 @@
 #!/bin/bash
-set -e
 bash
+set -e
+
 . ./functions.sh
 
 # you can install oj with: $ pip3 install --user -U online-judge-tools=='6.*'
@@ -35,3 +36,5 @@ if [ -n "$(git status -s)" ]; then
     git push --quiet origin master >/dev/null 2>&1
     echo "Pushed updated branch 'master'"
 fi
+
+exit
