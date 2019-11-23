@@ -1,5 +1,4 @@
 #!/bin/bash
-bash
 set -e
 
 . ./functions.sh
@@ -37,4 +36,3 @@ if [ -n "$(git status -s)" ]; then
     echo "Pushed updated branch 'master'"
 fi
 
-exit

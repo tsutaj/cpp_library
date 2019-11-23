@@ -32,7 +32,7 @@ is_verified() {
     file="$1"
     cache=test/timestamp/$(echo -n "$file" | md5sum | sed 's/ .*//')
     timestamp="$(get_last_commit_date "$file")"
-    [[ -e $cache ]] && [[ $timestamp = $(cat $cache) ]]
+    [ -e $cache ] && [ $timestamp = $(cat $cache) ]
 }
 
 mark_verified() {
@@ -62,12 +62,12 @@ run() {
         return
     fi
 
-    if ! is_verified "$file" ; then
+    if [ is_verified "$file" -eq 0 ] ; then
         # compile
         $CXX $CXXFLAGS -I . -o ${dir}/a.out "$file"
-        if [[ -n ${url} ]] ; then
+        if [ -n ${url} ] ; then
             # download
-            if [[ ! -e ${dir}/test ]] ; then
+            if [ ! -e ${dir}/test ] ; then
                 sleep 2
                 oj download --system "$url" -d ${dir}/test
             fi
