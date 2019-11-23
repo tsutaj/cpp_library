@@ -91,7 +91,6 @@ run() {
     fi
 }
 
-# CI
 git checkout master
 git remote set-url origin https://Tsutajiro:${GITHUB_TOKEN}@github.com/Tsutajiro/cpp_library.git
 
@@ -101,6 +100,7 @@ git config --global push.default simple
 
 git branch -a
 
+# auto verify
 for f in $(find . -name \*.test.cpp) ; do
     echo "----------------------------------------------------------------------"
     echo "## Testing '${f}' ..."
@@ -108,10 +108,16 @@ for f in $(find . -name \*.test.cpp) ; do
     run $f
 done
 
+# auto generate readme
+cd ../
+python3 generate_readme.py > ./README.md
+cd ./verifying_test/
+
 git status -s
 if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
+    git add ../README.md
     git commit -m "[auto-verifier] [ci skip] verify commit ${last_commit}"
     git push --quiet origin master >/dev/null 2>&1
     echo "Pushed updated branch 'master'"
