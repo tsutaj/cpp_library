@@ -1,3 +1,6 @@
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=ja"
+#define ERROR "1e-8"
+
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
