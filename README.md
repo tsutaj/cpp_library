@@ -30,6 +30,7 @@
 * etc\_001\_dice.cpp
 
 ### geometry
+* geometry\_2D.cpp
 * gmtr\_000\_basic.cpp
 * gmtr\_001\_orthogonal\_parallel.cpp
 * gmtr\_002\_intersection.cpp
@@ -42,7 +43,6 @@
 * gmtr\_009\_poly.cpp
 * gmtr\_010\_rotate.cpp
 * gmtr\_100\_basic\_threedim.cpp
-* gmtr\_000\_basic.cpp
 
 ### graph
 * graph\_000\_basic.cpp
@@ -175,6 +175,10 @@
     - Dependencies
         + ../structure/strc\_023\_compact\_bitvector.cpp
         + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
+* :heavy_check_mark: ./AOJ/CGL\_1\_A/CGL\_1\_A.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
 * :heavy_check_mark: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
     - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja
     - Dependencies
