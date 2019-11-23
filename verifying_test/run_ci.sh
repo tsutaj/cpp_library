@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+bash
 . ./functions.sh
 
 # you can install oj with: $ pip3 install --user -U online-judge-tools=='6.*'
