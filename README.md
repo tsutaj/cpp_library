@@ -5,7 +5,7 @@
 * 自己責任で使ってね
 * CI は試験運用中です
 
-## ここにあるものの一覧
+## ライブラリ一覧
 
 ### algorithm
 * algo\_000\_sum.cpp
@@ -42,6 +42,7 @@
 * gmtr\_009\_poly.cpp
 * gmtr\_010\_rotate.cpp
 * gmtr\_100\_basic\_threedim.cpp
+* gmtr\_000\_basic.cpp
 
 ### graph
 * graph\_000\_basic.cpp
@@ -71,6 +72,10 @@
 * graph\_024\_boruvka.cpp
 * graph\_025\_2SAT.cpp
 
+### marathon
+* rand.cpp
+* timer.cpp
+
 ### math
 * math\_000\_limits.cpp
 * math\_001\_mod.cpp
@@ -96,6 +101,7 @@
 * math\_021\_crt.cpp
 * math\_022\_matrix\_utils\_real.cpp
 * math\_023\_matrix\_utils\_modp.cpp
+* math\_024\_fixed\_matrix.cpp
 
 ### string
 * str\_000\_split.cpp
@@ -111,6 +117,10 @@
 * str\_010\_z\_algorithm.cpp
 
 ### structure
+* strc\_002\_segment\_rmq.cpp
+* strc\_003\_segment\_rmq\_sec.cpp
+* strc\_007\_bit\_recursion.cpp
+* strc\_011\_lazysegtree.cpp
 * strc\_001\_unionfind.cpp
 * strc\_002\_bit.cpp
 * strc\_003\_twodimbit.cpp
@@ -133,4 +143,21 @@
 * strc\_020\_dynamic\_segtree.cpp
 * strc\_021\_dynamic\_lazy\_segtree.cpp
 * strc\_022\_dual\_segtree.cpp
+* strc\_023\_compact\_bitvector.cpp
+* strc\_024\_static\_wavelet\_matrix.cpp
+
+## Verify ファイル一覧
+
+とりあえず表示するだけ
+
+TODO: Verify されているかどうかのチェックを付ける
+
+### verifying_test
+* ./verifying\_test/AOJ/1549/static\_wavelet\_matrix.test.cpp
+* ./verifying\_test/AOJ/2426/static\_wavelet\_matrix.test.cpp
+* ./verifying\_test/AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
+* ./verifying\_test/AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
+* ./verifying\_test/AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
+* ./verifying\_test/AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
+* ./verifying\_test/AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
 
