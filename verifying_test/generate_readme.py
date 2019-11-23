@@ -28,7 +28,7 @@ def convert_lib_to_md(dir_name, lib_file_list):
 
 def convert_test_to_md(dir_name, test_file_list):
     for f in test_file_list:
-        proc = subprocess.run(['source ./functions.sh ; ! $(is_verified {}) ; echo $?'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc = subprocess.run(['. ./functions.sh ; ! $(is_verified {}) ; echo $?'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1]
         mark = ':heavy_check_mark:' if proc_result == "1" else ':x:'
         f = f.replace('_', '\_')
