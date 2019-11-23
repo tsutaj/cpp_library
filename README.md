@@ -151,10 +151,38 @@
 :heavy_check_mark: は Verify 正常終了、:x: は異常終了
 
 * :heavy_check_mark: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A
+    - Dependencies
+        + ../structure/strc\_023\_compact\_bitvector.cpp
+        + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 
