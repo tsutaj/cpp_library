@@ -28,18 +28,18 @@ def convert_lib_to_md(dir_name, lib_file_list):
 
 def convert_test_to_md(dir_name, test_file_list):
     for f in test_file_list:
-        proc = subprocess.run(['bash check_verification.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc = subprocess.run(['bash ./lib/check_verification.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1]
         mark = ':heavy_check_mark:' if proc_result == "1" else ':x:'
         f_ = f.replace('_', '\_')
         print('*', mark, f_)
 
-        proc = subprocess.run(['bash check_url.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc = subprocess.run(['bash ./lib/check_url.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1]
         if len(proc_result) > 0:
             print('    - URL:', proc_result)
 
-        proc = subprocess.run(['bash check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc = subprocess.run(['bash ./lib/check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1].splitlines()
         if len(proc_result) > 0:
             print('    - Dependencies')

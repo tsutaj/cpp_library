@@ -4,13 +4,13 @@
 double deg2rad(double x) {return x * M_PI / 180.0;}
 
 // 点 a を中心として、点 b を z 度回転させたときの位置
-P rotatePoint(P a, P b, double z) {
+Point rotatePoint(Point a, Point b, double z) {
     // 度数法の場合は変換
     z = deg2rad(z);
 
     b -= a;
-    double rx = b.X * cos(z) - b.Y * sin(z);
-    double ry = b.X * sin(z) + b.Y * cos(z);
-    P ret(rx, ry); ret += a;
+    double rx = b.real() * cos(z) - b.imag() * sin(z);
+    double ry = b.real() * sin(z) + b.imag() * cos(z);
+    Point ret(rx, ry); ret += a;
     return ret;
 }
