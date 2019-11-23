@@ -79,9 +79,9 @@ run() {
             # test with tolerance error
             if list_defined "$file" | grep '^#define ERROR ' > /dev/null ; then
                 error=$(get_error "$file")
-                oj test -e ${error} -c ${dir}/a.out -d ${dir}/test
+                oj test -s -e ${error} -c ${dir}/a.out -d ${dir}/test
             else
-                oj test -c ${dir}/a.out -d ${dir}/test
+                oj test -s -c ${dir}/a.out -d ${dir}/test
             fi
         else
             # run

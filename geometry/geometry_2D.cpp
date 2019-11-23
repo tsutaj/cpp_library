@@ -386,8 +386,8 @@ bool cmp_y(const Point &a, const Point& b) {
 
 vector<Point> convexHull(vector<Point> ps) {
     int n = ps.size();
-    // sort(ps.begin(),ps.end(), cmp_y);
-    sort(ps.begin(),ps.end());
+    sort(ps.begin(), ps.end(), cmp_y);
+
     int k = 0;
     vector<Point> convex(n*2);
     for(int i=0; i<n; i++) {
