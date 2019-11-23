@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys, os, glob, re
+import sys, os, glob, re, subprocess
 
 # ディレクトリ一覧
 def get_directory_list(path):
@@ -19,15 +19,23 @@ def get_matched_file_list(path, cond):
     return sorted(files_list)
 
 # Markdown 形式で出力 (アンダースコアはそのまま使うとあれなので置換する)
-def convert_to_md(dir_name, cpp_file_list):
+def convert_lib_to_md(dir_name, lib_file_list):
     print('###', dir_name)
-    for f in cpp_file_list:
+    for f in lib_file_list:
         f = f.replace('_', '\_')
         print('*', f)
     print()
-    
+
+def convert_test_to_md(dir_name, test_file_list):
+    for f in test_file_list:
+        proc = subprocess.run(['source ./functions.sh ; ! $(is_verified {}) ; echo $?'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc_result = proc.stdout.decode("UTF-8")[:-1]
+        mark = ':heavy_check_mark:' if proc_result == "1" else ':x:'
+        f = f.replace('_', '\_')
+        print('*', mark, f)
+    print()
+        
 def main():
-    path = './'
         
     desc_1 = '''\
 # tsutaj の競技プログラミング用 C++ ライブラリ置き場
@@ -41,31 +49,32 @@ def main():
 '''    
     # パスに 'verify' が付いているファイルは拾わない
     # パスに 'test.cpp' が付いているファイルも拾わない
+    lib_path = '../'
     lib_cond = re.compile(r'^(?!.*verify)(?!.*test.cpp).*$')
     ignore_lib_list = []
     
     print(desc_1)
-    lib_dir_list = get_matched_directory_list(path, lib_cond, ignore_lib_list)
+    lib_dir_list = get_matched_directory_list(lib_path, lib_cond, ignore_lib_list)
     for d in lib_dir_list:
-        cpp_file_list = [os.path.basename(f) for f in get_matched_file_list(os.path.join(path, d), lib_cond)]
-        convert_to_md(d, cpp_file_list)
+        cpp_file_list = [os.path.basename(f) for f in get_matched_file_list(os.path.join(lib_path, d), lib_cond)]
+        convert_lib_to_md(d, cpp_file_list)
 
     desc_2 = '''\
 ## Verify ファイル一覧
 
-とりあえず表示するだけ
-
-TODO: Verify されているかどうかのチェックを付ける
+:heavy_check_mark: は Verify 正常終了、:x: は異常終了
 '''
     # パスに 'test.cpp' が付いているなら拾う
+    test_path = './'
     test_cond = re.compile(r'^(?=.*test.cpp).*$')
     ignore_test_list = []
 
     print(desc_2)
-    test_dir_list = get_matched_directory_list(path, test_cond, ignore_test_list)
+    test_dir_list = get_matched_directory_list(test_path, test_cond, ignore_test_list)
     for d in test_dir_list:
-        test_cpp_file_list = get_matched_file_list(os.path.join(path, d), test_cond)
-        convert_to_md(d, test_cpp_file_list)
+        test_cpp_file_list = get_matched_file_list(os.path.join(test_path, d), test_cond)
+        
+        convert_test_to_md(d, test_cpp_file_list)
     
 if __name__ == '__main__':
     main()
