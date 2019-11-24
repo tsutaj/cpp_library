@@ -46,9 +46,9 @@ def convert_lib_to_md(dir_name, lib_file_list, lib_dependencies):
     print('##', dir_name)
     for f in lib_file_list:
         print('###', f.replace('_', '\_'))
-        if f in lib_dependencies: print('#### Dependencies')
+        if f in lib_dependencies: print('    #### Dependencies')
         for d in lib_dependencies.setdefault(f, []):
-            print('*', d)
+            print('        *', d)
         print()
 
 def convert_test_to_md(testfile):
@@ -56,9 +56,9 @@ def convert_test_to_md(testfile):
     print('###', mark, testfile.testfile_name.replace('_', '\_'))
     if len(testfile.problem.url) > 0: print('* URL: [{}]({})'.format(testfile.problem.url, testfile.problem.url))
     if len(testfile.problem.description) > 0: print('*', testfile.problem.description)
-    if len(testfile.problem.dependencies) > 0: print('#### Dependencies')
+    if len(testfile.problem.dependencies) > 0: print('    #### Dependencies')
     for d in testfile.problem.dependencies:
-        print('*', os.path.basename(d).replace('_', '\_'))
+        print('        *', os.path.basename(d).replace('_', '\_'))
 
     print()
         
@@ -88,8 +88,7 @@ def get_test_dict(dir_name, test_file_list):
     return test_files, lib_dependencies
     
 def main():
-        
-    desc_1 = '''\
+    desc_0 = '''\
 <!-- Mathjax Support -->
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -105,7 +104,8 @@ def main():
 * this unordered seed list will be replaced by toc as unordered list
 {:toc}
 '''
-
+    print(desc_0)
+    
     # パスに 'test.cpp' が付いているなら拾う
     test_path = './'
     test_cond = re.compile(r'^(?=.*test.cpp).*$')
@@ -135,6 +135,7 @@ def main():
     desc_2 = '''\
 # Verify ファイル一覧
 '''
+    print(desc_2)
     for t in test_files:
         convert_test_to_md(t)
         
