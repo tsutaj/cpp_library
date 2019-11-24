@@ -1,5 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426"
-#define DESCRIPTION "矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める"
+#define DESCRIPTION "矩形 $$x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$$ 内に属する点の個数を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

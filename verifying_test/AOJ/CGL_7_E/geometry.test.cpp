@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja"
 #define ERROR "1e-6"
-#define DESCRIPTION "$2$ つの円 $c_1, c_2$ の交点を求める"
+#define DESCRIPTION "$$2$$ つの円 $$c_1, c_2$$ の交点を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

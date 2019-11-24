@@ -56,22 +56,6 @@ def convert_test_to_md(dir_name, test_file_list):
 def main():
         
     desc_1 = '''\
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$']],
-      processEscapes: true
-    },
-    CommonHTML: { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em",
-    TeX: {
-      equationNumbers: { autoNumber: "AMS" },
-    }
-  });
-</script>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
-
 # tsutaj の競技プログラミング用 C++ ライブラリ置き場
 
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)

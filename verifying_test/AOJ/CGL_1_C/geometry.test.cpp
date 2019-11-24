@@ -1,5 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja"
-#define DESCRIPTION "$3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める"
+#define DESCRIPTION "$$3$$ 点 $$p_0, p_1, p_2$$ の位置関係 (ccw) を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

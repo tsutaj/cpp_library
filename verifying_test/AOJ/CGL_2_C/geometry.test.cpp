@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja"
 #define ERROR "1e-8"
-#define DESCRIPTION "線分 $s_1, s_2$ の交点の座標を求める"
+#define DESCRIPTION "線分 $$s_1, s_2$$ の交点の座標を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

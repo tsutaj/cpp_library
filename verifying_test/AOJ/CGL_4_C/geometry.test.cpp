@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja"
 #define ERROR "1e-5"
-#define DESCRIPTION "凸多角形 $g$ を直線 $p_1 p_2$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める"
+#define DESCRIPTION "凸多角形 $$g$$ を直線 $$p_1 p_2$$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
