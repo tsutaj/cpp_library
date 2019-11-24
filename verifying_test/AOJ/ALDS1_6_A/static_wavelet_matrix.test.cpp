@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A"
+#define DESCRIPTION "ソートを行う (小さいものから $k$ 番目を求められることを利用)"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

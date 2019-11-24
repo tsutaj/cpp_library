@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja"
+#define DESCRIPTION "凸とは限らない多角形の面積を計算する"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

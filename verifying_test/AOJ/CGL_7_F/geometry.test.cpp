@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja"
 #define ERROR "1e-5"
-
+#define DESCRIPTION "点 $p$ を通る円 $c$ の接線を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

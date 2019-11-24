@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja"
+#define DESCRIPTION "連続部分列中の最小の要素を答える"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

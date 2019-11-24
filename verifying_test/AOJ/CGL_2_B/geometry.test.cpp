@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja"
+#define DESCRIPTION "線分 $s_1, s_2$ について、交差を判定"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

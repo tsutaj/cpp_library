@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja"
+#define DESCRIPTION "二次元平面における点集合 $P$ の凸包を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

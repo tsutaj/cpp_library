@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja"
+#define DESCRIPTION "直線 $s_1, s_2$ について平行・直交を判定"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

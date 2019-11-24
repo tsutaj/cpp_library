@@ -39,6 +39,11 @@ def convert_test_to_md(dir_name, test_file_list):
         if len(proc_result) > 0:
             print('    - URL:', proc_result)
 
+        proc = subprocess.run(['bash ./lib/check_description.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        proc_result = proc.stdout.decode("UTF-8")[:-1]
+        if len(proc_result) > 0:
+            print('        +', proc_result)
+
         proc = subprocess.run(['bash ./lib/check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1].splitlines()
         if len(proc_result) > 0:

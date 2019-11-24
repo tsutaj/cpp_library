@@ -1,4 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&lang=ja"
+#define DESCRIPTION "$2$ つの円 $c_1, c_2$ の位置関係を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

@@ -1,4 +1,5 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja"
+#define DESCRIPTION "与えられた数列を逆順に出力"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
