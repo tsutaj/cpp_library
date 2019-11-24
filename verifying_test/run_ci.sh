@@ -119,14 +119,14 @@ fi
 
 # auto generate page [gh-pages branch]
 python3 generate_readme.py > ../index.md
-mv lib/ ../
+mv library/ ../
 mv verified/ ../
-git add ../index.md ../lib ../verified
+git add ../index.md ../library ../verified
 git commit -m "[ci skip] html"
 
 git checkout gh-pages
-git checkout master -- ../index.md ../lib ../verified
-git add ../index.md ../lib ../verified
+git checkout master -- ../index.md ../library ../verified
+git add ../index.md ../library ../verified
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
 echo "Pushed updated branch 'gh-pages'"
