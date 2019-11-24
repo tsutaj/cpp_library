@@ -56,11 +56,14 @@ def convert_test_to_md(dir_name, test_file_list):
 def main():
         
     desc_1 = '''\
-# tsutaj の競技プログラミング用 C++ ライブラリ置き場
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
-* 自己責任で使ってね
+* tsutaj が使用している競技プログラミング用ライブラリです。自己責任で使ってね
 * CI は試験運用中です (そのうち HTML 生成機能をつける予定)
 
 ## 目次
