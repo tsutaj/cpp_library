@@ -7,7 +7,7 @@
 * 凸とは限らない多角形の面積を計算する
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -67,6 +67,7 @@ int main() {
     printf("%.1f\n", area(array));
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

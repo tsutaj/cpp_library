@@ -7,8 +7,8 @@
 * 与えられた数列を逆順に出力
 
 ## Dependencies
-* [strc\_023\_compact\_bitvector.cpp](../../../lib/strc_023_compact_bitvector.cpp.html)
-* [strc\_024\_static\_wavelet\_matrix.cpp](../../../lib/strc_024_static_wavelet_matrix.cpp.html)
+* [strc\_023\_compact\_bitvector.cpp](../../../library/strc_023_compact_bitvector.cpp.html)
+* [strc\_024\_static\_wavelet\_matrix.cpp](../../../library/strc_024_static_wavelet_matrix.cpp.html)
 
 ## Code
 
@@ -68,6 +68,7 @@ int main() {
     for(int i=0; i<N; i++) printf("%d%c", wm[N-1-i], " \n"[i + 1 == N]);
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

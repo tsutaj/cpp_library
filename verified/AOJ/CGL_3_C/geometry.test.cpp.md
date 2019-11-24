@@ -7,7 +7,7 @@
 * 多角形 $$g$$ と点 $$p$$ について、$$p$$ が $$g$$ に含まれるか・辺上にあるかを判定
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -78,6 +78,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

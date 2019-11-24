@@ -7,7 +7,7 @@
 * $$3$$ 点 $$p_0, p_1, p_2$$ の位置関係 (ccw) を求める
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -78,6 +78,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

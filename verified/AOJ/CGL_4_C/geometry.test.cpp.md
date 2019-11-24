@@ -7,7 +7,7 @@
 * 凸多角形 $$g$$ を直線 $$p_1 p_2$$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -77,6 +77,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

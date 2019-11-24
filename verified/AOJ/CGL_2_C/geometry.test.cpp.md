@@ -7,7 +7,7 @@
 * 線分 $$s_1, s_2$$ の交点の座標を求める
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -68,6 +68,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

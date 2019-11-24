@@ -7,7 +7,7 @@
 * $$2$$ つの円 $$c_1, c_2$$ の共通接線を求める
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -74,6 +74,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

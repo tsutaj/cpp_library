@@ -7,7 +7,7 @@
 * 点 $$p$$ を通る円 $$c$$ の接線を求める
 
 ## Dependencies
-* [geometry\_2D.cpp](../../../lib/geometry_2D.cpp.html)
+* [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
 
 ## Code
 
@@ -70,6 +70,7 @@ int main() {
     printf("%.10f %.10f\n%.10f %.10f\n", ans[0].real(), ans[0].imag(), ans[1].real(), ans[1].imag());
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)

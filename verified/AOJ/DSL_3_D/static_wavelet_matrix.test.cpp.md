@@ -7,8 +7,8 @@
 * 連続部分列中の最小の要素を答える
 
 ## Dependencies
-* [strc\_023\_compact\_bitvector.cpp](../../../lib/strc_023_compact_bitvector.cpp.html)
-* [strc\_024\_static\_wavelet\_matrix.cpp](../../../lib/strc_024_static_wavelet_matrix.cpp.html)
+* [strc\_023\_compact\_bitvector.cpp](../../../library/strc_023_compact_bitvector.cpp.html)
+* [strc\_024\_static\_wavelet\_matrix.cpp](../../../library/strc_024_static_wavelet_matrix.cpp.html)
 
 ## Code
 
@@ -70,6 +70,7 @@ int main() {
     }
     return 0;
 }
+
 ```
 
 [トップページに戻る](../../../index.html)
