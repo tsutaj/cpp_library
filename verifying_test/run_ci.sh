@@ -100,7 +100,7 @@ git config --global push.default simple
 
 git branch -a
 
-# auto verify
+# auto verify [master branch]
 for f in $(find . -name \*.test.cpp) ; do
     echo "----------------------------------------------------------------------"
     echo "## Testing '${f}' ..."
@@ -108,16 +108,20 @@ for f in $(find . -name \*.test.cpp) ; do
     run $f
 done
 
-# auto generate readme
-python3 generate_readme.py > ../README.md
-
 git status -s
 if [ -n "$(git status -s)" ]; then
     last_commit="$(git log -1 | head -1 | awk '{print $2}')"
     git add ./test
-    git add ../README.md
     git commit -m "[auto-verifier] [ci skip] verify commit ${last_commit}"
     git push --quiet origin master >/dev/null 2>&1
     echo "Pushed updated branch 'master'"
 fi
 
+# auto generate page [gh-pages branch]
+git checkout gh-pages
+python3 generate_readme.py > ../index.html
+
+git add ../index.html
+git commit -m "[ci skip] generating html commit"
+git push origin gh-pages >/dev/null 2>&1
+echo "Pushed updated branch 'gh-pages'"
