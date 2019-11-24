@@ -119,9 +119,9 @@ fi
 
 # auto generate page [gh-pages branch]
 git checkout gh-pages
-python3 generate_readme.py > ../index.html
+python3 generate_readme.py > ../index.md
 
-git add ../index.html
+git add ../index.md
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
 echo "Pushed updated branch 'gh-pages'"
