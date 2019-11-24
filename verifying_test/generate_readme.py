@@ -42,7 +42,7 @@ def get_matched_file_list(path, cond):
     return sorted(files_list)
 
 top_path = './'
-lib_path = './lib/'
+lib_path = './library/'
 test_path = './verified/'
 
 def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
@@ -53,10 +53,10 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
         md_file.write('# {}\n'.format(os.path.basename(lib_filepath).replace('_', '\_')))
         md_file.write('---\n\n')
 
-        if len(lib_dependencies) > 0:
+        if os.path.basename(lib_filepath) in lib_dependencies:
             md_file.write('## Verify Files\n')
-            for d in lib_dependencies:
-                path = os.path.normpath(os.path.join(os.path.relpath(test_path, lib_path), d))
+            for d in lib_dependencies[os.path.basename(lib_filepath)]:
+                path = os.path.normpath(os.path.join(os.path.relpath(test_path, lib_path), d)) + '.html'
                 md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
             md_file.write('\n')
 
@@ -66,7 +66,7 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
             lines = lib_file.readlines()
             for line in lines: md_file.write(line)
 
-        md_file.write('```\n\n')
+        md_file.write('\n```\n\n')
         md_file.write('[トップページに戻る]({})\n'.format(top_url))
 
                 
@@ -96,7 +96,7 @@ def generate_test_page(md_filename, testfile):
             lines = test_file.readlines()
             for line in lines: md_file.write(line)
         
-        md_file.write('```\n\n')
+        md_file.write('\n```\n\n')
         md_file.write('[トップページに戻る]({})\n'.format(top_url))
                 
 # Markdown 形式で出力 (アンダースコアはそのまま使うとあれなので置換する)
