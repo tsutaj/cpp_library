@@ -175,8 +175,72 @@
     - Dependencies
         + ../structure/strc\_023\_compact\_bitvector.cpp
         + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
-* :heavy_check_mark: ./AOJ/CGL\_1\_A/CGL\_1\_A.test.cpp
+* :heavy_check_mark: ./AOJ/CGL\_1\_A/geometry.test.cpp
     - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_1\_B/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_1\_C/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_2\_A/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_2\_B/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_2\_C/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_2\_D/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_3\_A/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_3\_C/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_4\_A/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_4\_B/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_4\_C/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_7\_A/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_7\_D/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_7\_E/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_7\_F/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja
+    - Dependencies
+        + ../geometry/geometry\_2D.cpp
+* :heavy_check_mark: ./AOJ/CGL\_7\_G/geometry.test.cpp
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_G&lang=ja
     - Dependencies
         + ../geometry/geometry\_2D.cpp
 * :heavy_check_mark: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
