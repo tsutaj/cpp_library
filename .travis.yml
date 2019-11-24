@@ -3,6 +3,10 @@ python:
   "3.7"
 before_install:
   - pip3 install -U online-judge-tools=='7.2.*'
+install:
+  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+  - cd $TRAVIS_REPO_SLUG
+  - git checkout master
 script:
   - cd ./verifying_test/
   - bash ./run_ci.sh
