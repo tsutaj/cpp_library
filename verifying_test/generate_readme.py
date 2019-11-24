@@ -41,27 +41,86 @@ def get_matched_file_list(path, cond):
     files_list = [f for f in glob.glob(path + '/**/*.cpp', recursive=True) if cond.match(f) != None]
     return sorted(files_list)
 
+top_path = './'
+lib_path = './lib/'
+test_path = './verified/'
+
+def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
+    with open(md_filename, mode='w') as md_file:
+        top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, lib_path), 'index.html'))
+        md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
+
+        md_file.write('# {}\n'.format(os.path.basename(lib_filepath).replace('_', '\_')))
+        md_file.write('---\n\n')
+
+        if len(lib_dependencies) > 0:
+            md_file.write('## Verify Files\n')
+            for d in lib_dependencies:
+                path = os.path.normpath(os.path.join(os.path.relpath(test_path, lib_path), d))
+                md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
+            md_file.write('\n')
+
+        md_file.write('## Code\n\n')
+        md_file.write('```cpp\n')
+        with open(lib_filepath) as lib_file:
+            lines = lib_file.readlines()
+            for line in lines: md_file.write(line)
+
+        md_file.write('```\n\n')
+        md_file.write('[トップページに戻る]({})\n'.format(top_url))
+
+                
+def generate_test_page(md_filename, testfile):
+    with open(md_filename, mode='w') as md_file:
+        top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, os.path.dirname(md_filename)), 'index.html'))
+        md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
+
+        mark = ':heavy_check_mark:' if testfile.is_verified else ':x:'
+        md_file.write('# {} {}\n'.format(mark, testfile.testfile_name.replace('_', '\_')))
+        md_file.write('---\n\n')
+
+        if len(testfile.problem.url) > 0: md_file.write('* URL: [{}]({})\n'.format(testfile.problem.url, testfile.problem.url))
+        if len(testfile.problem.description) > 0: md_file.write('* {}\n\n'.format(testfile.problem.description))
+
+        if len(testfile.problem.dependencies) > 0:
+            md_file.write('## Dependencies\n')
+            for d in testfile.problem.dependencies:
+                if os.path.samefile(d, testfile.testfile_name): continue
+                path = os.path.normpath(os.path.join(os.path.relpath(lib_path, os.path.dirname(md_filename)), os.path.basename(d))) + '.html'
+                md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
+            md_file.write('\n')
+
+        md_file.write('## Code\n\n')
+        md_file.write('```cpp\n')
+        with open(testfile.testfile_name) as test_file:
+            lines = test_file.readlines()
+            for line in lines: md_file.write(line)
+        
+        md_file.write('```\n\n')
+        md_file.write('[トップページに戻る]({})\n'.format(top_url))
+                
 # Markdown 形式で出力 (アンダースコアはそのまま使うとあれなので置換する)
 def convert_lib_to_md(dir_name, lib_file_list, lib_dependencies):
+    subprocess.run( 'mkdir -p {}'.format(lib_path), shell = True )
+    
     print('##', dir_name)
     for f in lib_file_list:
-        print('###', f.replace('_', '\_'))
-        if f in lib_dependencies: print('#### Dependencies')
-        for d in lib_dependencies.setdefault(f, []):
-            print('*', d)
-        print()
-
-def convert_test_to_md(testfile):
-    mark = ':heavy_check_mark:' if testfile.is_verified else ':x:'
-    print('###', mark, testfile.testfile_name.replace('_', '\_'))
-    if len(testfile.problem.url) > 0: print('* URL: [{}]({})'.format(testfile.problem.url, testfile.problem.url))
-    if len(testfile.problem.description) > 0: print('*', testfile.problem.description)
-    if len(testfile.problem.dependencies) > 0: print('#### Dependencies')
-    for d in testfile.problem.dependencies:
-        if os.path.samefile(d, testfile.testfile_name): continue
-        print('*', os.path.basename(d).replace('_', '\_'))
-
+        md_filename = os.path.join(lib_path, os.path.basename(f)) + '.md'
+        html_filename = os.path.join(lib_path, os.path.basename(f)) + '.html'
+        generate_lib_page(md_filename, f, lib_dependencies)
+        print('* [{}]({})'.format(os.path.basename(f).replace('_', '\_'), html_filename))
     print()
+        
+def convert_test_to_md(testfile):
+    subprocess.run( 'mkdir -p {}'.format(test_path), shell = True )
+    dirname = os.path.dirname(os.path.join(test_path, testfile.testfile_name))
+    subprocess.run( 'mkdir -p {}'.format(dirname), shell = True )
+    
+    md_filename = os.path.normpath(os.path.join(test_path, testfile.testfile_name)) + '.md'
+    html_filename = os.path.normpath(os.path.join(test_path, testfile.testfile_name)) + '.html'
+    generate_test_page(md_filename, testfile)
+    mark = ':heavy_check_mark:' if testfile.is_verified else ':x:'
+    print('* {} [{}]({})'.format(mark, testfile.testfile_name.replace('_', '\_'), html_filename))
         
 def get_test_dict(dir_name, test_file_list):
     test_files, lib_dependencies = [], {}
@@ -130,7 +189,7 @@ def main():
     print(desc_1)
     lib_dir_list = get_matched_directory_list(lib_path, lib_cond, ignore_lib_list)
     for d in lib_dir_list:
-        cpp_file_list = [os.path.basename(f) for f in get_matched_file_list(os.path.join(lib_path, d), lib_cond)]
+        cpp_file_list = get_matched_file_list(os.path.join(lib_path, d), lib_cond)
         convert_lib_to_md(d, cpp_file_list, lib_dependencies)
 
     desc_2 = '''\
