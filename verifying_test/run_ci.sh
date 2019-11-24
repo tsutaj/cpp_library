@@ -118,9 +118,9 @@ if [ -n "$(git status -s)" ]; then
 fi
 
 # auto generate page [gh-pages branch]
-git checkout gh-pages
 python3 generate_readme.py > ../index.md
 
+git checkout gh-pages
 git add ../index.md
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
