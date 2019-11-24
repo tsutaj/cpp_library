@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_014\_treecenters.cpp
+# :warning: graph\_014\_treecenters.cpp
 ---
 
 ## Code

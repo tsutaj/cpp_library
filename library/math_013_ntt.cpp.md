@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_013\_ntt.cpp
+# :warning: math\_013\_ntt.cpp
 ---
 
 ## Code

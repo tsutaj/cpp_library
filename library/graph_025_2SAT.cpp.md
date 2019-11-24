@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_025\_2SAT.cpp
+# :warning: graph\_025\_2SAT.cpp
 ---
 
 ## Code

@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# algo\_000\_sum.cpp
+# :warning: algo\_000\_sum.cpp
 ---
 
 ## Code

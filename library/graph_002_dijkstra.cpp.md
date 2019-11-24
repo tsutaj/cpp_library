@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_002\_dijkstra.cpp
+# :warning: graph\_002\_dijkstra.cpp
 ---
 
 ## Code

@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_006\_circle\_tangent.cpp
+# :warning: gmtr\_006\_circle\_tangent.cpp
 ---
 
 ## Code

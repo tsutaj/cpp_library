@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# dp\_001\_maxSquare.cpp
+# :warning: dp\_001\_maxSquare.cpp
 ---
 
 ## Code

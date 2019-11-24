@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# timer.cpp
+# :warning: timer.cpp
 ---
 
 ## Code

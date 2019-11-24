@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_024\_boruvka.cpp
+# :warning: graph\_024\_boruvka.cpp
 ---
 
 ## Code

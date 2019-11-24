@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_022\_max\_independent\_set.cpp
+# :warning: graph\_022\_max\_independent\_set.cpp
 ---
 
 ## Code

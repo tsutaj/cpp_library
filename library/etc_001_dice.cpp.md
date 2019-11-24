@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# etc\_001\_dice.cpp
+# :warning: etc\_001\_dice.cpp
 ---
 
 ## Code

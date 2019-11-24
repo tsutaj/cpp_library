@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_001\_unionfind.cpp
+# :warning: strc\_001\_unionfind.cpp
 ---
 
 ## Code

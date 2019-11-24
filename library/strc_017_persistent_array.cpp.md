@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_017\_persistent\_array.cpp
+# :warning: strc\_017\_persistent\_array.cpp
 ---
 
 ## Code

@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_009\_tpsort.cpp
+# :warning: graph\_009\_tpsort.cpp
 ---
 
 ## Code

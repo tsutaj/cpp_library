@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_005\_kruskal.cpp
+# :warning: graph\_005\_kruskal.cpp
 ---
 
 ## Code

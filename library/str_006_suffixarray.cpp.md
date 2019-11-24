@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_006\_suffixarray.cpp
+# :warning: str\_006\_suffixarray.cpp
 ---
 
 ## Code

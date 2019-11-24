@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_001\_bellman.cpp
+# :warning: graph\_001\_bellman.cpp
 ---
 
 ## Code

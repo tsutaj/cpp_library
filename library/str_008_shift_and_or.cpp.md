@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_008\_shift\_and\_or.cpp
+# :warning: str\_008\_shift\_and\_or.cpp
 ---
 
 ## Code

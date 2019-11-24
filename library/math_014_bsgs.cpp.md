@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_014\_bsgs.cpp
+# :warning: math\_014\_bsgs.cpp
 ---
 
 ## Code

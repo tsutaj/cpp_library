@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_008\_miller\_rabin\_rho.cpp
+# :warning: math\_008\_miller\_rabin\_rho.cpp
 ---
 
 ## Code

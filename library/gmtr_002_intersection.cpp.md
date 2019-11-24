@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_002\_intersection.cpp
+# :warning: gmtr\_002\_intersection.cpp
 ---
 
 ## Code

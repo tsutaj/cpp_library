@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_018\_binarytrie.cpp
+# :warning: strc\_018\_binarytrie.cpp
 ---
 
 ## Code

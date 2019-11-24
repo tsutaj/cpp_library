@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# dp\_007\_CPP.cpp
+# :warning: dp\_007\_CPP.cpp
 ---
 
 ## Code

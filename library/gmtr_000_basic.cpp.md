@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_000\_basic.cpp
+# :warning: gmtr\_000\_basic.cpp
 ---
 
 ## Code

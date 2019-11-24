@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_010\_convexhulltrick.cpp
+# :warning: math\_010\_convexhulltrick.cpp
 ---
 
 ## Code

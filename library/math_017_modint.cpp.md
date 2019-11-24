@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_017\_modint.cpp
+# :warning: math\_017\_modint.cpp
 ---
 
 ## Code

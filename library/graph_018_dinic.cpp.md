@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_018\_dinic.cpp
+# :warning: graph\_018\_dinic.cpp
 ---
 
 ## Code

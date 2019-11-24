@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_009\_kitamasa.cpp
+# :warning: math\_009\_kitamasa.cpp
 ---
 
 ## Code

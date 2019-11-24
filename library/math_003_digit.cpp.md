@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_003\_digit.cpp
+# :warning: math\_003\_digit.cpp
 ---
 
 ## Code

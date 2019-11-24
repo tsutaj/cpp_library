@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_016\_SPFA.cpp
+# :warning: graph\_016\_SPFA.cpp
 ---
 
 ## Code

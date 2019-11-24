@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_007\_kmp.cpp
+# :warning: str\_007\_kmp.cpp
 ---
 
 ## Code

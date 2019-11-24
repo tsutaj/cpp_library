@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_021\_crt.cpp
+# :warning: math\_021\_crt.cpp
 ---
 
 ## Code

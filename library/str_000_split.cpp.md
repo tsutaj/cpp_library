@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_000\_split.cpp
+# :warning: str\_000\_split.cpp
 ---
 
 ## Code

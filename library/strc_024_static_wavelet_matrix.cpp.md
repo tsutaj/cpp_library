@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_024\_static\_wavelet\_matrix.cpp
+# :heavy_check_mark: strc\_024\_static\_wavelet\_matrix.cpp
 ---
 
 ## Verify Files

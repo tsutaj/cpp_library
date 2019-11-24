@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_002\_rollinghash.cpp
+# :warning: str\_002\_rollinghash.cpp
 ---
 
 ## Code

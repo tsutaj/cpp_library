@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_010\_scc.cpp
+# :warning: graph\_010\_scc.cpp
 ---
 
 ## Code

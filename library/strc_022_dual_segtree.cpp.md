@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_022\_dual\_segtree.cpp
+# :warning: strc\_022\_dual\_segtree.cpp
 ---
 
 ## Code

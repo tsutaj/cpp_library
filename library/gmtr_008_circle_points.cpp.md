@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_008\_circle\_points.cpp
+# :warning: gmtr\_008\_circle\_points.cpp
 ---
 
 ## Code

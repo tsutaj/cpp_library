@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_003\_warshall.cpp
+# :warning: graph\_003\_warshall.cpp
 ---
 
 ## Code

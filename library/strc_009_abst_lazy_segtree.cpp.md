@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_009\_abst\_lazy\_segtree.cpp
+# :warning: strc\_009\_abst\_lazy\_segtree.cpp
 ---
 
 ## Code

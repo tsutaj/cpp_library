@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_010\_z\_algorithm.cpp
+# :warning: str\_010\_z\_algorithm.cpp
 ---
 
 ## Code

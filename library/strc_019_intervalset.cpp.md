@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_019\_intervalset.cpp
+# :warning: strc\_019\_intervalset.cpp
 ---
 
 ## Code

@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_013\_treap.cpp
+# :warning: strc\_013\_treap.cpp
 ---
 
 ## Code

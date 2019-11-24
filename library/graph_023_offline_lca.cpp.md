@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_023\_offline\_lca.cpp
+# :warning: graph\_023\_offline\_lca.cpp
 ---
 
 ## Code

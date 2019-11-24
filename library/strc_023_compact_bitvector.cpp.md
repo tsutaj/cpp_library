@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_023\_compact\_bitvector.cpp
+# :heavy_check_mark: strc\_023\_compact\_bitvector.cpp
 ---
 
 ## Verify Files

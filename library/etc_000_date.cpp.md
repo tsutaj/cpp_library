@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# etc\_000\_date.cpp
+# :warning: etc\_000\_date.cpp
 ---
 
 ## Code

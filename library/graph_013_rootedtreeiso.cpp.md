@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_013\_rootedtreeiso.cpp
+# :warning: graph\_013\_rootedtreeiso.cpp
 ---
 
 ## Code

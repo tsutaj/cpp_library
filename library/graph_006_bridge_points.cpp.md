@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_006\_bridge\_points.cpp
+# :warning: graph\_006\_bridge\_points.cpp
 ---
 
 ## Code

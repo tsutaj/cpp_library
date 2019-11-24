@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# dp\_008\_digit2.cpp
+# :warning: dp\_008\_digit2.cpp
 ---
 
 ## Code

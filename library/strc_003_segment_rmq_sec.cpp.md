@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_003\_segment\_rmq\_sec.cpp
+# :warning: strc\_003\_segment\_rmq\_sec.cpp
 ---
 
 ## Code

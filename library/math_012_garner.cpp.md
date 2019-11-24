@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_012\_garner.cpp
+# :warning: math\_012\_garner.cpp
 ---
 
 ## Code

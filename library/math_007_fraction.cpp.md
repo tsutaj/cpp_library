@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_007\_fraction.cpp
+# :warning: math\_007\_fraction.cpp
 ---
 
 ## Code

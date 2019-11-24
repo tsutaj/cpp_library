@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_007\_sparsetable.cpp
+# :warning: strc\_007\_sparsetable.cpp
 ---
 
 ## Code

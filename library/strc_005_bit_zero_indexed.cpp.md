@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# strc\_005\_bit\_zero\_indexed.cpp
+# :warning: strc\_005\_bit\_zero\_indexed.cpp
 ---
 
 ## Code

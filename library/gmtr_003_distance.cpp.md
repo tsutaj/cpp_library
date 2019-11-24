@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_003\_distance.cpp
+# :warning: gmtr\_003\_distance.cpp
 ---
 
 ## Code

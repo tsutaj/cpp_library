@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# str\_009\_manacher.cpp
+# :warning: str\_009\_manacher.cpp
 ---
 
 ## Code

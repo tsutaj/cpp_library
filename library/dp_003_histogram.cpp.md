@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# dp\_003\_histogram.cpp
+# :warning: dp\_003\_histogram.cpp
 ---
 
 ## Code

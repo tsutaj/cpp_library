@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_009\_poly.cpp
+# :warning: gmtr\_009\_poly.cpp
 ---
 
 ## Code

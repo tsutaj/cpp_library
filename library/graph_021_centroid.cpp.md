@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# graph\_021\_centroid.cpp
+# :warning: graph\_021\_centroid.cpp
 ---
 
 ## Code

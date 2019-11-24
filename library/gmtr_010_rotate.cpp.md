@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# gmtr\_010\_rotate.cpp
+# :warning: gmtr\_010\_rotate.cpp
 ---
 
 ## Code

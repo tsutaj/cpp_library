@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_018\_ragrange\_polynomial.cpp
+# :warning: math\_018\_ragrange\_polynomial.cpp
 ---
 
 ## Code

@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# rand.cpp
+# :warning: rand.cpp
 ---
 
 ## Code

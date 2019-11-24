@@ -6,7 +6,7 @@
 
 [トップページに戻る](../index.html)
 
-# math\_015\_remainder\_sum.cpp
+# :warning: math\_015\_remainder\_sum.cpp
 ---
 
 ## Code
