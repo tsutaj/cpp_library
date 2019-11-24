@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 import sys, os, glob, re, subprocess
 
+import_mathjax_text = '''\
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+'''
+
 class Problem:
     def __init__(self, url, description, dependencies):
         self.url = url
@@ -47,6 +54,9 @@ test_path = './verified/'
 
 def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
     with open(md_filename, mode='w') as md_file:
+        md_file.write(import_mathjax_text)
+        md_file.write('\n\n')
+
         top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, lib_path), 'index.html'))
         md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
 
@@ -72,6 +82,9 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
                 
 def generate_test_page(md_filename, testfile):
     with open(md_filename, mode='w') as md_file:
+        md_file.write(import_mathjax_text)
+        md_file.write('\n\n')
+        
         top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, os.path.dirname(md_filename)), 'index.html'))
         md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
 
@@ -148,12 +161,8 @@ def get_test_dict(dir_name, test_file_list):
     return test_files, lib_dependencies
     
 def main():
+    print(import_mathjax_text)
     desc_0 = '''\
-<!-- Mathjax Support -->
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
 * tsutaj が使用している競技プログラミング用ライブラリです。自己責任で使ってね
