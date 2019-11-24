@@ -61,7 +61,7 @@ def main():
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
 * 自己責任で使ってね
-* CI は試験運用中です
+* CI は試験運用中です (そのうち HTML 生成機能をつける予定)
 
 ## ライブラリ一覧
 '''    
