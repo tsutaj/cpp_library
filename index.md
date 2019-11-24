@@ -173,7 +173,7 @@
 
 * :heavy_check_mark: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
     - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
-        + "閉区間" $\left[ l, r \right]$ にある整数の中で $D$ に最も近いものを求める
+        + "閉区間" $$\left[ l, r \right]$$ にある整数の中で $$D$$ に最も近いものを求める
     - Dependencies
         + ../structure/strc\_023\_compact\_bitvector.cpp
         + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
