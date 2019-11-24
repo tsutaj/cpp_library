@@ -1,3 +1,9 @@
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/CGL\_3\_C/geometry.test.cpp

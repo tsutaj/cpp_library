@@ -1,3 +1,9 @@
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 [トップページに戻る](../index.html)
 
 # math\_015\_remainder\_sum.cpp

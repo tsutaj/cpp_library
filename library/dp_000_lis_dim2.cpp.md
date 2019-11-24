@@ -1,3 +1,9 @@
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 [トップページに戻る](../index.html)
 
 # dp\_000\_lis\_dim2.cpp
