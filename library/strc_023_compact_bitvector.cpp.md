@@ -10,13 +10,13 @@
 ---
 
 ## Verify Files
-* [static\_wavelet\_matrix.test.cpp](../verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)
-* [static\_wavelet\_matrix.test.cpp](../verified/AOJ/2426/static_wavelet_matrix.test.cpp.html)
-* [static\_wavelet\_matrix\_less.test.cpp](../verified/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
-* [static\_wavelet\_matrix\_more.test.cpp](../verified/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
-* [static\_wavelet\_matrix.test.cpp](../verified/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html)
-* [static\_wavelet\_matrix.test.cpp](../verified/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html)
-* [static\_wavelet\_matrix.test.cpp](../verified/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html)
+* [./AOJ/1549/static\_wavelet\_matrix.test.cpp](../verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)
+* [./AOJ/2426/static\_wavelet\_matrix.test.cpp](../verified/AOJ/2426/static_wavelet_matrix.test.cpp.html)
+* [./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp](../verified/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
+* [./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp](../verified/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
+* [./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp](../verified/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html)
+* [./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp](../verified/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html)
+* [./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp](../verified/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html)
 
 ## Code
 
