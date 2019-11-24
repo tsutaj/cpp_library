@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: dp\_005\_limitKnapsack.cpp
----
 
 ## Code
 

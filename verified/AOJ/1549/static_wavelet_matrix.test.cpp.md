@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549)
 * "閉区間" $$\left[ l, r \right]$$ にある整数の中で $$D$$ に最も近いものを求める

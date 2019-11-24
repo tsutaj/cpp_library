@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_004\_prim.cpp
----
 
 ## Code
 

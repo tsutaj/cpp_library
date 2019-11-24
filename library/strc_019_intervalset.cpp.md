@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_019\_intervalset.cpp
----
 
 ## Code
 

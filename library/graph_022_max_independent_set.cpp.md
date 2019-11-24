@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_022\_max\_independent\_set.cpp
----
 
 ## Code
 

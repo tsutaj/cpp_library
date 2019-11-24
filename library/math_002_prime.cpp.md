@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_002\_prime.cpp
----
 
 ## Code
 

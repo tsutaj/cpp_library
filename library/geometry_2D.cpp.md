@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :heavy_check_mark: geometry\_2D.cpp
----
 
 ## Verify Files
 * [./AOJ/CGL\_1\_A/geometry.test.cpp](../verified/AOJ/CGL_1_A/geometry.test.cpp.html)

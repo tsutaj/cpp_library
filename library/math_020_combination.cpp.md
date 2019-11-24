@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_020\_combination.cpp
----
 
 ## Code
 

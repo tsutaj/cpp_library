@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_003\_twodimbit.cpp
----
 
 ## Code
 

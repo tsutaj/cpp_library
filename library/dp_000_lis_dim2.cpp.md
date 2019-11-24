@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: dp\_000\_lis\_dim2.cpp
----
 
 ## Code
 

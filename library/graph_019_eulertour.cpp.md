@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_019\_eulertour.cpp
----
 
 ## Code
 

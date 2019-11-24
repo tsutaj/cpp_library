@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_003\_warshall.cpp
----
 
 ## Code
 

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :heavy_check_mark: strc\_023\_compact\_bitvector.cpp
----
 
 ## Verify Files
 * [./AOJ/1549/static\_wavelet\_matrix.test.cpp](../verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)

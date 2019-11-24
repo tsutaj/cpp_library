@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_005\_matrix\_mod2.cpp
----
 
 ## Code
 

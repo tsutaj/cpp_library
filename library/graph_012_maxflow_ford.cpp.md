@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_012\_maxflow\_ford.cpp
----
 
 ## Code
 

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_014\_rbst.cpp
----
 
 ## Code
 

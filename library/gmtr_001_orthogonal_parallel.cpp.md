@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_001\_orthogonal\_parallel.cpp
----
 
 ## Code
 

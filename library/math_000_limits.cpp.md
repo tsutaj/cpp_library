@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_000\_limits.cpp
----
 
 ## Code
 

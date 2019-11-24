@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_022\_matrix\_utils\_real.cpp
----
 
 ## Code
 

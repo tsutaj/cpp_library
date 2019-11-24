@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_011\_lca.cpp
----
 
 ## Code
 

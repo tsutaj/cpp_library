@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: str\_003\_replace.cpp
----
 
 ## Code
 

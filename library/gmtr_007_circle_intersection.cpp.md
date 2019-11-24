@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_007\_circle\_intersection.cpp
----
 
 ## Code
 

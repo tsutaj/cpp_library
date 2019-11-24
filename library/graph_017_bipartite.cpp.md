@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_017\_bipartite.cpp
----
 
 ## Code
 

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: algo\_001\_mo.cpp
----
 
 ## Code
 

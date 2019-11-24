@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_005\_circle\_crossp.cpp
----
 
 ## Code
 

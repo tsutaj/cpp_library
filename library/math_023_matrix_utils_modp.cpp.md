@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_023\_matrix\_utils\_modp.cpp
----
 
 ## Code
 

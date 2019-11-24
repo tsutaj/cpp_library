@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_100\_basic\_threedim.cpp
----
 
 ## Code
 
