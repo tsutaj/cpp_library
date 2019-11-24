@@ -1,0 +1,37 @@
+[トップページに戻る](../index.html)
+
+# graph\_019\_eulertour.cpp
+---
+
+## Verify Files
+* [static\_wavelet\_matrix.test.cpp](../verified/static_wavelet_matrix.test.cpp)
+* [strc\_023\_compact\_bitvector.cpp](../verified/strc_023_compact_bitvector.cpp)
+* [strc\_024\_static\_wavelet\_matrix.cpp](../verified/strc_024_static_wavelet_matrix.cpp)
+* [static\_wavelet\_matrix\_less.test.cpp](../verified/static_wavelet_matrix_less.test.cpp)
+* [static\_wavelet\_matrix\_more.test.cpp](../verified/static_wavelet_matrix_more.test.cpp)
+* [geometry.test.cpp](../verified/geometry.test.cpp)
+* [geometry\_2D.cpp](../verified/geometry_2D.cpp)
+
+## Code
+
+```cpp
+// Euler-tour (Verified: Codeforces Round #225 Div.1: Propagating Tree)
+// 頂点 i を根とした部分木の情報は [ etbegin[i], etend[i] ) を参照
+constexpr int MAXN = 200010;
+vector<int> G[MAXN];
+int k=0, euler_tour[2*MAXN], etbegin[MAXN], etend[MAXN];
+
+// usage: make_et(root)
+void make_et(int v, int par=-1) {
+    euler_tour[k] = v;
+    etbegin[v] = k++;
+    for(size_t i=0; i<G[v].size(); i++) {
+        int to = G[v][i];
+        if(to == par) continue;
+        make_et(to, v);
+        euler_tour[k++] = v;
+    }
+    etend[v] = k;
+}```
+
+[トップページに戻る](../index.html)

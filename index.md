@@ -16,440 +16,167 @@
 # ライブラリ一覧
 
 ## algorithm
-### algo\_000\_sum.cpp
-
-### algo\_001\_mo.cpp
-
-### algo\_002\_accumulation.cpp
-
-### algo\_003\_2D\_accumulation.cpp
+* [algo\_000\_sum.cpp](./lib/algo_000_sum.cpp.html)
+* [algo\_001\_mo.cpp](./lib/algo_001_mo.cpp.html)
+* [algo\_002\_accumulation.cpp](./lib/algo_002_accumulation.cpp.html)
+* [algo\_003\_2D\_accumulation.cpp](./lib/algo_003_2D_accumulation.cpp.html)
 
 ## dp
-### dp\_000\_lis\_dim2.cpp
-
-### dp\_001\_maxSquare.cpp
-
-### dp\_002\_maxRectangle.cpp
-
-### dp\_003\_histogram.cpp
-
-### dp\_004\_editDistance.cpp
-
-### dp\_005\_limitKnapsack.cpp
-
-### dp\_006\_TSP.cpp
-
-### dp\_007\_CPP.cpp
-
-### dp\_008\_digit.cpp
-
-### dp\_008\_digit2.cpp
+* [dp\_000\_lis\_dim2.cpp](./lib/dp_000_lis_dim2.cpp.html)
+* [dp\_001\_maxSquare.cpp](./lib/dp_001_maxSquare.cpp.html)
+* [dp\_002\_maxRectangle.cpp](./lib/dp_002_maxRectangle.cpp.html)
+* [dp\_003\_histogram.cpp](./lib/dp_003_histogram.cpp.html)
+* [dp\_004\_editDistance.cpp](./lib/dp_004_editDistance.cpp.html)
+* [dp\_005\_limitKnapsack.cpp](./lib/dp_005_limitKnapsack.cpp.html)
+* [dp\_006\_TSP.cpp](./lib/dp_006_TSP.cpp.html)
+* [dp\_007\_CPP.cpp](./lib/dp_007_CPP.cpp.html)
+* [dp\_008\_digit.cpp](./lib/dp_008_digit.cpp.html)
+* [dp\_008\_digit2.cpp](./lib/dp_008_digit2.cpp.html)
 
 ## etc
-### etc\_000\_date.cpp
-
-### etc\_001\_dice.cpp
+* [etc\_000\_date.cpp](./lib/etc_000_date.cpp.html)
+* [etc\_001\_dice.cpp](./lib/etc_001_dice.cpp.html)
 
 ## geometry
-### geometry\_2D.cpp
-#### Dependencies
-* ./AOJ/CGL_1_A/geometry.test.cpp
-* ./AOJ/CGL_1_B/geometry.test.cpp
-* ./AOJ/CGL_1_C/geometry.test.cpp
-* ./AOJ/CGL_2_A/geometry.test.cpp
-* ./AOJ/CGL_2_B/geometry.test.cpp
-* ./AOJ/CGL_2_C/geometry.test.cpp
-* ./AOJ/CGL_2_D/geometry.test.cpp
-* ./AOJ/CGL_3_A/geometry.test.cpp
-* ./AOJ/CGL_3_C/geometry.test.cpp
-* ./AOJ/CGL_4_A/geometry.test.cpp
-* ./AOJ/CGL_4_B/geometry.test.cpp
-* ./AOJ/CGL_4_C/geometry.test.cpp
-* ./AOJ/CGL_7_A/geometry.test.cpp
-* ./AOJ/CGL_7_D/geometry.test.cpp
-* ./AOJ/CGL_7_E/geometry.test.cpp
-* ./AOJ/CGL_7_F/geometry.test.cpp
-* ./AOJ/CGL_7_G/geometry.test.cpp
-
-### gmtr\_000\_basic.cpp
-
-### gmtr\_001\_orthogonal\_parallel.cpp
-
-### gmtr\_002\_intersection.cpp
-
-### gmtr\_003\_distance.cpp
-
-### gmtr\_004\_circle\_dist.cpp
-
-### gmtr\_005\_circle\_crossp.cpp
-
-### gmtr\_006\_circle\_tangent.cpp
-
-### gmtr\_007\_circle\_intersection.cpp
-
-### gmtr\_008\_circle\_points.cpp
-
-### gmtr\_009\_poly.cpp
-
-### gmtr\_010\_rotate.cpp
-
-### gmtr\_100\_basic\_threedim.cpp
+* [geometry\_2D.cpp](./lib/geometry_2D.cpp.html)
+* [gmtr\_000\_basic.cpp](./lib/gmtr_000_basic.cpp.html)
+* [gmtr\_001\_orthogonal\_parallel.cpp](./lib/gmtr_001_orthogonal_parallel.cpp.html)
+* [gmtr\_002\_intersection.cpp](./lib/gmtr_002_intersection.cpp.html)
+* [gmtr\_003\_distance.cpp](./lib/gmtr_003_distance.cpp.html)
+* [gmtr\_004\_circle\_dist.cpp](./lib/gmtr_004_circle_dist.cpp.html)
+* [gmtr\_005\_circle\_crossp.cpp](./lib/gmtr_005_circle_crossp.cpp.html)
+* [gmtr\_006\_circle\_tangent.cpp](./lib/gmtr_006_circle_tangent.cpp.html)
+* [gmtr\_007\_circle\_intersection.cpp](./lib/gmtr_007_circle_intersection.cpp.html)
+* [gmtr\_008\_circle\_points.cpp](./lib/gmtr_008_circle_points.cpp.html)
+* [gmtr\_009\_poly.cpp](./lib/gmtr_009_poly.cpp.html)
+* [gmtr\_010\_rotate.cpp](./lib/gmtr_010_rotate.cpp.html)
+* [gmtr\_100\_basic\_threedim.cpp](./lib/gmtr_100_basic_threedim.cpp.html)
 
 ## graph
-### graph\_000\_basic.cpp
-
-### graph\_001\_bellman.cpp
-
-### graph\_002\_dijkstra.cpp
-
-### graph\_003\_warshall.cpp
-
-### graph\_004\_prim.cpp
-
-### graph\_005\_kruskal.cpp
-
-### graph\_006\_bridge\_points.cpp
-
-### graph\_007\_tree\_dfs.cpp
-
-### graph\_008\_treeheight.cpp
-
-### graph\_009\_tpsort.cpp
-
-### graph\_010\_scc.cpp
-
-### graph\_011\_lca.cpp
-
-### graph\_012\_maxflow\_ford.cpp
-
-### graph\_013\_rootedtreeiso.cpp
-
-### graph\_014\_treecenters.cpp
-
-### graph\_015\_forest2trees.cpp
-
-### graph\_016\_SPFA.cpp
-
-### graph\_017\_bipartite.cpp
-
-### graph\_018\_dinic.cpp
-
-### graph\_019\_eulertour.cpp
-
-### graph\_020\_HLDecomposition.cpp
-
-### graph\_021\_centroid.cpp
-
-### graph\_022\_max\_independent\_set.cpp
-
-### graph\_023\_offline\_lca.cpp
-
-### graph\_024\_boruvka.cpp
-
-### graph\_025\_2SAT.cpp
+* [graph\_000\_basic.cpp](./lib/graph_000_basic.cpp.html)
+* [graph\_001\_bellman.cpp](./lib/graph_001_bellman.cpp.html)
+* [graph\_002\_dijkstra.cpp](./lib/graph_002_dijkstra.cpp.html)
+* [graph\_003\_warshall.cpp](./lib/graph_003_warshall.cpp.html)
+* [graph\_004\_prim.cpp](./lib/graph_004_prim.cpp.html)
+* [graph\_005\_kruskal.cpp](./lib/graph_005_kruskal.cpp.html)
+* [graph\_006\_bridge\_points.cpp](./lib/graph_006_bridge_points.cpp.html)
+* [graph\_007\_tree\_dfs.cpp](./lib/graph_007_tree_dfs.cpp.html)
+* [graph\_008\_treeheight.cpp](./lib/graph_008_treeheight.cpp.html)
+* [graph\_009\_tpsort.cpp](./lib/graph_009_tpsort.cpp.html)
+* [graph\_010\_scc.cpp](./lib/graph_010_scc.cpp.html)
+* [graph\_011\_lca.cpp](./lib/graph_011_lca.cpp.html)
+* [graph\_012\_maxflow\_ford.cpp](./lib/graph_012_maxflow_ford.cpp.html)
+* [graph\_013\_rootedtreeiso.cpp](./lib/graph_013_rootedtreeiso.cpp.html)
+* [graph\_014\_treecenters.cpp](./lib/graph_014_treecenters.cpp.html)
+* [graph\_015\_forest2trees.cpp](./lib/graph_015_forest2trees.cpp.html)
+* [graph\_016\_SPFA.cpp](./lib/graph_016_SPFA.cpp.html)
+* [graph\_017\_bipartite.cpp](./lib/graph_017_bipartite.cpp.html)
+* [graph\_018\_dinic.cpp](./lib/graph_018_dinic.cpp.html)
+* [graph\_019\_eulertour.cpp](./lib/graph_019_eulertour.cpp.html)
+* [graph\_020\_HLDecomposition.cpp](./lib/graph_020_HLDecomposition.cpp.html)
+* [graph\_021\_centroid.cpp](./lib/graph_021_centroid.cpp.html)
+* [graph\_022\_max\_independent\_set.cpp](./lib/graph_022_max_independent_set.cpp.html)
+* [graph\_023\_offline\_lca.cpp](./lib/graph_023_offline_lca.cpp.html)
+* [graph\_024\_boruvka.cpp](./lib/graph_024_boruvka.cpp.html)
+* [graph\_025\_2SAT.cpp](./lib/graph_025_2SAT.cpp.html)
 
 ## marathon
-### rand.cpp
-
-### timer.cpp
+* [rand.cpp](./lib/rand.cpp.html)
+* [timer.cpp](./lib/timer.cpp.html)
 
 ## math
-### math\_000\_limits.cpp
-
-### math\_001\_mod.cpp
-
-### math\_002\_prime.cpp
-
-### math\_003\_digit.cpp
-
-### math\_004\_matrix.cpp
-
-### math\_005\_matrix\_mod2.cpp
-
-### math\_006\_eulerphi.cpp
-
-### math\_007\_fraction.cpp
-
-### math\_008\_miller\_rabin\_rho.cpp
-
-### math\_009\_kitamasa.cpp
-
-### math\_010\_convexhulltrick.cpp
-
-### math\_011\_fft.cpp
-
-### math\_012\_garner.cpp
-
-### math\_013\_ntt.cpp
-
-### math\_014\_bsgs.cpp
-
-### math\_015\_remainder\_sum.cpp
-
-### math\_016\_mod\_sqrt.cpp
-
-### math\_017\_modint.cpp
-
-### math\_018\_ragrange\_polynomial.cpp
-
-### math\_019\_specific\_ragrange\_polynomial.cpp
-
-### math\_020\_combination.cpp
-
-### math\_021\_crt.cpp
-
-### math\_022\_matrix\_utils\_real.cpp
-
-### math\_023\_matrix\_utils\_modp.cpp
-
-### math\_024\_fixed\_matrix.cpp
+* [math\_000\_limits.cpp](./lib/math_000_limits.cpp.html)
+* [math\_001\_mod.cpp](./lib/math_001_mod.cpp.html)
+* [math\_002\_prime.cpp](./lib/math_002_prime.cpp.html)
+* [math\_003\_digit.cpp](./lib/math_003_digit.cpp.html)
+* [math\_004\_matrix.cpp](./lib/math_004_matrix.cpp.html)
+* [math\_005\_matrix\_mod2.cpp](./lib/math_005_matrix_mod2.cpp.html)
+* [math\_006\_eulerphi.cpp](./lib/math_006_eulerphi.cpp.html)
+* [math\_007\_fraction.cpp](./lib/math_007_fraction.cpp.html)
+* [math\_008\_miller\_rabin\_rho.cpp](./lib/math_008_miller_rabin_rho.cpp.html)
+* [math\_009\_kitamasa.cpp](./lib/math_009_kitamasa.cpp.html)
+* [math\_010\_convexhulltrick.cpp](./lib/math_010_convexhulltrick.cpp.html)
+* [math\_011\_fft.cpp](./lib/math_011_fft.cpp.html)
+* [math\_012\_garner.cpp](./lib/math_012_garner.cpp.html)
+* [math\_013\_ntt.cpp](./lib/math_013_ntt.cpp.html)
+* [math\_014\_bsgs.cpp](./lib/math_014_bsgs.cpp.html)
+* [math\_015\_remainder\_sum.cpp](./lib/math_015_remainder_sum.cpp.html)
+* [math\_016\_mod\_sqrt.cpp](./lib/math_016_mod_sqrt.cpp.html)
+* [math\_017\_modint.cpp](./lib/math_017_modint.cpp.html)
+* [math\_018\_ragrange\_polynomial.cpp](./lib/math_018_ragrange_polynomial.cpp.html)
+* [math\_019\_specific\_ragrange\_polynomial.cpp](./lib/math_019_specific_ragrange_polynomial.cpp.html)
+* [math\_020\_combination.cpp](./lib/math_020_combination.cpp.html)
+* [math\_021\_crt.cpp](./lib/math_021_crt.cpp.html)
+* [math\_022\_matrix\_utils\_real.cpp](./lib/math_022_matrix_utils_real.cpp.html)
+* [math\_023\_matrix\_utils\_modp.cpp](./lib/math_023_matrix_utils_modp.cpp.html)
+* [math\_024\_fixed\_matrix.cpp](./lib/math_024_fixed_matrix.cpp.html)
 
 ## string
-### str\_000\_split.cpp
-
-### str\_001\_technique.cpp
-
-### str\_002\_rollinghash.cpp
-
-### str\_003\_replace.cpp
-
-### str\_004\_trie.cpp
-
-### str\_005\_ahocorasick.cpp
-
-### str\_006\_suffixarray.cpp
-
-### str\_007\_kmp.cpp
-
-### str\_008\_shift\_and\_or.cpp
-
-### str\_009\_manacher.cpp
-
-### str\_010\_z\_algorithm.cpp
+* [str\_000\_split.cpp](./lib/str_000_split.cpp.html)
+* [str\_001\_technique.cpp](./lib/str_001_technique.cpp.html)
+* [str\_002\_rollinghash.cpp](./lib/str_002_rollinghash.cpp.html)
+* [str\_003\_replace.cpp](./lib/str_003_replace.cpp.html)
+* [str\_004\_trie.cpp](./lib/str_004_trie.cpp.html)
+* [str\_005\_ahocorasick.cpp](./lib/str_005_ahocorasick.cpp.html)
+* [str\_006\_suffixarray.cpp](./lib/str_006_suffixarray.cpp.html)
+* [str\_007\_kmp.cpp](./lib/str_007_kmp.cpp.html)
+* [str\_008\_shift\_and\_or.cpp](./lib/str_008_shift_and_or.cpp.html)
+* [str\_009\_manacher.cpp](./lib/str_009_manacher.cpp.html)
+* [str\_010\_z\_algorithm.cpp](./lib/str_010_z_algorithm.cpp.html)
 
 ## structure
-### strc\_002\_segment\_rmq.cpp
-
-### strc\_003\_segment\_rmq\_sec.cpp
-
-### strc\_007\_bit\_recursion.cpp
-
-### strc\_011\_lazysegtree.cpp
-
-### strc\_001\_unionfind.cpp
-
-### strc\_002\_bit.cpp
-
-### strc\_003\_twodimbit.cpp
-
-### strc\_004\_bit\_sec.cpp
-
-### strc\_005\_bit\_zero\_indexed.cpp
-
-### strc\_006\_twodimbit\_zero\_indexed.cpp
-
-### strc\_007\_sparsetable.cpp
-
-### strc\_008\_abst\_segtree.cpp
-
-### strc\_009\_abst\_lazy\_segtree.cpp
-
-### strc\_010\_abst\_sqrtdecomp.cpp
-
-### strc\_011\_weighted\_unionfind.cpp
-
-### strc\_012\_kd\_tree.cpp
-
-### strc\_013\_treap.cpp
-
-### strc\_014\_rbst.cpp
-
-### strc\_015\_partial\_persistent\_unionfind.cpp
-
-### strc\_016\_persistent\_unionfind.cpp
-
-### strc\_017\_persistent\_array.cpp
-
-### strc\_018\_binarytrie.cpp
-
-### strc\_019\_intervalset.cpp
-
-### strc\_020\_dynamic\_segtree.cpp
-
-### strc\_021\_dynamic\_lazy\_segtree.cpp
-
-### strc\_022\_dual\_segtree.cpp
-
-### strc\_023\_compact\_bitvector.cpp
-#### Dependencies
-* ./AOJ/1549/static_wavelet_matrix.test.cpp
-* ./AOJ/2426/static_wavelet_matrix.test.cpp
-* ./AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
-* ./AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
-* ./AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
-* ./AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
-* ./AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
-
-### strc\_024\_static\_wavelet\_matrix.cpp
-#### Dependencies
-* ./AOJ/1549/static_wavelet_matrix.test.cpp
-* ./AOJ/2426/static_wavelet_matrix.test.cpp
-* ./AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
-* ./AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
-* ./AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
-* ./AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
-* ./AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+* [strc\_002\_segment\_rmq.cpp](./lib/strc_002_segment_rmq.cpp.html)
+* [strc\_003\_segment\_rmq\_sec.cpp](./lib/strc_003_segment_rmq_sec.cpp.html)
+* [strc\_007\_bit\_recursion.cpp](./lib/strc_007_bit_recursion.cpp.html)
+* [strc\_011\_lazysegtree.cpp](./lib/strc_011_lazysegtree.cpp.html)
+* [strc\_001\_unionfind.cpp](./lib/strc_001_unionfind.cpp.html)
+* [strc\_002\_bit.cpp](./lib/strc_002_bit.cpp.html)
+* [strc\_003\_twodimbit.cpp](./lib/strc_003_twodimbit.cpp.html)
+* [strc\_004\_bit\_sec.cpp](./lib/strc_004_bit_sec.cpp.html)
+* [strc\_005\_bit\_zero\_indexed.cpp](./lib/strc_005_bit_zero_indexed.cpp.html)
+* [strc\_006\_twodimbit\_zero\_indexed.cpp](./lib/strc_006_twodimbit_zero_indexed.cpp.html)
+* [strc\_007\_sparsetable.cpp](./lib/strc_007_sparsetable.cpp.html)
+* [strc\_008\_abst\_segtree.cpp](./lib/strc_008_abst_segtree.cpp.html)
+* [strc\_009\_abst\_lazy\_segtree.cpp](./lib/strc_009_abst_lazy_segtree.cpp.html)
+* [strc\_010\_abst\_sqrtdecomp.cpp](./lib/strc_010_abst_sqrtdecomp.cpp.html)
+* [strc\_011\_weighted\_unionfind.cpp](./lib/strc_011_weighted_unionfind.cpp.html)
+* [strc\_012\_kd\_tree.cpp](./lib/strc_012_kd_tree.cpp.html)
+* [strc\_013\_treap.cpp](./lib/strc_013_treap.cpp.html)
+* [strc\_014\_rbst.cpp](./lib/strc_014_rbst.cpp.html)
+* [strc\_015\_partial\_persistent\_unionfind.cpp](./lib/strc_015_partial_persistent_unionfind.cpp.html)
+* [strc\_016\_persistent\_unionfind.cpp](./lib/strc_016_persistent_unionfind.cpp.html)
+* [strc\_017\_persistent\_array.cpp](./lib/strc_017_persistent_array.cpp.html)
+* [strc\_018\_binarytrie.cpp](./lib/strc_018_binarytrie.cpp.html)
+* [strc\_019\_intervalset.cpp](./lib/strc_019_intervalset.cpp.html)
+* [strc\_020\_dynamic\_segtree.cpp](./lib/strc_020_dynamic_segtree.cpp.html)
+* [strc\_021\_dynamic\_lazy\_segtree.cpp](./lib/strc_021_dynamic_lazy_segtree.cpp.html)
+* [strc\_022\_dual\_segtree.cpp](./lib/strc_022_dual_segtree.cpp.html)
+* [strc\_023\_compact\_bitvector.cpp](./lib/strc_023_compact_bitvector.cpp.html)
+* [strc\_024\_static\_wavelet\_matrix.cpp](./lib/strc_024_static_wavelet_matrix.cpp.html)
 
 # Verify ファイル一覧
 
-### :heavy_check_mark: ./AOJ/1549/static\_wavelet\_matrix.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549)
-* "閉区間" $$\left[ l, r \right]$$ にある整数の中で $$D$$ に最も近いものを求める
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426)
-* 矩形 $$x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$$ 内に属する点の個数を求める
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja)
-* 転倒数を求める (自分より小さいものを数えるアプローチ)
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja)
-* 転倒数を求める (自分より大きいものを数えるアプローチ)
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja)
-* ソートを行う (小さいものから $$k$$ 番目を求められることを利用)
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_1\_A/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A&lang=ja)
-* 直線 $$p_1 p_2$$ に対する点 $$p$$ の射影を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_1\_B/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja)
-* 直線 $$p_1 p_2$$ に対する点 $$p$$ の反射を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_1\_C/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja)
-* $$3$$ 点 $$p_0, p_1, p_2$$ の位置関係 (ccw) を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_2\_A/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja)
-* 直線 $$s_1, s_2$$ について平行・直交を判定
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_2\_B/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja)
-* 線分 $$s_1, s_2$$ について、交差を判定
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_2\_C/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja)
-* 線分 $$s_1, s_2$$ の交点の座標を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_2\_D/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=ja)
-* 線分 $$s_1, s_2$$ についてそれらの距離を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_3\_A/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja)
-* 凸とは限らない多角形の面積を計算する
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_3\_C/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja)
-* 多角形 $$g$$ と点 $$p$$ について、$$p$$ が $$g$$ に含まれるか・辺上にあるかを判定
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_4\_A/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja)
-* 二次元平面における点集合 $$P$$ の凸包を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_4\_B/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja)
-* 凸多角形 $$g$$ の直径を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_4\_C/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja)
-* 凸多角形 $$g$$ を直線 $$p_1 p_2$$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_7\_A/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&lang=ja)
-* $$2$$ つの円 $$c_1, c_2$$ の位置関係を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_7\_D/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D&lang=ja)
-* 円 $$c$$ と直線 $$l$$ の交点を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_7\_E/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja)
-* $$2$$ つの円 $$c_1, c_2$$ の交点を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_7\_F/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja)
-* 点 $$p$$ を通る円 $$c$$ の接線を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/CGL\_7\_G/geometry.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_G&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_G&lang=ja)
-* $$2$$ つの円 $$c_1, c_2$$ の共通接線を求める
-#### Dependencies
-* geometry\_2D.cpp
-
-### :heavy_check_mark: ./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja)
-* 連続部分列中の最小の要素を答える
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
-### :heavy_check_mark: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
-* URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja)
-* 与えられた数列を逆順に出力
-#### Dependencies
-* strc\_023\_compact\_bitvector.cpp
-* strc\_024\_static\_wavelet\_matrix.cpp
-
+* :heavy_check_mark: [./AOJ/1549/static\_wavelet\_matrix.test.cpp](verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)
+* :heavy_check_mark: [./AOJ/2426/static\_wavelet\_matrix.test.cpp](verified/AOJ/2426/static_wavelet_matrix.test.cpp.html)
+* :heavy_check_mark: [./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_less.test.cpp](verified/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
+* :heavy_check_mark: [./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp](verified/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
+* :heavy_check_mark: [./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp](verified/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_1\_A/geometry.test.cpp](verified/AOJ/CGL_1_A/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_1\_B/geometry.test.cpp](verified/AOJ/CGL_1_B/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_1\_C/geometry.test.cpp](verified/AOJ/CGL_1_C/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_2\_A/geometry.test.cpp](verified/AOJ/CGL_2_A/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_2\_B/geometry.test.cpp](verified/AOJ/CGL_2_B/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_2\_C/geometry.test.cpp](verified/AOJ/CGL_2_C/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_2\_D/geometry.test.cpp](verified/AOJ/CGL_2_D/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_3\_A/geometry.test.cpp](verified/AOJ/CGL_3_A/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_3\_C/geometry.test.cpp](verified/AOJ/CGL_3_C/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_4\_A/geometry.test.cpp](verified/AOJ/CGL_4_A/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_4\_B/geometry.test.cpp](verified/AOJ/CGL_4_B/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_4\_C/geometry.test.cpp](verified/AOJ/CGL_4_C/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_7\_A/geometry.test.cpp](verified/AOJ/CGL_7_A/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_7\_D/geometry.test.cpp](verified/AOJ/CGL_7_D/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_7\_E/geometry.test.cpp](verified/AOJ/CGL_7_E/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_7\_F/geometry.test.cpp](verified/AOJ/CGL_7_F/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/CGL\_7\_G/geometry.test.cpp](verified/AOJ/CGL_7_G/geometry.test.cpp.html)
+* :heavy_check_mark: [./AOJ/DSL\_3\_D/static\_wavelet\_matrix.test.cpp](verified/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html)
+* :heavy_check_mark: [./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp](verified/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html)
