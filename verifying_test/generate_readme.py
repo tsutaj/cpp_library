@@ -79,13 +79,13 @@ def get_test_dict(dir_name, test_file_list):
         description = proc.stdout.decode("UTF-8")[:-1]
 
         proc = subprocess.run(['bash ./lib/check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
-        dependencies = [os.path.basename(d) for d in proc.stdout.decode("UTF-8")[:-1].splitlines()]
+        dependencies = proc.stdout.decode("UTF-8")[:-1].splitlines()
         
         problem = Problem(url, description, dependencies)
         test_files.append(TestFile(testfile_name, is_verified, problem))
 
         for d in dependencies:
-            lib_dependencies.setdefault(d, []).append(f)
+            lib_dependencies.setdefault(os.path.basename(d), []).append(f)
     return test_files, lib_dependencies
     
 def main():
