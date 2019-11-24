@@ -50,7 +50,7 @@ def convert_test_to_md(dir_name, test_file_list):
             print('    - Dependencies')
             for d in proc_result:
                 if os.path.samefile(f, d): continue
-                print('        + {}'.format(os.path.normpath(d).replace('_', '\_')))
+                print('        + {}'.format(os.path.basename(d).replace('_', '\_')))
     print()
         
 def main():
