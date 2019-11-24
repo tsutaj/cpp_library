@@ -175,7 +175,7 @@
         + ../structure/strc\_023\_compact\_bitvector.cpp
         + ../structure/strc\_024\_static\_wavelet\_matrix.cpp
 * :heavy_check_mark: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
-    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A
+    - URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja
         + ソートを行う (小さいものから $k$ 番目を求められることを利用)
     - Dependencies
         + ../structure/strc\_023\_compact\_bitvector.cpp
