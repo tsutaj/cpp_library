@@ -1,7 +1,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [['$','$'], ['\(','\)']],
+      inlineMath: [['$','$']],
       processEscapes: true
     },
     CommonHTML: { matchFontHeight: false },
@@ -20,6 +20,10 @@
 
 * 自己責任で使ってね
 * CI は試験運用中です (そのうち HTML 生成機能をつける予定)
+
+## 目次
+
+{:toc}
 
 ## ライブラリ一覧
 
