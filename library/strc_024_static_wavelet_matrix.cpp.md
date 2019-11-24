@@ -8,6 +8,21 @@
 
 # :heavy_check_mark: strc\_024\_static\_wavelet\_matrix.cpp
 
+### 静的ウェーブレット行列 (Wavelet Matrix)
+
+簡潔ビットベクトルにより非負整数列に対する各種クエリを高速に処理可能
+
+| メソッド                                                                        | 説明                                                                                                                                         | 計算量               |
+|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| `WaveletMatrix(vector<value_type> vec);`                                        | Wavelet 行列を構築                                                                                                                           | $$O(N \log \sigma)$$ |
+| `value_type at(int k) const;`                                                   | 列の $$k$$ 番目にアクセス                                                                                                                    | $$O(\log \sigma)$$   |
+| `value_type operator[](int k) const;`                                           | 同上                                                                                                                                         | 同上                 |
+| `tuple<int, int, int> rank_tuple(int l, int r, value_type x) const;`            | $$\left[ l, r \right)$$ の範囲内に ($$x$$ 未満、$$x$$ と等しい、$$x$$ を超える) 要素がそれぞれ何個存在するかを数える                         | $$O(\log \sigma)$$   |
+| `tuple<int, int, int> rank_tuple(value_type x) const;`                          | 上の機能で範囲を限定しないもの                                                                                                               | 同上                 |
+| `value_type quantile(int l, int r, value_type mi, value_type ma, int k) const;` | $$\left[ l, r \right)$$ の範囲内にある $$\left[ \mathrm{mi}, \mathrm{ma} \right]$$ 内の値のうち、$$k$$ 番目 (1-indexed) に小さい要素を答える | $$O(\log \sigma)$$   |
+
+
+
 ## Verify Files
 * [./AOJ/1549/static\_wavelet\_matrix.test.cpp](../verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)
 * [./AOJ/2426/static\_wavelet\_matrix.test.cpp](../verified/AOJ/2426/static_wavelet_matrix.test.cpp.html)
@@ -20,6 +35,8 @@
 ## Code
 
 ```cpp
+#define DOCS "./docs/strc_024_static_wavelet_matrix.md"
+
 // ウェーブレット行列 (Wavelet Matrix)
 // w は word_size (ビット幅), 30 bit で表現できる整数なら 30
 template <uint64_t word_size = 30, typename value_type = int,
