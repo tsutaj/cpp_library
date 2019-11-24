@@ -1,3 +1,5 @@
+#define DOCS "./docs/strc_024_static_wavelet_matrix.md"
+
 // ウェーブレット行列 (Wavelet Matrix)
 // w は word_size (ビット幅), 30 bit で表現できる整数なら 30
 template <uint64_t word_size = 30, typename value_type = int,

@@ -15,21 +15,20 @@ class Problem:
         self.dependencies = dependencies
 
 class LibFile:
-    def __init__(self, lib_filename, dependencies):
-        self.lib_filename = lib_filename
+    def __init__(self, libfile_name, description, dependencies, testfiles, is_verified):
+        self.libfile_name = libfile_name
+        self.description = description
         self.dependencies = dependencies
-        self.is_verified = False
-        self.testfiles = []
-
-    def add_testfile(self, testfile):
-        self.testfiles.append(testfile)
-        self.is_verified |= testfile.is_verified
+        self.testfiles = testfiles
+        self.is_verified = is_verified
+        self.docs_text = get_docs(libfile_name)
         
 class TestFile:
     def __init__(self, testfile_name, is_verified, problem):
         self.testfile_name = testfile_name
         self.is_verified = is_verified
         self.problem = problem
+        self.docs_text = get_docs(testfile_name)
 
 # Verify 済みかどうかのマーク
 def get_mark(cond, strict = True):
@@ -39,7 +38,20 @@ def get_mark(cond, strict = True):
         return ':x:'
     else:
         return ':warning:'
-        
+
+# Docs データを得る
+def get_docs(file_path):
+    proc = subprocess.run(['bash ./lib/check_docs.sh {}'.format(file_path)], shell = True, stdout = subprocess.PIPE )
+    docs_path = os.path.join(os.path.dirname(file_path), proc.stdout.decode("UTF-8")[:-1])
+    if (not os.path.exists(docs_path)) or (os.path.isdir(docs_path)): return ""
+
+    docs_text = ""
+    if len(docs_path) > 0:
+        with open(docs_path) as f:
+            lines = f.readlines()
+            for line in lines: docs_text += line
+    return docs_text
+    
 # ディレクトリ一覧
 def get_directory_list(path):
     files = os.listdir(path)
@@ -61,7 +73,7 @@ top_path = './'
 lib_path = './library/'
 test_path = './verified/'
 
-def generate_lib_page(md_filename, lib_filepath, lib_dependencies, is_verified):
+def generate_lib_page(md_filename, lib_class):
     with open(md_filename, mode='w') as md_file:
         md_file.write(import_mathjax_text)
         md_file.write('\n\n')
@@ -69,25 +81,35 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies, is_verified):
         top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, lib_path), 'index.html'))
         md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
 
-        mark = get_mark(is_verified, False)
-        md_file.write('# {} {}\n\n'.format(mark, os.path.basename(lib_filepath).replace('_', '\_')))
+        mark = get_mark(lib_class.is_verified, False)
+        md_file.write('# {} {}\n\n'.format(mark, os.path.basename(lib_class.libfile_name).replace('_', '\_')))
 
-        if os.path.basename(lib_filepath) in lib_dependencies:
+        if len(lib_class.description) > 0: md_file.write('* {}\n\n'.format(lib_class.description))
+        if len(lib_class.docs_text) > 0: md_file.write('{}\n\n'.format(lib_class.docs_text))
+
+        if len(lib_class.dependencies) > 1:
+            md_file.write('## Dependencies\n')
+            for d in lib_class.dependencies:
+                if os.path.samefile(d, lib_class.libfile_name): continue
+                path = os.path.normpath(os.path.join(os.path.relpath(test_path, os.path.dirname(md_filename)), os.path.basename(d))) + '.html'
+                md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
+            md_file.write('\n')
+        
+        if len(lib_class.testfiles) > 0:
             md_file.write('## Verify Files\n')
-            for d in lib_dependencies[os.path.basename(lib_filepath)]:
+            for d in lib_class.testfiles:
                 path = os.path.normpath(os.path.join(os.path.relpath(test_path, lib_path), d)) + '.html'
                 md_file.write('* [{}]({})\n'.format(d.replace('_', '\_'), path))
             md_file.write('\n')
 
         md_file.write('## Code\n\n')
         md_file.write('```cpp\n')
-        with open(lib_filepath) as lib_file:
+        with open(lib_class.libfile_name) as lib_file:
             lines = lib_file.readlines()
             for line in lines: md_file.write(line)
 
         md_file.write('\n```\n\n')
         md_file.write('[トップページに戻る]({})\n'.format(top_url))
-
                 
 def generate_test_page(md_filename, testfile):
     with open(md_filename, mode='w') as md_file:
@@ -103,7 +125,7 @@ def generate_test_page(md_filename, testfile):
         if len(testfile.problem.url) > 0: md_file.write('* URL: [{}]({})\n'.format(testfile.problem.url, testfile.problem.url))
         if len(testfile.problem.description) > 0: md_file.write('* {}\n\n'.format(testfile.problem.description))
 
-        if len(testfile.problem.dependencies) > 0:
+        if len(testfile.problem.dependencies) > 1:
             md_file.write('## Dependencies\n')
             for d in testfile.problem.dependencies:
                 if os.path.samefile(d, testfile.testfile_name): continue
@@ -121,16 +143,15 @@ def generate_test_page(md_filename, testfile):
         md_file.write('[トップページに戻る]({})\n'.format(top_url))
                 
 # Markdown 形式で出力 (アンダースコアはそのまま使うとあれなので置換する)
-def convert_lib_to_md(dir_name, lib_file_list, lib_dependencies, lib_verified):
+def convert_lib_to_md(dir_name, lib_classes):
     subprocess.run( 'mkdir -p {}'.format(lib_path), shell = True )
     
     print('##', dir_name)
-    for f in lib_file_list:
-        md_filename = os.path.join(lib_path, os.path.basename(f)) + '.md'
-        html_filename = os.path.join(lib_path, os.path.basename(f)) + '.html'
-        is_verified = lib_verified[os.path.basename(f)] if os.path.basename(f) in lib_verified else False
-        generate_lib_page(md_filename, f, lib_dependencies, is_verified)
-        print('* {} [{}]({})'.format(get_mark(is_verified, False), os.path.basename(f).replace('_', '\_'), html_filename))
+    for c in lib_classes.values():
+        md_filename = os.path.join(lib_path, os.path.basename(c.libfile_name)) + '.md'
+        html_filename = os.path.join(lib_path, os.path.basename(c.libfile_name)) + '.html'
+        generate_lib_page(md_filename, c)
+        print('* {} [{}]({})'.format(get_mark(c.is_verified, False), os.path.basename(c.libfile_name).replace('_', '\_'), html_filename))
     print()
         
 def convert_test_to_md(testfile):
@@ -143,9 +164,29 @@ def convert_test_to_md(testfile):
     generate_test_page(md_filename, testfile)
     mark = get_mark(testfile.is_verified)
     print('* {} [{}]({})'.format(mark, testfile.testfile_name.replace('_', '\_'), html_filename))
+
+def get_lib_class(dir_name, lib_file_list, lib_verify_files, lib_verified):
+    lib_class = {}
+    for f in lib_file_list:
+        libfile_name = f
+
+        proc = subprocess.run(['bash ./lib/check_description.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        description = proc.stdout.decode("UTF-8")[:-1]
+
+        proc = subprocess.run(['bash ./lib/check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
+        dependencies = proc.stdout.decode("UTF-8")[:-1].splitlines()
+
+        if os.path.basename(f) in lib_verify_files:
+            testfiles = lib_verify_files[os.path.basename(f)]
+            is_verified = lib_verified[os.path.basename(f)]
+        else:
+            testfiles = []
+            is_verified = False
+        lib_class[os.path.basename(libfile_name)] = LibFile(libfile_name, description, dependencies, testfiles, is_verified)
+    return lib_class
         
-def get_test_dict(dir_name, test_file_list):
-    test_files, lib_dependencies, lib_verified = [], {}, {}
+def get_test_class(dir_name, test_file_list):
+    test_files, lib_verify_files, lib_verified = [], {}, {}
     for f in test_file_list:
         testfile_name = f
         
@@ -166,11 +207,11 @@ def get_test_dict(dir_name, test_file_list):
         test_files.append(TestFile(testfile_name, is_verified, problem))
 
         for d in dependencies:
-            lib_dependencies.setdefault(os.path.basename(d), []).append(f)
+            lib_verify_files.setdefault(os.path.basename(d), []).append(f)
             lib_verified.setdefault(os.path.basename(d), is_verified)
             lib_verified[os.path.basename(d)] |= is_verified
             
-    return test_files, lib_dependencies, lib_verified
+    return test_files, lib_verify_files, lib_verified
     
 def main():
     print(import_mathjax_text)
@@ -197,7 +238,7 @@ def main():
     for d in test_dir_list:
         test_cpp_file_list = get_matched_file_list(os.path.join(test_path, d), test_cond)
         # convert_test_to_md(d, test_cpp_file_list)
-        test_files, lib_dependencies, lib_verified = get_test_dict(os.path.join(test_path, d), test_cpp_file_list)
+        test_classes, lib_verify_files, lib_verified = get_test_class(os.path.join(test_path, d), test_cpp_file_list)
 
     desc_1 = '''\
 # ライブラリ一覧
@@ -212,13 +253,14 @@ def main():
     lib_dir_list = get_matched_directory_list(lib_path, lib_cond, ignore_lib_list)
     for d in lib_dir_list:
         cpp_file_list = get_matched_file_list(os.path.join(lib_path, d), lib_cond)
-        convert_lib_to_md(d, cpp_file_list, lib_dependencies, lib_verified)
+        lib_classes = get_lib_class(os.path.join(test_path, d), cpp_file_list, lib_verify_files, lib_verified)
+        convert_lib_to_md(d, lib_classes)
 
     desc_2 = '''\
 # Verify ファイル一覧
 '''
     print(desc_2)
-    for t in test_files:
+    for t in test_classes:
         convert_test_to_md(t)
         
 if __name__ == '__main__':
