@@ -70,8 +70,7 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies, is_verified):
         md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
 
         mark = get_mark(is_verified, False)
-        md_file.write('# {} {}\n'.format(mark, os.path.basename(lib_filepath).replace('_', '\_')))
-        md_file.write('---\n\n')
+        md_file.write('# {} {}\n\n'.format(mark, os.path.basename(lib_filepath).replace('_', '\_')))
 
         if os.path.basename(lib_filepath) in lib_dependencies:
             md_file.write('## Verify Files\n')
@@ -99,8 +98,7 @@ def generate_test_page(md_filename, testfile):
         md_file.write('[トップページに戻る]({})\n\n'.format(top_url))
 
         mark = get_mark(testfile.is_verified)
-        md_file.write('# {} {}\n'.format(mark, testfile.testfile_name.replace('_', '\_')))
-        md_file.write('---\n\n')
+        md_file.write('# {} {}\n\n'.format(mark, testfile.testfile_name.replace('_', '\_')))
 
         if len(testfile.problem.url) > 0: md_file.write('* URL: [{}]({})\n'.format(testfile.problem.url, testfile.problem.url))
         if len(testfile.problem.description) > 0: md_file.write('* {}\n\n'.format(testfile.problem.description))
@@ -179,8 +177,9 @@ def main():
     desc_0 = '''\
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
+* [リポジトリへのリンク](https://github.com/Tsutajiro/cpp_library)
 * tsutaj が使用している競技プログラミング用ライブラリです。自己責任で使ってね
-* CI は試験運用中です (そのうち HTML 生成機能をつける予定)
+* CI は試験運用中です
 
 # 目次
 
