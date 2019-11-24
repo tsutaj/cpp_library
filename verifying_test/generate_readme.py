@@ -37,7 +37,7 @@ def convert_test_to_md(dir_name, test_file_list):
         proc = subprocess.run(['bash ./lib/check_url.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1]
         if len(proc_result) > 0:
-            print('    - URL:', proc_result)
+            print('    - URL: [{}]({})'.format(proc_result, proc_result))
 
         proc = subprocess.run(['bash ./lib/check_description.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         proc_result = proc.stdout.decode("UTF-8")[:-1]
