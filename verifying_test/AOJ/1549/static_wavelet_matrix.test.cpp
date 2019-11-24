@@ -1,5 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549"
-#define DESCRIPTION "\"閉区間\" $\left[ l, r \right]$ にある整数の中で $D$ に最も近いものを求める"
+#define DESCRIPTION "\"閉区間\" $$\left[ l, r \right]$$ にある整数の中で $$D$$ に最も近いものを求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
