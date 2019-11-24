@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_006\_circle\_tangent.cpp
----
 
 ## Code
 

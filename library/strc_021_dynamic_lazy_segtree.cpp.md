@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_021\_dynamic\_lazy\_segtree.cpp
----
 
 ## Code
 

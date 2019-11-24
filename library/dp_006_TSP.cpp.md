@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: dp\_006\_TSP.cpp
----
 
 ## Code
 

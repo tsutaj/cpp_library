@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_025\_2SAT.cpp
----
 
 ## Code
 

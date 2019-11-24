@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/CGL\_1\_B/geometry.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja)
 * 直線 $$p_1 p_2$$ に対する点 $$p$$ の反射を求める

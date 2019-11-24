@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_006\_eulerphi.cpp
----
 
 ## Code
 

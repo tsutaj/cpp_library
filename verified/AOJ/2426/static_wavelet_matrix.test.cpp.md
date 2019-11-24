@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426)
 * 矩形 $$x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$$ 内に属する点の個数を求める

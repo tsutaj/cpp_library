@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/CGL\_3\_A/geometry.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja)
 * 凸とは限らない多角形の面積を計算する

@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/ITP1\_6\_A/static\_wavelet\_matrix.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja)
 * 与えられた数列を逆順に出力

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: str\_004\_trie.cpp
----
 
 ## Code
 

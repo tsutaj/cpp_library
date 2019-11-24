@@ -7,7 +7,6 @@
 [トップページに戻る](../../../index.html)
 
 # :heavy_check_mark: ./AOJ/ALDS1\_5\_D/static\_wavelet\_matrix\_more.test.cpp
----
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja)
 * 転倒数を求める (自分より大きいものを数えるアプローチ)

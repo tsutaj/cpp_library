@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_004\_circle\_dist.cpp
----
 
 ## Code
 

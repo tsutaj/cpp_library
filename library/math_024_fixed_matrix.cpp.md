@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_024\_fixed\_matrix.cpp
----
 
 ## Code
 

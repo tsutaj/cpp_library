@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_001\_bellman.cpp
----
 
 ## Code
 

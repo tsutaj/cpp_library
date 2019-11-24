@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_020\_HLDecomposition.cpp
----
 
 ## Code
 

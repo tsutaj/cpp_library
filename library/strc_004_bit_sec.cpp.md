@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_004\_bit\_sec.cpp
----
 
 ## Code
 

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_008\_treeheight.cpp
----
 
 ## Code
 

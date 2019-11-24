@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: str\_007\_kmp.cpp
----
 
 ## Code
 

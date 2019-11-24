@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: dp\_004\_editDistance.cpp
----
 
 ## Code
 

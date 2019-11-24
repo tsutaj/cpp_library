@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: gmtr\_009\_poly.cpp
----
 
 ## Code
 

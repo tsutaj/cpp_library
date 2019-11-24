@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: dp\_002\_maxRectangle.cpp
----
 
 ## Code
 

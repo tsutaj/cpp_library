@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_006\_twodimbit\_zero\_indexed.cpp
----
 
 ## Code
 

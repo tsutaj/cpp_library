@@ -5,8 +5,9 @@
 
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
+* [リポジトリへのリンク](https://github.com/Tsutajiro/cpp_library)
 * tsutaj が使用している競技プログラミング用ライブラリです。自己責任で使ってね
-* CI は試験運用中です (そのうち HTML 生成機能をつける予定)
+* CI は試験運用中です
 
 # 目次
 

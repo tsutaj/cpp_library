@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: algo\_003\_2D\_accumulation.cpp
----
 
 ## Code
 

@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_010\_abst\_sqrtdecomp.cpp
----
 
 ## Code
 

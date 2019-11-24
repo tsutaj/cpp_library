@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: str\_001\_technique.cpp
----
 
 ## Code
 

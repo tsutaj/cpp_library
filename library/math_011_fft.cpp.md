@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_011\_fft.cpp
----
 
 ## Code
 

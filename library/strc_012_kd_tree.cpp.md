@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_012\_kd\_tree.cpp
----
 
 ## Code
 

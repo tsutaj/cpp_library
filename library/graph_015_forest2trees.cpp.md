@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: graph\_015\_forest2trees.cpp
----
 
 ## Code
 

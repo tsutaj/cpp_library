@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: math\_016\_mod\_sqrt.cpp
----
 
 ## Code
 

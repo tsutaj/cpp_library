@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_016\_persistent\_unionfind.cpp
----
 
 ## Code
 

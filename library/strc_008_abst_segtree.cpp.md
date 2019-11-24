@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: strc\_008\_abst\_segtree.cpp
----
 
 ## Code
 

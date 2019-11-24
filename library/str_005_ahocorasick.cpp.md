@@ -7,7 +7,6 @@
 [トップページに戻る](../index.html)
 
 # :warning: str\_005\_ahocorasick.cpp
----
 
 ## Code
 
