@@ -46,9 +46,9 @@ def convert_lib_to_md(dir_name, lib_file_list, lib_dependencies):
     print('##', dir_name)
     for f in lib_file_list:
         print('###', f.replace('_', '\_'))
-        if f in lib_dependencies: print('    #### Dependencies')
+        if f in lib_dependencies: print('#### Dependencies')
         for d in lib_dependencies.setdefault(f, []):
-            print('        *', d)
+            print('*', d)
         print()
 
 def convert_test_to_md(testfile):
@@ -56,9 +56,10 @@ def convert_test_to_md(testfile):
     print('###', mark, testfile.testfile_name.replace('_', '\_'))
     if len(testfile.problem.url) > 0: print('* URL: [{}]({})'.format(testfile.problem.url, testfile.problem.url))
     if len(testfile.problem.description) > 0: print('*', testfile.problem.description)
-    if len(testfile.problem.dependencies) > 0: print('    #### Dependencies')
+    if len(testfile.problem.dependencies) > 0: print('#### Dependencies')
     for d in testfile.problem.dependencies:
-        print('        *', os.path.basename(d).replace('_', '\_'))
+        if os.path.samefile(d, testfile.testfile_name): continue
+        print('*', os.path.basename(d).replace('_', '\_'))
 
     print()
         
