@@ -67,7 +67,7 @@ def generate_lib_page(md_filename, lib_filepath, lib_dependencies):
             md_file.write('## Verify Files\n')
             for d in lib_dependencies[os.path.basename(lib_filepath)]:
                 path = os.path.normpath(os.path.join(os.path.relpath(test_path, lib_path), d)) + '.html'
-                md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
+                md_file.write('* [{}]({})\n'.format(d.replace('_', '\_'), path))
             md_file.write('\n')
 
         md_file.write('## Code\n\n')
