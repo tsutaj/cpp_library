@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_4\_C/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja)
-* 凸多角形 $$g$$ を直線 $$p_1 p_2$$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める
+* 凸多角形 $g$ を直線 $p_1 p_2$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -37,7 +37,7 @@
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_C&lang=ja"
 #define ERROR "1e-5"
-#define DESCRIPTION "凸多角形 $$g$$ を直線 $$p_1 p_2$$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める"
+#define DESCRIPTION "凸多角形 $g$ を直線 $p_1 p_2$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_1\_B/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja)
-* 直線 $$p_1 p_2$$ に対する点 $$p$$ の反射を求める
+* 直線 $p_1 p_2$ に対する点 $p$ の反射を求める
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -37,7 +37,7 @@
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B&lang=ja"
 #define ERROR "1e-8"
-#define DESCRIPTION "直線 $$p_1 p_2$$ に対する点 $$p$$ の反射を求める"
+#define DESCRIPTION "直線 $p_1 p_2$ に対する点 $p$ の反射を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

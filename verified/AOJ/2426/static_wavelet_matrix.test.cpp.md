@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/2426/static\_wavelet\_matrix.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426)
-* 矩形 $$x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$$ 内に属する点の個数を求める
+* 矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める
 
 ## Dependencies
 * [strc\_023\_compact\_bitvector.cpp](../../../library/strc_023_compact_bitvector.cpp.html)
@@ -37,7 +37,7 @@
 
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426"
-#define DESCRIPTION "矩形 $$x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$$ 内に属する点の個数を求める"
+#define DESCRIPTION "矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

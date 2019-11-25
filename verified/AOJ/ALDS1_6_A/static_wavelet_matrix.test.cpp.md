@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/ALDS1\_6\_A/static\_wavelet\_matrix.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja)
-* ソートを行う (小さいものから $$k$$ 番目を求められることを利用)
+* ソートを行う (小さいものから $k$ 番目を求められることを利用)
 
 ## Dependencies
 * [strc\_023\_compact\_bitvector.cpp](../../../library/strc_023_compact_bitvector.cpp.html)
@@ -37,7 +37,7 @@
 
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja"
-#define DESCRIPTION "ソートを行う (小さいものから $$k$$ 番目を求められることを利用)"
+#define DESCRIPTION "ソートを行う (小さいものから $k$ 番目を求められることを利用)"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

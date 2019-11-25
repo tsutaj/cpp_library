@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_2\_A/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja)
-* 直線 $$s_1, s_2$$ について平行・直交を判定
+* 直線 $s_1, s_2$ について平行・直交を判定
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -36,7 +36,7 @@
 
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A&lang=ja"
-#define DESCRIPTION "直線 $$s_1, s_2$$ について平行・直交を判定"
+#define DESCRIPTION "直線 $s_1, s_2$ について平行・直交を判定"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

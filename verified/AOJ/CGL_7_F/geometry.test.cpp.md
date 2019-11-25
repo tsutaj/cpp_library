@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_7\_F/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja)
-* 点 $$p$$ を通る円 $$c$$ の接線を求める
+* 点 $p$ を通る円 $c$ の接線を求める
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -37,7 +37,7 @@
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_F&lang=ja"
 #define ERROR "1e-5"
-#define DESCRIPTION "点 $$p$$ を通る円 $$c$$ の接線を求める"
+#define DESCRIPTION "点 $p$ を通る円 $c$ の接線を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

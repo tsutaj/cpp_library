@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_1\_C/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja)
-* $$3$$ 点 $$p_0, p_1, p_2$$ の位置関係 (ccw) を求める
+* $3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -36,7 +36,7 @@
 
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja"
-#define DESCRIPTION "$$3$$ 点 $$p_0, p_1, p_2$$ の位置関係 (ccw) を求める"
+#define DESCRIPTION "$3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

@@ -27,7 +27,7 @@
 # :heavy_check_mark: ./AOJ/CGL\_7\_E/geometry.test.cpp
 
 * URL: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja)
-* $$2$$ つの円 $$c_1, c_2$$ の交点を求める
+* $2$ つの円 $c_1, c_2$ の交点を求める
 
 ## Dependencies
 * [geometry\_2D.cpp](../../../library/geometry_2D.cpp.html)
@@ -37,7 +37,7 @@
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_E&lang=ja"
 #define ERROR "1e-6"
-#define DESCRIPTION "$$2$$ つの円 $$c_1, c_2$$ の交点を求める"
+#define DESCRIPTION "$2$ つの円 $c_1, c_2$ の交点を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
