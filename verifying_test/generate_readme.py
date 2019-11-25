@@ -6,7 +6,7 @@ import_static_js_text = '''\
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 '''
 
 def import_js_css(filename):
@@ -17,10 +17,10 @@ def import_js_css(filename):
     result_text += '<link rel="stylesheet" href="{}" />\n'.format(copy_button_css_path)
 
     ballons_js_path = os.path.normpath(os.path.relpath("./js/balloons.js", dirpath))
-    result_text += '<script src="{}"></script>\n'.format(ballons_js_path)
+    result_text += '<script type="text/javascript" src="{}"></script>\n'.format(ballons_js_path)
 
     copy_button_js_path = os.path.normpath(os.path.relpath("./js/copy-button.js", dirpath))
-    result_text += '<script src="{}"></script>\n\n'.format(copy_button_js_path)
+    result_text += '<script type="text/javascript" src="{}"></script>\n\n'.format(copy_button_js_path)
     
     return result_text
 
