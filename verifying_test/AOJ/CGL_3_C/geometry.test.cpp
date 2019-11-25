@@ -1,5 +1,5 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja"
-#define DESCRIPTION "多角形 $$g$$ と点 $$p$$ について、$$p$$ が $$g$$ に含まれるか・辺上にあるかを判定"
+#define DESCRIPTION "多角形 $g$ と点 $p$ について、$p$ が $g$ に含まれるか・辺上にあるかを判定"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

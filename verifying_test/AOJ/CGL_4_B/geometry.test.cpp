@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja"
 #define ERROR "1e-6"
-#define DESCRIPTION "凸多角形 $$g$$ の直径を求める"
+#define DESCRIPTION "凸多角形 $g$ の直径を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>

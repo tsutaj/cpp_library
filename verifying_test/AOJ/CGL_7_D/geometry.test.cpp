@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D&lang=ja"
 #define ERROR "1e-6"
-#define DESCRIPTION "円 $$c$$ と直線 $$l$$ の交点を求める"
+#define DESCRIPTION "円 $c$ と直線 $l$ の交点を求める"
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
