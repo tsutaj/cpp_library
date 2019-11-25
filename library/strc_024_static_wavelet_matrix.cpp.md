@@ -28,6 +28,9 @@
 
 
 
+## Requires
+* [strc\_023\_compact\_bitvector.cpp](strc_023_compact_bitvector.cpp.html)
+
 ## Verify Files
 * [./AOJ/1549/static\_wavelet\_matrix.test.cpp](../verified/AOJ/1549/static_wavelet_matrix.test.cpp.html)
 * [./AOJ/2426/static\_wavelet\_matrix.test.cpp](../verified/AOJ/2426/static_wavelet_matrix.test.cpp.html)
@@ -41,6 +44,8 @@
 
 ```cpp
 #define DOCS "./docs/strc_024_static_wavelet_matrix.md"
+#define REQUIRES "./strc_023_compact_bitvector.cpp"
+#undef REQUIRES
 
 // ウェーブレット行列 (Wavelet Matrix)
 // w は word_size (ビット幅), 30 bit で表現できる整数なら 30
