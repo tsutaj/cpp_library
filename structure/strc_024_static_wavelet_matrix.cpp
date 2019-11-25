@@ -1,4 +1,6 @@
 #define DOCS "./docs/strc_024_static_wavelet_matrix.md"
+#define REQUIRES "./strc_023_compact_bitvector.cpp"
+#undef REQUIRES
 
 // ウェーブレット行列 (Wavelet Matrix)
 // w は word_size (ビット幅), 30 bit で表現できる整数なら 30

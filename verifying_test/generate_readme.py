@@ -31,12 +31,12 @@ class Problem:
         self.dependencies = dependencies
 
 class LibFile:
-    def __init__(self, libfile_name, description, dependencies, testfiles, is_verified):
+    def __init__(self, libfile_name, description, testfiles, is_verified):
         self.libfile_name = libfile_name
         self.description = description
-        self.dependencies = dependencies
         self.testfiles = testfiles
         self.is_verified = is_verified
+        self.requires = get_requires(libfile_name)
         self.docs_text = get_docs(libfile_name)
         
 class TestFile:
@@ -67,7 +67,14 @@ def get_docs(file_path):
             lines = f.readlines()
             for line in lines: docs_text += line
     return docs_text
-    
+
+# Requires データを得る
+def get_requires(file_path):
+    proc = subprocess.run(['bash ./lib/check_requires_items.sh {}'.format(file_path)], shell = True, stdout = subprocess.PIPE )
+    requires = proc.stdout.decode("UTF-8")[:-1].splitlines()
+    requires = list(filter(lambda f: len(f) > 0, requires)) # avoid empty string
+    return requires
+
 # ディレクトリ一覧
 def get_directory_list(path):
     files = os.listdir(path)
@@ -104,11 +111,10 @@ def generate_lib_page(md_filename, lib_class):
         if len(lib_class.description) > 0: md_file.write('* {}\n\n'.format(lib_class.description))
         if len(lib_class.docs_text) > 0: md_file.write('{}\n\n'.format(lib_class.docs_text))
 
-        if len(lib_class.dependencies) > 1:
-            md_file.write('## Dependencies\n')
-            for d in lib_class.dependencies:
-                if os.path.samefile(d, lib_class.libfile_name): continue
-                path = os.path.normpath(os.path.join(os.path.relpath(test_path, os.path.dirname(md_filename)), os.path.basename(d))) + '.html'
+        if len(lib_class.requires) > 0:
+            md_file.write('## Requires\n')
+            for d in lib_class.requires:
+                path = os.path.basename(d) + '.html'
                 md_file.write('* [{}]({})\n'.format(os.path.basename(d).replace('_', '\_'), path))
             md_file.write('\n')
         
@@ -191,16 +197,13 @@ def get_lib_class(dir_name, lib_file_list, lib_verify_files, lib_verified):
         proc = subprocess.run(['bash ./lib/check_description.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
         description = proc.stdout.decode("UTF-8")[:-1]
 
-        proc = subprocess.run(['bash ./lib/check_dependencies.sh {}'.format(f)], shell = True, stdout = subprocess.PIPE )
-        dependencies = proc.stdout.decode("UTF-8")[:-1].splitlines()
-
         if os.path.basename(f) in lib_verify_files:
             testfiles = lib_verify_files[os.path.basename(f)]
             is_verified = lib_verified[os.path.basename(f)]
         else:
             testfiles = []
             is_verified = False
-        lib_class[os.path.basename(libfile_name)] = LibFile(libfile_name, description, dependencies, testfiles, is_verified)
+        lib_class[os.path.basename(libfile_name)] = LibFile(libfile_name, description, testfiles, is_verified)
     return lib_class
         
 def get_test_class(dir_name, test_file_list):
