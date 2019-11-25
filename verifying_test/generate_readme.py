@@ -4,7 +4,7 @@ import sys, os, glob, re, subprocess
 import_static_js_text = '''\
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
