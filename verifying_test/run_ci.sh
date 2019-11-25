@@ -121,12 +121,14 @@ fi
 python3 generate_readme.py > ../index.md
 mv library/ ../
 mv verified/ ../
-git add ../index.md ../library ../verified js css
+mv js/ ../
+mv css/ ../
+git add ../index.md ../library ../verified ../js ../css
 git commit -m "[ci skip] html"
 
 git checkout gh-pages
-git checkout master -- ../index.md ../library ../verified js css
-git add ../index.md ../library ../verified js css
+git checkout master -- ../index.md ../library ../verified ../js ../css
+git add ../index.md ../library ../verified ../js ../css
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
 echo "Pushed updated branch 'gh-pages'"
