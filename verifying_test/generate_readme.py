@@ -1,12 +1,28 @@
 # -*- coding: utf-8 -*-
 import sys, os, glob, re, subprocess
 
-import_mathjax_text = '''\
+import_static_js_text = '''\
 <!-- Mathjax Support -->
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 '''
+
+def import_js_css(filename):
+    dirpath = os.path.dirname(filename)
+    result_text = ""
+
+    copy_button_css_path = os.path.normpath(os.path.relpath("./css/copy-button.css", dirpath))
+    result_text += '<link rel="stylesheet" href="{}" />\n'.format(copy_button_css_path)
+
+    ballons_js_path = os.path.normpath(os.path.relpath("./js/balloons.js", dirpath))
+    result_text += '<script src="{}"></script>\n'.format(ballons_js_path)
+
+    copy_button_js_path = os.path.normpath(os.path.relpath("./js/copy-button.js", dirpath))
+    result_text += '<script src="{}"></script>\n\n'.format(copy_button_js_path)
+    
+    return result_text
 
 class Problem:
     def __init__(self, url, description, dependencies):
@@ -75,7 +91,8 @@ test_path = './verified/'
 
 def generate_lib_page(md_filename, lib_class):
     with open(md_filename, mode='w') as md_file:
-        md_file.write(import_mathjax_text)
+        md_file.write(import_static_js_text)
+        md_file.write(import_js_css(md_filename))
         md_file.write('\n\n')
 
         top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, lib_path), 'index.html'))
@@ -113,7 +130,8 @@ def generate_lib_page(md_filename, lib_class):
                 
 def generate_test_page(md_filename, testfile):
     with open(md_filename, mode='w') as md_file:
-        md_file.write(import_mathjax_text)
+        md_file.write(import_static_js_text)
+        md_file.write(import_js_css(md_filename))
         md_file.write('\n\n')
         
         top_url = os.path.normpath(os.path.join(os.path.relpath(top_path, os.path.dirname(md_filename)), 'index.html'))
@@ -214,7 +232,8 @@ def get_test_class(dir_name, test_file_list):
     return test_files, lib_verify_files, lib_verified
     
 def main():
-    print(import_mathjax_text)
+    print(import_static_js_text)
+    print(import_js_css('./index.html'))
     desc_0 = '''\
 [![Build Status](https://travis-ci.com/Tsutajiro/cpp_library.svg?branch=master)](https://travis-ci.com/Tsutajiro/cpp_library)
 
