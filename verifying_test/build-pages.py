@@ -61,7 +61,7 @@ class PagesBuilder:
             if title_cnt[title] >= 2:
                 title_num.setdefault(title, 0);
                 title_num[title] += 1
-                title += '{02:}'.format(title_num[title])
+                title += '{:02}'.format(title_num[title])
             result[title] = cpp_file.file_path
         return result        
         
