@@ -450,7 +450,7 @@ def main():
         'title': 'ライブラリの HTML ビルドテスト', # title of top page
         'description': '書いた内容がトップページ上部に載ります', # description of top page
         'toc': True, # table of contents (default: False)
-        'html': True, # generate HTML as well as Markdown (default: False)
+        'html': False, # generate HTML as well as Markdown (default: False)
         'categorize_library': True, # show library files with categorizing (default: True)
         'categorize_verify': False, # show verify files with categorizing (default: False)
     }
