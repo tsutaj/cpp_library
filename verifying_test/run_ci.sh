@@ -127,8 +127,9 @@ git commit -m "[ci skip] html"
 
 git checkout gh-pages
 git checkout master -- ./md-output
+rm ../{assets,library,verify,index.md}
 mv ./md-output/* ../
-git add ../{assets,library,verify}
+git add ../{assets,library,verify,index.md}
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
 echo "Pushed updated branch 'gh-pages'"
