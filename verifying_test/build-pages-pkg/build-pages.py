@@ -340,6 +340,7 @@ class PagesBuilder:
             if not self.is_ignored(matched_file) and matched_file not in ignored_files:
                 matched_file = os.path.normpath(matched_file)
                 files[matched_file] = CppFile(matched_file, source_path)
+        files = sorted(files.items(), key=lambda x: x[0])
         return files
 
     # title の重複があったらナンバリング付与
@@ -356,12 +357,14 @@ class PagesBuilder:
                 title_num[title] += 1
                 title += '{:02}'.format(title_num[title])
             result[title] = cpp_class.file_path
+        result = sorted(result.items(), key=lambda x: x[0])
         return result    
         
     def map_path2title(self):
         result = {}
         for cpp_class in dict(**self.library_files, **self.verify_files).values():
             result[cpp_class.file_path] = cpp_class.title
+        result = sorted(result.items(), key=lambda x: x[0])            
         return result
 
     def map_category2path(self):
@@ -369,10 +372,16 @@ class PagesBuilder:
         for cpp_class in self.verify_files.values():
             verify_result.setdefault(cpp_class.category, [])
             verify_result[cpp_class.category].append(cpp_class.file_path)
-
+        for file_path_list in verify_result.values():
+            file_path_list.sort()
+        verify_result = sorted(verify_result.items(), key=lambda x: x[0])
+            
         for cpp_class in self.library_files.values():
             library_result.setdefault(cpp_class.category, [])
             library_result[cpp_class.category].append(cpp_class.file_path)
+        for file_path_list in library_result.values():
+            file_path_list.sort()
+        library_result = sorted(library_result.items(), key=lambda x: x[0])
         return verify_result, library_result
             
     def get_required(self):
