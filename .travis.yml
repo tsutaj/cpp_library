@@ -3,6 +3,7 @@ python:
   "3.7"
 before_install:
   - pip3 install -U online-judge-tools=='7.2.*'
+  - pip3 install markdown
 install:
   - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
   - cd $TRAVIS_REPO_SLUG
