@@ -457,8 +457,8 @@ class PagesBuilder:
 def main():
     # 実行テスト
     config = {
-        'title': 'ライブラリの HTML ビルドテスト', # title of top page
-        'description': '書いた内容がトップページ上部に載ります', # description of top page
+        'title': 'tsutaj の競技プログラミング用ライブラリ', # title of top page
+        'description': '[![Build Status](https://travis-ci.com/tsutaj/cpp_library.svg?branch=master)](https://travis-ci.com/tsutaj/cpp_library)\n\n* [リポジトリへのリンク](https://github.com/tsutaj/cpp_library)', # description of top page
         'toc': True, # table of contents (default: False)
         'html': False, # generate HTML as well as Markdown (default: False)
         'categorize_library': True, # show library files with categorizing (default: True)
