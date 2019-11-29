@@ -118,17 +118,16 @@ if [ -n "$(git status -s)" ]; then
 fi
 
 # auto generate page [gh-pages branch]
-python3 generate_readme.py > ../index.md
-mv library/ ../
-mv verified/ ../
-mv js/ ../
-mv css/ ../
-git add ../index.md ../library ../verified ../js ../css
+cd ./build-pages-pkg/
+python3 ./build-pages.py
+mv md-output ../
+cd -
+git add ./md-output
 git commit -m "[ci skip] html"
 
 git checkout gh-pages
-git checkout master -- ../index.md ../library ../verified ../js ../css
-git add ../index.md ../library ../verified ../js ../css
+git checkout master -- ./md-output
+git add ./md-output
 git commit -m "[ci skip] generating html commit"
 git push origin gh-pages >/dev/null 2>&1
 echo "Pushed updated branch 'gh-pages'"

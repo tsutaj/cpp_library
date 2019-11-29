@@ -6,8 +6,8 @@
 #include <tuple>
 #include <utility>
 using namespace std;
-#include "../structure/strc_023_compact_bitvector.cpp"
-#include "../structure/strc_024_static_wavelet_matrix.cpp"
+#include "../strc_023_compact_bitvector.cpp"
+#include "../strc_024_static_wavelet_matrix.cpp"
 
 int main() {
     vector<int> vec = {2, 10, 2, 3, 2, 5, 4, 4};
