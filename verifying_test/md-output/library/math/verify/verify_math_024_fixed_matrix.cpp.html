@@ -1,0 +1,106 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/verify/verify_math_024_fixed_matrix.cpp</h1>
+<ul>
+<li>category: ../../math/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../math_017_modint.cpp.html">../../math/math_017_modint.cpp</a></li>
+<li>:warning: <a href="../math_024_fixed_matrix.cpp.html">../../math/math_024_fixed_matrix.cpp</a></li>
+<li>:warning: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">../../structure/strc_009_abst_lazy_segtree.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;valarray&gt;
+#include &lt;vector&gt;
+#include &lt;functional&gt;
+using namespace std;
+#include &quot;../math_024_fixed_matrix.cpp&quot;
+#include &quot;../math_017_modint.cpp&quot;
+#include &quot;../../structure/strc_009_abst_lazy_segtree.cpp&quot;
+
+void CF373_div2_E() {
+    using mint = ModInt&lt;1000000007&gt;;
+    using Mat = FixedMatrix&lt;mint, 2, 2&gt;;
+    using Vec = FixedMatrix&lt;mint, 2, 1&gt;;
+
+    auto f = [](Vec a, Mat b) { return b * a; };
+    auto g = [](Vec a, Vec b) {
+        return a + b;
+    };
+    auto h = [](Mat a, Mat b) {
+        return a * b;
+    };
+    auto p = [](Mat a, int x) {
+        return a;
+    };
+
+    Vec E0; E0.at(0, 0) = 0, E0.at(1, 0) = 0;
+    Mat E1 = eigen&lt;mint, 2, 2&gt;();
+
+    Mat fib;
+    fib.at(0, 0) = fib.at(0, 1) = fib.at(1, 0) = 1;
+    fib.at(1, 1) = 0;
+
+    Vec vec;
+    vec.at(0, 0) = 1, vec.at(1, 0) = 0;
+
+    int N, Q; scanf(&quot;%d%d&quot;, &amp;N, &amp;Q);
+    vector&lt;Vec&gt; matrices(N);
+    for(int i=0; i&lt;N; i++) {
+        int v; scanf(&quot;%d&quot;, &amp;v);
+        Mat pow_fib = pow(fib, v - 1);
+        matrices[i] = pow_fib * vec;
+    }
+
+    LazySegmentTree&lt;Vec, Mat&gt; seg(N, E0, E1, f, g, h, p, matrices);
+
+    while(Q--) {
+        int type; scanf(&quot;%d&quot;, &amp;type);
+        if(type == 1) {
+            int l, r, x; scanf(&quot;%d%d%d&quot;, &amp;l, &amp;r, &amp;x); l--;
+            Mat pow_fib = pow(fib, x);
+            seg.update(l, r, pow_fib);
+        }
+        if(type == 2) {
+            int l, r; scanf(&quot;%d%d&quot;, &amp;l, &amp;r); l--;
+            auto res = seg.query(l, r);
+            printf(&quot;%lld\n&quot;, res.at(0, 0).v);
+        }
+    }
+}
+
+int main() {
+    CF373_div2_E();
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

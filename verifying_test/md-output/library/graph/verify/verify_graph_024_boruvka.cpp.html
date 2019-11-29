@@ -1,0 +1,133 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/verify/verify_graph_024_boruvka.cpp</h1>
+<ul>
+<li>category: ../../graph/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../graph_024_boruvka.cpp.html">../../graph/graph_024_boruvka.cpp</a></li>
+<li>:warning: <a href="../../structure/strc_001_unionfind.cpp.html">../../structure/strc_001_unionfind.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;tuple&gt;
+using namespace std;
+#include &quot;../../structure/strc_001_unionfind.cpp&quot;
+#include &quot;../graph_024_boruvka.cpp&quot;
+
+void GRL_2_A() {
+    int N, M; scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    vector&lt;int&gt; s(M), t(M), w(M);
+    for(int i=0; i&lt;M; i++) {
+        scanf(&quot;%d%d%d&quot;, &amp;s[i], &amp;t[i], &amp;w[i]);
+    }
+
+    const int INF = 1 &lt;&lt; 30;
+    auto f = [&amp;](int sz, vector&lt;int&gt; group) {
+        vector&lt; pair&lt;int, int&gt; &gt; res(sz, {INF, -1});
+        for(int i=0; i&lt;M; i++) {
+            int gs = group[ s[i] ], gt = group[ t[i] ];
+            if(gs == gt) continue;
+            res[gs] = min(res[gs], {w[i], gt});
+            res[gt] = min(res[gt], {w[i], gs});
+        }
+        return res;
+    };
+
+    cout &lt;&lt; boruvka&lt; int, decltype(f) &gt;(N, f) &lt;&lt; endl;
+}
+
+void KEYENCE_2019_E() {
+    using int64 = long long int;
+    int64 N, D; cin &gt;&gt; N &gt;&gt; D;
+    vector&lt;int64&gt; A(N);
+    for(int i=0; i&lt;N; i++) cin &gt;&gt; A[i];
+
+    using Candidate = tuple&lt; pair&lt;int64, int64&gt;, pair&lt;int64, int64&gt; &gt;;
+    auto g = [&amp;](Candidate cand, pair&lt;int64, int64&gt; p) {
+        pair&lt;int64, int64&gt; c1, c2; tie(c1, c2) = cand;
+        if(c1.first &lt; p.first and c2.first &lt; p.first) return cand;
+        if(c1.first &lt; p.first) {
+            if(c1.second == p.second) return cand;
+            return make_tuple(c1, p);
+        }
+        if(c1.second != p.second) return make_tuple(p, c1);
+        return make_tuple(p, c2);
+    };
+
+    const int64 INF = 1LL &lt;&lt; 60;
+    pair&lt;int64, int64&gt; I(INF, -1);
+    auto f = [&amp;](int sz, vector&lt;int&gt; group) {
+        vector&lt; pair&lt;int64, int64&gt; &gt; res(sz, I);
+
+        {
+            Candidate cand(I, I);
+            for(int i=0; i&lt;N; i++) {
+                pair&lt;int64, int64&gt; c1, c2; tie(c1, c2) = cand;
+                pair&lt;int64, int64&gt; p = (c1.second != group[i] ? c1 : c2);
+                int64 v = p.first + A[i] + i * D;
+                if(res[ group[i] ].first &gt; v) {
+                    res[ group[i] ] = make_pair(v, p.second);
+                }
+
+                cand = g(cand, make_pair(A[i] - i * D, group[i]));
+            }
+        }
+
+        {
+            Candidate cand(I, I);
+            for(int i=N-1; i&gt;=0; i--) {
+                pair&lt;int64, int64&gt; c1, c2; tie(c1, c2) = cand;
+                pair&lt;int64, int64&gt; p = (c1.second != group[i] ? c1 : c2);
+                int64 v = p.first + A[i] + (N - 1 - i) * D;
+                if(res[ group[i] ].first &gt; v) {
+                    res[ group[i] ] = make_pair(v, p.second);
+                }
+
+                cand = g(cand, make_pair(A[i] - (N - 1 - i) * D, group[i]));
+            }
+        }
+
+        return res;
+    };
+
+    cout &lt;&lt; boruvka&lt; int64, decltype(f) &gt;(N, f) &lt;&lt; endl;
+}
+
+int main() {
+    // GRL_2_A();
+    KEYENCE_2019_E();
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

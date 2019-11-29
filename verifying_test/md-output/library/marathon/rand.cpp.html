@@ -1,0 +1,70 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../marathon/rand.cpp</h1>
+<ul>
+<li>category: ../../marathon</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// [lb, ub] の閉区間内の値をランダムに返す構造体
+// #include &lt;random&gt; しよう
+
+struct Rand {
+public:
+    Rand() = default;
+    Rand(std::mt19937::result_type seed) : eng(seed) {}
+    int NextInt(int lb, int ub) {
+        return std::uniform_int_distribution&lt;int&gt;{lb, ub}(eng);
+    }
+    ll NextLong(ll lb, ll ub) {
+        return std::uniform_int_distribution&lt;ll&gt;{lb, ub}(eng);
+    }
+    double NextDouble(double lb, double ub) {
+        return std::uniform_real_distribution&lt;double&gt;{lb, ub}(eng);
+    }
+private:
+    std::mt19937 eng{std::random_device{}()};
+};
+
+/* 
+// example.
+int main() {
+    Rand rnd(114514);
+    int l, r; scanf(&quot;%d%d&quot;, &amp;l, &amp;r);
+    printf(&quot;l = %d, r = %d, value = %d\n&quot;, l, r, rnd.NextInt(l, r));
+
+    double L, R; scanf(&quot;%lf%lf&quot;, &amp;L, &amp;R);
+    printf(&quot;L = %.12f, R = %.12f, value = %.12f\n&quot;, L, R, rnd.NextDouble(L, R));
+
+    long long int a, b; scanf(&quot;%lld%lld&quot;, &amp;a, &amp;b);
+    printf(&quot;a = %lld, b = %lld, value = %lld\n&quot;, a, b, rnd.NextLong(a, b));
+    return 0;
+}
+*/
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

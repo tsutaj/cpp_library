@@ -1,0 +1,127 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/math_009_kitamasa.cpp</h1>
+<ul>
+<li>category: ../../math</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// Kitamasa 法 (M 項漸化式の K 項目を O(M^2 log K) で求める)
+const int LOG_K = 60;
+template &lt;typename Type&gt;
+struct Kitamasa{
+    int M; // 初項の数
+    vector&lt;Type&gt; coefficient, first_term; // 係数・初項
+    vector&lt; vector&lt;Type&gt; &gt; log_table;
+    Type zero, one;
+
+    // 初項とその係数、0 (和の単位元) と 1 (積の単位元) の定義
+    Kitamasa(vector&lt;Type&gt; given_co, vector&lt;Type&gt; given_ft, Type given_z, Type given_o) {
+        assert(given_co.size() == given_ft.size());
+        coefficient = first_term = vector&lt;Type&gt;(1);
+        M = (int)given_ft.size();
+        copy(given_co.begin(), given_co.end(), back_inserter(coefficient));
+        copy(given_ft.begin(), given_ft.end(), back_inserter(first_term));
+        zero = given_z, one = given_o;
+
+        log_table = vector&lt; vector&lt;Type&gt; &gt;(LOG_K, vector&lt;Type&gt;(M+1, zero));
+        log_table[0][1] = one;
+        for(int i=1; i&lt;LOG_K; i++) {
+            log_table[i] = add(log_table[i-1], log_table[i-1]);
+        }
+    }
+
+    vector&lt;Type&gt; shrink(vector&lt;Type&gt; vec) {
+        vector&lt;Type&gt; ret_vec(M+1);
+        for(int i=2*M; i&gt;=M+1; i--) {
+            for(int k=1; k&lt;=M; k++) {
+                vec[i-k] = vec[i-k] + (coefficient[k] * vec[i]);
+            }
+        }
+        for(int i=1; i&lt;=M; i++) {
+            ret_vec[i] = vec[i];
+        }
+        return ret_vec;
+    }
+
+    vector&lt;Type&gt; add(const vector&lt;Type&gt; &amp;a, const vector&lt;Type&gt; &amp;b) {
+        assert(a.size() == M+1 &amp;&amp; b.size() == M+1);
+        vector&lt;Type&gt; ret_vec(2*M+1);
+        for(int i=1; i&lt;=M; i++) {
+            for(int j=1; j&lt;=M; j++) {
+                ret_vec[i+j] = ret_vec[i+j] + (a[i] * b[j]);
+            }
+        }
+        return shrink(ret_vec);
+    }
+
+    // K 項目 (1-indexed) を求める
+    Type get_value(ll K) {
+        K--; // K 乗を、1 乗と (K-1) 乗に分けて処理
+        vector&lt;Type&gt; vec = log_table[0];
+        for(int i=0; K&gt;0; i++, K&gt;&gt;=1) {
+            if(K &amp; 1) {
+                vec = add(vec, log_table[i]);
+            }
+        }
+
+        Type ret_val = zero;
+        for(int i=1; i&lt;=M; i++) {
+            ret_val = ret_val + (vec[i] * first_term[i]);
+        }
+        return ret_val;
+    }
+};
+
+// 突っ込む構造体の例
+// =, +, * を定義し、なおかつデフォルト値を必要とする
+struct Number {
+    ll num;
+    Number() {num = 0;}
+    Number(ll a) : num(a) {}
+    ll operator=(const Number &amp;b) {
+        return num = b.num;
+    }
+    ll operator+(const Number &amp;b) const {
+        return (num + b.num) % MOD;
+    }
+    ll operator*(const Number &amp;b) const {
+        return (num * b.num) % MOD;
+    }
+};
+
+signed main() {
+    int K, N; cin &gt;&gt; K &gt;&gt; N;
+    vector&lt;Number&gt; co(K, Number(1)), val(K, Number(1));
+    Kitamasa&lt;Number&gt; kt(co, val, Number(0), Number(1));
+    cout &lt;&lt; kt.get_value(N).num &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

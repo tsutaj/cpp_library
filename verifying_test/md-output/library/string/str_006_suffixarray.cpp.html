@@ -1,0 +1,266 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../string/str_006_suffixarray.cpp</h1>
+<ul>
+<li>category: ../../string</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// O(n log n) で構築するやつ
+// ・getIdx(i) := Suffix を辞書順に並べたときに i 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
+// ・getLCP(i) := SuffixArray 上で i 番目と i+1 番目の要素の最長共通接頭辞はいくらか？
+// ・is_greater: 辞書順 i 番目の Suffix がパターン文字列より大きいか見る
+// ・is_less: 辞書順 i 番目の Suffix がパターン文字列より小さいか見る
+// ・binary_search_greater: パターン文字列より大きい Suffix でインデックス最小のもの
+// ・binary_search_less: パターン文字列より小さい Suffix でインデックス最小のもの
+const int ALPH = 256;
+struct SuffixArray {
+private:
+    string s;
+    vector&lt;int&gt; rec, lcp, cnt;
+    int len, cnt_size;
+public:
+    SuffixArray(string s_) : s(s_) {
+        s += &quot;$&quot;; // 辞書順で最も小さいダミー文字
+        len = s.length();
+        cnt_size = max(ALPH, len); cnt.resize(cnt_size);
+        rec = getArray();
+        lcp = getLCPArray();
+    }
+
+    void dump_array(vector&lt;int&gt; &amp;indices, vector&lt;int&gt; &amp;classes) {
+        fprintf(stderr, &quot;# debug\n&quot;);
+        fprintf(stderr, &quot;# indices:&quot;);
+        for(int i=0; i&lt;len; i++) fprintf(stderr, &quot; %d&quot;, indices[i]);
+        fprintf(stderr, &quot;\n&quot;);
+        fprintf(stderr, &quot;# classes:&quot;);
+        for(int i=0; i&lt;len; i++) fprintf(stderr, &quot; %d&quot;, classes[i]);
+        fprintf(stderr, &quot;\n&quot;);
+    }
+
+    vector&lt;int&gt; getArray() {
+        vector&lt;int&gt; indices(len), prev_idx(len);
+        vector&lt;int&gt; classes(len), prev_cls(len);
+        vector&lt;int&gt; tmp_val(len);
+
+        // k == 0 はカウントソートのみ
+        for(int i=0; i&lt;len; i++) {
+            cnt[ s[i] ]++;
+        }
+        for(int i=1; i&lt;cnt_size; i++) {
+            cnt[i] += cnt[i-1];
+        }
+        for(int i=len-1; i&gt;=0; i--) {
+            indices[ --cnt[ s[i] ] ] = i;
+        }
+        for(int i=1; i&lt;len; i++) {
+            int pena = (s[ indices[i] ] != s[ indices[i-1] ]);
+            classes[ indices[i] ] = classes[ indices[i-1] ] + pena;
+        }
+
+        for(int k=0; (1 &lt;&lt; k) &lt; len; k++) {
+            swap(indices, prev_idx);
+            swap(classes, prev_cls);
+            for(int i=0; i&lt;len; i++) {
+                // 後半だけソート済みにしたものを indices に代入
+                prev_idx[i] = prev_idx[i] - (1 &lt;&lt; k);
+                if(prev_idx[i] &lt; 0) prev_idx[i] += len;
+                tmp_val[i] = prev_cls[ prev_idx[i] ];
+            }
+
+            // 前半についてカウントソート
+            fill(cnt.begin(), cnt.end(), (int)0);
+            for(int i=0; i&lt;len; i++) {
+                cnt[ tmp_val[i] ]++;
+            }
+            for(int i=1; i&lt;cnt_size; i++) {
+                cnt[i] += cnt[i-1];
+            }
+            for(int i=len-1; i&gt;=0; i--) {
+                indices[ --cnt[ tmp_val[i] ] ] = prev_idx[i];
+            }
+            classes[ indices[0] ] = 0;
+            for(int i=1; i&lt;len; i++) {
+                int shift = (1 &lt;&lt; k);
+                pair&lt;int, int&gt; pre(prev_cls[ indices[i-1] ], prev_cls[ (indices[i-1] + shift) % len ]);
+                pair&lt;int, int&gt; cur(prev_cls[ indices[i  ] ], prev_cls[ (indices[i  ] + shift) % len ]);
+                int pena = (pre != cur);
+                classes[ indices[i] ] = classes[ indices[i-1] ] + pena;
+            }
+        }
+        return indices;
+    }
+
+    int size() {
+        return rec.size();
+    }
+    // Suffix を辞書順に並べたときに idx 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
+    int getIdx(int idx) {
+        assert(0 &lt;= idx and idx &lt; size());
+        return rec[idx];
+    }
+    // SuffixArray 上で idx 番目と idx+1 番目の要素の最長共通接頭辞はいくらか？
+    int getLCP(int idx) {
+        assert(0 &lt;= idx and idx &lt; size());
+        return lcp[idx];
+    }
+
+    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて大きいか？
+    bool is_greater(string &amp;p, int idx) {
+        idx = getIdx(idx);
+        int N = size(), M = p.size(), x, y;
+        for(x=idx, y=0; x&lt;N and y&lt;M; x++, y++) {
+            if(s[x] &gt; p[y]) return true;
+            if(s[x] &lt; p[y]) return false;
+        }
+        return y &gt;= M and x &lt; N;
+    }
+
+    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて小さいか？
+    bool is_less(string &amp;p, int idx) {
+        idx = getIdx(idx);
+        int N = size(), M = p.size(), x, y;
+        for(x=idx, y=0; x&lt;N and y&lt;M; x++, y++) {
+            if(s[x] &lt; p[y]) return true;
+            if(s[x] &gt; p[y]) return false;
+        }
+        return x &gt;= N and y &lt; M;
+    }
+
+    // SA 配列上で、p より大きくなる要素であって最小のもの
+    // そのような要素が存在しなければ -1
+    int binary_search_greater(string &amp;p) {
+        int lb = -1, ub = len;
+        while(ub - lb &gt; 1) {
+            int mid = (ub + lb) / 2;
+            if(is_greater(p, mid)) ub = mid;
+            else lb = mid;
+        }
+
+        if(ub == len) return -1;
+        return ub;
+    }
+
+    // SA 配列上で、p より小さくなる要素であって最大のもの
+    // そのような要素が存在しなければ -1
+    int binary_search_less(string &amp;p) {
+        int lb = -1, ub = len;
+        while(ub - lb &gt; 1) {
+            int mid = (ub + lb) / 2;
+            if(is_less(p, mid)) lb = mid;
+            else ub = mid;
+        }
+        if(lb == -1) return -1;
+        return lb;
+    }
+
+    // LCP[i] := SA 配列上の i 番目と i+1 番目の最長共通接頭辞
+    vector&lt;int&gt; getLCPArray() {
+        vector&lt;int&gt; rank(len);
+        for(int i=0; i&lt;len; i++) {
+            rank[ rec[i] ] = i;
+        }
+
+        vector&lt;int&gt; res(len, -1);
+        int cons = 0;
+        // 空文字列に関しては探索しない！
+        for(int i=0; i+1&lt;len; i++) {
+            // i 文字目から始まる接尾辞に対して
+            // SA 配列上で直前の要素をもってくる
+            int pre = rec[ rank[i] - 1 ], cur = i;
+
+            while(s[cur + cons] == s[pre + cons]) cons++;
+            res[ rank[i] - 1 ] = cons;
+            cons = max&lt;int&gt;(0, cons - 1);
+        }
+        return res;
+    }
+};
+
+/*
+// Suffix Array: 構築 O(|S| log^2 |S|)
+// 蟻本の実装と多分同じ
+struct SuffixArray {
+    int N, k;
+    vector&lt;int&gt; rank, sa;
+    string s;
+
+    SuffixArray(string t) {
+        s = t, k = 1, N = t.length();
+        rank = sa = vector&lt;int&gt;(N+1);
+        build();
+    }
+
+    bool compare_sa(int i, int j) {
+        if(rank[i] != rank[j]) return rank[i] &lt; rank[j];
+        else {
+            int vi = (i+k &lt;= N ? rank[i+k] : -1);
+            int vj = (j+k &lt;= N ? rank[j+k] : -1);
+            return vi &lt; vj;
+        }
+    }
+
+    void build() {
+        for(int i=0; i&lt;=N; i++) {
+            sa[i] = i;
+            rank[i] = (i &lt; N ? s[i] : -1);
+        }
+
+        for(k=1; k&lt;=N; k*=2) {
+            sort(sa.begin(), sa.end(), [&amp;](int i, int j) {
+                return compare_sa(i, j);
+            });
+
+            vector&lt;int&gt; tmp(N+1, 0);
+            tmp[ sa[0] ] = 0;
+            for(int i=1; i&lt;=N; i++) {
+                tmp[ sa[i] ] = tmp[ sa[i-1] ] + (compare_sa(sa[i-1], sa[i]) ? 1 : 0);
+            }
+
+            swap(rank, tmp);
+        }
+    }
+
+    string get_substr(int idx) {
+        return s.substr(sa[idx]);
+    }
+
+    void output() {
+        for(int i=0; i&lt;=N; i++) {
+            fprintf(stderr, &quot;idx = %3d, str = %s\n&quot;, i, get_substr(i).c_str());
+        }
+    }
+
+    int operator[](int idx) const {
+        return sa[idx];
+    }
+};
+*/
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

@@ -1,0 +1,75 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/graph_003_warshall.cpp</h1>
+<ul>
+<li>category: ../../graph</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// ワーシャルフロイド法 (全点対最短路問題)
+// 計算量 O(|V|^3 )
+// 負の閉路があるかどうかは、d[i][i]が負になる頂点 i があるかどうかで判定可能
+
+template &lt;typename T&gt;
+vector&lt; vector&lt;T&gt; &gt; warshall(vector&lt; vector&lt; Edge&lt;T&gt; &gt; &gt; &amp;G) {
+    int V = G.size();
+    vector&lt; vector&lt;T&gt; &gt; d(V);
+    for(size_t i=0; i&lt;V; i++) {
+        for(size_t j=0; j&lt;V; j++) { {
+                if(i == j) d[i].push_back(0);
+                else d[i].push_back(numeric_limits&lt;T&gt;::max());
+            }
+        }
+    }
+
+    for(size_t i=0; i&lt;V; i++) {
+        for(size_t j=0; j&lt;G[i].size(); j++) {
+            Edge&lt;T&gt; e = G[i][j];
+            d[i][e.to] = e.cost;
+        }
+    }
+
+    for(size_t k=0; k&lt;V; k++) {
+        for(size_t i=0; i&lt;V; i++) {
+            for(size_t j=0; j&lt;V; j++) {
+                if(d[i][k] != numeric_limits&lt;T&gt;::max() &amp;&amp; d[k][j] != numeric_limits&lt;T&gt;::max())
+                    d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+            }
+        }
+    }
+    return d;
+}
+
+// (負の閉路があったら true になる bool minus)
+bool minus = false;
+vector&lt; vector&lt;Edge&lt;T&gt; &gt; &gt; G;
+vector&lt; vector&lt;T&gt; &gt; d = warshall(G);
+for(size_t i=0; i&lt;G.size(); i++) if(d[i][i] &lt; 0) minus = true;
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

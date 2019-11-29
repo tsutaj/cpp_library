@@ -1,0 +1,144 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/graph_022_max_independent_set.cpp</h1>
+<ul>
+<li>category: ../../graph</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Required</h2>
+<ul>
+<li>:warning: <a href="verify/verify_graph_022_max_independent_set.cpp.html">../../graph/verify/verify_graph_022_max_independent_set.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">// 無向非連結グラフの最大独立集合 (maximal independent set)
+// 頂点の集合 V であって、V の任意の 2 つをつなぐ辺が存在しない場合
+// 次数 1 であれば必ず採用・そうでなければ次数が大きいものから試す、
+// とすると枝刈りがきいて高速になる
+
+const int GRAPH_SIZE = 40;
+using gbit = bitset&lt;GRAPH_SIZE&gt;;
+
+// bitset には比較演算子がないので・・・
+namespace std {
+    bool operator&lt;(const gbit &amp;a, const gbit &amp;b) {
+        gbit ab = a ^ b;
+        int k = ab._Find_first();
+        return k &lt; GRAPH_SIZE and b[k] == 1;
+    }
+}
+
+template &lt;typename CostType = int&gt;
+struct MaximalIndependentSet {   
+    Graph&lt;int&gt; G;
+    int N; vector&lt;CostType&gt; costs;
+    gbit alive;
+    vector&lt;gbit&gt; adj;
+    bool weighted;
+    map&lt;gbit, CostType&gt; rec;
+
+    // 無向グラフを入力として与える
+    MaximalIndependentSet(Graph&lt;int&gt; G_,
+                          vector&lt;CostType&gt; costs_ = vector&lt;CostType&gt;())
+        : G(G_), costs(costs_) {
+
+        N = G_.size();
+        if(costs.size() != N) {
+            costs = vector&lt;CostType&gt;(N, 1);
+            weighted = false;
+        }
+        else weighted = true;
+
+        alive = gbit();
+        adj = vector&lt;gbit&gt;(N);
+
+        for(int i=0; i&lt;N; i++) {
+            alive[i] = true;
+            for(auto e : G[i]) adj[i][e.to] = 1;
+        }
+    }
+
+    inline int deg(int v) {
+        return (alive &amp; adj[v]).count();
+    }
+
+    // その時点で次数最大の頂点を見つける
+    int argmax_deg() {
+        int max_deg = -1, res = -1;
+        for(int i=0; i&lt;N; i++) {
+            if(!alive[i]) continue;
+            int d = deg(i);
+            if(d &gt; max_deg) max_deg = d, res = i;
+        }
+        return res;
+    }
+
+    pair&lt; CostType, gbit &gt; solve_part1() {
+        CostType d = 0; gbit res;
+        // 次数 0 または 1 の頂点を全部見つける
+        // 重みがある場合は 0 のみ
+        for(int i=0; i&lt;N; i++) {
+            if(alive[i] and !res[i] and deg(i) &lt;= !weighted) {
+                res[i] = true; d += costs[i];
+                res |= (alive &amp; adj[i]);
+            }
+        }
+        return make_pair(d, res);
+    }
+
+    CostType solve_part2() {
+        int v = argmax_deg(); CostType res = 0;
+        if(v &lt; 0) return CostType(0);
+
+        // v を使わない
+        alive[v] = false;
+        res = max(res, solve());
+
+        // v を使う
+        gbit vs = alive &amp; adj[v];
+        alive ^= vs;
+        res = max(res, solve() + costs[v]);
+        alive ^= vs;
+
+        alive[v] = true;
+        return res;
+    }
+
+    CostType solve() {
+        if(rec.count(alive)) return rec[alive];
+
+        CostType v1; gbit vs;
+        tie(v1, vs) = solve_part1();
+        alive ^= vs;
+        CostType v2 = solve_part2();
+        alive ^= vs;
+        return rec[alive] = v1 + v2;
+    }
+};
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

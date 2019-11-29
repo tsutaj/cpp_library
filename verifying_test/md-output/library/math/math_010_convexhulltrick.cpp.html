@@ -1,0 +1,170 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/math_010_convexhulltrick.cpp</h1>
+<ul>
+<li>category: ../../math</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// Convex Hull Trick (Verified: COLOCON 2018 Final C)
+// ・直線集合に直線を追加する
+// ・直線集合に含まれている関数の中で、 f(x) の最大値を求める
+
+// 直線を表現する型と、取得クエリの単位元 (最大値を返すので、大きい負の値とか)
+template&lt;typename Type, const Type id&gt;
+struct ConvexHullTrick {
+private:
+    using Response = pair&lt;Type, int&gt;;
+    struct Line {
+        Type a, b;
+        Line (Type a_ = 0, Type b_ = 0) : a(a_), b(b_) {}
+        Type get(Type x) { return a*x + b; }
+    };
+
+    struct Node {
+        Line line;
+        Node *lhs, *rhs;
+        int index;
+        Node(Line line_, int index_=-1) : line(line_), lhs(nullptr), rhs(nullptr), index(index_) {}
+        ~Node() {
+            if(lhs) delete lhs;
+            if(rhs) delete rhs;
+        }
+    };
+
+    int N;
+    vector&lt;Type&gt; pos;
+    Node *root;
+
+public:
+    // x の取りうる値を sort かつ unique にしたもの
+    ConvexHullTrick(const vector&lt;Type&gt; &amp;pos_) : N(pos_.size()), pos(pos_), root(nullptr) {}
+    ~ConvexHullTrick() {
+        if(root) delete root;
+    }
+
+    // 直線 f(x) = a*x + b を追加する (オプション: インデックスの情報も保持したいならする)
+    void insert(Type a, Type b, int idx=-1) {
+        Line line(a, b);
+        root = update(root, 0, N, line, idx);
+    }
+
+    // 直線集合 F において、f(x) の最大値を返す
+    Type get_value(Type x) const {
+        int t = lower_bound(pos.begin(), pos.end(), x) - pos.begin();
+        assert(t &lt; N &amp;&amp; pos[t] == x);
+        return query(root, 0, N, t).first;
+    }
+
+    // 直線集合 F において、f(x) の最大値を実現する直線のインデックスを返す
+    // (複数ある場合はインデックスが最も小さいものを返す)
+    int get_index(Type x) const {
+        int t = lower_bound(pos.begin(), pos.end(), x) - pos.begin();
+        assert(t &lt; N &amp;&amp; pos[t] == x);
+        return query(root, 0, N, t).second;
+    }
+
+private:
+    // クエリで処理する区間は閉区間なので注意！！！
+    Node* update(Node* p, int lb, int ub, Line&amp; l, int idx=-1) {
+        if(!p) return new Node(l, idx);
+        if(p -&gt; line.get(pos[lb    ]) &gt;= l.get(pos[lb    ]) &amp;&amp;
+           p -&gt; line.get(pos[ub - 1]) &gt;= l.get(pos[ub - 1])) {
+            return p;
+        }
+
+        if(p -&gt; line.get(pos[lb    ]) &lt;= l.get(pos[lb    ]) &amp;&amp;
+           p -&gt; line.get(pos[ub - 1]) &lt;= l.get(pos[ub - 1])) {
+            p -&gt; line = l;
+            p -&gt; index = idx;
+            return p;
+        }
+
+        int mid = (ub + lb) / 2;
+        if(p -&gt; line.get(pos[mid]) &lt; l.get(pos[mid])) {
+            swap(p -&gt; line, l);
+            swap(p -&gt; index, idx);
+        }
+        if(p -&gt; line.get(pos[lb]) &lt;= l.get(pos[lb])) {
+            p -&gt; lhs = update(p -&gt; lhs, lb, mid, l, idx);
+        }
+        else {
+            p -&gt; rhs = update(p -&gt; rhs, mid, ub, l, idx);
+        }
+        return p;
+    }
+
+    Response comp(Response lhs, Response rhs) const {
+        if(lhs.first != rhs.first) {
+            return lhs.first &gt; rhs.first ? lhs : rhs;
+        }
+        else {
+            return lhs.second &lt; rhs.second ? lhs : rhs;
+        }
+    }
+
+    Response query(Node *p, int lb, int ub, int t) const {
+        if(!p) return make_pair(id, -1);
+        if(ub - lb == 1) return make_pair(p -&gt; line.get(pos[t]), p -&gt; index);
+
+        int mid = (ub + lb) / 2;
+        Response cur = make_pair(p -&gt; line.get(pos[t]), p -&gt; index);
+        if(t &lt; mid) {
+            return comp(cur, query(p -&gt; lhs, lb, mid, t));
+        }
+        else {
+            return comp(cur, query(p -&gt; rhs, mid, ub, t));
+        }
+    }
+};
+
+// 使用例
+int main() {
+    ll N; scanf(&quot;%lld&quot;, &amp;N);
+    vector&lt;ll&gt; points(N);
+    iota(points.begin(), points.end(), 1);
+
+    vector&lt;ll&gt; X(N+1), Y(N+1);
+
+    ConvexHullTrick&lt;ll, LLONG_MIN&gt; cht(points);
+    for(ll j=1; j&lt;=N; j++) {
+        ll A; scanf(&quot;%lld&quot;, &amp;A);
+        ll x = 2*j, y = -(A + j*j);
+        X[j] = -2*j;
+        Y[j] = A + j*j;
+        cht.insert(x, y, j);
+    }
+
+    for(auto p : points) {
+        int idx = cht.get_index(p);
+        printf(&quot;%lld\n&quot;, X[idx]*p + Y[idx] + p*p);
+    }
+    return 0;
+}
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

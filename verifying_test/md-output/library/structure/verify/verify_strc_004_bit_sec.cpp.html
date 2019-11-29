@@ -1,0 +1,71 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/verify/verify_strc_004_bit_sec.cpp</h1>
+<ul>
+<li>category: ../../structure/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../strc_002_bit.cpp.html">../../structure/strc_002_bit.cpp</a></li>
+<li>:warning: <a href="../strc_004_bit_sec.cpp.html">../../structure/strc_004_bit_sec.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#include &quot;../strc_002_bit.cpp&quot;
+#include &quot;../strc_004_bit_sec.cpp&quot;
+
+// Verified on Apr 27, 2019
+void DSL_2_G() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+
+    using ll = long long int;
+    BIT_sec&lt;ll&gt; bit(N);
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x;
+            bit.add(s, t, x);
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t;
+            cout &lt;&lt; bit.sum(s, t) &lt;&lt; endl;
+        }
+    }
+}
+
+int main() {
+    DSL_2_G();
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

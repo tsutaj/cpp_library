@@ -1,0 +1,253 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/verify/verify_graph_020_HLDecomposition.cpp</h1>
+<ul>
+<li>category: ../../graph/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../graph_020_HLDecomposition.cpp.html">../../graph/graph_020_HLDecomposition.cpp</a></li>
+<li>:warning: <a href="../../math/math_004_matrix.cpp.html">../../math/math_004_matrix.cpp</a></li>
+<li>:warning: <a href="../../math/math_017_modint.cpp.html">../../math/math_017_modint.cpp</a></li>
+<li>:warning: <a href="../../math/math_024_fixed_matrix.cpp.html">../../math/math_024_fixed_matrix.cpp</a></li>
+<li>:warning: <a href="../../structure/strc_008_abst_segtree.cpp.html">../../structure/strc_008_abst_segtree.cpp</a></li>
+<li>:warning: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">../../structure/strc_009_abst_lazy_segtree.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#include &lt;tuple&gt;
+#include &lt;cassert&gt;
+#include &lt;valarray&gt;
+using namespace std;
+#include &quot;../graph_020_HLDecomposition.cpp&quot;
+#include &quot;../../structure/strc_008_abst_segtree.cpp&quot;
+#include &quot;../../structure/strc_009_abst_lazy_segtree.cpp&quot;
+#include &quot;../../math/math_004_matrix.cpp&quot;
+#include &quot;../../math/math_017_modint.cpp&quot;
+#include &quot;../../math/math_024_fixed_matrix.cpp&quot;
+
+void GRL_5_C() {
+    int N; cin &gt;&gt; N;
+    HLD hl(N);
+    for(int i=0; i&lt;N; i++) {
+        int c; cin &gt;&gt; c;
+        for(int j=0; j&lt;c; j++) {
+            int u = i, v; cin &gt;&gt; v;
+            hl.add_edge(u, v);
+        }
+    }
+    hl.build();
+
+    int Q; cin &gt;&gt; Q;
+    for(int i=0; i&lt;Q; i++) {
+        int u, v; cin &gt;&gt; u &gt;&gt; v;
+        cout &lt;&lt; hl.lca(u, v) &lt;&lt; endl;
+    }
+}
+
+void ABC014_D() {
+    int N; cin &gt;&gt; N;
+    HLD hl(N);
+    for(int i=0; i&lt;N-1; i++) {
+        int u, v; cin &gt;&gt; u &gt;&gt; v;
+        u--; v--;
+        hl.add_edge(u, v);
+    }
+    hl.build();
+
+    int Q; cin &gt;&gt; Q;
+    for(int i=0; i&lt;Q; i++) {
+        int u, v; cin &gt;&gt; u &gt;&gt; v;
+        u--; v--;
+        cout &lt;&lt; hl.distance(u, v) + 1 &lt;&lt; endl;
+    }
+}
+
+void AOJ2871() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    HLD hl(N);
+    for(int i=1; i&lt;N; i++) {
+        int u = i, v; cin &gt;&gt; v; v--;
+        hl.add_edge(u, v);
+    }
+    hl.build();
+
+    vector&lt;int&gt; color(N);
+    auto &amp;in = hl.in, &amp;out = hl.out;
+
+    for(int i=0; i&lt;N; i++) {
+        char c; cin &gt;&gt; c;
+        color[ in[i] ] = (c == 'G' ? 1 : -1);
+    }
+    LazySegmentTree&lt;int, int&gt; seg(N, 0, 1,
+                                  [](int a, int b) { return a * b; },
+                                  [](int a, int b) { return a + b; },
+                                  [](int a, int b) { return a * b; },
+                                  [](int a, int x) { return a; },
+                                  color);
+    // seg.dump();
+    for(int i=0; i&lt;Q; i++) {
+        int v; cin &gt;&gt; v; v--;
+        seg.update(in[v], out[v], -1);
+        int res = seg.query(in[0], out[0]);
+        if(res &lt; 0) cout &lt;&lt; &quot;cauliflower&quot; &lt;&lt; endl;
+        else cout &lt;&lt; &quot;broccoli&quot; &lt;&lt; endl;
+        // seg.dump();
+    }
+}
+
+void yuki_650() {
+    using mint = ModInt&lt;1000000007&gt;;
+    int N; cin &gt;&gt; N;
+    HLD hl(N);
+    vector&lt;int&gt; u(N), v(N);
+    for(int i=0; i&lt;N-1; i++) {
+        cin &gt;&gt; u[i] &gt;&gt; v[i];
+        hl.add_edge(u[i], v[i]);
+    }
+
+    hl.build();
+    auto &amp;ord = hl.in;
+
+    using Mat = Matrix&lt;mint&gt;;
+    Mat I = eigen&lt;mint&gt;(2);
+    LazySegmentTree&lt;Mat, Mat&gt; seg(N, I, I,
+                                  [](Mat a, Mat b) { return b; },
+                                  [](Mat a, Mat b) { return a * b; },
+                                  [](Mat a, Mat b) { return b; },
+                                  [](Mat a, int x) { return a; });
+    auto f = [&amp;](int l, int r) { return seg.query(l, r); };
+    auto m = [&amp;](Mat a, Mat b) { return a * b; };
+    int Q; cin &gt;&gt; Q;
+    for(int i=0; i&lt;Q; i++) {
+        char q; cin &gt;&gt; q;
+        if(q == 'x') {
+            int e; mint ul, ur, dl, dr; cin &gt;&gt; e &gt;&gt; ul &gt;&gt; ur &gt;&gt; dl &gt;&gt; dr;
+            Mat mat(2, 2);
+            mat[0] = {ul, ur};
+            mat[1] = {dl, dr};
+            hl.query_edges(u[e], v[e], [&amp;mat, &amp;seg](int l, int r) { seg.update(l, r, mat); });
+        }
+        if(q == 'g') {
+            int x, y; cin &gt;&gt; x &gt;&gt; y;
+            Mat res = hl.query_edges(x, y, I, f, m);
+            cout &lt;&lt; res[0][0] &lt;&lt; &quot; &quot; &lt;&lt; res[0][1] &lt;&lt; &quot; &quot; &lt;&lt; res[1][0] &lt;&lt; &quot; &quot; &lt;&lt; res[1][1] &lt;&lt; endl;
+        }
+    }
+}
+
+void yuki_650_fixed() {
+    using mint = ModInt&lt;1000000007&gt;;
+    int N; cin &gt;&gt; N;
+    HLD hl(N);
+    vector&lt;int&gt; u(N), v(N);
+    for(int i=0; i&lt;N-1; i++) {
+        cin &gt;&gt; u[i] &gt;&gt; v[i];
+        hl.add_edge(u[i], v[i]);
+    }
+
+    hl.build();
+    auto &amp;ord = hl.in;
+
+    using Mat = FixedMatrix&lt;mint, 2, 2&gt;;
+    Mat I = eigen&lt;mint, 2, 2&gt;();
+    LazySegmentTree&lt;Mat, Mat&gt; seg(N, I, I,
+                                  [](Mat a, Mat b) { return b; },
+                                  [](Mat a, Mat b) { return a * b; },
+                                  [](Mat a, Mat b) { return b; },
+                                  [](Mat a, int x) { return a; });
+    auto f = [&amp;](int l, int r) { return seg.query(l, r); };
+    auto m = [&amp;](Mat a, Mat b) { return a * b; };
+    int Q; cin &gt;&gt; Q;
+    for(int i=0; i&lt;Q; i++) {
+        char q; cin &gt;&gt; q;
+        if(q == 'x') {
+            int e; mint ul, ur, dl, dr; cin &gt;&gt; e &gt;&gt; ul &gt;&gt; ur &gt;&gt; dl &gt;&gt; dr;
+            Mat mat;
+            mat.at(0, 0) = ul, mat.at(0, 1) = ur;
+            mat.at(1, 0) = dl, mat.at(1, 1) = dr;
+            hl.query_edges(u[e], v[e], [&amp;mat, &amp;seg](int l, int r) { seg.update(l, r, mat); });
+        }
+        if(q == 'g') {
+            int x, y; cin &gt;&gt; x &gt;&gt; y;
+            Mat res = hl.query_edges(x, y, I, f, m);
+            cout &lt;&lt; res.at(0, 0) &lt;&lt; &quot; &quot; &lt;&lt; res.at(0, 1) &lt;&lt; &quot; &quot; &lt;&lt; res.at(1, 0) &lt;&lt; &quot; &quot; &lt;&lt; res.at(1, 1) &lt;&lt; endl;
+        }
+    }    
+}
+
+void yuki_399() {
+    int N; scanf(&quot;%d&quot;, &amp;N);
+    HLD hl(N);
+    for(int i=0; i&lt;N-1; i++) {
+        int u, v; scanf(&quot;%d%d&quot;, &amp;u, &amp;v);
+        u--; v--;
+        hl.add_edge(u, v);
+    }
+    hl.build();
+
+    using int64 = long long int;
+    LazySegmentTree&lt;int64, int64&gt; seg(N, 0, 0,
+                                      [](int64 a, int64 b) { return a + b; },
+                                      [](int64 a, int64 b) { return a + b; },
+                                      [](int64 a, int64 b) { return a + b; },
+                                      [](int64 a, int   x) { return a * x; });
+
+    auto f = [&amp;](int   l, int   r) { return seg.query(l, r); };
+    auto g = [&amp;](int   l, int   r) { seg.update(l, r, 1); };
+    auto m = [&amp;](int64 a, int64 b) { return a + b; };
+
+    int Q; scanf(&quot;%d&quot;, &amp;Q);
+    int64 ans = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int u, v; scanf(&quot;%d%d&quot;, &amp;u, &amp;v);
+        u--; v--;
+        ans += hl.distance(u, v) + 1;
+        ans += hl.query_vertices(u, v, 0LL, f, m);
+        hl.query_vertices(u, v, g);
+    }
+
+    printf(&quot;%lld\n&quot;, ans);
+}
+
+int main() {
+    // GRL_5_C();  // LCA
+    // ABC014_D(); // distance
+    // AOJ2871();  // query (subtree)
+    // yuki_650(); // query (edges)
+    yuki_650_fixed();
+    // yuki_399(); // query (vertices)
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

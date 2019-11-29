@@ -1,0 +1,332 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/verify/verify_strc_009_abst_lazy_segtree.cpp</h1>
+<ul>
+<li>category: ../../structure/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../strc_009_abst_lazy_segtree.cpp.html">../../structure/strc_009_abst_lazy_segtree.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;functional&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;climits&gt;
+#include &lt;map&gt;
+#include &lt;utility&gt;
+using namespace std;
+#include &quot;../strc_009_abst_lazy_segtree.cpp&quot;
+
+// Verified on Apr 27, 2019
+void DSL_2_D() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    LazySegmentTree&lt;int, int&gt; seg(N, INT_MAX, INT_MAX,
+                                  [](int a, int b) { return b;         },  // upd
+                                  [](int a, int b) { return min(a, b); },  // cmb
+                                  [](int a, int b) { return b;         },  // lzy
+                                  [](int a, int x) { return a;         }); // acc
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s; cin &gt;&gt; s;
+            s -= indexed;
+            cout &lt;&lt; seg.query(s, s+1) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }
+}
+
+void DSL_2_D_pair() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using Pair = pair&lt;int, int&gt;;
+    LazySegmentTree&lt;int, Pair&gt; seg(N, INT_MAX, make_pair(0, 0),
+                                   [](int x, Pair p) {
+                                       if(p.second == 0) return x;
+                                       return p.first;
+                                   },
+                                   [](int a, int b) { return min(a, b); },
+                                   [](Pair a, Pair b) {
+                                       return b.second ? b : a;
+                                   },
+                                   [](Pair a, int x) { return a; },
+                                   vector&lt;int&gt;(N, INT_MAX));
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int q; cin &gt;&gt; q;
+        if(q == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x;
+            s -= indexed, t -= indexed, t++;
+            seg.update(s, t, make_pair(x, 1));
+        }
+        if(q == 1) {
+            int x; cin &gt;&gt; x; x -= indexed;
+            cout &lt;&lt; seg.query(x, x+1) &lt;&lt; endl;
+        }
+    }
+}
+
+// Verified on Apr 27, 2019
+void DSL_2_E() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    LazySegmentTree&lt;int, int&gt; seg(N, 0, 0,
+                                  [](int a, int b) { return a + b; },  // upd
+                                  [](int a, int b) { return a + b; },  // cmb
+                                  [](int a, int b) { return a + b; },  // lzy
+                                  [](int a, int x) { return a * x; }); // acc
+
+    int indexed = 1;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s; cin &gt;&gt; s;
+            s -= indexed;
+            cout &lt;&lt; seg.query(s, s+1) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+// Verified on Apr 27, 2019
+void DSL_2_F() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    LazySegmentTree&lt;int, int&gt; seg(N, INT_MAX, 0,
+                                  [](int a, int b) { return b;         },  // upd
+                                  [](int a, int b) { return min(a, b); },  // cmb
+                                  [](int a, int b) { return b;         },  // lzy
+                                  [](int a, int x) { return a;         }); // acc
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t; t++;
+            s -= indexed; t -= indexed;
+            cout &lt;&lt; seg.query(s, t) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+// Verified on Apr 27, 2019
+void DSL_2_G() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using ll = long long int;
+    LazySegmentTree&lt;ll, ll&gt; seg(N, 0, 0,
+                                  [](ll a, ll  b) { return a + b; },  // upd
+                                  [](ll a, ll  b) { return a + b; },  // cmb
+                                  [](ll a, ll  b) { return a + b; },  // lzy
+                                  [](ll a, int x) { return a * x; }); // acc
+
+    int indexed = 1;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t; t++;
+            s -= indexed; t -= indexed;
+            cout &lt;&lt; seg.query(s, t) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+// Verified on Apr 27, 2019
+void DSL_2_H() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using ll = long long int;
+    LazySegmentTree&lt;ll, ll&gt; seg(N, INT_MAX, 0,
+                                [](ll a, ll  b) { return a + b;     },  // upd
+                                [](ll a, ll  b) { return min(a, b); },  // cmb
+                                [](ll a, ll  b) { return a + b;     },  // lzy
+                                [](ll a, int x) { return a;         },  // acc
+                                vector&lt;ll&gt;(N));
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t; t++;
+            s -= indexed; t -= indexed;
+            cout &lt;&lt; seg.query(s, t) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+// Verified on Apr 27, 2019
+void DSL_2_H_simple() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using ll = long long int;
+    using Pair = pair&lt;ll, ll&gt;;
+    LazySegmentTree&lt;ll, Pair&gt; seg(N, INT_MAX, make_pair(0, 1),
+                                  [](ll   a, Pair b) { return a * b.second + b.first; },  // upd
+                                  [](ll   a, ll   b) { return min(a, b); },  // cmb
+                                  [](Pair a, Pair b) { return make_pair(a.first * b.second + b.first, a.second &amp; b.second); },  // lzy
+                                  [](Pair a, int  x) { return a; }); // acc
+
+    seg.update(0, N, make_pair(0, 0));
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, make_pair(x, 1));
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t; t++;
+            s -= indexed; t -= indexed;
+            cout &lt;&lt; seg.query(s, t) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+
+// Verified on Apr 27, 2019
+void DSL_2_I() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using ll = long long int;
+    LazySegmentTree&lt;ll, ll&gt; seg(N, 0, 0,
+                                [](ll a, ll  b) { return b;     },  // upd
+                                [](ll a, ll  b) { return a + b; },  // cmb
+                                [](ll a, ll  b) { return b;     },  // lzy
+                                [](ll a, int x) { return a * x; },  // acc
+                                vector&lt;ll&gt;(N));
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s, t; cin &gt;&gt; s &gt;&gt; t; t++;
+            s -= indexed; t -= indexed;
+            cout &lt;&lt; seg.query(s, t) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+// Verified on May 31, 2019
+void ABC128_E() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+
+    map&lt;int, int&gt; cmp; int id = 0;
+    vector&lt;int&gt; s(N), t(N), x(N), p(Q);
+    for(int i=0; i&lt;N; i++) {
+        cin &gt;&gt; s[i] &gt;&gt; t[i] &gt;&gt; x[i];
+        s[i] = max(0, s[i] - x[i]);
+        t[i] = max(0, t[i] - x[i]);
+        cmp[ s[i] ]++; cmp[ t[i] ]++; cmp[ t[i] - 1 ]++;
+    }
+    for(int i=0; i&lt;Q; i++) {
+        cin &gt;&gt; p[i];
+        cmp[ p[i] ]++;
+    }
+    for(auto &amp;e : cmp) e.second = id++;
+    for(int i=0; i&lt;N; i++) {
+        s[i] = cmp[ s[i] ], t[i] = cmp[ t[i] ];
+    }
+    for(int i=0; i&lt;Q; i++) {
+        p[i] = cmp[ p[i] ];
+    }
+
+    LazySegmentTree&lt;int, int&gt; seg(id, INT_MAX, INT_MAX,
+                                  [](int a, int b) { return min(a, b); },
+                                  [](int a, int b) { return min(a, b); },
+                                  [](int a, int b) { return min(a, b); },
+                                  [](int a, int x) { return a; });
+
+    for(int i=0; i&lt;N; i++) {
+        seg.update(s[i], t[i], x[i]);
+    }
+    for(int i=0; i&lt;Q; i++) {
+        int res = seg.query(p[i], p[i]+1);
+        if(res == INT_MAX) cout &lt;&lt; -1 &lt;&lt; endl;
+        else cout &lt;&lt; res &lt;&lt; endl;
+    }
+}
+
+/*
+void yuki_749() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+
+
+
+}
+*/
+
+int main() {
+    // DSL_2_D();
+    // DSL_2_D_pair();
+    // DSL_2_E();
+    // DSL_2_F();
+    // DSL_2_G();
+    // DSL_2_H();
+    DSL_2_H_simple();
+    // DSL_2_I();
+    // ABC128_E();
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

@@ -1,0 +1,109 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/graph_001_bellman.cpp</h1>
+<ul>
+<li>category: ../../graph</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">/***** ベルマンフォード法 *****/
+// 計算量 O(|V| |E|)
+// 単一始点最短路問題を解く。各辺の重みは負数でもよい
+// 通常 |V| - 1 回実行してループを抜けるが、負のコストの閉路が存在する場合は
+// V 回目でも更新が発生する → 負の閉路の検出にも使える
+
+// グラフに、s から到達可能な負の閉路があるかどうかを検出する
+template &lt;typename T&gt;
+bool find_negative_loop(vector&lt; vector&lt; Edge&lt;T&gt; &gt; &gt; &amp;G, int s) {
+    int V = G.size();
+    vector&lt;T&gt; d(V);
+    for(int i=0; i&lt;V; i++) d[i] = numeric_limits&lt;T&gt;::max(); d[s] = 0;
+    for(int i=0; i&lt;V; i++) {
+        for(int j=0; j&lt;V; j++) {
+            for(int k=0; k&lt;G[j].size(); k++) {
+                Edge&lt;T&gt; e = G[j][k];
+                if(d[j] != numeric_limits&lt;T&gt;::max() &amp;&amp; d[e.to] &gt; d[j] + e.cost) {
+                    d[e.to] = d[j] + e.cost;
+
+                    // n 回目にも更新があるなら負の閉路が存在する
+                    if(i == V - 1) return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// グラフ全体を見て、負の閉路があるかどうかを検出する
+template &lt;typename T&gt;
+bool find_negative_loop_whole(vector&lt; vector&lt; Edge&lt;T&gt; &gt; &gt; &amp;G) {
+    int V = G.size();
+    vector&lt;T&gt; d(V);
+    fill(d.begin(), d.end(), 0);
+    for(int i=0; i&lt;V; i++) {
+        for(int j=0; j&lt;V; j++) {
+            for(int k=0; k&lt;G[j].size(); k++) {
+                Edge&lt;T&gt; e = G[j][k];
+                if(d[e.to] &gt; d[j] + e.cost) {
+                    d[e.to] = d[j] + e.cost;
+
+                    // n 回目にも更新があるなら負の閉路が存在する
+                    if(i == V - 1) return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// 頂点の数V, 辺の数Eのグラフにおいて、 s 番目の頂点から各頂点への最短距離を求める
+template &lt;typename T&gt;
+vector&lt;T&gt; bellman(vector&lt; vector&lt; Edge&lt;T&gt; &gt; &gt; &amp;G, int s) {
+    // 頂点の数と辺の数を数える
+    int V = G.size();
+    vector&lt;T&gt; d(V);
+    for(int i=0; i&lt;V; i++) d[i] = numeric_limits&lt;T&gt;::max();
+    d[s] = 0;
+
+    while(true) {
+        bool update = false;
+        for(int i=0; i&lt;V; i++) {
+            for(int j=0; j&lt;G[i].size(); j++) {
+                Edge&lt;T&gt; e = G[i][j];
+                if(d[i] != numeric_limits&lt;T&gt;::max() &amp;&amp; d[e.to] &gt; d[i] + e.cost) {
+                    d[e.to] = d[i] + e.cost;
+                    update = true;
+                }
+            }
+        }
+        if(!update) break;
+    }
+    return d;
+}
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

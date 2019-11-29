@@ -1,0 +1,83 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/math_011_fft.cpp</h1>
+<ul>
+<li>category: ../../math</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// FFT (高速フーリエ変換)
+// Verified: 高速フーリエ変換 (ATC 001 C)
+
+using Complex = complex&lt;double&gt;;
+vector&lt;Complex&gt; dft(vector&lt;Complex&gt; A, int N, int sgn = 1) {
+    for(int i=0, j=1; j&lt;N-1; j++) {
+        for(int k=N &gt;&gt; 1; k&gt;(i ^= k); k &gt;&gt;= 1);
+        if(j &lt; i) swap(A[i], A[j]);
+    }
+
+    for(int m=2; m&lt;=N; m*=2) {
+        Complex zeta(cos(2.0 * M_PI / m), sin(2.0 * M_PI / m) * sgn);
+
+        for(int i=0; i&lt;N; i+=m) {
+            Complex zeta_pow = 1;
+            for(int u=i, v=i+m/2; v&lt;i+m; u++, v++) {
+                Complex vl = A[u], vr = zeta_pow * A[v];
+                A[u] = vl + vr;
+                A[v] = vl - vr;
+                zeta_pow = zeta_pow * zeta;
+            }
+        }
+    }
+    return A;
+}
+
+vector&lt;Complex&gt; inv_dft(vector&lt;Complex&gt; A, int N) {
+    A = dft(A, N, -1);
+    for(int i=0; i&lt;N; i++) {
+        A[i] /= N;
+    }
+    return A;
+}
+
+vector&lt;Complex&gt; multiply(vector&lt;Complex&gt; A, vector&lt;Complex&gt; B) {
+    int sz = A.size() + B.size() + 1;
+    int N = 1; while(N &lt; sz) N *= 2;
+
+    A.resize(N), B.resize(N);
+    A = dft(A, N), B = dft(B, N);
+
+    vector&lt;Complex&gt; F(N);
+    for(int i=0; i&lt;N; i++) {
+        F[i] = A[i] * B[i];
+    }
+    return inv_dft(F, N);
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

@@ -1,0 +1,148 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/math_004_matrix.cpp</h1>
+<ul>
+<li>category: ../../math</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Required</h2>
+<ul>
+<li>:warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">../../graph/verify/verify_graph_020_HLDecomposition.cpp</a></li>
+<li>:warning: <a href="verify/verify_math_004_matrix.cpp.html">../../math/verify/verify_math_004_matrix.cpp</a></li>
+<li>:warning: <a href="verify/verify_math_022_matrix_utils_real.cpp.html">../../math/verify/verify_math_022_matrix_utils_real.cpp</a></li>
+<li>:warning: <a href="verify/verify_math_023_matrix_utils_modp.cpp.html">../../math/verify/verify_math_023_matrix_utils_modp.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">// 行列ライブラリ
+
+// size(): 行数を返す (列数は mat[0].size() で)
+// 演算子: 複合代入 (+=, *=, -=), 単項 (-), 二項 (+, -, *, ==)
+// eigen(N): N*N 単位行列を返す
+// pow(mat, k): mat の k 乗を返す
+
+template &lt;typename T&gt;
+struct Matrix {
+    vector&lt; vector&lt;T&gt; &gt; mat;
+    Matrix() {}
+    Matrix(int h, int w, T val = T(0)) : mat(h, vector&lt;T&gt;(w, val)) {}
+    size_t size() const { return mat.size(); }
+    const vector&lt;T&gt;&amp; operator[](int i) const { return mat[i]; }
+    vector&lt;T&gt;&amp; operator[](int i) { return mat[i]; }
+
+    Matrix&lt;T&gt; &amp;operator+=(const Matrix&lt;T&gt;&amp; rhs) {
+        assert(mat.size() == rhs.size());
+        assert(mat[0].size() == rhs[0].size());
+        for(size_t i=0; i&lt;mat.size(); i++) {
+            for(size_t j=0; j&lt;mat[0].size(); j++) {
+                mat[i][j] += rhs[i][j];
+            }
+        }
+        return *this;
+    }
+
+    Matrix&lt;T&gt; operator-() const {
+        Matrix&lt;T&gt; res(*this);
+        for(size_t i=0; i&lt;res.size(); i++) {
+            for(size_t j=0; j&lt;res[0].size(); j++) {
+                res[i][j] *= T(-1);
+            }
+        }
+        return res;
+    }
+
+    Matrix&lt;T&gt;&amp; operator-=(const Matrix&lt;T&gt;&amp; rhs) {
+        return (Matrix&lt;T&gt;(*this) += -rhs);
+    }
+
+    Matrix&lt;T&gt;&amp; operator*=(const Matrix&lt;T&gt;&amp; rhs) {
+        assert(mat[0].size() == rhs.size());
+        size_t H = mat.size(), W = rhs[0].size(), C = rhs.size();
+        Matrix&lt;T&gt; res(H, W);
+        for(size_t i=0; i&lt;H; i++) {
+            for(size_t j=0; j&lt;W; j++) {
+                for(size_t k=0; k&lt;C; k++) {
+                    res[i][j] += mat[i][k] * rhs[k][j];
+                }
+            }
+        }
+        this-&gt;mat = res.mat;
+        return *this;
+    }
+
+    Matrix&lt;T&gt; operator+(const Matrix&lt;T&gt;&amp; rhs) {
+        return (Matrix&lt;T&gt;(*this) += rhs);
+    }
+
+    Matrix&lt;T&gt; operator*(const Matrix&lt;T&gt;&amp; rhs) {
+        return (Matrix&lt;T&gt;(*this) *= rhs);
+    }
+
+    Matrix&lt;T&gt; operator-(const Matrix&lt;T&gt; &amp;rhs) {
+        return (Matrix&lt;T&gt;(*this) -= rhs);
+    }
+
+    bool operator==(const Matrix&lt;T&gt; &amp;rhs) const {
+        return this-&gt;mat == rhs.mat;
+    }
+    bool operator!=(const Matrix&lt;T&gt; &amp;rhs) const {
+        return !(*this == rhs);
+    }
+};
+
+template &lt;typename T&gt;
+Matrix&lt;T&gt; eigen(size_t N) {
+    Matrix&lt;T&gt; res(N, N, 0);
+    for(size_t i=0; i&lt;N; i++) res[i][i] = T(1);
+    return res;
+}
+
+template &lt;typename T&gt;
+Matrix&lt;T&gt; pow(Matrix&lt;T&gt; mat, long long int k) {
+    Matrix&lt;T&gt; res = eigen&lt;T&gt;(mat.size());
+    for(; k&gt;0; k&gt;&gt;=1) {
+        if(k &amp; 1) res *= mat;
+        mat *= mat;
+    }
+    return res;
+}
+
+template &lt;typename T&gt;
+ostream&amp; operator&lt;&lt; (ostream&amp; out, Matrix&lt;T&gt; mat) {
+    int H = mat.size(), W = mat[0].size();
+    out &lt;&lt; &quot;[&quot; &lt;&lt; endl;
+    for(int i=0; i&lt;H; i++) {
+        out &lt;&lt; &quot;  [ &quot;;
+        for(int j=0; j&lt;W; j++) out &lt;&lt; mat[i][j] &lt;&lt; &quot; &quot;;
+        out &lt;&lt; &quot;]&quot; &lt;&lt; endl;
+    }
+    out &lt;&lt; &quot;]&quot; &lt;&lt; endl;
+    return out;
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

@@ -1,0 +1,144 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/verify/verify_strc_022_dual_segtree.cpp</h1>
+<ul>
+<li>category: ../../structure/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../strc_022_dual_segtree.cpp.html">../../structure/strc_022_dual_segtree.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#include &lt;climits&gt;
+#include &lt;map&gt;
+using namespace std;
+#include &quot;../strc_022_dual_segtree.cpp&quot;
+
+void DSL_2_D() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    using Pair = pair&lt;int, int&gt;;
+    DualSegmentTree&lt;int, Pair&gt; seg(make_pair(0, 0),
+                                   [](int x, Pair p) {
+                                       if(p.second == 0) return x;
+                                       return p.first;
+                                   },
+                                   [](Pair a, Pair b) {
+                                       return b.second ? b : a;
+                                   },
+                                   vector&lt;int&gt;(N, INT_MAX));
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int q; cin &gt;&gt; q;
+        if(q == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x;
+            s -= indexed, t -= indexed, t++;
+            seg.update(s, t, make_pair(x, 1));
+        }
+        if(q == 1) {
+            int x; cin &gt;&gt; x; x -= indexed;
+            cout &lt;&lt; seg.query(x) &lt;&lt; endl;
+        }
+    }
+}
+
+void DSL_2_E() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    DualSegmentTree&lt;int, int&gt; seg(0,
+                                  [](int a, int b) { return a + b; },
+                                  [](int a, int b) { return a + b; },
+                                  vector&lt;int&gt;(N, 0));
+
+    int indexed = 1;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        if(query_type == 0) {
+            int s, t, x; cin &gt;&gt; s &gt;&gt; t &gt;&gt; x; t++;
+            s -= indexed, t -= indexed;
+            seg.update(s, t, x);
+        }
+        if(query_type == 1) {
+            int s; cin &gt;&gt; s;
+            s -= indexed;
+            cout &lt;&lt; seg.query(s) &lt;&lt; endl;
+        }
+        // seg.dump();
+    }    
+}
+
+void ABC128_E() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+
+    map&lt;int, int&gt; cmp; int id = 0;
+    vector&lt;int&gt; s(N), t(N), x(N), p(Q);
+    for(int i=0; i&lt;N; i++) {
+        cin &gt;&gt; s[i] &gt;&gt; t[i] &gt;&gt; x[i];
+        s[i] = max(0, s[i] - x[i]);
+        t[i] = max(0, t[i] - x[i]);
+        cmp[ s[i] ]++; cmp[ t[i] ]++; cmp[ t[i] - 1 ]++;
+    }
+    for(int i=0; i&lt;Q; i++) {
+        cin &gt;&gt; p[i];
+        cmp[ p[i] ]++;
+    }
+    for(auto &amp;e : cmp) e.second = id++;
+    for(int i=0; i&lt;N; i++) {
+        s[i] = cmp[ s[i] ], t[i] = cmp[ t[i] ];
+    }
+    for(int i=0; i&lt;Q; i++) {
+        p[i] = cmp[ p[i] ];
+    }
+
+    DualSegmentTree&lt;int, int&gt; seg(INT_MAX,
+                                  [](int a, int b) { return min(a, b); },
+                                  [](int a, int b) { return min(a, b); },
+                                  vector&lt;int&gt;(id, INT_MAX));
+
+    for(int i=0; i&lt;N; i++) {
+        seg.update(s[i], t[i], x[i]);
+    }
+    for(int i=0; i&lt;Q; i++) {
+        int res = seg.query(p[i]);
+        if(res == INT_MAX) cout &lt;&lt; -1 &lt;&lt; endl;
+        else cout &lt;&lt; res &lt;&lt; endl;
+    }
+}
+
+int main() {
+    DSL_2_D();
+    // DSL_2_E();
+    // ABC128_E();
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

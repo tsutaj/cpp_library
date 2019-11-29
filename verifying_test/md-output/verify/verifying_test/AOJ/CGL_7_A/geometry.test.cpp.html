@@ -1,0 +1,102 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../verifying_test/AOJ/CGL_7_A/geometry.test.cpp</h1>
+<p><a href="../../../../index.html">Back to top page</a></p>
+<ul>
+<li>$2$ つの円 $c_1, c_2$ の位置関係を求める</li>
+<li>see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&amp;lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&amp;lang=ja</a></li>
+</ul>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../../../../library/geometry/geometry_2D.cpp.html">../../geometry/geometry_2D.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#define PROBLEM &quot;http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A&amp;lang=ja&quot;
+#define DESCRIPTION &quot;$2$ つの円 $c_1, c_2$ の位置関係を求める&quot;
+
+// #define _GLIBCXX_DEBUG // for STL debug (optional)
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;deque&gt;
+#include &lt;list&gt;
+#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;utility&gt;
+#include &lt;algorithm&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+#include &lt;complex&gt;
+#include &lt;cmath&gt;
+#include &lt;limits&gt;
+#include &lt;cfloat&gt;
+#include &lt;climits&gt;
+#include &lt;ctime&gt;
+#include &lt;cassert&gt;
+#include &lt;numeric&gt;
+#include &lt;fstream&gt;
+#include &lt;functional&gt;
+#include &lt;bitset&gt;
+using namespace std;
+using ll = long long int;
+using int64 = long long int;
+
+#include &quot;../../../geometry/geometry_2D.cpp&quot;
+
+template&lt;typename T&gt; void chmax(T &amp;a, T b) {a = max(a, b);}
+template&lt;typename T&gt; void chmin(T &amp;a, T b) {a = min(a, b);}
+template&lt;typename T&gt; void chadd(T &amp;a, T b) {a = a + b;}
+
+int dx[] = {0, 0, 1, -1};
+int dy[] = {1, -1, 0, 0};
+const int INF = 1LL &lt;&lt; 29;
+const ll LONGINF = 1LL &lt;&lt; 60;
+const ll MOD = 1000000007LL;
+
+int main() {
+    double ax, ay, ar, bx, by, br;
+    cin &gt;&gt; ax &gt;&gt; ay &gt;&gt; ar &gt;&gt; bx &gt;&gt; by &gt;&gt; br;
+
+    Circle a({ax, ay}, ar), b({bx, by}, br);
+    map&lt;int, int&gt; m;
+    m[0] = 4;
+    m[-2] = 3;
+    m[2] = 2;
+    m[1] = 1;
+    m[-1] = 1;
+    m[3] = 0;
+    m[-3] = 0;
+    cout &lt;&lt; m[intersectCC(a, b)] &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../../index.html">Back to top page</a></p>

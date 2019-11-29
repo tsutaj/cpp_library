@@ -1,0 +1,139 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/math_024_fixed_matrix.cpp</h1>
+<ul>
+<li>category: ../../math</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Required</h2>
+<ul>
+<li>:warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">../../graph/verify/verify_graph_020_HLDecomposition.cpp</a></li>
+<li>:warning: <a href="verify/verify_math_024_fixed_matrix.cpp.html">../../math/verify/verify_math_024_fixed_matrix.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">// 行列ライブラリ
+
+// 演算子: 複合代入 (+=, -=), 単項 (-), 二項 (+, -, *, ==)
+// eigen(N): N*N 単位行列を返す
+// pow(mat, k): mat の k 乗を返す
+
+template &lt;typename T, int h, int w&gt;
+struct FixedMatrix {
+    using array_type = array&lt;T, h * w&gt;;
+    array_type mat;
+
+    FixedMatrix(T val = T(0)) { mat.fill(val); }
+
+    const T&amp; at(int i, int j) const { return mat[i*w + j]; }
+    T&amp; at(int i, int j) { return mat[i*w + j]; }
+
+    FixedMatrix&lt;T, h, w&gt; &amp;operator+=(const FixedMatrix&lt;T, h, w&gt;&amp; rhs) {
+        for(size_t i=0; i&lt;h; i++) {
+            for(size_t j=0; j&lt;w; j++) {
+                this-&gt;at(i, j) += rhs.at(i, j);
+            }
+        }
+        return *this;
+    }
+
+    FixedMatrix&lt;T, h, w&gt; operator-() const {
+        FixedMatrix&lt;T, h, w&gt; res(*this);
+        for(size_t i=0; i&lt;h; i++) {
+            for(size_t j=0; j&lt;w; j++) {
+                res.at(i, j) *= T(-1);
+            }
+        }
+        return res;
+    }
+
+    FixedMatrix&lt;T, h, w&gt; &amp;operator-=(const FixedMatrix&lt;T, h, w&gt;&amp; rhs) {
+        return (FixedMatrix&lt;T, h, w&gt;(*this) += -rhs);
+    }
+
+    template &lt;int wr&gt;
+    FixedMatrix&lt;T, h, wr&gt; operator*(const FixedMatrix&lt;T, w, wr&gt;&amp; rhs) {
+        size_t H = h, W = wr, C = w;
+        FixedMatrix&lt;T, h, wr&gt; res;
+        for(size_t i=0; i&lt;H; i++) {
+            for(size_t j=0; j&lt;W; j++) {
+                for(size_t k=0; k&lt;C; k++) {
+                    res.at(i, j) += this-&gt;at(i, k) * rhs.at(k, j);
+                }
+            }
+        }
+        return res;
+    }
+
+    FixedMatrix&lt;T, h, w&gt; operator+(const FixedMatrix&lt;T, h, w&gt;&amp; rhs) {
+        return (FixedMatrix&lt;T, h, w&gt;(*this) += rhs);
+    }
+
+    FixedMatrix&lt;T, h, w&gt; operator-(const FixedMatrix&lt;T, h, w&gt; &amp;rhs) {
+        return (FixedMatrix&lt;T, h, w&gt;(*this) -= rhs);
+    }
+
+    bool operator==(const FixedMatrix&lt;T, h, w&gt; &amp;rhs) const {
+        return this-&gt;mat == rhs.mat;
+    }
+    bool operator!=(const FixedMatrix&lt;T, h, w&gt; &amp;rhs) const {
+        return !(*this == rhs);
+    }
+};
+
+template &lt;typename T, int h, int w&gt;
+FixedMatrix&lt;T, h, w&gt; eigen() {
+    FixedMatrix&lt;T, h, w&gt; res(0);
+    for(size_t i=0; i&lt;h; i++) res.at(i, i) = T(1);
+    return res;
+}
+
+template &lt;typename T, int h, int w&gt;
+FixedMatrix&lt;T, h, w&gt; pow(FixedMatrix&lt;T, h, w&gt; mat, long long int k) {
+    FixedMatrix&lt;T, h, w&gt; res = eigen&lt;T, h, w&gt;();
+    for(; k&gt;0; k&gt;&gt;=1) {
+        if(k &amp; 1) res = res * mat;
+        mat = mat * mat;
+    }
+    return res;
+}
+
+template &lt;typename T, int h, int w&gt;
+ostream&amp; operator&lt;&lt; (ostream&amp; out, FixedMatrix&lt;T, h, w&gt; mat) {
+    int H = mat.h, W = mat.w;
+    out &lt;&lt; &quot;[&quot; &lt;&lt; endl;
+    for(int i=0; i&lt;H; i++) {
+        out &lt;&lt; &quot;  [ &quot;;
+        for(int j=0; j&lt;W; j++) out &lt;&lt; mat.at(i, j) &lt;&lt; &quot; &quot;;
+        out &lt;&lt; &quot;]&quot; &lt;&lt; endl;
+    }
+    out &lt;&lt; &quot;]&quot; &lt;&lt; endl;
+    return out;
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

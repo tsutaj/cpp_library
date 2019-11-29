@@ -1,0 +1,86 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../string/str_008_shift_and_or.cpp</h1>
+<ul>
+<li>category: ../../string</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// Shift And アルゴリズムによる文字列検索 (Verified: AOJ ALDS1_14_B)
+// パターン・テキストともに英小文字・英大文字・数字のみ出現することを想定 (適宜 getCharId を変更して)
+// たくさんビットが必要なので bitset が必要
+
+// 最大文字列長 + 1
+const int PATTERN_SIZE = 10001;
+
+// 文字の種類数 (適宜変更が必要)
+const int ALPH = 26 + 26 + 10;
+
+struct BitParallel {
+    string s;
+    vector&lt; bitset&lt;PATTERN_SIZE&gt; &gt; mask;
+
+    // 文字の id を取得
+    int getCharId(char c) {
+        if('a' &lt;= c and c &lt;= 'z') return c - 'a';
+        if('A' &lt;= c and c &lt;= 'Z') return 26 + (c - 'A');
+        return 26 + 26 + (c - '0');
+    }
+
+    // パターン文字列を受け取り、mask を作成
+    BitParallel(string s_) : s(s_) {
+        mask.resize(ALPH);
+        for(size_t i=0; i&lt;s.length(); i++) {
+            int c = getCharId(s[i]);
+            mask[c][i+1] = 1;
+        }
+    }
+
+    // テキスト文字列を入力として与える
+    // 出現位置 (の左端) を 0-indexed で返す
+    vector&lt;int&gt; search(string t) {
+        bitset&lt;PATTERN_SIZE&gt; bit;
+
+        vector&lt;int&gt; appeared;
+        int L = s.length();
+        for(size_t i=0; i&lt;t.length(); i++) {
+            int c = getCharId(t[i]);
+            bit[0] = 1;
+            bit = (bit &lt;&lt; 1) &amp; mask[c];
+
+            // パターンと一致
+            if(bit[L] == 1) {
+                appeared.push_back(i-L+1);
+            }
+        }
+        return appeared;
+    }
+};
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

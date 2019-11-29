@@ -1,0 +1,88 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/verify/verify_graph_018_dinic.cpp</h1>
+<ul>
+<li>category: ../../graph/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../graph_018_dinic.cpp.html">../../graph/graph_018_dinic.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+using namespace std;
+#include &quot;../graph_018_dinic.cpp&quot;
+
+void GRL_6_A() {
+    int V, E; scanf(&quot;%d%d&quot;, &amp;V, &amp;E);
+    Dinic&lt;&gt; fl(V);
+    for(int i=0; i&lt;E; i++) {
+        int u, v, c; scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;c);
+        fl.add_edge(u, v, c);
+    }
+    int source = 0, sink = V - 1;
+    printf(&quot;%d\n&quot;, fl.max_flow(source, sink));
+}
+
+// 復元の Verify
+void AOJ2304() {
+    int N, M; scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    Dinic&lt;&gt; fl(N);
+    for(int i=0; i&lt;M; i++) {
+        int u, v; scanf(&quot;%d%d&quot;, &amp;u, &amp;v); u--; v--;
+        fl.add_edge(u, v, 1);
+        fl.add_edge(v, u, 1); // 逆向きの辺 (これに流れるかどうか？)
+    }
+    int source, sink; scanf(&quot;%d%d&quot;, &amp;source, &amp;sink);
+    source--; sink--;
+
+    int flow = fl.max_flow(source, sink);
+    printf(&quot;%d\n&quot;, flow);
+    vector&lt;int&gt; ans;
+    for(int i=0; i&lt;M; i++) {
+        int k = 2*i + 1;
+        if(fl.get_flowed_cap(k) == 1) ans.emplace_back(i + 1);
+    }
+    printf(&quot;%zu\n&quot;, ans.size());
+    for(auto k : ans) printf(&quot;%d\n&quot;, k);
+}
+
+int main() {
+    // GRL_6_A();
+    AOJ2304();
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

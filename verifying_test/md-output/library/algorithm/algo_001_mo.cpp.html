@@ -1,0 +1,136 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../algorithm/algo_001_mo.cpp</h1>
+<ul>
+<li>category: ../../algorithm</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;numeric&gt;
+using namespace std;
+
+// Mo のアルゴリズム (以下の条件を満たすときにクエリを高速に処理可能)
+// ・オフラインクエリ
+// ・クエリの対象となる数列が不変
+// ・区間の伸縮にかかる計算量が小さい
+struct Mo {
+    int bucket, nl, nr, ptr;
+    vector&lt;int&gt; left, right, query_idx;
+    vector&lt;bool&gt; state;
+
+    Mo(int N) : bucket(sqrt(N) + 1), nl(0), nr(0), ptr(0), state(N) {
+        left = right = vector&lt;int&gt;();
+    }
+
+    // 区間 [l, r) を追加
+    void insert(int l, int r) {
+        left.push_back(l);
+        right.push_back(r);
+    }
+
+    // ソートする (バケットごとに、バケット同じなら右端小さい順)
+    void build() {
+        query_idx = vector&lt;int&gt;(left.size());
+        iota(query_idx.begin(), query_idx.end(), 0);
+        sort(query_idx.begin(), query_idx.end(), [&amp;](int a, int b) {
+                if(left[a] / bucket != left[b] / bucket) return left[a] &lt; left[b];
+                return right[a] &lt; right[b];
+            });
+    }
+
+    // クエリを一つすすめて、そのクエリ id を返す
+    int proceed() {
+        if(ptr == query_idx.size()) return -1;
+        int id = query_idx[ptr];
+        while(nl &gt; left[id] ) operate(--nl);
+        while(nr &lt; right[id]) operate(nr++);
+        while(nl &lt; left[id] ) operate(nl++);
+        while(nr &gt; right[id]) operate(--nr);
+        return query_idx[ptr++];
+    }
+
+    void operate(int idx) {
+        state[idx].flip();
+        if(state[idx]) add(idx);
+        else del(idx);
+    }
+
+    void add(int idx);
+    void del(int idx);
+};
+
+int A[200010], cnt[1000010];
+long long int res = 0;
+void Mo::add(int idx) {
+    long long int pre = cnt[ A[idx] ];
+    long long int nxt = pre + 1;
+    res -= pre * pre * A[idx];
+    res += nxt * nxt * A[idx];
+    cnt[ A[idx] ]++;
+}
+
+void Mo::del(int idx) {
+    long long int pre = cnt[ A[idx] ];
+    long long int nxt = pre - 1;
+    res -= pre * pre * A[idx];
+    res += nxt * nxt * A[idx];
+    cnt[ A[idx] ]--;
+}
+
+int main() {
+    int N, Q; scanf(&quot;%d%d&quot;, &amp;N, &amp;Q);
+    for(int i=0; i&lt;N; i++) {
+        scanf(&quot;%d&quot;, &amp;A[i]);
+    }
+
+    Mo mo(N);
+    for(int i=0; i&lt;Q; i++) {
+        int l, r; scanf(&quot;%d%d&quot;, &amp;l, &amp;r);
+        mo.insert(--l, r);
+    }
+
+    mo.build();
+    vector&lt;long long int&gt; ans(Q);
+    for(int i=0; i&lt;Q; i++) {
+        int idx = mo.proceed();
+        // fprintf(stderr, &quot;idx = %lld\n&quot;, idx);
+        ans[idx] = res;
+    }
+
+    for(int i=0; i&lt;Q; i++) {
+        printf(&quot;%lld\n&quot;, ans[i]);
+    }
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

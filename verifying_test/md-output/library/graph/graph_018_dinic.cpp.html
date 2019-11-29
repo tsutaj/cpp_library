@@ -1,0 +1,142 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../graph/graph_018_dinic.cpp</h1>
+<ul>
+<li>category: ../../graph</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Required</h2>
+<ul>
+<li>:warning: <a href="verify/verify_graph_018_dinic.cpp.html">../../graph/verify/verify_graph_018_dinic.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">// Dinic を信じろ
+
+template &lt;typename CapTp=int, typename CostTp=int&gt;
+struct Edge {
+    int to, rev;
+    CapTp cap; CostTp cost;
+    bool is_rev;
+    Edge(int t, bool f, int r, CapTp ca, CostTp co=0)
+        : to(t), rev(r), cap(ca), cost(co), is_rev(f) {}
+};
+
+template&lt;typename CapTp=int&gt;
+struct Dinic {
+    using Graph = vector&lt; vector&lt; Edge&lt;CapTp&gt; &gt; &gt;;
+    Graph G;
+    vector&lt;int&gt; level, iter;
+    const CapTp IA;
+    vector&lt; pair&lt;int, int&gt; &gt; r_edges;
+    Dinic(int N, CapTp IA_=1&lt;&lt;29) : IA(IA_) {
+        G.resize(N);
+        level.resize(N);
+        iter.resize(N);
+    }
+    void add_edge(int from, int to, CapTp cap) {
+        G[from].emplace_back(to, false, G[to].size(), cap);
+        G[to].emplace_back(from, true, G[from].size() - 1, 0);
+        r_edges.emplace_back(to, G[to].size() - 1);
+    }
+    CapTp get_flowed_cap(size_t k) {
+        if(r_edges.size() &lt;= k) return -1;
+        int v, i; tie(v, i) = r_edges[k];
+        return G[v][i].cap;
+    }
+    void bfs(int s) {
+        fill(level.begin(), level.end(), -1);
+        queue&lt;int&gt; que; que.push(s);
+        level[s] = 0;
+        while(!que.empty()) {
+            int temp = que.front(); que.pop();
+            for(size_t i=0; i&lt;G[temp].size(); i++) {
+                auto &amp;e = G[temp][i];
+                if(e.cap &gt; 0 &amp;&amp; level[e.to] &lt; 0) {
+                    level[e.to] = level[temp] + 1;
+                    que.push(e.to);
+                }
+            }
+        }
+    }
+    CapTp dfs(int v, int t, CapTp f) {
+        if(v == t) return f;
+        for(int &amp;i = iter[v]; i&lt;(int)G[v].size(); i++) {
+            auto &amp;e = G[v][i];
+            if(e.cap &gt; 0 &amp;&amp; level[v] &lt; level[e.to]) {
+                CapTp d = dfs(e.to, t, min(f, e.cap));
+                if(d &gt; 0) {
+                    e.cap -= d;
+                    G[e.to][e.rev].cap += d;
+                    return d;
+                }
+            }
+        }
+        return 0;
+    }
+    CapTp max_flow(int s, int t) {
+        CapTp flow = 0.0, f;
+        while(1) {
+            bfs(s);
+            if(level[t] &lt; 0) return flow;
+            fill(iter.begin(), iter.end(), 0);
+            while( (f = dfs(s, t, IA)) &gt; 0 ) flow += f;
+        }
+    }
+};
+
+// 最小流量制約付きフロー
+// u から v に最小 lb, 最大 ub 流す
+template&lt;typename flow_type&gt;
+struct Dinic_lr {
+    Dinic&lt;flow_type&gt; fl;
+    int S, T;
+    flow_type sum_lb;
+
+    Dinic_lr() {}
+    Dinic_lr(int N) : fl(N+2, 0), S(N), T(N+1), sum_lb(0) {}
+
+    void add_edge(int u, int v, flow_type lb, flow_type ub) {
+        assert(0 &lt;= lb &amp;&amp; lb &lt;= ub);
+        if(u == v || ub == 0) return;
+        fl.add_edge(u, v, ub - lb);
+        fl.add_edge(S, v, lb);
+        fl.add_edge(u, T, lb);
+        sum_lb += lb;
+    }
+
+    flow_type max_flow(int s, int t) {
+        flow_type a = fl.max_flow(S, T);
+        flow_type b = fl.max_flow(s, T);
+        flow_type c = fl.max_flow(S, t);
+        flow_type d = fl.max_flow(s, t);
+        return (a + c == sum_lb &amp;&amp; a + b == sum_lb) ? b + d : -1;
+    }
+};
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

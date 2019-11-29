@@ -1,0 +1,113 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../math/verify/verify_math_023_matrix_utils_modp.cpp</h1>
+<ul>
+<li>category: ../../math/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../math_004_matrix.cpp.html">../../math/math_004_matrix.cpp</a></li>
+<li>:warning: <a href="../math_017_modint.cpp.html">../../math/math_017_modint.cpp</a></li>
+<li>:warning: <a href="../math_023_matrix_utils_modp.cpp.html">../../math/math_023_matrix_utils_modp.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+#include &quot;../math_017_modint.cpp&quot;
+#include &quot;../math_004_matrix.cpp&quot;
+#include &quot;../math_023_matrix_utils_modp.cpp&quot;
+
+
+void ARC054_C() {
+    using mint = ModInt&lt;2&gt;;
+    int N; cin &gt;&gt; N;
+    Matrix&lt;mint&gt; mat(N, N);
+    for(int i=0; i&lt;N; i++) {
+        for(int j=0; j&lt;N; j++) {
+            char c; cin &gt;&gt; c;
+            if(c == '1') mat[i][j] = mint(1);
+        }
+    }
+
+    mint d = detModp(mat);
+    if(d == mint(0)) cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;
+    else cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;
+}
+
+void yuki_803() {
+    using mint = ModInt&lt;2&gt;;
+    const int B = 30;
+    int N, M, X; cin &gt;&gt; N &gt;&gt; M &gt;&gt; X;
+    Matrix&lt;mint&gt; mat(B+M, N+1);
+
+    for(int j=0; j&lt;B; j++) {
+        int p = X &amp; 1;
+        mat[j][N] = mint(p);
+        X &gt;&gt;= 1;
+    }
+
+    for(int i=0; i&lt;N; i++) {
+        int val; cin &gt;&gt; val;
+        for(int j=0; j&lt;B; j++) {
+            int p = val &amp; 1;
+            mat[j][i] = mint(p);
+            val &gt;&gt;= 1;
+        }
+    }
+
+    for(int i=0; i&lt;M; i++) {
+        int t, l, r; cin &gt;&gt; t &gt;&gt; l &gt;&gt; r; l--;
+        mat[B+i][N] = t;
+        for(int x=l; x&lt;r; x++) mat[B+i][x] = 1;
+    }
+
+    int rank = gaussianEliminationModp(mat, true);
+    for(int i=rank; i&lt;B+M; i++) {
+        if(mat[i][N] != mint(0)) {
+            cout &lt;&lt; 0 &lt;&lt; endl;
+            return;
+        }
+    }
+
+    int p = N - rank;
+    cout &lt;&lt; ModInt&lt;1000000007&gt;(2).pow(p) &lt;&lt; endl;
+}
+
+int main() {
+    // ARC054_C(); // detModp
+    yuki_803(); // gaussianEliminationModp
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

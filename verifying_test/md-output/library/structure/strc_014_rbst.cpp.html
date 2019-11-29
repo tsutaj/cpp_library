@@ -1,0 +1,346 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/strc_014_rbst.cpp</h1>
+<ul>
+<li>category: ../../structure</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// RBST (平衡二分探索木)
+// データ型・最大値用の単位元を指定して使う
+// TODO: 使い方をまとめる (わすれるので)
+
+inline uint32_t xor128() {
+    static uint32_t x = 123456789;
+    static uint32_t y = 362436069;
+    static uint32_t z = 521288629;
+    static uint32_t w = 88675123;
+    uint32_t t;
+
+    t = x ^ (x &lt;&lt; 11);
+    x = y;
+    y = z;
+    z = w;
+    return w = (w ^ (w &gt;&gt; 19)) ^ (t ^ (t &gt;&gt; 8));
+}
+
+namespace rbt {
+    template &lt;typename Type&gt;
+    struct node_t {
+        Type val, sum, max_val, min_val;
+        node_t&lt;Type&gt; *lch, *rch, *par;
+        int cap;
+        node_t(int val_) : 
+            val(val_), sum(val_), max_val(val_), min_val(val_), cap(1) {
+                lch = rch = par = nullptr;
+        }
+    };
+
+    // 扱う要素の型と、max, min に用いる単位元
+    // (どれと max, min とっても変わらないやつ)
+    template &lt;typename Type, Type max_identity, Type min_identity&gt;
+    struct rbst {
+        using RBST = rbst&lt;Type, max_identity, min_identity&gt;;
+    private:
+        size_t size_;
+        node_t&lt;Type&gt;* root;
+
+        // 根の情報
+        void eval(node_t&lt;Type&gt; *t) { root = t, size_ = t ? count( update(t) ) : 0; }
+
+        // 部分木の情報
+        int  count  (node_t&lt;Type&gt;* t) { return t ? t-&gt;cap     : 0; }
+        Type sum    (node_t&lt;Type&gt;* t) { return t ? t-&gt;sum     : 0; }
+        Type max_val(node_t&lt;Type&gt;* t) { return t ? t-&gt;max_val : max_identity; }
+        Type min_val(node_t&lt;Type&gt;* t) { return t ? t-&gt;min_val : min_identity; }
+
+        // 部分木に関する情報の再計算
+        node_t&lt;Type&gt;* update(node_t&lt;Type&gt;* t, Type val=max_identity) {
+            if(val != max_identity) t-&gt;val = val;
+            t-&gt;cap     = count(t-&gt;lch) + count(t-&gt;rch) + 1;
+            t-&gt;sum     = sum  (t-&gt;lch) + sum  (t-&gt;rch) + t-&gt;val;
+            t-&gt;max_val = max({max_val(t-&gt;lch), max_val(t-&gt;rch), t-&gt;val});
+            t-&gt;min_val = min({min_val(t-&gt;lch), min_val(t-&gt;rch), t-&gt;val});
+            if(t-&gt;par) update(t-&gt;par);
+            return t;        
+        }
+    public:
+        node_t&lt;Type&gt;* merge(node_t&lt;Type&gt;* l, node_t&lt;Type&gt;* r) {
+            if(!l || !r) return !l ? r : l;
+
+            uint32_t rnd = xor128();
+            double prob = (double)rnd / UINT_MAX;
+            int N = count(l), M = count(r);
+            if(prob &lt; (double)N / (N + M)) {
+                if(l-&gt;rch) l-&gt;rch-&gt;par = nullptr;
+                node_t&lt;Type&gt;* child = merge(l-&gt;rch, r);
+                l-&gt;rch = child;
+                if(child) child-&gt;par = l;
+                return update(l);
+            }
+            else {
+                if(r-&gt;lch) r-&gt;lch-&gt;par = nullptr;
+                node_t&lt;Type&gt;* child = merge(l, r-&gt;lch);
+                r-&gt;lch = child;
+                if(child) child-&gt;par = r;
+                return update(r);
+            }
+        }
+
+        // 場所 k で split  [0, k), [k, n)
+        pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; split(node_t&lt;Type&gt;* t, int k) {
+            if(t == nullptr) return make_pair(nullptr, nullptr);
+
+            if(k &lt;= count(t-&gt;lch)) {
+                if(t-&gt;lch) t-&gt;lch-&gt;par = nullptr;
+                pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; s = split(t-&gt;lch, k);
+                t-&gt;lch = s.second;
+                if(s.second) s.second-&gt;par = t;
+                return make_pair(s.first, update(t));
+            }
+            else {
+                if(t-&gt;rch) t-&gt;rch-&gt;par = nullptr;
+                pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; s = split(t-&gt;rch, k - count(t-&gt;lch) - 1);
+                t-&gt;rch = s.first;
+                if(s.first) s.first-&gt;par = t;
+                return make_pair(update(t), s.second);
+            }
+        }
+
+        node_t&lt;Type&gt;* insert(node_t&lt;Type&gt;* t, int k, Type val) {
+            pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; lr = split(t, k);
+            node_t&lt;Type&gt;* newElem = new node_t&lt;Type&gt;(val);
+
+            node_t&lt;Type&gt;* res = merge(lr.first, newElem);
+            res = merge(res, lr.second);
+            return res;
+        }
+
+        node_t&lt;Type&gt;* erase(node_t&lt;Type&gt;* t, int k) {
+            pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; lr2 = split(t, k+1);
+
+            t = lr2.first;
+            pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; lr1 = split(t, k  );
+
+            node_t&lt;Type&gt;* res = merge(lr1.first, lr2.second);
+            return res;
+        }
+
+        // k 番目の要素 (0-indexed)
+        node_t&lt;Type&gt;* kth_node(node_t&lt;Type&gt;* t, int k) {
+            assert(k &lt; count(t));
+
+            if(count(t-&gt;lch) &gt;= k + 1) {
+                return kth_node(t-&gt;lch, k);
+            }
+            else if(count(t-&gt;lch) + 1 == k + 1) {
+                return t;
+            }
+            else {
+                return kth_node(t-&gt;rch, k - count(t-&gt;lch) - 1);
+            }
+        }
+
+        Type kth_number(node_t&lt;Type&gt;* t, int k) {
+            assert(k &lt; size());
+            return kth_node(t, k)-&gt;val;
+        }
+
+        // lower bound (0-indexed)
+        int lower_bound(node_t&lt;Type&gt;* t, Type val, int idx=0) {
+            if(t == nullptr) return idx;
+
+            if(t-&gt;lch &amp;&amp; t-&gt;lch-&gt;max_val &gt;= val) {
+                return lower_bound(t-&gt;lch, val, idx);
+            }
+            if(t-&gt;val &gt;= val) {
+                return idx + (count(t) - count(t-&gt;rch)) - 1;
+            }
+            if(t-&gt;rch &amp;&amp; t-&gt;rch-&gt;max_val &gt;= val) {
+                return lower_bound(t-&gt;rch, val, idx + count(t-&gt;lch) + 1);
+            }
+            return idx + count(t);
+        }
+
+        // upper bound (0-indexed)
+        int upper_bound(node_t&lt;Type&gt;* t, Type val, int idx=0) {
+            if(t == nullptr) return idx;
+            if(t-&gt;lch &amp;&amp; t-&gt;lch-&gt;max_val &gt; val) {
+                return upper_bound(t-&gt;lch, val, idx);
+            }
+            if(t-&gt;val &gt; val) {
+                return idx + (count(t) - count(t-&gt;rch)) - 1;
+            }
+            if(t-&gt;rch &amp;&amp; t-&gt;rch-&gt;max_val &gt; val) {
+                return lower_bound(t-&gt;rch, val, idx + count(t-&gt;lch) + 1);
+            }
+            return idx + count(t);
+        }
+
+        int get_idx(node_t&lt;Type&gt;* t) {
+            if(t-&gt;par == nullptr) return count(t-&gt;lch);
+            else if(t-&gt;par-&gt;lch == t) {
+                return get_idx(t-&gt;par) - count(t-&gt;rch) - 1;
+            }
+            else {
+                return get_idx(t-&gt;par) + count(t-&gt;lch) + 1;
+            }
+        }
+
+        // rmq を解く (minmax: 0 で最大、1 で最小)
+        Type rmq_query(int a, int b, int l, int r, node_t&lt;Type&gt;* cur, int minmax) {
+            Type identity = (minmax ? min_identity : max_identity);
+            if(r &lt;= a || b &lt;= l || !cur) return identity;
+            if(a &lt;= l &amp;&amp; r &lt;= b) return (minmax ? cur-&gt;min_val : cur-&gt;max_val);
+            // 答え (現在の頂点を入れることも)
+            int idx = get_idx(cur), nl, nr;
+            Type ans = (a &lt;= idx &amp;&amp; idx &lt; b) ? cur-&gt;val : identity;
+
+            auto get = [&amp;](Type A, Type B) {
+                return minmax ? min(A, B) : max(A, B);
+            };
+
+            // 左の子へ (右端が縮む)
+            if(cur-&gt;lch) {
+                nl = l, nr = r - 1 - count(cur-&gt;rch);
+                ans = get(ans, rmq_query(a, b, nl, nr, cur-&gt;lch, minmax));
+            }
+
+            // 右の子へ (左端が縮む)
+            if(cur-&gt;rch) {
+                nl = l + 1 + count(cur-&gt;lch), nr = r;
+                ans = get(ans, rmq_query(a, b, nl, nr, cur-&gt;rch, minmax));
+            }
+            return ans;
+        }
+
+        rbst()                  { size_ = 0, root = nullptr; }
+        rbst(node_t&lt;Type&gt;* r)   { eval(r); }
+        node_t&lt;Type&gt;* get_root() { return root; }
+        size_t  size () { return size_; }
+        bool    empty() { return size_ == 0; }
+
+        void insert(Type val, int k) {
+            eval( insert(root, k, val) );
+        }
+        void erase(int k) {
+            eval( erase(root, k) );
+        }
+
+        pair&lt; RBST, RBST &gt; split(int k) {
+            pair&lt;node_t&lt;Type&gt;*, node_t&lt;Type&gt;*&gt; lr = split(root, k);
+            return make_pair(RBST(lr.first), RBST(lr.second));
+        }
+        RBST merge(RBST l, RBST r) {
+            eval( merge(l.get_root(), r.get_root()) );
+            return RBST(root);
+        }
+        node_t&lt;Type&gt;* kth_node(int k) {
+            return kth_node(root, k);
+        }
+        Type kth_number(int k) {
+            return kth_number(root, k);
+        }
+        int lower_bound(Type val) {
+            return lower_bound(root, val);
+        }
+        int upper_bound(Type val) {
+            return upper_bound(root, val);
+        }
+        void update(Type val, int k) {
+            node_t&lt;Type&gt;* node = kth_node(k);
+            update(node, val);
+        }
+        bool find(Type val) {
+            int idx = lower_bound(val);
+            if(idx &gt;= size_) return false;
+            return kth_number(idx) == val;
+        }
+
+        Type find_min(int l, int r) {
+            return rmq_query(l, r, 0, size(), root, 1);
+        }
+        Type find_max(int l, int r) {
+            return rmq_query(l, r, 0, size(), root, 0);
+        }
+
+        void dump_array() {
+            for(int i=0; i&lt;size(); i++) {
+                fprintf(stderr, &quot;%d &quot;, kth_number(i));
+            }
+            fprintf(stderr, &quot;\n&quot;);
+        }
+
+        // みさわさんの根付き木と多分同じフォーマット？
+        void dump_tree(node_t&lt;Type&gt;* t) {
+            if(t == nullptr) return;
+            if(t-&gt;lch) {
+                fprintf(stderr, &quot;(&quot;);
+                dump_tree(t-&gt;lch);
+                fprintf(stderr, &quot;)&quot;);
+            }
+            fprintf(stderr, &quot;[%d&quot;, t-&gt;val);
+            if(t-&gt;par) {
+                fprintf(stderr, &quot;&lt;%d&gt;&quot;, t-&gt;par-&gt;val);
+            }
+            else {
+                fprintf(stderr, &quot;&lt;NA&gt;&quot;);
+            }
+            fprintf(stderr, &quot;]&quot;);
+            if(t-&gt;rch) {
+                fprintf(stderr, &quot;(&quot;);
+                dump_tree(t-&gt;rch);
+                fprintf(stderr, &quot;)&quot;);
+            }
+        }
+    };
+
+    // 重複を許さない全順序集合
+    template &lt;typename Type, Type max_identity, Type min_identity&gt;
+    struct Set : public rbst&lt;Type, max_identity, min_identity&gt; {
+    public:
+        using PRBST = rbst&lt;Type, max_identity, min_identity&gt;;
+        bool empty() { return PRBST::size() == 0; }
+        void insert(Type val) {
+            if(PRBST::find(val)) return;
+            int idx = PRBST::lower_bound(val);
+            PRBST::insert(val, idx);
+        }
+
+        void erase(Type val) {
+            if(empty() || !PRBST::find(val)) return;
+            int idx = PRBST::lower_bound(val);
+            PRBST::erase(idx);
+        }
+    };
+
+    // TODO: multiset も書く
+}
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

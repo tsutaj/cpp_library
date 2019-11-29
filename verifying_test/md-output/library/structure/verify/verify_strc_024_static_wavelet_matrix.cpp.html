@@ -1,0 +1,70 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/verify/verify_strc_024_static_wavelet_matrix.cpp</h1>
+<ul>
+<li>category: ../../structure/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../strc_023_compact_bitvector.cpp.html">../../structure/strc_023_compact_bitvector.cpp</a></li>
+<li>:warning: <a href="../strc_024_static_wavelet_matrix.cpp.html">../../structure/strc_024_static_wavelet_matrix.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;array&gt;
+#include &lt;algorithm&gt;
+#include &lt;cinttypes&gt;
+#include &lt;iostream&gt;
+#include &lt;tuple&gt;
+#include &lt;utility&gt;
+using namespace std;
+#include &quot;../strc_023_compact_bitvector.cpp&quot;
+#include &quot;../strc_024_static_wavelet_matrix.cpp&quot;
+
+int main() {
+    vector&lt;int&gt; vec = {2, 10, 2, 3, 2, 5, 4, 4};
+    WaveletMatrix&lt;4&gt; wm(vec);
+
+    for(size_t i=0; i&lt;vec.size(); i++) {
+        cerr &lt;&lt; wm[i] &lt;&lt; &quot; &quot;;
+    }
+    cerr &lt;&lt; endl;
+
+    while(true) {
+        // int k, x; cin &gt;&gt; k &gt;&gt; x; k--;
+        // cout &lt;&lt; wm.rank_idx(k, x) &lt;&lt; endl;
+        int l, r, k, x; cin &gt;&gt; l &gt;&gt; r &gt;&gt; k &gt;&gt; x; l--;
+        cout &lt;&lt; wm.select(l, r, k, x) &lt;&lt; endl;
+        // cout &lt;&lt; res &lt;&lt; endl;
+    }
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

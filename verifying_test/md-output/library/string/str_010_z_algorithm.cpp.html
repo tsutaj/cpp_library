@@ -1,0 +1,75 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../string/str_010_z_algorithm.cpp</h1>
+<ul>
+<li>category: ../../string</li>
+</ul>
+<p><a href="../../index.html">Back to top page</a></p>
+<h2>Required</h2>
+<ul>
+<li>:warning: <a href="verify/verify_str_010_z_algorithm.cpp.html">../../string/verify/verify_str_010_z_algorithm.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">// Z-algorithm
+// 各 Suffix と元の文字列との LCP を求める
+template &lt;typename ArrayType&gt;
+struct Z_algorithm {
+    ArrayType v;
+    vector&lt;int&gt; Z;
+
+    void build() {
+        int N = v.size(), i, j;
+        Z = vector&lt;int&gt;(N);
+
+        for(i=1,j=0; i&lt;N; i++) {
+            int l = i - j;
+            if(i + Z[l] &lt; j + Z[j]) {
+                Z[i] = Z[l];
+            }
+            else {
+                int k = max(0, j + Z[j] - i);
+                while(i + k &lt; N and v[k] == v[i+k]) k++;
+                Z[i] = k;
+                j = i;
+            }
+        }
+        Z[0] = N;
+    }
+
+    Z_algorithm(ArrayType v_) : v(v_) {
+        build();
+    }
+
+    // idx から切り出した Suffix と文字列全体との LCP
+    int get_lcp(int idx) {
+        return Z[idx];
+    }
+};
+
+</code></pre>
+
+<p><a href="../../index.html">Back to top page</a></p>

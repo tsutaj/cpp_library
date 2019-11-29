@@ -1,0 +1,75 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/old/strc_002_segment_rmq.cpp</h1>
+<ul>
+<li>category: ../../structure/old</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Code</h2>
+<pre><code class="cpp">// Range Minimum Query (区間最小クエリ、RMQ)
+// Verified: AOJ DSL_2_A: Range Minimum Query (int型のみ)
+
+template &lt;typename T&gt;
+class rmq {
+public:
+    int n;
+    vector&lt;T&gt; dat;
+
+    // 要素数 m の RMQ を作る
+    rmq(int m) {
+        n = 1;
+        while(n &lt; m) n *= 2;
+        dat.resize(2*n-1);
+        rep(i,0,2*n-1) dat[i] = INT_MAX;
+    }
+
+    // k番目 (0-indexed) の値を a に更新
+    void update(int k, T a) {
+        k += n - 1;
+        dat[k] = a;
+        while(k &gt; 0) {
+            k = (k - 1) / 2;
+            dat[k] = min(dat[k*2+1], dat[k*2+2]);
+        }
+    }
+
+    // [a, b) の最小値を返す
+    // 最初に呼び出すときは XX.query(a, b, 0, 0, -1) とする
+    T query(int a, int b, int k, int l, int r) {
+        if(r == -1) r = n;
+        if(r &lt;= a || b &lt;= l) return INT_MAX;
+        if(a &lt;= l &amp;&amp; r &lt;= b) return dat[k];
+        else {
+            T vl = query(a, b, k*2+1, l, (l+r)/2);
+            T vr = query(a, b, k*2+2, (l+r)/2, r);
+            return min(vl, vr);
+        }
+    }
+};
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>

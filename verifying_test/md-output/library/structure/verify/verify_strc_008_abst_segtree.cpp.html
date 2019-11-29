@@ -1,0 +1,109 @@
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" }},
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+
+<p><link rel="stylesheet" href="../../../assets/css/copy-button.css" /></p>
+<h1>:warning: ../../structure/verify/verify_strc_008_abst_segtree.cpp</h1>
+<ul>
+<li>category: ../../structure/verify</li>
+</ul>
+<p><a href="../../../index.html">Back to top page</a></p>
+<h2>Dependencies</h2>
+<ul>
+<li>:warning: <a href="../strc_008_abst_segtree.cpp.html">../../structure/strc_008_abst_segtree.cpp</a></li>
+</ul>
+<h2>Code</h2>
+<pre><code class="cpp">#include &lt;vector&gt;
+#include &lt;functional&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;climits&gt;
+using namespace std;
+#include &quot;../strc_008_abst_segtree.cpp&quot;
+
+// Verified on Apr 27, 2019
+// Judge: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
+
+// Range Minimum Query
+// query 1: update
+// query 2: range minimum
+void DSL_2_A() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    SegmentTree&lt;int&gt; seg(N, INT_MAX,
+                         [](int a, int b) { return b; },
+                         [](int a, int b) { return min(a, b); });
+
+    int indexed = 0;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        int x, y; cin &gt;&gt; x &gt;&gt; y;
+        if(query_type == 0) {
+            x -= indexed;
+            seg.update(x, y);
+        }
+        if(query_type == 1) {
+            x -= indexed, y -= indexed;
+            y++;
+            cout &lt;&lt; seg.query(x, y) &lt;&lt; endl;
+        }
+    }
+}
+
+// Verified on Apr 27, 2019
+// Judge: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+
+// Range Sum Query
+// query 1: add
+// query 2: range sum
+void DSL_2_B() {
+    int N, Q; cin &gt;&gt; N &gt;&gt; Q;
+    SegmentTree&lt;int&gt; seg(N, 0,
+                         [](int a, int b) { return a + b; },
+                         [](int a, int b) { return a + b; });
+
+    int indexed = 1;
+    for(int i=0; i&lt;Q; i++) {
+        int query_type; cin &gt;&gt; query_type;
+        int x, y; cin &gt;&gt; x &gt;&gt; y;
+        if(query_type == 0) {
+            x -= indexed;
+            seg.update(x, y);
+        }
+        if(query_type == 1) {
+            x -= indexed, y -= indexed;
+            y++;
+            cout &lt;&lt; seg.query(x, y) &lt;&lt; endl;
+        }
+    }
+}
+
+int main() {
+    // DSL_2_A();
+    DSL_2_B();
+    return 0;
+}
+
+</code></pre>
+
+<p><a href="../../../index.html">Back to top page</a></p>
