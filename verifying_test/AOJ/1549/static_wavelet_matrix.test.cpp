@@ -1,6 +1,3 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549"
-#define DESCRIPTION "\"閉区間\" $\left[ l, r \right]$ にある整数の中で $D$ に最も近いものを求める"
-
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
@@ -43,6 +40,9 @@ const ll MOD = 1000000007LL;
 
 #include "../../../structure/strc_023_compact_bitvector.cpp"
 #include "../../../structure/strc_024_static_wavelet_matrix.cpp"
+
+// @see http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549
+// @brief 閉区間 $\left[ l, r \right]$ にある整数の中で $D$ に最も近いものを求める
 
 int main() {
     int N; scanf("%d", &N);

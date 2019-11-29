@@ -6,6 +6,8 @@
 using namespace std;
 #include "../strc_008_abst_segtree.cpp"
 
+// @ignore (無視されるかどうかのテスト)
+
 // Verified on Apr 27, 2019
 // Judge: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
 
