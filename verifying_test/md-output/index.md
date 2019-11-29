@@ -21,9 +21,11 @@
 <link rel="stylesheet" href="assets/css/copy-button.css" />
 
 
-# ライブラリの HTML ビルドテスト
+# tsutaj の競技プログラミング用ライブラリ
 
-書いた内容がトップページ上部に載ります
+[![Build Status](https://travis-ci.com/tsutaj/cpp_library.svg?branch=master)](https://travis-ci.com/tsutaj/cpp_library)
+
+* [リポジトリへのリンク](https://github.com/tsutaj/cpp_library)
 
 * this unordered seed list will be replaced by toc as unordered list
 {:toc}
