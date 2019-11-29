@@ -172,20 +172,20 @@ class MarkdownArticle(MarkdownPage):
             file_object.write('\n\n')
                 
         # cpp <= cpp
-        required_file_list = [f for f in self.file_class.required if f[-8:] != 'test.cpp']
+        required_file_list = [f for f in self.file_class.required if re.match(r'^.*test\.(cpp|hpp|cc)$', f)]
         required_file_list = sorted(list(set(required_file_list)))
         if required_file_list != []:
             file_object.write('## Required\n')
             for required in required_file_list:
                 mark = self.get_mark(path_to_verification[required])
                 title = path_to_title[required]
-                file_type = 'verify' if required[-8:] == 'test.cpp' else 'library'
+                file_type = 'verify' if re.match(r'^.*test\.(cpp|hpp|cc)$', required) else 'library'
                 link = self.get_link(self.get_destination(required, file_type))
                 file_object.write('* {} [{}]({})\n'.format(mark, title, link))
             file_object.write('\n\n')
                 
         # cpp => test.cpp
-        verified_file_list = [f for f in self.file_class.required if f[-8:] == 'test.cpp']
+        verified_file_list = [f for f in self.file_class.required if re.match(r'^.*test\.(cpp|hpp|cc)$', f)]
         verified_file_list = sorted(list(set(verified_file_list)))
         if verified_file_list != []:
             file_object.write('## Verified\n')
@@ -272,27 +272,30 @@ class MarkdownTopPage(MarkdownPage):
                                 path_to_title, path_to_verification)
             
 class PagesBuilder:
-    def __init__(self, cpp_source_path, md_destination_path='./md-output', config={}, html=False):
-        self.verify_files = self.get_files(cpp_source_path, r'.test.cpp')
-        self.library_files = self.get_files(cpp_source_path, r'.cpp', self.verify_files)
+    def __init__(self, cpp_source_path, md_destination_path='./md-output', config={}):
+        self.verify_files = self.get_files(cpp_source_path, r'^.*\.test\.(cpp|hpp|cc)$')
+        self.library_files = self.get_files(cpp_source_path, r'^.*\.(cpp|hpp|cc)$', self.verify_files)
         self.title_to_path = self.map_title2path()
         self.path_to_title = self.map_path2title()
+        self.config = config
         self.get_required()
         self.path_to_verification = self.map_path2verification()
-        self.build_verify_files(cpp_source_path, md_destination_path, html)
-        self.build_library_files(cpp_source_path, md_destination_path, html)
-        self.build_top_page(cpp_source_path, md_destination_path, config, html)
+        self.build_verify_files(cpp_source_path, md_destination_path)
+        self.build_library_files(cpp_source_path, md_destination_path)
+        self.build_top_page(cpp_source_path, md_destination_path)
         self.build_assets(md_destination_path)
 
     # ignore が付いているか？
     def is_ignored(self, file_path):
         parser = FileParser(file_path)
-        ignore = parser.get_contents_by_tag(r'@ignore')        
+        ignore = []
+        ignore.extend(parser.get_contents_by_tag(r'@ignore'))
+        ignore.extend(parser.get_contents_by_tag(r'#define IGNORE'))
         return ignore != []
 
     def get_files(self, source_path, extension, ignored_files={}):
-        path = source_path + r'/**/*' + extension
-        match_result = glob.glob(path, recursive=True)
+        path = source_path + r'/**/*'
+        match_result = [p for p in glob.glob(path, recursive=True) if re.search(extension, p)]
         files = {}
         for matched_file in match_result:
             if not self.is_ignored(matched_file) and matched_file not in ignored_files:
@@ -348,26 +351,29 @@ class PagesBuilder:
         for cpp_file, cpp_class in self.library_files.items():
             verify_file_cnt, cond = 0, True
             for verify in cpp_class.required:
-                if verify[-8:] == 'test.cpp':
+                if re.match(r'^.*test\.(cpp|hpp|cc)$', verify):
                     verify_file_cnt += 1
                     cond &= result[verify]
             result[cpp_file] = (verify_file_cnt > 0 and cond)
         return result
             
-    def build_verify_files(self, cpp_source_path, md_destination_path, html_cond):
+    def build_verify_files(self, cpp_source_path, md_destination_path):
         for verify_file in self.verify_files.values():
             page = MarkdownArticle(verify_file, 'verify', cpp_source_path, md_destination_path)
+            html_cond = self.config.setdefault('html', False)
             page.build(self.path_to_title, self.path_to_verification)
             if html_cond: page.convert_to_html()
 
-    def build_library_files(self, cpp_source_path, md_destination_path, html_cond):
+    def build_library_files(self, cpp_source_path, md_destination_path):
         for library_file in self.library_files.values():
             page = MarkdownArticle(library_file, 'library', cpp_source_path, md_destination_path)
+            html_cond = self.config.setdefault('html', False)
             page.build(self.path_to_title, self.path_to_verification)
             if html_cond: page.convert_to_html()
             
-    def build_top_page(self, cpp_source_path, md_destination_path, config, html_cond):
-        page = MarkdownTopPage(cpp_source_path, md_destination_path, config)
+    def build_top_page(self, cpp_source_path, md_destination_path):
+        page = MarkdownTopPage(cpp_source_path, md_destination_path, self.config)
+        html_cond = self.config.setdefault('html', False)
         page.build(self.verify_files, self.library_files,
                    self.path_to_title, self.path_to_verification)
         if html_cond: page.convert_to_html()
@@ -378,12 +384,14 @@ class PagesBuilder:
         shutil.copytree('./assets/', destination)
             
 def main():
+    # 実行テスト
     config = {
         'title': 'ライブラリの HTML ビルドテスト',
         'description': 'ここに書いた内容がトップページに足されます',
-        'toc': True, # default: False
+        'toc': True, # table of contents (default: False)
+        'html': True # generate HTML as well as Markdown (default: False)
     }
-    builder = PagesBuilder(cpp_source_path='../../', config=config, html=True)
+    builder = PagesBuilder(cpp_source_path='../', config=config)
     
 if __name__ == '__main__':
     main()
