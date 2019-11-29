@@ -127,7 +127,7 @@ git commit -m "[ci skip] html"
 
 git checkout gh-pages
 git checkout master -- ./md-output
-rm ../{assets,library,verify,index.md}
+rm -rf ../{assets,library,verify,index.md}
 mv ./md-output/* ../
 git add ../{assets,library,verify,index.md}
 git commit -m "[ci skip] generating html commit"
