@@ -16,13 +16,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: ../../math/verify/verify_math_023_matrix_utils_modp.cpp
-* category: ../../math/verify
+# :warning: math/verify/verify_math_023_matrix_utils_modp.cpp
+* category: math/verify
 
 
 [Back to top page](../../../index.html)
@@ -30,9 +30,9 @@
 
 
 ## Dependencies
-* :warning: [../../math/math_004_matrix.cpp](../math_004_matrix.cpp.html)
-* :warning: [../../math/math_017_modint.cpp](../math_017_modint.cpp.html)
-* :warning: [../../math/math_023_matrix_utils_modp.cpp](../math_023_matrix_utils_modp.cpp.html)
+* :warning: [math/math_004_matrix.cpp](../math_004_matrix.cpp.html)
+* :warning: [math/math_017_modint.cpp](../math_017_modint.cpp.html)
+* :warning: [math/math_023_matrix_utils_modp.cpp](../math_023_matrix_utils_modp.cpp.html)
 
 
 ## Code

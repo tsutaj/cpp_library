@@ -16,13 +16,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: ../../math/math_017_modint.cpp
-* category: ../../math
+# :warning: math/math_017_modint.cpp
+* category: math
 
 
 [Back to top page](../../index.html)
@@ -30,14 +30,14 @@
 
 
 ## Required
-* :warning: [../../graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
-* :warning: [../../math/verify/verify_math_004_matrix.cpp](verify/verify_math_004_matrix.cpp.html)
-* :warning: [../../math/verify/verify_math_015_remainder_sum.cpp](verify/verify_math_015_remainder_sum.cpp.html)
-* :warning: [../../math/verify/verify_math_018_ragrange_polynomial.cpp](verify/verify_math_018_ragrange_polynomial.cpp.html)
-* :warning: [../../math/verify/verify_math_019_specific_ragrange_polynomial.cpp](verify/verify_math_019_specific_ragrange_polynomial.cpp.html)
-* :warning: [../../math/verify/verify_math_020_combination.cpp](verify/verify_math_020_combination.cpp.html)
-* :warning: [../../math/verify/verify_math_023_matrix_utils_modp.cpp](verify/verify_math_023_matrix_utils_modp.cpp.html)
-* :warning: [../../math/verify/verify_math_024_fixed_matrix.cpp](verify/verify_math_024_fixed_matrix.cpp.html)
+* :warning: [graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
+* :warning: [math/verify/verify_math_004_matrix.cpp](verify/verify_math_004_matrix.cpp.html)
+* :warning: [math/verify/verify_math_015_remainder_sum.cpp](verify/verify_math_015_remainder_sum.cpp.html)
+* :warning: [math/verify/verify_math_018_ragrange_polynomial.cpp](verify/verify_math_018_ragrange_polynomial.cpp.html)
+* :warning: [math/verify/verify_math_019_specific_ragrange_polynomial.cpp](verify/verify_math_019_specific_ragrange_polynomial.cpp.html)
+* :warning: [math/verify/verify_math_020_combination.cpp](verify/verify_math_020_combination.cpp.html)
+* :warning: [math/verify/verify_math_023_matrix_utils_modp.cpp](verify/verify_math_023_matrix_utils_modp.cpp.html)
+* :warning: [math/verify/verify_math_024_fixed_matrix.cpp](verify/verify_math_024_fixed_matrix.cpp.html)
 
 
 ## Code

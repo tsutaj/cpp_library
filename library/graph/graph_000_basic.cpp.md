@@ -16,13 +16,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: ../../graph/graph_000_basic.cpp
-* category: ../../graph
+# :warning: graph/graph_000_basic.cpp
+* category: graph
 
 
 [Back to top page](../../index.html)
@@ -30,9 +30,9 @@
 
 
 ## Required
-* :warning: [../../graph/verify/verify_graph_022_max_independent_set.cpp](verify/verify_graph_022_max_independent_set.cpp.html)
-* :warning: [../../graph/verify/verify_graph_023_offline_lca.cpp](verify/verify_graph_023_offline_lca.cpp.html)
-* :warning: [../../graph/verify/verify_graph_025_2SAT.cpp](verify/verify_graph_025_2SAT.cpp.html)
+* :warning: [graph/verify/verify_graph_022_max_independent_set.cpp](verify/verify_graph_022_max_independent_set.cpp.html)
+* :warning: [graph/verify/verify_graph_023_offline_lca.cpp](verify/verify_graph_023_offline_lca.cpp.html)
+* :warning: [graph/verify/verify_graph_025_2SAT.cpp](verify/verify_graph_025_2SAT.cpp.html)
 
 
 ## Code

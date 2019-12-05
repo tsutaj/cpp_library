@@ -16,12 +16,12 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: ../../verifying_test/AOJ/CGL_2_B/geometry.test.cpp
+# :heavy_check_mark: verifying_test/AOJ/CGL_2_B/geometry.test.cpp
 
 
 [Back to top page](../../../../index.html)
@@ -31,7 +31,7 @@
 
 
 ## Dependencies
-* :warning: [../../geometry/geometry_2D.cpp](../../../../library/geometry/geometry_2D.cpp.html)
+* :heavy_check_mark: [geometry/geometry_2D.cpp](../../../../library/geometry/geometry_2D.cpp.html)
 
 
 ## Code
