@@ -1,3 +1,5 @@
+// @ignore // ファイル無視テスト
+
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
