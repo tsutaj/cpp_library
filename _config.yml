@@ -1,6 +1,2 @@
 plugins:
   - jemoji
-  
-kramdown:
-  parse_block_html: true
-

@@ -16,13 +16,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: ../../geometry/geometry_2D.cpp
-* category: ../../geometry
+# :warning: geometry/geometry_2D.cpp
+* category: geometry
 
 
 [Back to top page](../../index.html)
@@ -30,23 +30,23 @@
 
 
 ## Verified
-* :warning: [../../verifying_test/AOJ/CGL_1_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_1_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_1_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_2_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_A/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_2_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_B/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_2_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_C/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_2_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_D/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_3_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_A/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_3_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_C/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_4_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_A/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_4_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_B/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_4_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_C/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_7_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_A/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_7_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_D/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_7_E/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_7_F/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html)
-* :warning: [../../verifying_test/AOJ/CGL_7_G/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_1_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_1_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_1_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_2_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_A/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_2_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_B/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_2_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_C/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_2_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_D/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_3_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_A/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_3_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_C/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_4_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_A/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_4_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_B/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_4_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_C/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_7_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_A/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_7_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_D/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_7_E/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_7_F/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html)
+* :heavy_check_mark: [verifying_test/AOJ/CGL_7_G/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html)
 
 
 ## Code

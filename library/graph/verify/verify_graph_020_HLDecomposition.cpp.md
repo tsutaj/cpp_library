@@ -16,13 +16,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/js/balloons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: ../../graph/verify/verify_graph_020_HLDecomposition.cpp
-* category: ../../graph/verify
+# :warning: graph/verify/verify_graph_020_HLDecomposition.cpp
+* category: graph/verify
 
 
 [Back to top page](../../../index.html)
@@ -30,12 +30,12 @@
 
 
 ## Dependencies
-* :warning: [../../graph/graph_020_HLDecomposition.cpp](../graph_020_HLDecomposition.cpp.html)
-* :warning: [../../math/math_004_matrix.cpp](../../math/math_004_matrix.cpp.html)
-* :warning: [../../math/math_017_modint.cpp](../../math/math_017_modint.cpp.html)
-* :warning: [../../math/math_024_fixed_matrix.cpp](../../math/math_024_fixed_matrix.cpp.html)
-* :warning: [../../structure/strc_008_abst_segtree.cpp](../../structure/strc_008_abst_segtree.cpp.html)
-* :warning: [../../structure/strc_009_abst_lazy_segtree.cpp](../../structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [graph/graph_020_HLDecomposition.cpp](../graph_020_HLDecomposition.cpp.html)
+* :warning: [math/math_004_matrix.cpp](../../math/math_004_matrix.cpp.html)
+* :warning: [math/math_017_modint.cpp](../../math/math_017_modint.cpp.html)
+* :warning: [math/math_024_fixed_matrix.cpp](../../math/math_024_fixed_matrix.cpp.html)
+* :warning: [structure/strc_008_abst_segtree.cpp](../../structure/strc_008_abst_segtree.cpp.html)
+* :warning: [structure/strc_009_abst_lazy_segtree.cpp](../../structure/strc_009_abst_lazy_segtree.cpp.html)
 
 
 ## Code
