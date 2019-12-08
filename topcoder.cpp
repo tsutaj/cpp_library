@@ -1,4 +1,4 @@
-// @ignore // ファイル無視テスト
+// @ignore // ファイルを無視するテスト
 
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
