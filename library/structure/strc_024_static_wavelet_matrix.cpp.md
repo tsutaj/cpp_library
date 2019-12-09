@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_024_static_wavelet_matrix.cpp
+# :heavy_check_mark: structure/strc_024_static_wavelet_matrix.cpp
 * category: structure
 
 
@@ -93,6 +93,7 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @title Wavelet 行列 (wavelet matrix)
 #define DOCS "./docs/strc_024_static_wavelet_matrix.md"
 #define REQUIRES "./strc_023_compact_bitvector.cpp"
 #undef REQUIRES

@@ -26,7 +26,7 @@ layout: default
 
 
 # :warning: structure/strc_022_dual_segtree.cpp
-* category: structure
+* category: セグメント木 (Segment Tree)
 
 
 [Back to top page](../../index.html)
@@ -40,6 +40,8 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @category セグメント木 (Segment Tree)
+// @title 双対セグメント木 (Dual Segment Tree)
 // 双対セグメント木 (Dual Segment Tree)
 // ref: https://kimiyuki.net/blog/2019/02/22/dual-segment-tree/
 template <typename MonoidType, typename OperatorType>

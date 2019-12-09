@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_023_compact_bitvector.cpp
+# :heavy_check_mark: structure/strc_023_compact_bitvector.cpp
 * category: structure
 
 
@@ -52,6 +52,7 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @title 簡潔ビットベクトル (compact bit vector)
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)
 // n_sml <- log(N) / 2 (N = 2^32 としたとき、n_sml = 32/2 = 16 = 2^4)

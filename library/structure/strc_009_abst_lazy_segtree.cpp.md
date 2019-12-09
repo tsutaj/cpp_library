@@ -26,7 +26,7 @@ layout: default
 
 
 # :warning: structure/strc_009_abst_lazy_segtree.cpp
-* category: structure
+* category: セグメント木 (Segment Tree)
 
 
 [Back to top page](../../index.html)
@@ -42,6 +42,8 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @category セグメント木 (Segment Tree)
+// @title 遅延伝播セグメント木 (Lazy Segment Tree)
 template <typename MonoidType, typename OperatorType>
 struct LazySegmentTree {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;

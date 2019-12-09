@@ -26,7 +26,7 @@ layout: default
 
 
 # :warning: structure/strc_021_dynamic_lazy_segtree.cpp
-* category: structure
+* category: セグメント木 (Segment Tree)
 
 
 [Back to top page](../../index.html)
@@ -40,6 +40,8 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @category セグメント木 (Segment Tree)
+// @title 動的遅延セグメント木 (Dynamic Lazy Segment Tree)
 // 動的遅延セグメント木 (必要なところだけノードを作る)
 
 template <typename MonoidType, typename OperatorType>

@@ -26,7 +26,7 @@ layout: default
 
 
 # :warning: structure/strc_020_dynamic_segtree.cpp
-* category: structure
+* category: セグメント木 (Segment Tree)
 
 
 [Back to top page](../../index.html)
@@ -40,6 +40,8 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @category セグメント木 (Segment Tree)
+// @title 動的セグメント木 (Dynamic Segment Tree)
 // 動的セグメント木 (必要なノードだけ作る)
 
 template <typename MonoidType>

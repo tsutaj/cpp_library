@@ -201,8 +201,6 @@ layout: default
 * :warning: [structure/strc_005_bit_zero_indexed.cpp](library/structure/strc_005_bit_zero_indexed.cpp.html)
 * :warning: [structure/strc_006_twodimbit_zero_indexed.cpp](library/structure/strc_006_twodimbit_zero_indexed.cpp.html)
 * :warning: [structure/strc_007_sparsetable.cpp](library/structure/strc_007_sparsetable.cpp.html)
-* :warning: [structure/strc_008_abst_segtree.cpp](library/structure/strc_008_abst_segtree.cpp.html)
-* :warning: [structure/strc_009_abst_lazy_segtree.cpp](library/structure/strc_009_abst_lazy_segtree.cpp.html)
 * :warning: [structure/strc_010_abst_sqrtdecomp.cpp](library/structure/strc_010_abst_sqrtdecomp.cpp.html)
 * :warning: [structure/strc_011_weighted_unionfind.cpp](library/structure/strc_011_weighted_unionfind.cpp.html)
 * :warning: [structure/strc_012_kd_tree.cpp](library/structure/strc_012_kd_tree.cpp.html)
@@ -213,9 +211,6 @@ layout: default
 * :warning: [structure/strc_017_persistent_array.cpp](library/structure/strc_017_persistent_array.cpp.html)
 * :warning: [structure/strc_018_binarytrie.cpp](library/structure/strc_018_binarytrie.cpp.html)
 * :warning: [structure/strc_019_intervalset.cpp](library/structure/strc_019_intervalset.cpp.html)
-* :warning: [structure/strc_020_dynamic_segtree.cpp](library/structure/strc_020_dynamic_segtree.cpp.html)
-* :warning: [structure/strc_021_dynamic_lazy_segtree.cpp](library/structure/strc_021_dynamic_lazy_segtree.cpp.html)
-* :warning: [structure/strc_022_dual_segtree.cpp](library/structure/strc_022_dual_segtree.cpp.html)
 * :heavy_check_mark: [structure/strc_023_compact_bitvector.cpp](library/structure/strc_023_compact_bitvector.cpp.html)
 * :heavy_check_mark: [structure/strc_024_static_wavelet_matrix.cpp](library/structure/strc_024_static_wavelet_matrix.cpp.html)
 
@@ -236,6 +231,14 @@ layout: default
 * :warning: [structure/verify/verify_strc_022_dual_segtree.cpp](library/structure/verify/verify_strc_022_dual_segtree.cpp.html)
 * :warning: [structure/verify/verify_strc_023_compact_bitvector.cpp](library/structure/verify/verify_strc_023_compact_bitvector.cpp.html)
 * :warning: [structure/verify/verify_strc_024_static_wavelet_matrix.cpp](library/structure/verify/verify_strc_024_static_wavelet_matrix.cpp.html)
+
+
+### セグメント木 (Segment Tree)
+* :warning: [structure/strc_008_abst_segtree.cpp](library/structure/strc_008_abst_segtree.cpp.html)
+* :warning: [structure/strc_009_abst_lazy_segtree.cpp](library/structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [structure/strc_020_dynamic_segtree.cpp](library/structure/strc_020_dynamic_segtree.cpp.html)
+* :warning: [structure/strc_021_dynamic_lazy_segtree.cpp](library/structure/strc_021_dynamic_lazy_segtree.cpp.html)
+* :warning: [structure/strc_022_dual_segtree.cpp](library/structure/strc_022_dual_segtree.cpp.html)
 
 
 ## Verify Files

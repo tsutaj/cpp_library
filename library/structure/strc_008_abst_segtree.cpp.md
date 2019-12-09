@@ -26,7 +26,7 @@ layout: default
 
 
 # :warning: structure/strc_008_abst_segtree.cpp
-* category: structure
+* category: セグメント木 (Segment Tree)
 
 
 [Back to top page](../../index.html)
@@ -42,6 +42,8 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @category セグメント木 (Segment Tree)
+// @title セグメント木 (Segment Tree)
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)
 template <typename MonoidType>
 struct SegmentTree {

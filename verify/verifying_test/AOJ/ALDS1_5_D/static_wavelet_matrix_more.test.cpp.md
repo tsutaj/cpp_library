@@ -42,6 +42,7 @@ layout: default
 ## Code
 {% raw %}
 ```cpp
+// @title AOJ ALDS_1_5_D: 反転数
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja"
 #define DESCRIPTION "転倒数を求める (自分より大きいものを数えるアプローチ)"
 

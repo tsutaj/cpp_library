@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: geometry/geometry_2D.cpp
+# :heavy_check_mark: geometry/geometry_2D.cpp
 * category: geometry
 
 
