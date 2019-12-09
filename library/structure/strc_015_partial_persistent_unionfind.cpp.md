@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 部分永続 UnionFind
 // バージョンを指定して関数を動かすことで、その時点での連結情報が得られる
@@ -63,6 +68,7 @@ struct PartialPersistentUnionFind {
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

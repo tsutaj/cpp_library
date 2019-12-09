@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // クロージャ内にあるリテラルの数が高々 2 であるときの充足可能性問題 (2-SAT)
 // 依存ライブラリ: SCC (graph_010_scc.cpp)
@@ -81,6 +86,7 @@ struct TwoSAT {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

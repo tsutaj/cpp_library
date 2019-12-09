@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 強連結成分分解
 // Verified: AOJ GRL_3_C (Strongly Connected Components)
@@ -122,6 +127,7 @@ public:
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

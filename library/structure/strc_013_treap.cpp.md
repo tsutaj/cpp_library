@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Treap (平衡二分探索木)
 // データ型・最大値用の単位元を指定して使う
@@ -341,6 +346,7 @@ namespace trp {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

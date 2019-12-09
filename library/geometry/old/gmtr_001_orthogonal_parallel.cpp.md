@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 /***** 直交・平行判定 *****/
 // Verified: AOJ CGL_2_A: Parallel/Orthogonal
@@ -45,6 +50,7 @@ bool is_parallel(Point a1, Point a2, Point b1, Point b2) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

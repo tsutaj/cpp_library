@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 木の中心を求めるアルゴリズム O(|V|)
 // ・まずは、木の最遠点対と、この 2 点から任意の点との距離をそれぞれ求める
@@ -70,6 +75,7 @@ vector<int> getCenters(vector< vector< Edge<T> > > &G) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

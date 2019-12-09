@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // ワーシャルフロイド法 (全点対最短路問題)
 // 計算量 O(|V|^3 )
@@ -72,6 +77,7 @@ vector< vector<T> > d = warshall(G);
 for(size_t i=0; i<G.size(); i++) if(d[i][i] < 0) minus = true;
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

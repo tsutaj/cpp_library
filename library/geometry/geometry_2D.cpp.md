@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -50,6 +54,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 /***** 基本的準備 *****/
 
@@ -635,6 +640,7 @@ Point rotatePoint(Point a, Point b, double z) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

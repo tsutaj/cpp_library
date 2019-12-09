@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // O(n log n) で構築するやつ
 // ・getIdx(i) := Suffix を辞書順に並べたときに i 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
@@ -263,6 +268,7 @@ struct SuffixArray {
 */
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

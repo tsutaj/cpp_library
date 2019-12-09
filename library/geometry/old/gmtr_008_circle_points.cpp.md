@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 三角形の外心。点 a, b, c は同一線上にあってはならない
 Point circumcenter(Point a, Point b, Point c) {
@@ -112,6 +117,7 @@ Point minEnclosingCircle(const vector<Point> &ps) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

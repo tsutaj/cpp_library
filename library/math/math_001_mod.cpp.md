@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 /***** 最大公約数・最小公倍数 *****/
 // gcd (2つの整数に関して、最大公約数)
@@ -136,6 +141,7 @@ for(int i=0; i<SIZE; i++) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

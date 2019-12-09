@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Manacher のアルゴリズム
 // 各インデックスについて回文半径を線形時間で求める
@@ -86,6 +91,7 @@ struct Manacher {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -36,6 +40,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=ja"
 #define DESCRIPTION "ソートを行う (小さいものから $k$ 番目を求められることを利用)"
@@ -96,6 +101,7 @@ int main() {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../../index.html)
 

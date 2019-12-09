@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 中国剰余定理
 // x = b_1 (mod_1), ..., x = b_k (mod_k), ... を満たす x を
@@ -85,6 +90,7 @@ struct CRT {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

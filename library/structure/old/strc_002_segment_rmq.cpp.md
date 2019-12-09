@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Range Minimum Query (区間最小クエリ、RMQ)
 // Verified: AOJ DSL_2_A: Range Minimum Query (int型のみ)
@@ -72,6 +77,7 @@ public:
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

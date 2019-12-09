@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // mod2 行列ライブラリ (bitset を使って高速化、横は SIZE 固定とする)
 // TODO: 乗算の verify
@@ -167,6 +172,7 @@ int detBinary(BinaryMatrix A) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // よく使う配列
 string dayname[] = {"日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"};
@@ -80,6 +85,7 @@ void BForceDate(int y, int m, int d) {
     else BForceDate(y, m, d+1);
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

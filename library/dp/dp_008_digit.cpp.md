@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 1 以上 10^n 以下の整数のうち、 3 の倍数および 3 のつく個数を求める
 // -> 桁 DP で "桁数", "mod 3", "3 を持つか", "元の数未満であることが確定しているか"
@@ -77,6 +82,7 @@ int main() {
     return 0;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

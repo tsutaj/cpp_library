@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // ダイクストラ法 (priority_queueを用いて、 O(|E| log|V|) )
 // 注意: 負の辺が存在する場合、この方法は使えないよ！！！！
@@ -57,6 +62,7 @@ vector<T> dijkstra(vector< vector< Edge<T> > > &G, int s) {
     return d;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

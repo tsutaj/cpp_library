@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 木に対するDFS (対象となる頂点から最も遠い頂点の情報を返す)
 // n := (頂点番号, その頂点までのコスト)
@@ -88,6 +93,7 @@ tuple<int, int, T> diameter(vector< vector< Edge<T> > > &G) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

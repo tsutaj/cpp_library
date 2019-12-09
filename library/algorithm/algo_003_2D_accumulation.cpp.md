@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 二次元累積演算 (0-indexed)
 // 単位元と二項演算・その逆演算を与える
@@ -104,6 +109,7 @@ struct Accumulation2D {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

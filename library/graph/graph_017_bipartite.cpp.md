@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 二部マッチング (最大流を使って解く)
 // ・普通に辺を張る他に、自分で別に頂点を 2 つ用意する
@@ -103,6 +108,7 @@ signed main() {
 }
 */
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

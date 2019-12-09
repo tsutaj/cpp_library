@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -46,6 +50,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)
@@ -237,6 +242,7 @@ int CompactBitVector<value_type, ln_big, ln_sml>::operator[](size_t k) const {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

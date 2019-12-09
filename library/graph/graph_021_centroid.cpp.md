@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 木の重心列挙 O(N)
 // 重心を一つ求める O(N) (列挙よりも高速)
@@ -170,6 +175,7 @@ int main() {
     return 0;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -87,6 +91,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 #define DOCS "./docs/strc_024_static_wavelet_matrix.md"
 #define REQUIRES "./strc_023_compact_bitvector.cpp"
@@ -454,6 +459,7 @@ value_type WaveletMatrix<word_size, value_type, ln_big, ln_sml>::prev_val(int l,
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 個数制限付きナップザック問題
 // 価値 v_i で重さ w_i の品物が m_i 個ある状態で
@@ -60,6 +65,7 @@ void solve() {
     cout << *max_element(dp, dp+W+1) << endl;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

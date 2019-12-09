@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 最大正方形問題 (綺麗なタイルのみを使ってできる正方形の面積最大)
 // 0 -> 綺麗なタイル、 1 -> 汚れているタイル
@@ -52,6 +57,7 @@ int maxSquare(vector< vector<int> > board) {
     return ret;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

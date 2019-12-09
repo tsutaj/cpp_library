@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 2次元LIS (最長増加部分列)
 // Verified: ABC038 D問題
@@ -60,6 +65,7 @@ int main(){
 // ※lower_boundは指定された要素「以上」の値が現れる最初の位置の検索
 // ※upper_boundは指定された要素「よりも大きい」値の値が現れる最初の位置の検索
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Kitamasa 法 (M 項漸化式の K 項目を O(M^2 log K) で求める)
 const int LOG_K = 60;
@@ -124,6 +129,7 @@ signed main() {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

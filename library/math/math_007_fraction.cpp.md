@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // fraction library (use C++11)
 struct fraction{
@@ -123,6 +128,7 @@ bool operator>(const fraction &A, const fraction &B) {
 }
 // fraction library end
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

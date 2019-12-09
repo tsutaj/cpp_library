@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 /***** ベルマンフォード法 *****/
 // 計算量 O(|V| |E|)
@@ -106,6 +111,7 @@ vector<T> bellman(vector< vector< Edge<T> > > &G, int s) {
     return d;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

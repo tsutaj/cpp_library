@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 重み付き UnionFind - マージテク (QuickFind) を使用した実装
 // merge の計算量はならし O(log N)
@@ -92,6 +97,7 @@ struct QuickFind {
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Ford-Fulkerson 法による 最大流 O( F |E| )
 // Bellman-Ford 法による 最小費用流 O( F |V| |E| )
@@ -178,6 +183,7 @@ struct Flow {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

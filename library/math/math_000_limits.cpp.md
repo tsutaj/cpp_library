@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 #include <climits>
 #include <cfloat>
@@ -66,6 +71,7 @@ DBL_MIN ～ DBL_MAX
 LDBL_MIN ～ LDBL_MAX
 環境によって変化するが、double型よりも精度が良い場合がほとんど。
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

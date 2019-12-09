@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 領域探索 (kD 木・2 次元バージョン)
 // Verified: AOJ DSL_2_C: Range Search (kD Tree)
@@ -84,6 +89,7 @@ void find(int v, int sx, int tx, int sy, int ty, vector<int> &ans, int depth=0) 
 // kD-tree end
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

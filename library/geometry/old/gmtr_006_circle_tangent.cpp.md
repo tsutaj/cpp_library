@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 点 p から円 x への接線の接点
 // Verified: AOJ CGL_7_F: Tangent to a Circle
@@ -69,6 +74,7 @@ vector<L> tangentLines(Circle x, Circle y) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

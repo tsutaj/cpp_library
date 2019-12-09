@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // NTT (剰余環を用いた FFT)
 // 任意 mod でやるなら、garner のアルゴリズム + ライブラリ下部が必須
@@ -120,6 +125,7 @@ vector<ll> convolution_using_ntt(vector<ll> A, vector<ll> B, ll mod) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

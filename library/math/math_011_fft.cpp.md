@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // FFT (高速フーリエ変換)
 // Verified: 高速フーリエ変換 (ATC 001 C)
@@ -80,6 +85,7 @@ vector<Complex> multiply(vector<Complex> A, vector<Complex> B) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 巡回セールスマン問題 (重み付き有向グラフについて、次の条件を満たす最短経路の距離)
 // ・ある頂点から出発して、出発点へ戻る閉路
@@ -63,6 +68,7 @@ void solve() {
     cout << ans << endl;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

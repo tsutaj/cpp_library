@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 離散対数問題 (Discrete Logarithm Problem) を解く
 // a^x = b (mod p, p は素数) を満たすような x (1 <= x <= p-1) を求める
@@ -118,6 +123,7 @@ struct DiscreteLogarithm {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

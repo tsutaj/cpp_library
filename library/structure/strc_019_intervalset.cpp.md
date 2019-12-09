@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 区間を set で管理するやつ
 // 閉区間 [l, r] を扱うことに注意
@@ -91,6 +96,7 @@ struct IntervalSet : set< pair<numericType, numericType> > {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

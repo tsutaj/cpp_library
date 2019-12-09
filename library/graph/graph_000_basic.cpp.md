@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -36,6 +40,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 移動元と行先と辺のコストを記録する構造体
 template <typename T = int>
@@ -57,6 +62,7 @@ template <typename T = int>
 using Graph = vector< vector< Edge<T> > >;
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

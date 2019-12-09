@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 永続配列 (2^{LOG} 分木による実装)
 // パスコピーは mutable_get で行おう！値を持ってくるだけなら get を使おう
@@ -87,6 +92,7 @@ struct PersistentArray {
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 長さ N のヒストグラムの長方形領域最大
 // Verified: AOJ DPL_3_C: Largest Rectangle in a Histogram
@@ -60,6 +65,7 @@ int histArea(vector<int> h) {
     return ans;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

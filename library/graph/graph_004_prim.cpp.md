@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // プリム法 (最小全域木問題)
 // Edgeには from, to, cost の情報が必須。計算量 O( |V|^2 )
@@ -78,6 +83,7 @@ pair<int, vector< Edge<T> > > prim(vector< vector< Edge<T> > > &G) {
 // (Under construction)
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

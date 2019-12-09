@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // オイラーの φ 関数 (n 以下の自然数のうち n と互いに素なものの個数)
 // \phi(n) = n \times \prod_{i=1}^{k} (1 - \frac{1}{p_i}) を使おう
@@ -81,6 +86,7 @@ long long int Carmichael(long long int n, long long int prime=0, int pow_cnt=0) 
     }
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

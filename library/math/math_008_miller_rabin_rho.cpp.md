@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // ・ミラーラビン (高速な素数判定)
 // ・ロー法 (高速な素因数分解)
@@ -164,6 +169,7 @@ struct Rho {
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 木の高さを求めるアルゴリズム O(E log |V|)
 // ある頂点に対して最遠の頂点は、木の直径となる両頂点のうち、
@@ -57,6 +62,7 @@ vector<T> treeHeight(vector< vector< Edge<T> > > &G) {
     return ret;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

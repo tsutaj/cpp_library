@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // mod p 行列に対する主要な操作
 // 実数じゃないので絶対値最大のものを pivot にするとかがいらない
@@ -107,6 +112,7 @@ mint detModp(Matrix<mint> A) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

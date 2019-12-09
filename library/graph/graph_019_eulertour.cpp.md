@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Euler-tour (Verified: Codeforces Round #225 Div.1: Propagating Tree)
 // 頂点 i を根とした部分木の情報は [ etbegin[i], etend[i] ) を参照
@@ -50,6 +55,7 @@ void make_et(int v, int par=-1) {
     etend[v] = k;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

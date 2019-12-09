@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -34,6 +38,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Boruvka's algorithm (最小全域木を求める)
 // その時点で存在するそれぞれの木について、それに接続している辺で重み最小のものを探す関数が必要
@@ -77,6 +82,7 @@ T boruvka(int N, F f) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

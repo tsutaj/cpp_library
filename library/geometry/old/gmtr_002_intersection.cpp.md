@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 /***** 各種交差判定 (intersection) *****/
 // 豆知識: 線分 ... line segment (英)
@@ -63,6 +68,7 @@ bool isec_sp(Point a1, Point a2, Point b) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

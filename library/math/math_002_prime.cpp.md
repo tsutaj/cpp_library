@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // エラトステネスの篩
 // [0,n) の範囲の i について、primes[i] != 0 ⇔ i は素数
@@ -114,6 +119,7 @@ vector<ll> OutDivisor(ll n) {
     return ret;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

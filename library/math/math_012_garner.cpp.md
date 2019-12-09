@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Garner のアルゴリズム ( 計算量 O(N^2) )
 // x ≡ a_1 (mod m_1), ..., x ≡ a_N (mod m_N) を満たす最小の x を返す
@@ -74,6 +79,7 @@ ll garner(vector<ll> values, vector<ll> mods, ll mod) {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -36,6 +40,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja"
 #define DESCRIPTION "連続部分列中の最小の要素を答える"
@@ -96,6 +101,7 @@ int main() {
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../../index.html)
 

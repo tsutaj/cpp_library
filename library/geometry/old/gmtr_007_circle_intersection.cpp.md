@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 円 c1 と円 c2 の位置関係
 // Verified: AOJ CGL_7_A: Intersection
@@ -47,6 +52,7 @@ int intersectCC(Circle c1, Circle c2){
 }
 
 ```
+{% endraw %}
 
 [Back to top page](../../../index.html)
 

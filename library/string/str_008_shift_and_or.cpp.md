@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Shift And アルゴリズムによる文字列検索 (Verified: AOJ ALDS1_14_B)
 // パターン・テキストともに英小文字・英大文字・数字のみ出現することを想定 (適宜 getCharId を変更して)
@@ -83,6 +88,7 @@ struct BitParallel {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

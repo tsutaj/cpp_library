@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 最大長方形問題 (綺麗なタイルのみを使ってできる長方形の面積最大)
 // ※ dp_003_histogram.cpp を呼び出すので注意！
@@ -48,6 +53,7 @@ int maxRectangle(vector< vector<int> > board) {
     return ret;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 中国人郵便配達問題 (重み付き無向グラフについて、次の条件を満たす最短経路の距離)
 // ・ある頂点から出発し、出発点へ戻る閉路
@@ -79,6 +84,7 @@ void solve() {
     cout << total + dp[(1<<M)-1] << endl;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

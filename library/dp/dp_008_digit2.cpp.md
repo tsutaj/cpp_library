@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // TTPC2015 F: レシート
 // 太郎君は A 円の買い物をした。 太郎君は X \geq A を満たす任意の X 円を支払うことができる。
@@ -61,6 +66,7 @@ int main() {
     cout << max(dp[N][0], dp[N][1]) << endl;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

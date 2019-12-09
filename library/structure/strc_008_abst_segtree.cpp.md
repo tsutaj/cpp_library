@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -36,6 +40,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)
 template <typename MonoidType>
@@ -97,6 +102,7 @@ struct SegmentTree {
 };
 
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

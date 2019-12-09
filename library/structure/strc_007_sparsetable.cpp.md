@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // Sparse Table 構築 O(N log N), クエリ O(1)
 // 配列で init することでテーブルを構築し、
@@ -74,6 +79,7 @@ struct SparseTable_max {
     }
 };
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 

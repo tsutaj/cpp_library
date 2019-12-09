@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -30,6 +34,7 @@
 
 
 ## Code
+{% raw %}
 ```cpp
 // split関数 (1文字バージョン。指定された文字で文字列を分割)
 vector<string> split(string s, char c) {
@@ -65,6 +70,7 @@ vector<string> split(string s, string c) {
     return ret;
 }
 ```
+{% endraw %}
 
 [Back to top page](../../index.html)
 
