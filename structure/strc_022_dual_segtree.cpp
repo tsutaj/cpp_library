@@ -1,3 +1,5 @@
+// @category セグメント木 (Segment Tree)
+// @title 双対セグメント木 (Dual Segment Tree)
 // 双対セグメント木 (Dual Segment Tree)
 // ref: https://kimiyuki.net/blog/2019/02/22/dual-segment-tree/
 template <typename MonoidType, typename OperatorType>

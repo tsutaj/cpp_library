@@ -1,3 +1,5 @@
+// @category セグメント木 (Segment Tree)
+// @title 動的セグメント木 (Dynamic Segment Tree)
 // 動的セグメント木 (必要なノードだけ作る)
 
 template <typename MonoidType>

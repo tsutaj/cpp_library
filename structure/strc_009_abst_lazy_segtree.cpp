@@ -1,3 +1,5 @@
+// @category セグメント木 (Segment Tree)
+// @title 遅延伝播セグメント木 (Lazy Segment Tree)
 template <typename MonoidType, typename OperatorType>
 struct LazySegmentTree {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;

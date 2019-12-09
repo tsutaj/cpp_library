@@ -1,3 +1,5 @@
+// @category セグメント木 (Segment Tree)
+// @title 動的遅延セグメント木 (Dynamic Lazy Segment Tree)
 // 動的遅延セグメント木 (必要なところだけノードを作る)
 
 template <typename MonoidType, typename OperatorType>

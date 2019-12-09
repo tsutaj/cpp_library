@@ -1,3 +1,5 @@
+// @category セグメント木 (Segment Tree)
+// @title セグメント木 (Segment Tree)
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)
 template <typename MonoidType>
 struct SegmentTree {
