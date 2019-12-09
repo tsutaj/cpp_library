@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :heavy_check_mark: [structure/strc_023_compact_bitvector.cpp](../strc_023_compact_bitvector.cpp.html)
+* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../strc_023_compact_bitvector.cpp.html)
 
 
 ## Code

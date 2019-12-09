@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_008_abst_segtree.cpp
+# :warning: セグメント木 (Segment Tree)
 * category: セグメント木 (Segment Tree)
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: structure/strc_023_compact_bitvector.cpp
+# :heavy_check_mark: 簡潔ビットベクトル (compact bit vector)
 * category: structure
 
 
@@ -34,7 +34,7 @@ layout: default
 
 
 ## Required
-* :heavy_check_mark: [structure/strc_024_static_wavelet_matrix.cpp](strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](strc_024_static_wavelet_matrix.cpp.html)
 * :warning: [structure/verify/verify_strc_023_compact_bitvector.cpp](verify/verify_strc_023_compact_bitvector.cpp.html)
 * :warning: [structure/verify/verify_strc_024_static_wavelet_matrix.cpp](verify/verify_strc_024_static_wavelet_matrix.cpp.html)
 
@@ -42,8 +42,8 @@ layout: default
 ## Verified
 * :heavy_check_mark: [verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp](../../verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp](../../verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp](../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp](../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
+* :heavy_check_mark: [AOJ ALDS_1_5_D: 反転数 (01)](../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
+* :heavy_check_mark: [AOJ ALDS_1_5_D: 反転数 (02)](../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp](../../verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp](../../verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp](../../verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html)

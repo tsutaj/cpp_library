@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: [structure/strc_022_dual_segtree.cpp](../strc_022_dual_segtree.cpp.html)
+* :warning: [双対セグメント木 (Dual Segment Tree)](../strc_022_dual_segtree.cpp.html)
 
 
 ## Code

@@ -36,7 +36,7 @@ layout: default
 ## Dependencies
 * :warning: [math/math_017_modint.cpp](../math_017_modint.cpp.html)
 * :warning: [math/math_024_fixed_matrix.cpp](../math_024_fixed_matrix.cpp.html)
-* :warning: [structure/strc_009_abst_lazy_segtree.cpp](../../structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../../structure/strc_009_abst_lazy_segtree.cpp.html)
 
 
 ## Code

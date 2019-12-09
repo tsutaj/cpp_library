@@ -211,8 +211,8 @@ layout: default
 * :warning: [structure/strc_017_persistent_array.cpp](library/structure/strc_017_persistent_array.cpp.html)
 * :warning: [structure/strc_018_binarytrie.cpp](library/structure/strc_018_binarytrie.cpp.html)
 * :warning: [structure/strc_019_intervalset.cpp](library/structure/strc_019_intervalset.cpp.html)
-* :heavy_check_mark: [structure/strc_023_compact_bitvector.cpp](library/structure/strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [structure/strc_024_static_wavelet_matrix.cpp](library/structure/strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](library/structure/strc_023_compact_bitvector.cpp.html)
+* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](library/structure/strc_024_static_wavelet_matrix.cpp.html)
 
 
 ### structure/old
@@ -234,18 +234,18 @@ layout: default
 
 
 ### セグメント木 (Segment Tree)
-* :warning: [structure/strc_008_abst_segtree.cpp](library/structure/strc_008_abst_segtree.cpp.html)
-* :warning: [structure/strc_009_abst_lazy_segtree.cpp](library/structure/strc_009_abst_lazy_segtree.cpp.html)
-* :warning: [structure/strc_020_dynamic_segtree.cpp](library/structure/strc_020_dynamic_segtree.cpp.html)
-* :warning: [structure/strc_021_dynamic_lazy_segtree.cpp](library/structure/strc_021_dynamic_lazy_segtree.cpp.html)
-* :warning: [structure/strc_022_dual_segtree.cpp](library/structure/strc_022_dual_segtree.cpp.html)
+* :warning: [セグメント木 (Segment Tree)](library/structure/strc_008_abst_segtree.cpp.html)
+* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](library/structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [動的セグメント木 (Dynamic Segment Tree)](library/structure/strc_020_dynamic_segtree.cpp.html)
+* :warning: [動的遅延セグメント木 (Dynamic Lazy Segment Tree)](library/structure/strc_021_dynamic_lazy_segtree.cpp.html)
+* :warning: [双対セグメント木 (Dual Segment Tree)](library/structure/strc_022_dual_segtree.cpp.html)
 
 
 ## Verify Files
 * :heavy_check_mark: [verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp](verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp](verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp](verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp](verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
+* :heavy_check_mark: [AOJ ALDS_1_5_D: 反転数 (01)](verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html)
+* :heavy_check_mark: [AOJ ALDS_1_5_D: 反転数 (02)](verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp](verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/CGL_1_A/geometry.test.cpp](verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html)
 * :heavy_check_mark: [verifying_test/AOJ/CGL_1_B/geometry.test.cpp](verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html)

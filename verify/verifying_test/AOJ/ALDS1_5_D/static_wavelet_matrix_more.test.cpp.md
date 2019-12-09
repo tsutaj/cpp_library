@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
+# :heavy_check_mark: AOJ ALDS_1_5_D: 反転数 (02)
 
 
 [Back to top page](../../../../index.html)
@@ -35,8 +35,8 @@ layout: default
 
 
 ## Dependencies
-* :heavy_check_mark: [structure/strc_023_compact_bitvector.cpp](../../../../library/structure/strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [structure/strc_024_static_wavelet_matrix.cpp](../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../../../../library/structure/strc_023_compact_bitvector.cpp.html)
+* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html)
 
 
 ## Code

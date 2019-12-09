@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_009_abst_lazy_segtree.cpp
+# :warning: 遅延伝播セグメント木 (Lazy Segment Tree)
 * category: セグメント木 (Segment Tree)
 
 

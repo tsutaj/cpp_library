@@ -38,8 +38,8 @@ layout: default
 * :warning: [math/math_004_matrix.cpp](../../math/math_004_matrix.cpp.html)
 * :warning: [math/math_017_modint.cpp](../../math/math_017_modint.cpp.html)
 * :warning: [math/math_024_fixed_matrix.cpp](../../math/math_024_fixed_matrix.cpp.html)
-* :warning: [structure/strc_008_abst_segtree.cpp](../../structure/strc_008_abst_segtree.cpp.html)
-* :warning: [structure/strc_009_abst_lazy_segtree.cpp](../../structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [セグメント木 (Segment Tree)](../../structure/strc_008_abst_segtree.cpp.html)
+* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../../structure/strc_009_abst_lazy_segtree.cpp.html)
 
 
 ## Code

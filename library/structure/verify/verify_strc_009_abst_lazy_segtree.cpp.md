@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: [structure/strc_009_abst_lazy_segtree.cpp](../strc_009_abst_lazy_segtree.cpp.html)
+* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../strc_009_abst_lazy_segtree.cpp.html)
 
 
 ## Code

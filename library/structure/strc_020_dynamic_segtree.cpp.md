@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_020_dynamic_segtree.cpp
+# :warning: 動的セグメント木 (Dynamic Segment Tree)
 * category: セグメント木 (Segment Tree)
 
 

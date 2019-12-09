@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: [structure/strc_020_dynamic_segtree.cpp](../strc_020_dynamic_segtree.cpp.html)
+* :warning: [動的セグメント木 (Dynamic Segment Tree)](../strc_020_dynamic_segtree.cpp.html)
 
 
 ## Code

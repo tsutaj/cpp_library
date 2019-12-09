@@ -34,8 +34,8 @@ layout: default
 
 
 ## Dependencies
-* :heavy_check_mark: [structure/strc_023_compact_bitvector.cpp](../strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [structure/strc_024_static_wavelet_matrix.cpp](../strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../strc_023_compact_bitvector.cpp.html)
+* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](../strc_024_static_wavelet_matrix.cpp.html)
 
 
 ## Code

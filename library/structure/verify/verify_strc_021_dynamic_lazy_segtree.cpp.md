@@ -34,7 +34,7 @@ layout: default
 
 
 ## Dependencies
-* :warning: [structure/strc_021_dynamic_lazy_segtree.cpp](../strc_021_dynamic_lazy_segtree.cpp.html)
+* :warning: [動的遅延セグメント木 (Dynamic Lazy Segment Tree)](../strc_021_dynamic_lazy_segtree.cpp.html)
 
 
 ## Code

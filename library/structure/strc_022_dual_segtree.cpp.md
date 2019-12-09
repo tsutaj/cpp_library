@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_022_dual_segtree.cpp
+# :warning: 双対セグメント木 (Dual Segment Tree)
 * category: セグメント木 (Segment Tree)
 
 
