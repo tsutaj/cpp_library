@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: $3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_1_C/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-25 23:59:53 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_1_C/geometry.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-25 23:59:53 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C&lang=ja</a>

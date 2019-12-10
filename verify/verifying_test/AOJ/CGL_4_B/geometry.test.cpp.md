@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 凸多角形 $g$ の直径を求める
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_4_B/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-25 23:59:53 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_4_B/geometry.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-25 23:59:53 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_B&lang=ja</a>

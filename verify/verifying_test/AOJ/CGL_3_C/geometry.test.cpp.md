@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 多角形 $g$ と点 $p$ について、$p$ が $g$ に含まれるか・辺上にあるかを判定
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_C/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-25 23:59:53 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_C/geometry.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-25 23:59:53 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_C&lang=ja</a>

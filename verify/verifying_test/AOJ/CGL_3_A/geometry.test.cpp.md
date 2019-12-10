@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 凸とは限らない多角形の面積を計算する
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_A/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 18:06:16 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_A/geometry.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-24 18:06:16 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_A&lang=ja</a>

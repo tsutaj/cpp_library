@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: $\left\[ l, r \right\]$ にある整数の中で $D$ に最も近いものを求める
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 17:27:28 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1549</a>

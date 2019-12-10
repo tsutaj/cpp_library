@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 線分 $s_1, s_2$ の交点の座標を求める
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_2_C/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-25 23:59:53 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_2_C/geometry.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-25 23:59:53 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_C&lang=ja</a>

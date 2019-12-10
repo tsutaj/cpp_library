@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: AOJ ALDS_1_5_D: 反転数 (02)
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 17:27:28 +0900
 
 
 * 転倒数を求める (自分より大きいものを数えるアプローチ)

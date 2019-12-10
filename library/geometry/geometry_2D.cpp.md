@@ -29,7 +29,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: geometry
-* <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry_2D.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 03:10:17 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry_2D.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-11-24 03:10:17 +0900
 
 
 

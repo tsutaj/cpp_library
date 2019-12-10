@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 与えられた数列を逆順に出力
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 17:27:28 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_6_A&lang=ja</a>

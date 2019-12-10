@@ -29,7 +29,8 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * category: math/verify
-* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_024_fixed_matrix.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_024_fixed_matrix.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 17:27:28 +0900
 
 
 

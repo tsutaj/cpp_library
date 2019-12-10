@@ -28,7 +28,8 @@ layout: default
 # :heavy_check_mark: 矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める
 <a href="../../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-09 17:27:28 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426</a>
