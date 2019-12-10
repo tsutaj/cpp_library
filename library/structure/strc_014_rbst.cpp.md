@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: structure/strc_014_rbst.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: structure
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_014_rbst.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -350,5 +351,5 @@ namespace rbt {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

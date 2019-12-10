@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: graph/verify/verify_graph_012_maxflow_ford.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: graph/verify
+* <a href="{{ site.github.repository_url }}/blob/master/graph/verify/verify_graph_012_maxflow_ford.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [graph/graph_012_maxflow_ford.cpp](../graph_012_maxflow_ford.cpp.html)
+* :warning: <a href="../graph_012_maxflow_ford.cpp.html">graph/graph_012_maxflow_ford.cpp</a>
 
 
 ## Code
@@ -116,5 +117,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

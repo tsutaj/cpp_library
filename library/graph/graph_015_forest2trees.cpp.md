@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: graph/graph_015_forest2trees.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/graph_015_forest2trees.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -76,5 +77,5 @@ Graph<T> Forest2Trees(Graph<T> &G) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

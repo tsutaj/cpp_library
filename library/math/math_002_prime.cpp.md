@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: math/math_002_prime.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_002_prime.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -121,5 +122,5 @@ vector<ll> OutDivisor(ll n) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

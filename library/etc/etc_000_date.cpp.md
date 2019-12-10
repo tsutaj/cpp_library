@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: etc/etc_000_date.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: etc
+* <a href="{{ site.github.repository_url }}/blob/master/etc/etc_000_date.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -87,5 +88,5 @@ void BForceDate(int y, int m, int d) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

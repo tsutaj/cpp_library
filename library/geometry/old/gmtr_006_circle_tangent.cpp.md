@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: geometry/old/gmtr_006_circle_tangent.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: geometry/old
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_006_circle_tangent.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 02:02:41 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
@@ -76,5 +77,5 @@ vector<L> tangentLines(Circle x, Circle y) {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

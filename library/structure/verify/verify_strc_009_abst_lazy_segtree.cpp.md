@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_009_abst_lazy_segtree.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_009_abst_lazy_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../strc_009_abst_lazy_segtree.cpp.html)
+* :warning: <a href="../strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code
@@ -336,5 +337,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

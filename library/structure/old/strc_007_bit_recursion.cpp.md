@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: structure/old/strc_007_bit_recursion.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/old
+* <a href="{{ site.github.repository_url }}/blob/master/structure/old/strc_007_bit_recursion.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
@@ -63,5 +64,5 @@ signed main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

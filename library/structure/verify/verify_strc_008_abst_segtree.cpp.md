@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_008_abst_segtree.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_008_abst_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [セグメント木 (Segment Tree)](../strc_008_abst_segtree.cpp.html)
+* :warning: <a href="../strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
 
 
 ## Code
@@ -113,5 +114,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

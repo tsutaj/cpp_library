@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: graph/graph_004_prim.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/graph_004_prim.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -85,5 +86,5 @@ pair<int, vector< Edge<T> > > prim(vector< vector< Edge<T> > > &G) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

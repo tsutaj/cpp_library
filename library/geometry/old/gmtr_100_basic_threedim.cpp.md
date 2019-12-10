@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: geometry/old/gmtr_100_basic_threedim.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: geometry/old
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_100_basic_threedim.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 02:02:41 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
@@ -73,5 +74,5 @@ double dot(Point3D a, Point3D b) {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

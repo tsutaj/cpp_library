@@ -26,18 +26,19 @@ layout: default
 
 
 # :warning: math/math_004_matrix.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_004_matrix.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
-* :warning: [math/verify/verify_math_004_matrix.cpp](verify/verify_math_004_matrix.cpp.html)
-* :warning: [math/verify/verify_math_022_matrix_utils_real.cpp](verify/verify_math_022_matrix_utils_real.cpp.html)
-* :warning: [math/verify/verify_math_023_matrix_utils_modp.cpp](verify/verify_math_023_matrix_utils_modp.cpp.html)
+* :warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
+* :warning: <a href="verify/verify_math_004_matrix.cpp.html">math/verify/verify_math_004_matrix.cpp</a>
+* :warning: <a href="verify/verify_math_022_matrix_utils_real.cpp.html">math/verify/verify_math_022_matrix_utils_real.cpp</a>
+* :warning: <a href="verify/verify_math_023_matrix_utils_modp.cpp.html">math/verify/verify_math_023_matrix_utils_modp.cpp</a>
 
 
 ## Code
@@ -152,5 +153,5 @@ ostream& operator<< (ostream& out, Matrix<T> mat) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

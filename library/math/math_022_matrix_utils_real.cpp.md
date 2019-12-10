@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: math/math_022_matrix_utils_real.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_022_matrix_utils_real.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [math/verify/verify_math_022_matrix_utils_real.cpp](verify/verify_math_022_matrix_utils_real.cpp.html)
+* :warning: <a href="verify/verify_math_022_matrix_utils_real.cpp.html">math/verify/verify_math_022_matrix_utils_real.cpp</a>
 
 
 ## Code
@@ -121,5 +122,5 @@ Real detReal(Matrix<Real> A, const Real EPS=1e-9) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

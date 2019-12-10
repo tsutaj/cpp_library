@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: graph/verify/verify_graph_025_2SAT.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: graph/verify
+* <a href="{{ site.github.repository_url }}/blob/master/graph/verify/verify_graph_025_2SAT.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [graph/graph_000_basic.cpp](../graph_000_basic.cpp.html)
-* :warning: [graph/graph_010_scc.cpp](../graph_010_scc.cpp.html)
-* :warning: [graph/graph_025_2SAT.cpp](../graph_025_2SAT.cpp.html)
+* :warning: <a href="../graph_000_basic.cpp.html">graph/graph_000_basic.cpp</a>
+* :warning: <a href="../graph_010_scc.cpp.html">graph/graph_010_scc.cpp</a>
+* :warning: <a href="../graph_025_2SAT.cpp.html">graph/graph_025_2SAT.cpp</a>
 
 
 ## Code
@@ -167,5 +168,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

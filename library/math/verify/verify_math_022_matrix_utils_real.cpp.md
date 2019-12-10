@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: math/verify/verify_math_022_matrix_utils_real.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: math/verify
+* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_022_matrix_utils_real.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [math/math_004_matrix.cpp](../math_004_matrix.cpp.html)
-* :warning: [math/math_022_matrix_utils_real.cpp](../math_022_matrix_utils_real.cpp.html)
+* :warning: <a href="../math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
+* :warning: <a href="../math_022_matrix_utils_real.cpp.html">math/math_022_matrix_utils_real.cpp</a>
 
 
 ## Code
@@ -114,5 +115,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

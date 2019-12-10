@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: math/math_020_combination.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_020_combination.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [math/verify/verify_math_019_specific_ragrange_polynomial.cpp](verify/verify_math_019_specific_ragrange_polynomial.cpp.html)
-* :warning: [math/verify/verify_math_020_combination.cpp](verify/verify_math_020_combination.cpp.html)
+* :warning: <a href="verify/verify_math_019_specific_ragrange_polynomial.cpp.html">math/verify/verify_math_019_specific_ragrange_polynomial.cpp</a>
+* :warning: <a href="verify/verify_math_020_combination.cpp.html">math/verify/verify_math_020_combination.cpp</a>
 
 
 ## Code
@@ -140,5 +141,5 @@ struct Partition {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -26,22 +26,23 @@ layout: default
 
 
 # :warning: math/math_017_modint.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_017_modint.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
-* :warning: [math/verify/verify_math_004_matrix.cpp](verify/verify_math_004_matrix.cpp.html)
-* :warning: [math/verify/verify_math_015_remainder_sum.cpp](verify/verify_math_015_remainder_sum.cpp.html)
-* :warning: [math/verify/verify_math_018_ragrange_polynomial.cpp](verify/verify_math_018_ragrange_polynomial.cpp.html)
-* :warning: [math/verify/verify_math_019_specific_ragrange_polynomial.cpp](verify/verify_math_019_specific_ragrange_polynomial.cpp.html)
-* :warning: [math/verify/verify_math_020_combination.cpp](verify/verify_math_020_combination.cpp.html)
-* :warning: [math/verify/verify_math_023_matrix_utils_modp.cpp](verify/verify_math_023_matrix_utils_modp.cpp.html)
-* :warning: [math/verify/verify_math_024_fixed_matrix.cpp](verify/verify_math_024_fixed_matrix.cpp.html)
+* :warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
+* :warning: <a href="verify/verify_math_004_matrix.cpp.html">math/verify/verify_math_004_matrix.cpp</a>
+* :warning: <a href="verify/verify_math_015_remainder_sum.cpp.html">math/verify/verify_math_015_remainder_sum.cpp</a>
+* :warning: <a href="verify/verify_math_018_ragrange_polynomial.cpp.html">math/verify/verify_math_018_ragrange_polynomial.cpp</a>
+* :warning: <a href="verify/verify_math_019_specific_ragrange_polynomial.cpp.html">math/verify/verify_math_019_specific_ragrange_polynomial.cpp</a>
+* :warning: <a href="verify/verify_math_020_combination.cpp.html">math/verify/verify_math_020_combination.cpp</a>
+* :warning: <a href="verify/verify_math_023_matrix_utils_modp.cpp.html">math/verify/verify_math_023_matrix_utils_modp.cpp</a>
+* :warning: <a href="verify/verify_math_024_fixed_matrix.cpp.html">math/verify/verify_math_024_fixed_matrix.cpp</a>
 
 
 ## Code
@@ -107,5 +108,5 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

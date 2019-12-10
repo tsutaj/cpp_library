@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_024_static_wavelet_matrix.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](../strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: <a href="../strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
+* :heavy_check_mark: <a href="../strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
 
 
 ## Code
@@ -74,5 +75,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

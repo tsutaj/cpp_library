@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: algorithm/verify/verify_algo_002_accumulation.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: algorithm/verify
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/verify/verify_algo_002_accumulation.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [algorithm/algo_002_accumulation.cpp](../algo_002_accumulation.cpp.html)
+* :warning: <a href="../algo_002_accumulation.cpp.html">algorithm/algo_002_accumulation.cpp</a>
 
 
 ## Code
@@ -102,5 +103,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

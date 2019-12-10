@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: 双対セグメント木 (Dual Segment Tree)
+<a href="../../index.html">Back to top page</a>
+
 * category: セグメント木 (Segment Tree)
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_022_dual_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [structure/verify/verify_strc_022_dual_segtree.cpp](verify/verify_strc_022_dual_segtree.cpp.html)
+* :warning: <a href="verify/verify_strc_022_dual_segtree.cpp.html">structure/verify/verify_strc_022_dual_segtree.cpp</a>
 
 
 ## Code
@@ -107,5 +108,5 @@ struct DualSegmentTree {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

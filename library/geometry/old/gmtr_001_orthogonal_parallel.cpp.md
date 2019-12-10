@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: geometry/old/gmtr_001_orthogonal_parallel.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: geometry/old
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_001_orthogonal_parallel.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 02:02:41 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
@@ -52,5 +53,5 @@ bool is_parallel(Point a1, Point a2, Point b1, Point b2) {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

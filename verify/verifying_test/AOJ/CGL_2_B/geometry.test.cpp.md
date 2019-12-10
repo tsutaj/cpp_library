@@ -25,17 +25,17 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: verifying_test/AOJ/CGL_2_B/geometry.test.cpp
+# :heavy_check_mark: 線分 $s_1, s_2$ について、交差を判定
+<a href="../../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_2_B/geometry.test.cpp">View this file on GitHub</a> (Last commit date: 2019-11-25 23:59:53 +0900)
 
 
-[Back to top page](../../../../index.html)
-
-* 線分 $s_1, s_2$ について、交差を判定
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B&lang=ja</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [geometry/geometry_2D.cpp](../../../../library/geometry/geometry_2D.cpp.html)
+* :heavy_check_mark: <a href="../../../../library/geometry/geometry_2D.cpp.html">geometry/geometry_2D.cpp</a>
 
 
 ## Code
@@ -100,5 +100,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../../index.html)
+<a href="../../../../index.html">Back to top page</a>
 

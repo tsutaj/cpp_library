@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: string/str_010_z_algorithm.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: string
+* <a href="{{ site.github.repository_url }}/blob/master/string/str_010_z_algorithm.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [string/verify/verify_str_010_z_algorithm.cpp](verify/verify_str_010_z_algorithm.cpp.html)
+* :warning: <a href="verify/verify_str_010_z_algorithm.cpp.html">string/verify/verify_str_010_z_algorithm.cpp</a>
 
 
 ## Code
@@ -79,5 +80,5 @@ struct Z_algorithm {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

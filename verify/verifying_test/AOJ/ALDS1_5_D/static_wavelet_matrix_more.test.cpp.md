@@ -26,17 +26,18 @@ layout: default
 
 
 # :heavy_check_mark: AOJ ALDS_1_5_D: 反転数 (02)
+<a href="../../../../index.html">Back to top page</a>
 
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-[Back to top page](../../../../index.html)
 
 * 転倒数を求める (自分より大きいものを数えるアプローチ)
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../../../../library/structure/strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: <a href="../../../../library/structure/strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
+* :heavy_check_mark: <a href="../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
 
 
 ## Code
@@ -104,5 +105,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../../index.html)
+<a href="../../../../index.html">Back to top page</a>
 

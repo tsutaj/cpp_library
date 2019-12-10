@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: string/str_009_manacher.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: string
+* <a href="{{ site.github.repository_url }}/blob/master/string/str_009_manacher.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [string/verify/verify_str_009_manacher.cpp](verify/verify_str_009_manacher.cpp.html)
+* :warning: <a href="verify/verify_str_009_manacher.cpp.html">string/verify/verify_str_009_manacher.cpp</a>
 
 
 ## Code
@@ -93,5 +94,5 @@ struct Manacher {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

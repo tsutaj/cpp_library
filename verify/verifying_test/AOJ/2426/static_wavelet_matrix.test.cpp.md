@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
+# :heavy_check_mark: 矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める
+<a href="../../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
 
-[Back to top page](../../../../index.html)
-
-* 矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../../../../library/structure/strc_023_compact_bitvector.cpp.html)
-* :heavy_check_mark: [Wavelet 行列 (wavelet matrix)](../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html)
+* :heavy_check_mark: <a href="../../../../library/structure/strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
+* :heavy_check_mark: <a href="../../../../library/structure/strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
 
 
 ## Code
@@ -118,5 +118,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../../index.html)
+<a href="../../../../index.html">Back to top page</a>
 

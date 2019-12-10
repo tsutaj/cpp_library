@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: string/verify/verify_str_009_manacher.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: string/verify
+* <a href="{{ site.github.repository_url }}/blob/master/string/verify/verify_str_009_manacher.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [string/str_009_manacher.cpp](../str_009_manacher.cpp.html)
-* :warning: [セグメント木 (Segment Tree)](../../structure/strc_008_abst_segtree.cpp.html)
+* :warning: <a href="../str_009_manacher.cpp.html">string/str_009_manacher.cpp</a>
+* :warning: <a href="../../structure/strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
 
 
 ## Code
@@ -168,5 +169,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: 動的セグメント木 (Dynamic Segment Tree)
+<a href="../../index.html">Back to top page</a>
+
 * category: セグメント木 (Segment Tree)
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_020_dynamic_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [structure/verify/verify_strc_020_dynamic_segtree.cpp](verify/verify_strc_020_dynamic_segtree.cpp.html)
+* :warning: <a href="verify/verify_strc_020_dynamic_segtree.cpp.html">structure/verify/verify_strc_020_dynamic_segtree.cpp</a>
 
 
 ## Code
@@ -122,5 +123,5 @@ struct DynamicSegmentTree {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

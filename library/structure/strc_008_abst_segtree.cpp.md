@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: セグメント木 (Segment Tree)
+<a href="../../index.html">Back to top page</a>
+
 * category: セグメント木 (Segment Tree)
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_008_abst_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
-* :warning: [string/verify/verify_str_009_manacher.cpp](../string/verify/verify_str_009_manacher.cpp.html)
-* :warning: [structure/verify/verify_strc_008_abst_segtree.cpp](verify/verify_strc_008_abst_segtree.cpp.html)
+* :warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
+* :warning: <a href="../string/verify/verify_str_009_manacher.cpp.html">string/verify/verify_str_009_manacher.cpp</a>
+* :warning: <a href="verify/verify_strc_008_abst_segtree.cpp.html">structure/verify/verify_strc_008_abst_segtree.cpp</a>
 
 
 ## Code
@@ -106,5 +107,5 @@ struct SegmentTree {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

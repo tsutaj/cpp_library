@@ -26,31 +26,32 @@ layout: default
 
 
 # :heavy_check_mark: geometry/geometry_2D.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: geometry
+* <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry_2D.cpp">View this file on GitHub</a> (Last commit date: 2019-11-24 03:10:17 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Verified
-* :heavy_check_mark: [verifying_test/AOJ/CGL_1_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_1_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_1_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_2_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_A/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_2_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_B/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_2_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_C/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_2_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_2_D/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_3_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_A/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_3_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_3_C/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_4_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_A/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_4_B/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_B/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_4_C/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_4_C/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_7_A/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_A/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_7_D/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_D/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_7_E/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_7_F/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html)
-* :heavy_check_mark: [verifying_test/AOJ/CGL_7_G/geometry.test.cpp](../../verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html">直線 $p_1 p_2$ に対する点 $p$ の射影を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html">直線 $p_1 p_2$ に対する点 $p$ の反射を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html">$3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_2_A/geometry.test.cpp.html">直線 $s_1, s_2$ について平行・直交を判定</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_2_B/geometry.test.cpp.html">線分 $s_1, s_2$ について、交差を判定</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_2_C/geometry.test.cpp.html">線分 $s_1, s_2$ の交点の座標を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_2_D/geometry.test.cpp.html">線分 $s_1, s_2$ についてそれらの距離を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_3_A/geometry.test.cpp.html">凸とは限らない多角形の面積を計算する</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_3_C/geometry.test.cpp.html">多角形 $g$ と点 $p$ について、$p$ が $g$ に含まれるか・辺上にあるかを判定</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_4_A/geometry.test.cpp.html">二次元平面における点集合 $P$ の凸包を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_4_B/geometry.test.cpp.html">凸多角形 $g$ の直径を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_4_C/geometry.test.cpp.html">凸多角形 $g$ を直線 $p_1 p_2$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_7_A/geometry.test.cpp.html">$2$ つの円 $c_1, c_2$ の位置関係を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_7_D/geometry.test.cpp.html">円 $c$ と直線 $l$ の交点を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html">$2$ つの円 $c_1, c_2$ の交点を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html">点 $p$ を通る円 $c$ の接線を求める</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">$2$ つの円 $c_1, c_2$ の共通接線を求める</a>
 
 
 ## Code
@@ -642,5 +643,5 @@ Point rotatePoint(Point a, Point b, double z) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_023_compact_bitvector.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_023_compact_bitvector.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :heavy_check_mark: [簡潔ビットベクトル (compact bit vector)](../strc_023_compact_bitvector.cpp.html)
+* :heavy_check_mark: <a href="../strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
 
 
 ## Code
@@ -100,5 +101,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

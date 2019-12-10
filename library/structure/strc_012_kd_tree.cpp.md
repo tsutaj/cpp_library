@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: structure/strc_012_kd_tree.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: structure
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_012_kd_tree.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -91,5 +92,5 @@ void find(int v, int sx, int tx, int sy, int ty, vector<int> &ans, int depth=0) 
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

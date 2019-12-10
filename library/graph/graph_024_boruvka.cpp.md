@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: graph/graph_024_boruvka.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: graph
+* <a href="{{ site.github.repository_url }}/blob/master/graph/graph_024_boruvka.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [graph/verify/verify_graph_024_boruvka.cpp](verify/verify_graph_024_boruvka.cpp.html)
+* :warning: <a href="verify/verify_graph_024_boruvka.cpp.html">graph/verify/verify_graph_024_boruvka.cpp</a>
 
 
 ## Code
@@ -84,5 +85,5 @@ T boruvka(int N, F f) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

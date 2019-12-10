@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: math/verify/verify_math_018_ragrange_polynomial.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: math/verify
+* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_018_ragrange_polynomial.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [math/math_017_modint.cpp](../math_017_modint.cpp.html)
-* :warning: [math/math_018_ragrange_polynomial.cpp](../math_018_ragrange_polynomial.cpp.html)
+* :warning: <a href="../math_017_modint.cpp.html">math/math_017_modint.cpp</a>
+* :warning: <a href="../math_018_ragrange_polynomial.cpp.html">math/math_018_ragrange_polynomial.cpp</a>
 
 
 ## Code
@@ -123,5 +124,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

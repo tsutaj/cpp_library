@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: math/verify/verify_math_023_matrix_utils_modp.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: math/verify
+* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_023_matrix_utils_modp.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [math/math_004_matrix.cpp](../math_004_matrix.cpp.html)
-* :warning: [math/math_017_modint.cpp](../math_017_modint.cpp.html)
-* :warning: [math/math_023_matrix_utils_modp.cpp](../math_023_matrix_utils_modp.cpp.html)
+* :warning: <a href="../math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
+* :warning: <a href="../math_017_modint.cpp.html">math/math_017_modint.cpp</a>
+* :warning: <a href="../math_023_matrix_utils_modp.cpp.html">math/math_023_matrix_utils_modp.cpp</a>
 
 
 ## Code
@@ -117,5 +118,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: algorithm/algo_003_2D_accumulation.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: algorithm
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/algo_003_2D_accumulation.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [algorithm/verify/verify_algo_003_2D_accumulation.cpp](verify/verify_algo_003_2D_accumulation.cpp.html)
+* :warning: <a href="verify/verify_algo_003_2D_accumulation.cpp.html">algorithm/verify/verify_algo_003_2D_accumulation.cpp</a>
 
 
 ## Code
@@ -111,5 +112,5 @@ struct Accumulation2D {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

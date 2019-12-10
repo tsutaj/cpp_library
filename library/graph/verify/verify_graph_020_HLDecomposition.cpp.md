@@ -26,20 +26,21 @@ layout: default
 
 
 # :warning: graph/verify/verify_graph_020_HLDecomposition.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: graph/verify
+* <a href="{{ site.github.repository_url }}/blob/master/graph/verify/verify_graph_020_HLDecomposition.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [graph/graph_020_HLDecomposition.cpp](../graph_020_HLDecomposition.cpp.html)
-* :warning: [math/math_004_matrix.cpp](../../math/math_004_matrix.cpp.html)
-* :warning: [math/math_017_modint.cpp](../../math/math_017_modint.cpp.html)
-* :warning: [math/math_024_fixed_matrix.cpp](../../math/math_024_fixed_matrix.cpp.html)
-* :warning: [セグメント木 (Segment Tree)](../../structure/strc_008_abst_segtree.cpp.html)
-* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../../structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: <a href="../graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
+* :warning: <a href="../../math/math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
+* :warning: <a href="../../math/math_017_modint.cpp.html">math/math_017_modint.cpp</a>
+* :warning: <a href="../../math/math_024_fixed_matrix.cpp.html">math/math_024_fixed_matrix.cpp</a>
+* :warning: <a href="../../structure/strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
+* :warning: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code
@@ -257,5 +258,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

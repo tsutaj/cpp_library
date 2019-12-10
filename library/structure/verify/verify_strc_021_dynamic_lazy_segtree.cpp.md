@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [動的遅延セグメント木 (Dynamic Lazy Segment Tree)](../strc_021_dynamic_lazy_segtree.cpp.html)
+* :warning: <a href="../strc_021_dynamic_lazy_segtree.cpp.html">動的遅延セグメント木 (Dynamic Lazy Segment Tree)</a>
 
 
 ## Code
@@ -296,5 +297,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

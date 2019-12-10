@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: math/verify/verify_math_024_fixed_matrix.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: math/verify
+* <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_024_fixed_matrix.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [math/math_017_modint.cpp](../math_017_modint.cpp.html)
-* :warning: [math/math_024_fixed_matrix.cpp](../math_024_fixed_matrix.cpp.html)
-* :warning: [遅延伝播セグメント木 (Lazy Segment Tree)](../../structure/strc_009_abst_lazy_segtree.cpp.html)
+* :warning: <a href="../math_017_modint.cpp.html">math/math_017_modint.cpp</a>
+* :warning: <a href="../math_024_fixed_matrix.cpp.html">math/math_024_fixed_matrix.cpp</a>
+* :warning: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code
@@ -110,5 +111,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

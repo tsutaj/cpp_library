@@ -26,15 +26,16 @@ layout: default
 
 
 # :warning: math/math_021_crt.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_021_crt.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [math/verify/verify_math_021_crt.cpp](verify/verify_math_021_crt.cpp.html)
+* :warning: <a href="verify/verify_math_021_crt.cpp.html">math/verify/verify_math_021_crt.cpp</a>
 
 
 ## Code
@@ -92,5 +93,5 @@ struct CRT {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

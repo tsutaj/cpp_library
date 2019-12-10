@@ -26,10 +26,11 @@ layout: default
 
 
 # :warning: math/math_011_fft.cpp
+<a href="../../index.html">Back to top page</a>
+
 * category: math
+* <a href="{{ site.github.repository_url }}/blob/master/math/math_011_fft.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
@@ -87,5 +88,5 @@ vector<Complex> multiply(vector<Complex> A, vector<Complex> B) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

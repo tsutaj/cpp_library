@@ -26,17 +26,18 @@ layout: default
 
 
 # :warning: 遅延伝播セグメント木 (Lazy Segment Tree)
+<a href="../../index.html">Back to top page</a>
+
 * category: セグメント木 (Segment Tree)
+* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_009_abst_lazy_segtree.cpp">View this file on GitHub</a> (Last commit date: 2019-12-09 17:27:28 +0900)
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Required
-* :warning: [graph/verify/verify_graph_020_HLDecomposition.cpp](../graph/verify/verify_graph_020_HLDecomposition.cpp.html)
-* :warning: [math/verify/verify_math_024_fixed_matrix.cpp](../math/verify/verify_math_024_fixed_matrix.cpp.html)
-* :warning: [structure/verify/verify_strc_009_abst_lazy_segtree.cpp](verify/verify_strc_009_abst_lazy_segtree.cpp.html)
+* :warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
+* :warning: <a href="../math/verify/verify_math_024_fixed_matrix.cpp.html">math/verify/verify_math_024_fixed_matrix.cpp</a>
+* :warning: <a href="verify/verify_strc_009_abst_lazy_segtree.cpp.html">structure/verify/verify_strc_009_abst_lazy_segtree.cpp</a>
 
 
 ## Code
@@ -162,5 +163,5 @@ struct LazySegmentTree {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

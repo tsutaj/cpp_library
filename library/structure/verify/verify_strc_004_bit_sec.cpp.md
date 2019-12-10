@@ -26,16 +26,17 @@ layout: default
 
 
 # :warning: structure/verify/verify_strc_004_bit_sec.cpp
+<a href="../../../index.html">Back to top page</a>
+
 * category: structure/verify
+* <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_004_bit_sec.cpp">View this file on GitHub</a> (Last commit date: 2019-11-22 21:50:52 +0900)
 
-
-[Back to top page](../../../index.html)
 
 
 
 ## Dependencies
-* :warning: [structure/strc_002_bit.cpp](../strc_002_bit.cpp.html)
-* :warning: [structure/strc_004_bit_sec.cpp](../strc_004_bit_sec.cpp.html)
+* :warning: <a href="../strc_002_bit.cpp.html">structure/strc_002_bit.cpp</a>
+* :warning: <a href="../strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
 
 
 ## Code
@@ -75,5 +76,5 @@ int main() {
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
