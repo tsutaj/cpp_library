@@ -5,4 +5,6 @@ docs:
   html: false
   title: C++ Competitive Programming Library
   toc: false
+plugins:
+- jemoji
 theme: jekyll-theme-dinky
