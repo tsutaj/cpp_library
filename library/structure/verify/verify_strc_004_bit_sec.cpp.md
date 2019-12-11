@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../strc_002_bit.cpp.html">structure/strc_002_bit.cpp</a>
 * :warning: <a href="../strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
 

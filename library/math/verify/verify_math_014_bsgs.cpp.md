@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../math_014_bsgs.cpp.html">math/math_014_bsgs.cpp</a>
 
 

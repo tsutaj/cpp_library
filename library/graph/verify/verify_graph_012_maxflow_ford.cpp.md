@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../graph_012_maxflow_ford.cpp.html">graph/graph_012_maxflow_ford.cpp</a>
 
 

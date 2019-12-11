@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../graph_000_basic.cpp.html">graph/graph_000_basic.cpp</a>
 * :warning: <a href="../graph_010_scc.cpp.html">graph/graph_010_scc.cpp</a>
 * :warning: <a href="../graph_025_2SAT.cpp.html">graph/graph_025_2SAT.cpp</a>

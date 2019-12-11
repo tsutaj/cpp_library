@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="../strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
 * :heavy_check_mark: <a href="../strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
 

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :warning: <a href="verify/verify_strc_022_dual_segtree.cpp.html">structure/verify/verify_strc_022_dual_segtree.cpp</a>
 
 

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../str_010_z_algorithm.cpp.html">string/str_010_z_algorithm.cpp</a>
 
 

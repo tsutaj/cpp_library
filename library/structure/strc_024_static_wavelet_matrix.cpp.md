@@ -74,15 +74,15 @@ layout: default
 |`prev_val(l, r, x)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $x$ 未満の要素の中で最小のものを答える| $O(\log \sigma \log N)$ |
 
 
-## Dependencies
+## Depends On
 * :heavy_check_mark: <a href="strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
 
 
-## Required
+## Required By
 * :warning: <a href="verify/verify_strc_024_static_wavelet_matrix.cpp.html">structure/verify/verify_strc_024_static_wavelet_matrix.cpp</a>
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html">$\left\[ l, r \right\]$ にある整数の中で $D$ に最も近いものを求める</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html">矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (01)</a>

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../math_015_remainder_sum.cpp.html">math/math_015_remainder_sum.cpp</a>
 * :warning: <a href="../math_017_modint.cpp.html">math/math_017_modint.cpp</a>
 

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../strc_022_dual_segtree.cpp.html">双対セグメント木 (Dual Segment Tree)</a>
 
 

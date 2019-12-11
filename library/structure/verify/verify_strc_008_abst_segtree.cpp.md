@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
 
 

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../algo_003_2D_accumulation.cpp.html">algorithm/algo_003_2D_accumulation.cpp</a>
 
 

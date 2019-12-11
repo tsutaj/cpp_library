@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :warning: <a href="verify/verify_strc_021_dynamic_lazy_segtree.cpp.html">structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp</a>
 
 

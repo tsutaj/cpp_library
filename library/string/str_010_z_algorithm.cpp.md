@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :warning: <a href="verify/verify_str_010_z_algorithm.cpp.html">string/verify/verify_str_010_z_algorithm.cpp</a>
 
 

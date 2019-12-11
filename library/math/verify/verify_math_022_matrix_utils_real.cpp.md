@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
 * :warning: <a href="../math_022_matrix_utils_real.cpp.html">math/math_022_matrix_utils_real.cpp</a>
 

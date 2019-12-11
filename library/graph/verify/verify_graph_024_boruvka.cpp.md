@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../graph_024_boruvka.cpp.html">graph/graph_024_boruvka.cpp</a>
 * :warning: <a href="../../structure/strc_001_unionfind.cpp.html">structure/strc_001_unionfind.cpp</a>
 

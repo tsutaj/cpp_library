@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../str_004_trie.cpp.html">string/str_004_trie.cpp</a>
 
 

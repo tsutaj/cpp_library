@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Required
+## Required By
 * :warning: <a href="verify/verify_graph_024_boruvka.cpp.html">graph/verify/verify_graph_024_boruvka.cpp</a>
 
 

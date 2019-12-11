@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Verified
+## Verified With
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html">直線 $p_1 p_2$ に対する点 $p$ の射影を求める</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html">直線 $p_1 p_2$ に対する点 $p$ の反射を求める</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html">$3$ 点 $p_0, p_1, p_2$ の位置関係 (ccw) を求める</a>

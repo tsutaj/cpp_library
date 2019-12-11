@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../math_021_crt.cpp.html">math/math_021_crt.cpp</a>
 
 

@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../math_016_mod_sqrt.cpp.html">math/math_016_mod_sqrt.cpp</a>
 
 

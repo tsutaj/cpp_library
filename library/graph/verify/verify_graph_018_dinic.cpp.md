@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../graph_018_dinic.cpp.html">graph/graph_018_dinic.cpp</a>
 
 

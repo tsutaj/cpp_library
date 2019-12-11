@@ -35,7 +35,7 @@ layout: default
 
 
 
-## Dependencies
+## Depends On
 * :warning: <a href="../graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
 * :warning: <a href="../../math/math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
 * :warning: <a href="../../math/math_017_modint.cpp.html">math/math_017_modint.cpp</a>
