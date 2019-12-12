@@ -28,7 +28,7 @@ layout: default
 # :heavy_check_mark: 簡潔ビットベクトル (compact bit vector)
 <a href="../../index.html">Back to top page</a>
 
-* category: structure
+* category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/strc_023_compact_bitvector.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 17:27:28 +0900
 

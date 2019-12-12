@@ -28,7 +28,7 @@ layout: default
 # :warning: 動的遅延セグメント木 (Dynamic Lazy Segment Tree)
 <a href="../../index.html">Back to top page</a>
 
-* category: セグメント木 (Segment Tree)
+* category: <a href="../../index.html#ab7b6be46d46663aa3f94309299ec2eb">セグメント木 (Segment Tree)</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/strc_021_dynamic_lazy_segtree.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 17:27:28 +0900
 

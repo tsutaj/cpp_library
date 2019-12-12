@@ -28,7 +28,7 @@ layout: default
 # :warning: graph/verify/verify_graph_020_HLDecomposition.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: graph/verify
+* category: <a href="../../../index.html#18777f84943a96e2bda3d93e0ed91d5c">graph/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/verify/verify_graph_020_HLDecomposition.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 17:27:28 +0900
 

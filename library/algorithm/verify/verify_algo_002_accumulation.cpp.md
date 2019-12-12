@@ -28,7 +28,7 @@ layout: default
 # :warning: algorithm/verify/verify_algo_002_accumulation.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: algorithm/verify
+* category: <a href="../../../index.html#cdafa30741d8345b8ca44ea7cf563c14">algorithm/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/verify/verify_algo_002_accumulation.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 

@@ -28,7 +28,7 @@ layout: default
 # :warning: string/verify/verify_str_010_z_algorithm.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: string/verify
+* category: <a href="../../../index.html#26c28df84862218769fd49d15963eb43">string/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/verify/verify_str_010_z_algorithm.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 

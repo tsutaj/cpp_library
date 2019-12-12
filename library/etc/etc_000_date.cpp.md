@@ -28,7 +28,7 @@ layout: default
 # :warning: etc/etc_000_date.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: etc
+* category: <a href="../../index.html#e80f17310109447772dca82b45ef35a5">etc</a>
 * <a href="{{ site.github.repository_url }}/blob/master/etc/etc_000_date.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 

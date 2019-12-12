@@ -28,7 +28,7 @@ layout: default
 # :warning: math/verify/verify_math_019_specific_ragrange_polynomial.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: math/verify
+* category: <a href="../../../index.html#8a171886c06d04ba11b1e6cabfe6b499">math/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/verify/verify_math_019_specific_ragrange_polynomial.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 

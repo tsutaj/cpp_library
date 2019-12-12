@@ -28,7 +28,7 @@ layout: default
 # :warning: marathon/rand.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: marathon
+* category: <a href="../../index.html#faaaac9cb18c500a97c03eec92d6b8fc">marathon</a>
 * <a href="{{ site.github.repository_url }}/blob/master/marathon/rand.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 

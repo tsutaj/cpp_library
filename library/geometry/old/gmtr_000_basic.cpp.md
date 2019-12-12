@@ -28,7 +28,7 @@ layout: default
 # :warning: geometry/old/gmtr_000_basic.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: geometry/old
+* category: <a href="../../../index.html#ee276eb56ad4bc3f1e3c8191a9303fa9">geometry/old</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_000_basic.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-24 02:02:41 +0900
 

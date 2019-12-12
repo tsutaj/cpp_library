@@ -28,7 +28,7 @@ layout: default
 # :warning: structure/verify/verify_strc_023_compact_bitvector.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* category: structure/verify
+* category: <a href="../../../index.html#8a42e2f360efd149dd1f7c64fba9767e">structure/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_023_compact_bitvector.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-09 17:27:28 +0900
 

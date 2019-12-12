@@ -28,7 +28,7 @@ layout: default
 # :warning: structure/strc_006_twodimbit_zero_indexed.cpp
 <a href="../../index.html">Back to top page</a>
 
-* category: structure
+* category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/strc_006_twodimbit_zero_indexed.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-22 21:50:52 +0900
 
