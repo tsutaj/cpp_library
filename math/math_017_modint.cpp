@@ -46,6 +46,11 @@ struct ModInt {
 };
 
 template<ll mod>
+ModInt<mod> pow(ModInt<mod> n, ll k) {
+    return ModInt<mod>(n.mod_pow(n.v, k));
+}
+
+template<ll mod>
 ostream& operator<< (ostream& out, ModInt<mod> a) {return out << a.v;}
 template<ll mod>
 istream& operator>> (istream& in, ModInt<mod>& a) {
