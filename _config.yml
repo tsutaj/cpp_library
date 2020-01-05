@@ -8,5 +8,4 @@ docs:
   toc: true
 plugins:
 - jemoji
-- jemoji
 theme: jekyll-theme-dinky

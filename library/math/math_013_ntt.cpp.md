@@ -26,16 +26,19 @@ layout: default
 
 
 # :warning: math/math_013_ntt.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/math_013_ntt.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2020-01-06 07:57:20+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 // NTT (剰余環を用いた FFT)
@@ -44,58 +47,215 @@ layout: default
 
 template<ll mod, ll primitive_root>
 struct NTT {
-    int get_mod() { return mod; }
+    int get_mod() const { return mod; }
+    static const int P = 22;
+    ll zs[P+1], zinvs[P+1];
 
-    vector<ll> dft(vector<ll> A, int N, int sgn = 1) {
+    ll mod_pow(ll n, ll k) const {
+        ll res = 1;
+        for(; k>0; k>>=1) {
+            if(k & 1) (res *= n) %= mod;
+            (n *= n) %= mod;
+        }
+        return res;
+    }
+    
+    NTT() {
+        zs[P] = mod_pow(primitive_root, (mod - 1) >> P);
+        zinvs[P] = mod_pow(zs[P], mod - 2);
+        for(int k=P-1; k>=1; k--) {
+            zs[k] = zs[k+1] * zs[k+1] % mod;
+            zinvs[k] = zinvs[k+1] * zinvs[k+1] % mod;
+        }
+    }
+
+    void dft(vector<ll> &A, int K, int sgn = 1) {
+        int N = 1 << K;
         for(int i=0, j=1; j<N-1; j++) {
             for(int k=N >> 1; k>(i ^= k); k >>= 1);
             if(j < i) swap(A[i], A[j]);
         }
-
-        for(int m=2; m<=N; m*=2) {
-            ll zeta = mod_pow(primitive_root, (mod - 1) / m, mod);
-            if(sgn < 0) zeta = mod_pow(zeta, mod - 2, mod);
-
+        
+        for(int m=2, k=1; m<=N; m <<= 1, k++) {
+            ll zeta = (sgn < 0 ? zinvs[k] : zs[k]);
             for(int i=0; i<N; i+=m) {
                 ll zeta_pow = 1LL;
-                for(int u=i, v=i+m/2; v<i+m; u++, v++) {
-                    ll vl = A[u], vr = zeta_pow * A[v] % mod;
+                for(int u=i, v=i+(m>>1); v<i+m; u++, v++) {
+                    ll vl = A[u];
+                    ll vr = zeta_pow * A[v] % mod;
                     A[u] = vl + vr;
                     A[v] = vl - vr + mod;
-                    while(A[u] >= mod) A[u] -= mod;
-                    while(A[v] >= mod) A[v] -= mod;
-                    zeta_pow = zeta_pow * zeta % mod;
+                    if(A[u] >= mod) A[u] -= mod;
+                    if(A[v] >= mod) A[v] -= mod;
+                    (zeta_pow *= zeta) %= mod;
                 }
             }
         }
-        return A;
     }
 
-    vector<ll> inv_dft(vector<ll> A, int N) {
-        A = dft(A, N, -1);
-        ll inv_N = mod_pow(N, mod-2, mod);
-        for(int i=0; i<N; i++) {
-            (A[i] *= inv_N) %= mod;
-        }
-        return A;
+    vector<ll> multiply(const vector<ll> &x, const vector<ll> &y) {
+        if(x == y) return multiply(x);
+        int sz = x.size() + y.size() + 1;
+        int N = 1, K = 0; while(N < sz) N <<= 1, K++;
+        ll inv_N = mod_pow(N, mod-2);
+
+        vector<ll> X(N), Y(N);
+        for(size_t i=0; i<x.size(); i++) X[i] = x[i];
+        for(size_t i=0; i<y.size(); i++) Y[i] = y[i];
+        dft(X, K), dft(Y, K);
+        
+        for(int i=0; i<N; i++) (X[i] *= Y[i]) %= mod;
+        dft(X, K, -1);
+
+        for(int i=0; i<sz; i++) (X[i] *= inv_N) %= mod;
+        X.resize(sz);
+        return X;
     }
 
-    vector<ll> multiply(vector<ll> A, vector<ll> B) {
-        int sz = A.size() + B.size() + 1;
-        int N = 1; while(N < sz) N *= 2;
+    vector<ll> multiply(const vector<ll> &x) {
+        int sz = x.size() + x.size() + 1;
+        int N = 1, K = 0; while(N < sz) N <<= 1, K++;
+        ll inv_N = mod_pow(N, mod-2);
 
-        A.resize(N), B.resize(N);
-        A = dft(A, N), B = dft(B, N);
+        vector<ll> X(N);
+        for(size_t i=0; i<x.size(); i++) X[i] = x[i];
+        dft(X, K);
 
-        vector<ll> F(N);
-        for(int i=0; i<N; i++) {
-            F[i] = (A[i] * B[i]) % mod;
-        }
-        return inv_dft(F, N);
+        for(int i=0; i<N; i++) (X[i] *= X[i]) %= mod;
+        dft(X, K, -1);
+
+        for(int i=0; i<sz; i++) (X[i] *= inv_N) %= mod;
+        X.resize(sz);
+        return X;
     }
 };
 
-// 以下、任意 mod 用
+using NTT_1 = NTT< 167772161, 3>;
+using NTT_2 = NTT< 469762049, 3>;
+using NTT_3 = NTT<1224736769, 3>;
+
+vector<ll> convolution_using_ntt(vector<ll> A, vector<ll> B, ll mod) {
+    for(auto &x : A) x %= mod;
+    for(auto &x : B) x %= mod;
+
+    NTT_1 ntt_1; NTT_2 ntt_2; NTT_3 ntt_3;
+    vector< vector<ll> > convo(3);
+    convo[0] = ntt_1.multiply(A, B);
+    convo[1] = ntt_2.multiply(A, B);
+    convo[2] = ntt_3.multiply(A, B);
+
+    int N = convo[0].size();
+    vector<ll> ret(N), mods(3);
+    mods[0] = ntt_1.get_mod();
+    mods[1] = ntt_2.get_mod();
+    mods[2] = ntt_3.get_mod();
+
+    for(int i=0; i<N; i++) {
+        vector<ll> values(3);
+        for(int k=0; k<3; k++) {
+            values[k] = convo[k][i];
+        }
+        ret[i] = garner(values, mods, mod);
+    }
+    return ret;
+}
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "math/math_013_ntt.cpp"
+// NTT (剰余環を用いた FFT)
+// 任意 mod でやるなら、garner のアルゴリズム + ライブラリ下部が必須
+// mod 998244353 なら NTT<998244353, 5> ntt; とかで十分です
+
+template<ll mod, ll primitive_root>
+struct NTT {
+    int get_mod() const { return mod; }
+    static const int P = 22;
+    ll zs[P+1], zinvs[P+1];
+
+    ll mod_pow(ll n, ll k) const {
+        ll res = 1;
+        for(; k>0; k>>=1) {
+            if(k & 1) (res *= n) %= mod;
+            (n *= n) %= mod;
+        }
+        return res;
+    }
+    
+    NTT() {
+        zs[P] = mod_pow(primitive_root, (mod - 1) >> P);
+        zinvs[P] = mod_pow(zs[P], mod - 2);
+        for(int k=P-1; k>=1; k--) {
+            zs[k] = zs[k+1] * zs[k+1] % mod;
+            zinvs[k] = zinvs[k+1] * zinvs[k+1] % mod;
+        }
+    }
+
+    void dft(vector<ll> &A, int K, int sgn = 1) {
+        int N = 1 << K;
+        for(int i=0, j=1; j<N-1; j++) {
+            for(int k=N >> 1; k>(i ^= k); k >>= 1);
+            if(j < i) swap(A[i], A[j]);
+        }
+        
+        for(int m=2, k=1; m<=N; m <<= 1, k++) {
+            ll zeta = (sgn < 0 ? zinvs[k] : zs[k]);
+            for(int i=0; i<N; i+=m) {
+                ll zeta_pow = 1LL;
+                for(int u=i, v=i+(m>>1); v<i+m; u++, v++) {
+                    ll vl = A[u];
+                    ll vr = zeta_pow * A[v] % mod;
+                    A[u] = vl + vr;
+                    A[v] = vl - vr + mod;
+                    if(A[u] >= mod) A[u] -= mod;
+                    if(A[v] >= mod) A[v] -= mod;
+                    (zeta_pow *= zeta) %= mod;
+                }
+            }
+        }
+    }
+
+    vector<ll> multiply(const vector<ll> &x, const vector<ll> &y) {
+        if(x == y) return multiply(x);
+        int sz = x.size() + y.size() + 1;
+        int N = 1, K = 0; while(N < sz) N <<= 1, K++;
+        ll inv_N = mod_pow(N, mod-2);
+
+        vector<ll> X(N), Y(N);
+        for(size_t i=0; i<x.size(); i++) X[i] = x[i];
+        for(size_t i=0; i<y.size(); i++) Y[i] = y[i];
+        dft(X, K), dft(Y, K);
+        
+        for(int i=0; i<N; i++) (X[i] *= Y[i]) %= mod;
+        dft(X, K, -1);
+
+        for(int i=0; i<sz; i++) (X[i] *= inv_N) %= mod;
+        X.resize(sz);
+        return X;
+    }
+
+    vector<ll> multiply(const vector<ll> &x) {
+        int sz = x.size() + x.size() + 1;
+        int N = 1, K = 0; while(N < sz) N <<= 1, K++;
+        ll inv_N = mod_pow(N, mod-2);
+
+        vector<ll> X(N);
+        for(size_t i=0; i<x.size(); i++) X[i] = x[i];
+        dft(X, K);
+
+        for(int i=0; i<N; i++) (X[i] *= X[i]) %= mod;
+        dft(X, K, -1);
+
+        for(int i=0; i<sz; i++) (X[i] *= inv_N) %= mod;
+        X.resize(sz);
+        return X;
+    }
+};
+
 using NTT_1 = NTT< 167772161, 3>;
 using NTT_2 = NTT< 469762049, 3>;
 using NTT_3 = NTT<1224736769, 3>;

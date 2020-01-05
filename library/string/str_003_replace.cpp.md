@@ -26,18 +26,51 @@ layout: default
 
 
 # :warning: string/str_003_replace.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/str_003_replace.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// s に含まれている t を全て u に変える
+// (find しまくるよりは高速のはず)
+string replace_user(string s, string t, string u) {
+    reverse(t.begin(), t.end());
+    size_t N = s.length(), M = t.length();
+    if(N < M) return s;
+
+    string ret = "", temp = "";
+    for(size_t i=0; i<N; i++) {
+        if(temp.length() == M) {
+            ret += temp.back();
+            temp.pop_back();
+        }
+        temp = s[i] + temp;
+        if(temp == t) {
+            ret += u;
+            temp = "";
+        }
+    }
+    reverse(temp.begin(), temp.end());
+    s = ret + temp;
+    return s;
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "string/str_003_replace.cpp"
 // s に含まれている t を全て u に変える
 // (find しまくるよりは高速のはず)
 string replace_user(string s, string t, string u) {

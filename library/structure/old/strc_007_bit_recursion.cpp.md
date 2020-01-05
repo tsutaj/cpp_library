@@ -26,18 +26,52 @@ layout: default
 
 
 # :warning: structure/old/strc_007_bit_recursion.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ea7b7b53f881f37feb2f447585bbcf5b">structure/old</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/old/strc_007_bit_recursion.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// BIT 略
+// Verified: ALDS1_5_D (反転数)
+signed main() {
+    int n; cin >> n;
+    BIT<int> b(n);
+    vector<int> a(n);
+    map<int, int> m;
+    rep(i,0,n) {
+        cin >> a[i];
+        m[a[i]];
+    }
+
+    int newnum = 1;
+    for(auto &x : m) x.second = newnum++;
+    rep(i,0,n) a[i] = m[a[i]];
+
+    int ans = 0;
+    rep(j,0,n) {
+        ans += j - b.sum(a[j]);
+        b.add(a[j], 1);
+    }
+    cout << ans << endl;
+    return 0;
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "structure/old/strc_007_bit_recursion.cpp"
 // BIT 略
 // Verified: ALDS1_5_D (反転数)
 signed main() {

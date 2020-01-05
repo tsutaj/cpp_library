@@ -26,18 +26,65 @@ layout: default
 
 
 # :warning: graph/graph_015_forest2trees.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/graph_015_forest2trees.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 森を木の vector に分解する (無向) O(|V|)
+// ・まだチェックしていない頂点に関して、その頂点から BFS を行う
+// ・頂点番号を振り直しながら辺を張っていく
+
+template <typename T>
+using Graph = vector< vector< Edge<T> > >;
+
+template <typename T>
+Graph<T> Forest2Trees(Graph<T> &G) {
+    int n = (int)G.size();
+    vector<int> vtxid(n, -1);
+
+    vector< Graph<T> > ret;
+    for(int i=0; i<n; i++) {
+        if(vtxid[i] >= 0) continue;
+        Graph<T> Tree(1);
+        int cur = 0;
+        vtxid[i] = cur++;
+
+        queue<int> q; q.push(i);
+        while(!q.empty()) {
+            int k = q.front(); q.pop();
+            for(size_t x=0; x<G[k].size(); x++) {
+                int to = G[k][x].to; T cost = G[k][x].cost;
+                if(vtxid[to] >= 0) continue;
+                vtxid[to] = cur++;
+                Tree.push_back(vector< Edge<T> >());
+                Tree[ vtxid[k ] ].push_back( Edge<T>(vtxid[to], cost) );
+                Tree[ vtxid[to] ].push_back( Edge<T>(vtxid[k ], cost) );
+                q.push(to);
+            }
+        }
+        ret.push_back(Tree);
+    }
+    return ret;
+}
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "graph/graph_015_forest2trees.cpp"
 // 森を木の vector に分解する (無向) O(|V|)
 // ・まだチェックしていない頂点に関して、その頂点から BFS を行う
 // ・頂点番号を振り直しながら辺を張っていく

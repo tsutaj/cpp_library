@@ -26,18 +26,41 @@ layout: default
 
 
 # :warning: geometry/old/gmtr_001_orthogonal_parallel.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ee276eb56ad4bc3f1e3c8191a9303fa9">geometry/old</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_001_orthogonal_parallel.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-24 02:02:41 +0900
+    - Last commit date: 2019-11-24 02:02:41+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+/***** 直交・平行判定 *****/
+// Verified: AOJ CGL_2_A: Parallel/Orthogonal
+
+// 2直線の直交判定 (内積が0であること)
+bool is_orthogonal(Point a1, Point a2, Point b1, Point b2) {
+    return EQ( dot(a1-a2, b1-b2), 0.0 );
+}
+
+// 2直線の平行判定 (外積が0であること)
+bool is_parallel(Point a1, Point a2, Point b1, Point b2) {
+    return EQ( cross(a1-a2, b1-b2), 0.0 );
+}
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "geometry/old/gmtr_001_orthogonal_parallel.cpp"
 /***** 直交・平行判定 *****/
 // Verified: AOJ CGL_2_A: Parallel/Orthogonal
 

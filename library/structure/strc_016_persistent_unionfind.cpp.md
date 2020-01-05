@@ -26,18 +26,66 @@ layout: default
 
 
 # :warning: structure/strc_016_persistent_unionfind.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/strc_016_persistent_unionfind.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 完全永続 UnionFind
+// PersistentArray がないと動きません
+
+struct PersistentUnionFind {
+    PersistentArray<int, 3> data;
+    PersistentUnionFind() {}
+    PersistentUnionFind(int size_) {
+        data.build(vector<int>(size_, -1));
+    }
+
+    int find(int k) {
+        int p = data.get(k);
+        return p >= 0 ? find(p) : k;
+    }
+
+    bool same(int x, int y) {
+        return find(x) == find(y);
+    }
+
+    int size(int k) {
+        return (-data.get(find(k)));
+    }
+    
+    PersistentUnionFind unite(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if(x == y) return *this;
+        auto u = data.get(x);
+        auto v = data.get(y);
+        if(u > v) swap(u, v), swap(x, y);
+
+        auto a = data.mutable_get(x);
+        *a += v;
+        auto b = data.mutable_get(y);
+        *b = x;
+        return *this;
+    }
+};
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "structure/strc_016_persistent_unionfind.cpp"
 // 完全永続 UnionFind
 // PersistentArray がないと動きません
 

@@ -26,18 +26,45 @@ layout: default
 
 
 # :warning: geometry/old/gmtr_010_rotate.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ee276eb56ad4bc3f1e3c8191a9303fa9">geometry/old</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/old/gmtr_010_rotate.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-24 02:02:41 +0900
+    - Last commit date: 2019-11-24 02:02:41+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 頂点を回転させる系
+
+// 度数法 → 弧度法
+double deg2rad(double x) {return x * M_PI / 180.0;}
+
+// 点 a を中心として、点 b を z 度回転させたときの位置
+Point rotatePoint(Point a, Point b, double z) {
+    // 度数法の場合は変換
+    z = deg2rad(z);
+
+    b -= a;
+    double rx = b.real() * cos(z) - b.imag() * sin(z);
+    double ry = b.real() * sin(z) + b.imag() * cos(z);
+    Point ret(rx, ry); ret += a;
+    return ret;
+}
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "geometry/old/gmtr_010_rotate.cpp"
 // 頂点を回転させる系
 
 // 度数法 → 弧度法

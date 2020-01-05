@@ -26,18 +26,56 @@ layout: default
 
 
 # :warning: dp/dp_003_histogram.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#95687afb5d9a2a9fa39038f991640b0c">dp</a>
 * <a href="{{ site.github.repository_url }}/blob/master/dp/dp_003_histogram.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 長さ N のヒストグラムの長方形領域最大
+// Verified: AOJ DPL_3_C: Largest Rectangle in a Histogram
+
+int histArea(vector<int> h) {
+    // 番兵
+    int N = h.size();
+    h.push_back(0); N++;
+
+    // height, position
+    int ans = 0;
+    stack<pii> S;
+    rep(i,0,N+1) {
+        if(S.empty()) S.push(pii(h[i], i));
+
+        if     (S.top().first < h[i])
+            S.push(pii(h[i], i));
+        else if(S.top().first > h[i]) {
+            int lastpos = 0;
+            while(!S.empty() && S.top().first >= h[i]) {
+                lastpos = S.top().second;
+                chmax(ans, S.top().first * (i-lastpos));
+                S.pop();
+            }
+            S.push(pii(h[i], lastpos));
+        }
+    }
+    return ans;
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "dp/dp_003_histogram.cpp"
 // 長さ N のヒストグラムの長方形領域最大
 // Verified: AOJ DPL_3_C: Largest Rectangle in a Histogram
 

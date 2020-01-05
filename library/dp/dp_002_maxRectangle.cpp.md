@@ -26,18 +26,44 @@ layout: default
 
 
 # :warning: dp/dp_002_maxRectangle.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#95687afb5d9a2a9fa39038f991640b0c">dp</a>
 * <a href="{{ site.github.repository_url }}/blob/master/dp/dp_002_maxRectangle.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 最大長方形問題 (綺麗なタイルのみを使ってできる長方形の面積最大)
+// ※ dp_003_histogram.cpp を呼び出すので注意！
+// 0 -> 綺麗なタイル、 1 -> 汚れているタイル
+// Verified: AOJ DPL_3_B: Largest Rectangle
+
+int maxRectangle(vector< vector<int> > board) {
+    int H = board.size(), W = board[0].size();
+    vector< vector<int> > sum(H, vector<int>(W));
+    rep(i,0,H) rep(j,0,W) {
+        if(board[i][j] == 1) continue;
+        sum[i][j] = (i > 0 ? sum[i-1][j] : 0) + 1;
+    }
+    int ret = 0;
+    rep(i,0,H) chmax(ret, histArea(sum[i]));
+    return ret;
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "dp/dp_002_maxRectangle.cpp"
 // 最大長方形問題 (綺麗なタイルのみを使ってできる長方形の面積最大)
 // ※ dp_003_histogram.cpp を呼び出すので注意！
 // 0 -> 綺麗なタイル、 1 -> 汚れているタイル

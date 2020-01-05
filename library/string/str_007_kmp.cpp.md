@@ -26,18 +26,63 @@ layout: default
 
 
 # :warning: string/str_007_kmp.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/str_007_kmp.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// KMP 法 (Knuth-Morris-Pratt Algorithm)
+struct KMP {
+    string p; int len;
+    vector<int> fail;
+    KMP() {}
+    KMP(string p_) : p(p_), len(p_.length()) {
+        // 文字列 p[0:i-1] の接頭辞と接尾辞は最大何文字一致する？
+        // ただし、|p[0:i-1]| 文字未満のみ考慮
+        // MP 法に比べ、失敗時の遷移が log 回に改善されている
+        // see also: http://www-igm.univ-mlv.fr/~lecroq/string/node8.html
+        fail.resize(len + 1, -1);
+        for(int i=1, j=-1; i<=len; i++) {
+            // その時点で一致しなければ fail[j] 文字以下の一致となる
+            // j を fail[j] に変更
+            int step = 0;
+            while(j >= 0 and p[j] != p[i-1]) j = fail[j], step++;
+            fail[i] = (p[i] == p[++j] ? fail[j] : j);
+        }
+    }
+
+    // 文字列 s における p の出現位置 (開始位置) のリスト
+    vector<int> match(string s) {
+        int N = s.length();
+        vector<int> occur;
+        for(int i=0, k=0; i<N; i++) {
+            while(k >= 0 and s[i] != p[k]) k = fail[k];
+            if(++k == len) {
+                occur.push_back(i-len+1);
+                k = fail[k];
+            }
+        }
+        return occur;
+    }
+};
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "string/str_007_kmp.cpp"
 // KMP 法 (Knuth-Morris-Pratt Algorithm)
 struct KMP {
     string p; int len;

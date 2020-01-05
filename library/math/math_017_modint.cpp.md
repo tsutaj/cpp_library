@@ -26,16 +26,18 @@ layout: default
 
 
 # :warning: math/math_017_modint.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/math_017_modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2020-01-06 07:57:20+09:00
 
 
 
 
-## Required By
+## Required by
+
 * :warning: <a href="../graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
 * :warning: <a href="verify/verify_math_004_matrix.cpp.html">math/verify/verify_math_004_matrix.cpp</a>
 * :warning: <a href="verify/verify_math_015_remainder_sum.cpp.html">math/verify/verify_math_015_remainder_sum.cpp</a>
@@ -47,6 +49,8 @@ layout: default
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 // ModInt begin
@@ -95,6 +99,80 @@ struct ModInt {
     // operator int() const { return int(v); }
     // operator long long int() const { return v; }
 };
+
+template<ll mod>
+ModInt<mod> pow(ModInt<mod> n, ll k) {
+    return ModInt<mod>(n.mod_pow(n.v, k));
+}
+
+template<ll mod>
+ostream& operator<< (ostream& out, ModInt<mod> a) {return out << a.v;}
+template<ll mod>
+istream& operator>> (istream& in, ModInt<mod>& a) {
+    in >> a.v;
+    return in;
+}
+
+// ModInt end
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "math/math_017_modint.cpp"
+// ModInt begin
+
+using ll = long long;
+template<ll mod>
+struct ModInt {
+    ll v;
+    ll mod_pow(ll x, ll n) const {
+        return (!n) ? 1 : (mod_pow((x*x)%mod,n/2) * ((n&1)?x:1)) % mod;
+    }
+    ModInt(ll a = 0) : v((a %= mod) < 0 ? a + mod : a) {}
+    ModInt operator+ ( const ModInt& b ) const {
+        return (v + b.v >= mod ? ModInt(v + b.v - mod) : ModInt(v + b.v));
+    }
+    ModInt operator- () const {
+        return ModInt(-v);
+    }
+    ModInt operator- ( const ModInt& b ) const {
+        return (v - b.v < 0 ? ModInt(v - b.v + mod) : ModInt(v - b.v));
+    }
+    ModInt operator* ( const ModInt& b ) const {return (v * b.v) % mod;}
+    ModInt operator/ ( const ModInt& b ) const {return (v * mod_pow(b.v, mod-2)) % mod;}
+    
+    bool operator== ( const ModInt &b ) const {return v == b.v;}
+    bool operator!= ( const ModInt &b ) const {return !(*this == b); }
+    ModInt& operator+= ( const ModInt &b ) {
+        v += b.v;
+        if(v >= mod) v -= mod;
+        return *this;
+    }
+    ModInt& operator-= ( const ModInt &b ) {
+        v -= b.v;
+        if(v < 0) v += mod;
+        return *this;
+    }
+    ModInt& operator*= ( const ModInt &b ) {
+        (v *= b.v) %= mod;
+        return *this;
+    }
+    ModInt& operator/= ( const ModInt &b ) {
+        (v *= mod_pow(b.v, mod-2)) %= mod;
+        return *this;
+    }
+    ModInt pow(ll x) { return ModInt(mod_pow(v, x)); }
+    // operator int() const { return int(v); }
+    // operator long long int() const { return v; }
+};
+
+template<ll mod>
+ModInt<mod> pow(ModInt<mod> n, ll k) {
+    return ModInt<mod>(n.mod_pow(n.v, k));
+}
 
 template<ll mod>
 ostream& operator<< (ostream& out, ModInt<mod> a) {return out << a.v;}

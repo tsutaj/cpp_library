@@ -26,24 +26,54 @@ layout: default
 
 
 # :warning: graph/graph_000_basic.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/graph_000_basic.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
-## Required By
+## Required by
+
 * :warning: <a href="verify/verify_graph_022_max_independent_set.cpp.html">graph/verify/verify_graph_022_max_independent_set.cpp</a>
 * :warning: <a href="verify/verify_graph_023_offline_lca.cpp.html">graph/verify/verify_graph_023_offline_lca.cpp</a>
 * :warning: <a href="verify/verify_graph_025_2SAT.cpp.html">graph/verify/verify_graph_025_2SAT.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 移動元と行先と辺のコストを記録する構造体
+template <typename T = int>
+struct Edge {
+    int from, to;
+    T cost;
+    Edge(int s, T d = 1) : to(s), cost(d) {}
+    Edge(int f, int s, T d) : from(f), to(s), cost(d) {}
+
+    bool operator<(const Edge &e) const {
+        return cost < e.cost;
+    }
+    bool operator>(const Edge &e) const {
+        return cost > e.cost;
+    }
+};
+
+template <typename T = int>
+using Graph = vector< vector< Edge<T> > >;
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "graph/graph_000_basic.cpp"
 // 移動元と行先と辺のコストを記録する構造体
 template <typename T = int>
 struct Edge {

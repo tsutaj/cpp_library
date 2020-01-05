@@ -26,18 +26,63 @@ layout: default
 
 
 # :warning: marathon/rand.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#faaaac9cb18c500a97c03eec92d6b8fc">marathon</a>
 * <a href="{{ site.github.repository_url }}/blob/master/marathon/rand.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// [lb, ub] の閉区間内の値をランダムに返す構造体
+// #include <random> しよう
+
+struct Rand {
+public:
+    Rand() = default;
+    Rand(std::mt19937::result_type seed) : eng(seed) {}
+    int NextInt(int lb, int ub) {
+        return std::uniform_int_distribution<int>{lb, ub}(eng);
+    }
+    ll NextLong(ll lb, ll ub) {
+        return std::uniform_int_distribution<ll>{lb, ub}(eng);
+    }
+    double NextDouble(double lb, double ub) {
+        return std::uniform_real_distribution<double>{lb, ub}(eng);
+    }
+private:
+    std::mt19937 eng{std::random_device{}()};
+};
+
+/* 
+// example.
+int main() {
+    Rand rnd(114514);
+    int l, r; scanf("%d%d", &l, &r);
+    printf("l = %d, r = %d, value = %d\n", l, r, rnd.NextInt(l, r));
+
+    double L, R; scanf("%lf%lf", &L, &R);
+    printf("L = %.12f, R = %.12f, value = %.12f\n", L, R, rnd.NextDouble(L, R));
+
+    long long int a, b; scanf("%lld%lld", &a, &b);
+    printf("a = %lld, b = %lld, value = %lld\n", a, b, rnd.NextLong(a, b));
+    return 0;
+}
+*/
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "marathon/rand.cpp"
 // [lb, ub] の閉区間内の値をランダムに返す構造体
 // #include <random> しよう
 

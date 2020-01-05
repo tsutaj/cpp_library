@@ -26,18 +26,48 @@ layout: default
 
 
 # :warning: dp/dp_001_maxSquare.cpp
+
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#95687afb5d9a2a9fa39038f991640b0c">dp</a>
 * <a href="{{ site.github.repository_url }}/blob/master/dp/dp_001_maxSquare.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52 +0900
+    - Last commit date: 2019-11-22 21:50:52+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
+// 最大正方形問題 (綺麗なタイルのみを使ってできる正方形の面積最大)
+// 0 -> 綺麗なタイル、 1 -> 汚れているタイル
+// Verified: AOJ DPL_3_A: Largest Square
+
+int maxSquare(vector< vector<int> > board) {
+    int H = board.size(), W = board[0].size();
+    vector< vector<int> > dp(H, vector<int>(W));
+
+    int ret = 0;
+    rep(i,0,H) rep(j,0,W) {
+        if(board[i][j] == 1) continue;
+        if(i == 0 || j == 0) dp[i][j] = 1;
+        else {
+            int mi = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]));
+            dp[i][j] = mi + 1;
+        }
+        chmax(ret, dp[i][j] * dp[i][j]);
+    }
+    return ret;
+}
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "dp/dp_001_maxSquare.cpp"
 // 最大正方形問題 (綺麗なタイルのみを使ってできる正方形の面積最大)
 // 0 -> 綺麗なタイル、 1 -> 汚れているタイル
 // Verified: AOJ DPL_3_A: Largest Square
