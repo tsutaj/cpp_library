@@ -1,135 +1,102 @@
-// Convex Hull Trick (Verified: COLOCON 2018 Final C)
-// ・直線集合に直線を追加する
-// ・直線集合に含まれている関数の中で、 f(x) の最大値を求める
-
-// 直線を表現する型と、取得クエリの単位元 (最大値を返すので、大きい負の値とか)
-template<typename Type, const Type id>
-struct ConvexHullTrick {
+// @brief Convex Hull Trick (Li-Chao Tree) 
+template <typename X_Tp, typename Y_Tp>
+struct LiChaoTree {
 private:
-    using Response = pair<Type, int>;
-    struct Line {
-        Type a, b;
-        Line (Type a_ = 0, Type b_ = 0) : a(a_), b(b_) {}
-        Type get(Type x) { return a*x + b; }
-    };
-
-    struct Node {
-        Line line;
-        Node *lhs, *rhs;
-        int index;
-        Node(Line line_, int index_=-1) : line(line_), lhs(nullptr), rhs(nullptr), index(index_) {}
-        ~Node() {
-            if(lhs) delete lhs;
-            if(rhs) delete rhs;
-        }
-    };
-
+    vector<X_Tp> X_pos;
+    Y_Tp E;
+    function<bool(Y_Tp, Y_Tp)> comp;
     int N;
-    vector<Type> pos;
-    Node *root;
 
+    // @brief Line: 直線のクラス
+    struct Line {
+        bool is_empty;
+        Y_Tp a, b; int index;
+
+        Line() { is_empty = true; }
+        Line(Y_Tp a_, Y_Tp b_, int index_)
+            : a(a_), b(b_), index(index_) { is_empty = false; }
+        
+        bool empty() const { return is_empty; }
+        Y_Tp f(X_Tp x) const { return a*x + b; }
+    };
+
+    vector<Line> node;
+
+    void node_update(Line line) {
+        int l = 0, r = N, k = 0;
+        while(true) {
+            if(node[k].empty()) {
+                node[k] = line;
+                break;
+            }
+
+            if(comp(line.f(X_pos[l]), node[k].f(X_pos[l])) and
+               comp(line.f(X_pos[r-1]), node[k].f(X_pos[r-1]))) break;
+
+            if(comp(node[k].f(X_pos[l]), line.f(X_pos[l])) and
+               comp(node[k].f(X_pos[r-1]), line.f(X_pos[r-1]))) {
+                node[k] = line;
+                break;
+            }
+
+            if(r - l == 1) break;            
+            int mid = (l + r) / 2;
+            if(comp(node[k].f(X_pos[mid]), line.f(X_pos[mid]))) {
+                swap(line, node[k]);
+            }
+
+            if(comp(node[k].f(X_pos[l]), line.f(X_pos[l]))) {
+                r = mid, k = 2*k + 1;
+            }
+            else {
+                l = mid, k = 2*k + 2;
+            }
+        }
+    }
+
+    pair<Y_Tp, int> search_line(int t) const {
+        pair<Y_Tp, int> result(E, -1);
+        int l = 0, r = N, k = 0;
+        while(true) {
+            if(node[k].empty()) break;
+            pair<Y_Tp, int> cand(node[k].f(X_pos[t]), node[k].index);
+            if(comp(result.first, cand.first)) result = cand;
+
+            if(r - l == 1) break;
+            int mid = (l + r) / 2;
+            if(t < mid) r = mid, k = 2*k + 1;
+            else l = mid, k = 2*k + 2;
+        }
+        return result;
+    }
+    
 public:
-    // x の取りうる値を sort かつ unique にしたもの
-    ConvexHullTrick(const vector<Type> &pos_) : N(pos_.size()), pos(pos_), root(nullptr) {}
-    ~ConvexHullTrick() {
-        if(root) delete root;
+    // @brief クエリが与えられる座標・単位元・比較関数を渡す
+    LiChaoTree(vector<X_Tp> X_pos_, Y_Tp E_,
+               function<bool(Y_Tp, Y_Tp)> comp_)
+        : X_pos(X_pos_), E(E_), comp(comp_) {
+        sort(X_pos.begin(), X_pos.end());
+        X_pos.erase(unique(X_pos.begin(), X_pos.end()), X_pos.end());
+        N = 1; while(N < X_pos.size()) N <<= 1;
+        while(X_pos.size() < N) X_pos.emplace_back(X_pos.back());
+        node.resize(2*N-1, Line());
     }
 
-    // 直線 f(x) = a*x + b を追加する (オプション: インデックスの情報も保持したいならする)
-    void insert(Type a, Type b, int idx=-1) {
-        Line line(a, b);
-        root = update(root, 0, N, line, idx);
+    // @brief 直線 $y = ax + b$ を集合に加える (直線のインデックス番号を与えてもよい)
+    void insert(Y_Tp a, Y_Tp b, int k=-1) {
+        Line line(a, b, k);
+        node_update(line);
     }
 
-    // 直線集合 F において、f(x) の最大値を返す
-    Type get_value(Type x) const {
-        int t = lower_bound(pos.begin(), pos.end(), x) - pos.begin();
-        assert(t < N && pos[t] == x);
-        return query(root, 0, N, t).first;
+    // @brief $x$ を引数に与え、比較関数 comp により順序が最上となる直線 $f$ における値 $f(x)$ と、その直線のインデックスを返す
+    pair<Y_Tp, int> query_pair(X_Tp x) const {
+        int t = lower_bound(X_pos.begin(), X_pos.end(), x) - X_pos.begin();
+        assert(t < X_pos.size() and X_pos[t] == x);
+        return search_line(t);
     }
 
-    // 直線集合 F において、f(x) の最大値を実現する直線のインデックスを返す
-    // (複数ある場合はインデックスが最も小さいものを返す)
-    int get_index(Type x) const {
-        int t = lower_bound(pos.begin(), pos.end(), x) - pos.begin();
-        assert(t < N && pos[t] == x);
-        return query(root, 0, N, t).second;
-    }
-
-private:
-    // クエリで処理する区間は閉区間なので注意！！！
-    Node* update(Node* p, int lb, int ub, Line& l, int idx=-1) {
-        if(!p) return new Node(l, idx);
-        if(p -> line.get(pos[lb    ]) >= l.get(pos[lb    ]) &&
-           p -> line.get(pos[ub - 1]) >= l.get(pos[ub - 1])) {
-            return p;
-        }
-
-        if(p -> line.get(pos[lb    ]) <= l.get(pos[lb    ]) &&
-           p -> line.get(pos[ub - 1]) <= l.get(pos[ub - 1])) {
-            p -> line = l;
-            p -> index = idx;
-            return p;
-        }
-
-        int mid = (ub + lb) / 2;
-        if(p -> line.get(pos[mid]) < l.get(pos[mid])) {
-            swap(p -> line, l);
-            swap(p -> index, idx);
-        }
-        if(p -> line.get(pos[lb]) <= l.get(pos[lb])) {
-            p -> lhs = update(p -> lhs, lb, mid, l, idx);
-        }
-        else {
-            p -> rhs = update(p -> rhs, mid, ub, l, idx);
-        }
-        return p;
-    }
-
-    Response comp(Response lhs, Response rhs) const {
-        if(lhs.first != rhs.first) {
-            return lhs.first > rhs.first ? lhs : rhs;
-        }
-        else {
-            return lhs.second < rhs.second ? lhs : rhs;
-        }
-    }
-
-    Response query(Node *p, int lb, int ub, int t) const {
-        if(!p) return make_pair(id, -1);
-        if(ub - lb == 1) return make_pair(p -> line.get(pos[t]), p -> index);
-
-        int mid = (ub + lb) / 2;
-        Response cur = make_pair(p -> line.get(pos[t]), p -> index);
-        if(t < mid) {
-            return comp(cur, query(p -> lhs, lb, mid, t));
-        }
-        else {
-            return comp(cur, query(p -> rhs, mid, ub, t));
-        }
+    // @brief `query_pair` で値だけ取ってくるバージョン
+    Y_Tp query(X_Tp x) const {
+        return query_pair(x).first;
     }
 };
-
-// 使用例
-int main() {
-    ll N; scanf("%lld", &N);
-    vector<ll> points(N);
-    iota(points.begin(), points.end(), 1);
-
-    vector<ll> X(N+1), Y(N+1);
-
-    ConvexHullTrick<ll, LLONG_MIN> cht(points);
-    for(ll j=1; j<=N; j++) {
-        ll A; scanf("%lld", &A);
-        ll x = 2*j, y = -(A + j*j);
-        X[j] = -2*j;
-        Y[j] = A + j*j;
-        cht.insert(x, y, j);
-    }
-
-    for(auto p : points) {
-        int idx = cht.get_index(p);
-        printf("%lld\n", X[idx]*p + Y[idx] + p*p);
-    }
-    return 0;
-}
