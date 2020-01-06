@@ -22,35 +22,39 @@ private:
 
     vector<Line> node;
 
-    void node_update(Line line) {
-        int l = 0, r = N, k = 0;
-        while(true) {
+    void node_update(Line line, int t1, int t2, int l, int r, int k) {
+        int mid = (l + r) / 2;
+        if(t2 <= l or r <= t1) return;
+        if(t1 <= l and r <= t2) {
             if(node[k].empty()) {
                 node[k] = line;
-                break;
+                return;
             }
 
             if(comp(line.f(X_pos[l]), node[k].f(X_pos[l])) and
-               comp(line.f(X_pos[r-1]), node[k].f(X_pos[r-1]))) break;
+               comp(line.f(X_pos[r-1]), node[k].f(X_pos[r-1]))) return;
 
             if(comp(node[k].f(X_pos[l]), line.f(X_pos[l])) and
                comp(node[k].f(X_pos[r-1]), line.f(X_pos[r-1]))) {
                 node[k] = line;
-                break;
+                return;
             }
 
-            if(r - l == 1) break;            
-            int mid = (l + r) / 2;
+            if(r - l == 1) return;
             if(comp(node[k].f(X_pos[mid]), line.f(X_pos[mid]))) {
                 swap(line, node[k]);
             }
-
+                
             if(comp(node[k].f(X_pos[l]), line.f(X_pos[l]))) {
-                r = mid, k = 2*k + 1;
+                node_update(line, t1, t2, l, mid, 2*k+1);
             }
             else {
-                l = mid, k = 2*k + 2;
+                node_update(line, t1, t2, mid, r, 2*k+2);
             }
+        }
+        else {
+            node_update(line, t1, t2, l, mid, 2*k+1);
+            node_update(line, t1, t2, mid, r, 2*k+2);
         }
     }
 
@@ -58,9 +62,10 @@ private:
         pair<Y_Tp, int> result(E, -1);
         int l = 0, r = N, k = 0;
         while(true) {
-            if(node[k].empty()) break;
-            pair<Y_Tp, int> cand(node[k].f(X_pos[t]), node[k].index);
-            if(comp(result.first, cand.first)) result = cand;
+            if(!node[k].empty()) {
+                pair<Y_Tp, int> cand(node[k].f(X_pos[t]), node[k].index);
+                if(comp(result.first, cand.first)) result = cand;
+            }
 
             if(r - l == 1) break;
             int mid = (l + r) / 2;
@@ -85,7 +90,17 @@ public:
     // @brief 直線 $y = ax + b$ を集合に加える (直線のインデックス番号を与えてもよい)
     void insert(Y_Tp a, Y_Tp b, int k=-1) {
         Line line(a, b, k);
-        node_update(line);
+        node_update(line, 0, N, 0, N, 0);
+    }
+
+    // @brief 線分 $y = ax + b$ ($x_1 \leq x \leq x_2$) を集合に加える (線分のインデックス番号を与えてもよい)
+    void insert(Y_Tp a, Y_Tp b, X_Tp x1, X_Tp x2, int k=-1) {
+        Line line(a, b, k);
+        int t1 = lower_bound(X_pos.begin(), X_pos.end(), x1) - X_pos.begin();
+        int t2 = lower_bound(X_pos.begin(), X_pos.end(), x2) - X_pos.begin();
+        assert(t1 < X_pos.size() and X_pos[t1] == x1);
+        assert(t2 < X_pos.size() and X_pos[t2] == x2); t2++;
+        node_update(line, t1, t2, 0, N, 0);
     }
 
     // @brief $x$ を引数に与え、比較関数 comp により順序が最上となる直線 $f$ における値 $f(x)$ と、その直線のインデックスを返す
