@@ -178,7 +178,7 @@ layout: default
 * :warning: <a href="library/math/math_007_fraction.cpp.html">math/math_007_fraction.cpp</a>
 * :warning: <a href="library/math/math_008_miller_rabin_rho.cpp.html">math/math_008_miller_rabin_rho.cpp</a>
 * :warning: <a href="library/math/math_009_kitamasa.cpp.html">math/math_009_kitamasa.cpp</a>
-* :warning: <a href="library/math/math_010_convexhulltrick.cpp.html">math/math_010_convexhulltrick.cpp</a>
+* :warning: <a href="library/math/math_010_convexhulltrick.cpp.html">Convex Hull Trick (Li-Chao Tree) <small>(math/math_010_convexhulltrick.cpp)</small></a>
 * :warning: <a href="library/math/math_011_fft.cpp.html">math/math_011_fft.cpp</a>
 * :warning: <a href="library/math/math_012_garner.cpp.html">math/math_012_garner.cpp</a>
 * :warning: <a href="library/math/math_013_ntt.cpp.html">math/math_013_ntt.cpp</a>
