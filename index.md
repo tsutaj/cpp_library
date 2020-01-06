@@ -178,7 +178,7 @@ layout: default
 * :warning: <a href="library/math/math_007_fraction.cpp.html">math/math_007_fraction.cpp</a>
 * :warning: <a href="library/math/math_008_miller_rabin_rho.cpp.html">math/math_008_miller_rabin_rho.cpp</a>
 * :warning: <a href="library/math/math_009_kitamasa.cpp.html">math/math_009_kitamasa.cpp</a>
-* :warning: <a href="library/math/math_010_convexhulltrick.cpp.html">Convex Hull Trick (Li-Chao Tree) <small>(math/math_010_convexhulltrick.cpp)</small></a>
+* :heavy_check_mark: <a href="library/math/math_010_convexhulltrick.cpp.html">Convex Hull Trick (Li-Chao Tree) <small>(math/math_010_convexhulltrick.cpp)</small></a>
 * :warning: <a href="library/math/math_011_fft.cpp.html">math/math_011_fft.cpp</a>
 * :warning: <a href="library/math/math_012_garner.cpp.html">math/math_012_garner.cpp</a>
 * :warning: <a href="library/math/math_013_ntt.cpp.html">math/math_013_ntt.cpp</a>
@@ -325,5 +325,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">$2$ つの円 $c_1, c_2$ の共通接線を求める <small>(verifying_test/AOJ/CGL_7_G/geometry.test.cpp)</small></a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">連続部分列中の最小の要素を答える <small>(verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp)</small></a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">与えられた数列を逆順に出力 <small>(verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp)</small></a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
 
 
