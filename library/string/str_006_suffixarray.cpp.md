@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: Suffix Array: $O(N log N)$ <small>(string/str_006_suffixarray.cpp)</small>
+# :x: Suffix Array: $O(N log N)$ <small>(string/str_006_suffixarray.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/str_006_suffixarray.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-11 16:10:37+09:00
+    - Last commit date: 2020-01-11 16:23:09+09:00
 
 
 * dummy は、t のどの要素よりも小さい
@@ -42,6 +42,11 @@ layout: default
 * SA 配列上の、パターン文字列未満最大インデックス: $O(|T| \log |S|)$
 * LCP (SA 配列上の i 番目と i+1 番目の最長共通接頭辞): $O(|S|)$
 * 文字列検索: $O(|T| \log |S|)$
+
+
+## Verified with
+
+* :x: <a href="../../verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
 
 
 ## Code
@@ -62,7 +67,7 @@ private:
 public:
     // @brief dummy は、t のどの要素よりも小さい
     SuffixArray(ArrayTp s_, ElemTp dummy_ = '$') : s(s_), dummy(dummy_) {
-        s.emplace_back(dummy);
+        s.push_back(dummy);
         len = s.size();
 
         vector<ElemTp> seq;
@@ -240,7 +245,7 @@ public:
     // - LCP が十分大きい限り順番に降りていく？
     vector<int> match(const ArrayTp &p) const {
         int t = binary_search_less(p) + 1;
-        int k = get_SA2Str(t);
+        int k = (t < len ? get_SA2Str(t) : len + 1);
 
         int N = p.size();
         bool match_first = (k+N <= len);
@@ -278,7 +283,7 @@ private:
 public:
     // @brief dummy は、t のどの要素よりも小さい
     SuffixArray(ArrayTp s_, ElemTp dummy_ = '$') : s(s_), dummy(dummy_) {
-        s.emplace_back(dummy);
+        s.push_back(dummy);
         len = s.size();
 
         vector<ElemTp> seq;
@@ -456,7 +461,7 @@ public:
     // - LCP が十分大きい限り順番に降りていく？
     vector<int> match(const ArrayTp &p) const {
         int t = binary_search_less(p) + 1;
-        int k = get_SA2Str(t);
+        int k = (t < len ? get_SA2Str(t) : len + 1);
 
         int N = p.size();
         bool match_first = (k+N <= len);
