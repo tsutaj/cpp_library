@@ -25,15 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/str_006_suffixarray.cpp
+# :warning: Suffix Array: $O(N log N)$ <small>(string/str_006_suffixarray.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/str_006_suffixarray.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52+09:00
+    - Last commit date: 2020-01-11 16:10:37+09:00
 
 
+* dummy は、t のどの要素よりも小さい
+* get_SA2Str: SA 配列の idx 番目は元の文字列の何番目？
+* get_Str2SA: 元の文字列の idx 番目は SA 配列の何番目？
+* get_LCP: SA 配列上の idx, idx+1 番目の要素の LCP はいくらか？
+* SA 配列上の、パターン文字列を超える最小インデックス: $O(|T| \log |S|)$
+* SA 配列上の、パターン文字列未満最大インデックス: $O(|T| \log |S|)$
+* LCP (SA 配列上の i 番目と i+1 番目の最長共通接頭辞): $O(|S|)$
+* 文字列検索: $O(|T| \log |S|)$
 
 
 ## Code
@@ -41,29 +49,38 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-// O(n log n) で構築するやつ
-// ・getIdx(i) := Suffix を辞書順に並べたときに i 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
-// ・getLCP(i) := SuffixArray 上で i 番目と i+1 番目の要素の最長共通接頭辞はいくらか？
-// ・is_greater: 辞書順 i 番目の Suffix がパターン文字列より大きいか見る
-// ・is_less: 辞書順 i 番目の Suffix がパターン文字列より小さいか見る
-// ・binary_search_greater: パターン文字列より大きい Suffix でインデックス最小のもの
-// ・binary_search_less: パターン文字列より小さい Suffix でインデックス最小のもの
-const int ALPH = 256;
+// @brief Suffix Array: $O(N log N)$
+template <typename ArrayTp, typename ElemTp>
 struct SuffixArray {
 private:
-    string s;
-    vector<int> rec, lcp, cnt;
-    int len, cnt_size;
+    ArrayTp s;
+    vector<int> cmp_s;
+    ElemTp dummy;
+    vector<int> rec, rev, lcp, cnt;
+    int len, sigma;
+
 public:
-    SuffixArray(string s_) : s(s_) {
-        s += "$"; // 辞書順で最も小さいダミー文字
-        len = s.length();
-        cnt_size = max(ALPH, len); cnt.resize(cnt_size);
-        rec = getArray();
-        lcp = getLCPArray();
+    // @brief dummy は、t のどの要素よりも小さい
+    SuffixArray(ArrayTp s_, ElemTp dummy_ = '$') : s(s_), dummy(dummy_) {
+        s.emplace_back(dummy);
+        len = s.size();
+
+        vector<ElemTp> seq;
+        for(const auto& e : s) seq.emplace_back(e);
+        sort(seq.begin(), seq.end());
+        seq.erase(unique(seq.begin(), seq.end()), seq.end());
+        sigma = seq.size();
+
+        for(const auto &e : s) cmp_s.emplace_back(lower_bound(seq.begin(), seq.end(), e) - seq.begin());
+
+        rec = get_Array();
+        rev.resize(len);
+        for(int i=0; i<len; i++) rev[ rec[i] ] = i;
+        lcp = get_LCPArray();
     }
 
-    void dump_array(vector<int> &indices, vector<int> &classes) {
+    void dump_array(const vector<int> &indices,
+                    const vector<int> &classes) const {
         fprintf(stderr, "# debug\n");
         fprintf(stderr, "# indices:");
         for(int i=0; i<len; i++) fprintf(stderr, " %d", indices[i]);
@@ -73,20 +90,21 @@ public:
         fprintf(stderr, "\n");
     }
     
-    vector<int> getArray() {
+    vector<int> get_Array() {
+        cnt.resize(len);
         vector<int> indices(len), prev_idx(len);
         vector<int> classes(len), prev_cls(len);
         vector<int> tmp_val(len);
 
         // k == 0 はカウントソートのみ
         for(int i=0; i<len; i++) {
-            cnt[ s[i] ]++;
+            cnt[ cmp_s[i] ]++;
         }
-        for(int i=1; i<cnt_size; i++) {
+        for(int i=1; i<len; i++) {
             cnt[i] += cnt[i-1];
         }
         for(int i=len-1; i>=0; i--) {
-            indices[ --cnt[ s[i] ] ] = i;
+            indices[ --cnt[ cmp_s[i] ] ] = i;
         }
         for(int i=1; i<len; i++) {
             int pena = (s[ indices[i] ] != s[ indices[i-1] ]);
@@ -108,7 +126,7 @@ public:
             for(int i=0; i<len; i++) {
                 cnt[ tmp_val[i] ]++;
             }
-            for(int i=1; i<cnt_size; i++) {
+            for(int i=1; i<len; i++) {
                 cnt[i] += cnt[i-1];
             }
             for(int i=len-1; i>=0; i--) {
@@ -126,23 +144,28 @@ public:
         return indices;
     }
 
-    int size() {
+    int size() const {
         return rec.size();
     }
-    // Suffix を辞書順に並べたときに idx 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
-    int getIdx(int idx) {
+    // @brief get_SA2Str: SA 配列の idx 番目は元の文字列の何番目？
+    int get_SA2Str(int idx) const {
         assert(0 <= idx and idx < size());
         return rec[idx];
     }
-    // SuffixArray 上で idx 番目と idx+1 番目の要素の最長共通接頭辞はいくらか？
-    int getLCP(int idx) {
+    // @brief get_Str2SA: 元の文字列の idx 番目は SA 配列の何番目？
+    int get_Str2SA(int idx) const {
+        assert(0 <= idx and idx < size());
+        return rev[idx];
+    }
+    // @brief get_LCP: SA 配列上の idx, idx+1 番目の要素の LCP はいくらか？
+    int get_LCP(int idx) const {
         assert(0 <= idx and idx < size());
         return lcp[idx];
     }
     
-    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて大きいか？
-    bool is_greater(string &p, int idx) {
-        idx = getIdx(idx);
+    // SA 配列上 idx 番目以降の接尾辞は、パターン文字列 p に比べて大きいか？
+    bool is_greater(const ArrayTp &p, int idx) const {
+        idx = get_SA2Str(idx);
         int N = size(), M = p.size(), x, y;
         for(x=idx, y=0; x<N and y<M; x++, y++) {
             if(s[x] > p[y]) return true;
@@ -151,9 +174,9 @@ public:
         return y >= M and x < N;
     }
 
-    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて小さいか？
-    bool is_less(string &p, int idx) {
-        idx = getIdx(idx);
+    // SA 配列上 idx 番目以降の接尾辞は、パターン文字列 p に比べて小さいか？
+    bool is_less(const ArrayTp &p, int idx) const {
+        idx = get_SA2Str(idx);
         int N = size(), M = p.size(), x, y;
         for(x=idx, y=0; x<N and y<M; x++, y++) {
             if(s[x] < p[y]) return true;
@@ -161,10 +184,10 @@ public:
         }
         return x >= N and y < M;
     }
-    
-    // SA 配列上で、p より大きくなる要素であって最小のもの
-    // そのような要素が存在しなければ -1
-    int binary_search_greater(string &p) {
+
+    // @brief SA 配列上の、パターン文字列を超える最小インデックス: $O(|T| \log |S|)$
+    // SA 配列上で、p より大きくなる要素であって最小のもの (存在しなければ -1)
+    int binary_search_greater(const ArrayTp &p) const {
         int lb = -1, ub = len;
         while(ub - lb > 1) {
             int mid = (ub + lb) / 2;
@@ -176,9 +199,9 @@ public:
         return ub;
     }
 
-    // SA 配列上で、p より小さくなる要素であって最大のもの
-    // そのような要素が存在しなければ -1
-    int binary_search_less(string &p) {
+    // @brief SA 配列上の、パターン文字列未満最大インデックス: $O(|T| \log |S|)$
+    // SA 配列上で、p より小さくなる要素であって最大のもの (存在しなければ -1)
+    int binary_search_less(const ArrayTp &p) const {
         int lb = -1, ub = len;
         while(ub - lb > 1) {
             int mid = (ub + lb) / 2;
@@ -189,8 +212,8 @@ public:
         return lb;
     }
 
-    // LCP[i] := SA 配列上の i 番目と i+1 番目の最長共通接頭辞
-    vector<int> getLCPArray() {
+    // @brief LCP (SA 配列上の i 番目と i+1 番目の最長共通接頭辞): $O(|S|)$
+    vector<int> get_LCPArray() {
         vector<int> rank(len);
         for(int i=0; i<len; i++) {
             rank[ rec[i] ] = i;
@@ -210,67 +233,30 @@ public:
         }
         return res;
     }
-};
 
-/*
-// Suffix Array: 構築 O(|S| log^2 |S|)
-// 蟻本の実装と多分同じ
-struct SuffixArray {
-    int N, k;
-    vector<int> rank, sa;
-    string s;
+    // @brief 文字列検索: $O(|T| \log |S|)$
+    // - パターン文字列未満になる場所を特定
+    // - 境界についてパターン文字列と一致するか判定
+    // - LCP が十分大きい限り順番に降りていく？
+    vector<int> match(const ArrayTp &p) const {
+        int t = binary_search_less(p) + 1;
+        int k = get_SA2Str(t);
 
-    SuffixArray(string t) {
-        s = t, k = 1, N = t.length();
-        rank = sa = vector<int>(N+1);
-        build();
-    }
+        int N = p.size();
+        bool match_first = (k+N <= len);
+        for(int i=0; i<N and match_first; i++) match_first &= (p[i] == s[k+i]);
+        if(!match_first) return {};
 
-    bool compare_sa(int i, int j) {
-        if(rank[i] != rank[j]) return rank[i] < rank[j];
-        else {
-            int vi = (i+k <= N ? rank[i+k] : -1);
-            int vj = (j+k <= N ? rank[j+k] : -1);
-            return vi < vj;
+        vector<int> res;
+        while(t < len) {
+            res.emplace_back(get_SA2Str(t));
+            if(get_LCP(t) < static_cast<int>(p.size())) break;
+            t++;
         }
-    }
-
-    void build() {
-        for(int i=0; i<=N; i++) {
-            sa[i] = i;
-            rank[i] = (i < N ? s[i] : -1);
-        }
-
-        for(k=1; k<=N; k*=2) {
-            sort(sa.begin(), sa.end(), [&](int i, int j) {
-                return compare_sa(i, j);
-            });
-
-            vector<int> tmp(N+1, 0);
-            tmp[ sa[0] ] = 0;
-            for(int i=1; i<=N; i++) {
-                tmp[ sa[i] ] = tmp[ sa[i-1] ] + (compare_sa(sa[i-1], sa[i]) ? 1 : 0);
-            }
-
-            swap(rank, tmp);
-        }
-    }
-
-    string get_substr(int idx) {
-        return s.substr(sa[idx]);
-    }
-
-    void output() {
-        for(int i=0; i<=N; i++) {
-            fprintf(stderr, "idx = %3d, str = %s\n", i, get_substr(i).c_str());
-        }
-    }
-
-    int operator[](int idx) const {
-        return sa[idx];
+        sort(res.begin(), res.end());
+        return res;
     }
 };
-*/
 
 ```
 {% endraw %}
@@ -279,29 +265,38 @@ struct SuffixArray {
 {% raw %}
 ```cpp
 #line 1 "string/str_006_suffixarray.cpp"
-// O(n log n) で構築するやつ
-// ・getIdx(i) := Suffix を辞書順に並べたときに i 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
-// ・getLCP(i) := SuffixArray 上で i 番目と i+1 番目の要素の最長共通接頭辞はいくらか？
-// ・is_greater: 辞書順 i 番目の Suffix がパターン文字列より大きいか見る
-// ・is_less: 辞書順 i 番目の Suffix がパターン文字列より小さいか見る
-// ・binary_search_greater: パターン文字列より大きい Suffix でインデックス最小のもの
-// ・binary_search_less: パターン文字列より小さい Suffix でインデックス最小のもの
-const int ALPH = 256;
+// @brief Suffix Array: $O(N log N)$
+template <typename ArrayTp, typename ElemTp>
 struct SuffixArray {
 private:
-    string s;
-    vector<int> rec, lcp, cnt;
-    int len, cnt_size;
+    ArrayTp s;
+    vector<int> cmp_s;
+    ElemTp dummy;
+    vector<int> rec, rev, lcp, cnt;
+    int len, sigma;
+
 public:
-    SuffixArray(string s_) : s(s_) {
-        s += "$"; // 辞書順で最も小さいダミー文字
-        len = s.length();
-        cnt_size = max(ALPH, len); cnt.resize(cnt_size);
-        rec = getArray();
-        lcp = getLCPArray();
+    // @brief dummy は、t のどの要素よりも小さい
+    SuffixArray(ArrayTp s_, ElemTp dummy_ = '$') : s(s_), dummy(dummy_) {
+        s.emplace_back(dummy);
+        len = s.size();
+
+        vector<ElemTp> seq;
+        for(const auto& e : s) seq.emplace_back(e);
+        sort(seq.begin(), seq.end());
+        seq.erase(unique(seq.begin(), seq.end()), seq.end());
+        sigma = seq.size();
+
+        for(const auto &e : s) cmp_s.emplace_back(lower_bound(seq.begin(), seq.end(), e) - seq.begin());
+
+        rec = get_Array();
+        rev.resize(len);
+        for(int i=0; i<len; i++) rev[ rec[i] ] = i;
+        lcp = get_LCPArray();
     }
 
-    void dump_array(vector<int> &indices, vector<int> &classes) {
+    void dump_array(const vector<int> &indices,
+                    const vector<int> &classes) const {
         fprintf(stderr, "# debug\n");
         fprintf(stderr, "# indices:");
         for(int i=0; i<len; i++) fprintf(stderr, " %d", indices[i]);
@@ -311,20 +306,21 @@ public:
         fprintf(stderr, "\n");
     }
     
-    vector<int> getArray() {
+    vector<int> get_Array() {
+        cnt.resize(len);
         vector<int> indices(len), prev_idx(len);
         vector<int> classes(len), prev_cls(len);
         vector<int> tmp_val(len);
 
         // k == 0 はカウントソートのみ
         for(int i=0; i<len; i++) {
-            cnt[ s[i] ]++;
+            cnt[ cmp_s[i] ]++;
         }
-        for(int i=1; i<cnt_size; i++) {
+        for(int i=1; i<len; i++) {
             cnt[i] += cnt[i-1];
         }
         for(int i=len-1; i>=0; i--) {
-            indices[ --cnt[ s[i] ] ] = i;
+            indices[ --cnt[ cmp_s[i] ] ] = i;
         }
         for(int i=1; i<len; i++) {
             int pena = (s[ indices[i] ] != s[ indices[i-1] ]);
@@ -346,7 +342,7 @@ public:
             for(int i=0; i<len; i++) {
                 cnt[ tmp_val[i] ]++;
             }
-            for(int i=1; i<cnt_size; i++) {
+            for(int i=1; i<len; i++) {
                 cnt[i] += cnt[i-1];
             }
             for(int i=len-1; i>=0; i--) {
@@ -364,23 +360,28 @@ public:
         return indices;
     }
 
-    int size() {
+    int size() const {
         return rec.size();
     }
-    // Suffix を辞書順に並べたときに idx 番目に来るものは、元の文字列で何番目のインデックスからはじめた Suffix か？
-    int getIdx(int idx) {
+    // @brief get_SA2Str: SA 配列の idx 番目は元の文字列の何番目？
+    int get_SA2Str(int idx) const {
         assert(0 <= idx and idx < size());
         return rec[idx];
     }
-    // SuffixArray 上で idx 番目と idx+1 番目の要素の最長共通接頭辞はいくらか？
-    int getLCP(int idx) {
+    // @brief get_Str2SA: 元の文字列の idx 番目は SA 配列の何番目？
+    int get_Str2SA(int idx) const {
+        assert(0 <= idx and idx < size());
+        return rev[idx];
+    }
+    // @brief get_LCP: SA 配列上の idx, idx+1 番目の要素の LCP はいくらか？
+    int get_LCP(int idx) const {
         assert(0 <= idx and idx < size());
         return lcp[idx];
     }
     
-    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて大きいか？
-    bool is_greater(string &p, int idx) {
-        idx = getIdx(idx);
+    // SA 配列上 idx 番目以降の接尾辞は、パターン文字列 p に比べて大きいか？
+    bool is_greater(const ArrayTp &p, int idx) const {
+        idx = get_SA2Str(idx);
         int N = size(), M = p.size(), x, y;
         for(x=idx, y=0; x<N and y<M; x++, y++) {
             if(s[x] > p[y]) return true;
@@ -389,9 +390,9 @@ public:
         return y >= M and x < N;
     }
 
-    // 元の文字列の idx 番目以降の接尾辞は、パターン文字列 p に比べて小さいか？
-    bool is_less(string &p, int idx) {
-        idx = getIdx(idx);
+    // SA 配列上 idx 番目以降の接尾辞は、パターン文字列 p に比べて小さいか？
+    bool is_less(const ArrayTp &p, int idx) const {
+        idx = get_SA2Str(idx);
         int N = size(), M = p.size(), x, y;
         for(x=idx, y=0; x<N and y<M; x++, y++) {
             if(s[x] < p[y]) return true;
@@ -399,10 +400,10 @@ public:
         }
         return x >= N and y < M;
     }
-    
-    // SA 配列上で、p より大きくなる要素であって最小のもの
-    // そのような要素が存在しなければ -1
-    int binary_search_greater(string &p) {
+
+    // @brief SA 配列上の、パターン文字列を超える最小インデックス: $O(|T| \log |S|)$
+    // SA 配列上で、p より大きくなる要素であって最小のもの (存在しなければ -1)
+    int binary_search_greater(const ArrayTp &p) const {
         int lb = -1, ub = len;
         while(ub - lb > 1) {
             int mid = (ub + lb) / 2;
@@ -414,9 +415,9 @@ public:
         return ub;
     }
 
-    // SA 配列上で、p より小さくなる要素であって最大のもの
-    // そのような要素が存在しなければ -1
-    int binary_search_less(string &p) {
+    // @brief SA 配列上の、パターン文字列未満最大インデックス: $O(|T| \log |S|)$
+    // SA 配列上で、p より小さくなる要素であって最大のもの (存在しなければ -1)
+    int binary_search_less(const ArrayTp &p) const {
         int lb = -1, ub = len;
         while(ub - lb > 1) {
             int mid = (ub + lb) / 2;
@@ -427,8 +428,8 @@ public:
         return lb;
     }
 
-    // LCP[i] := SA 配列上の i 番目と i+1 番目の最長共通接頭辞
-    vector<int> getLCPArray() {
+    // @brief LCP (SA 配列上の i 番目と i+1 番目の最長共通接頭辞): $O(|S|)$
+    vector<int> get_LCPArray() {
         vector<int> rank(len);
         for(int i=0; i<len; i++) {
             rank[ rec[i] ] = i;
@@ -448,67 +449,30 @@ public:
         }
         return res;
     }
-};
 
-/*
-// Suffix Array: 構築 O(|S| log^2 |S|)
-// 蟻本の実装と多分同じ
-struct SuffixArray {
-    int N, k;
-    vector<int> rank, sa;
-    string s;
+    // @brief 文字列検索: $O(|T| \log |S|)$
+    // - パターン文字列未満になる場所を特定
+    // - 境界についてパターン文字列と一致するか判定
+    // - LCP が十分大きい限り順番に降りていく？
+    vector<int> match(const ArrayTp &p) const {
+        int t = binary_search_less(p) + 1;
+        int k = get_SA2Str(t);
 
-    SuffixArray(string t) {
-        s = t, k = 1, N = t.length();
-        rank = sa = vector<int>(N+1);
-        build();
-    }
+        int N = p.size();
+        bool match_first = (k+N <= len);
+        for(int i=0; i<N and match_first; i++) match_first &= (p[i] == s[k+i]);
+        if(!match_first) return {};
 
-    bool compare_sa(int i, int j) {
-        if(rank[i] != rank[j]) return rank[i] < rank[j];
-        else {
-            int vi = (i+k <= N ? rank[i+k] : -1);
-            int vj = (j+k <= N ? rank[j+k] : -1);
-            return vi < vj;
+        vector<int> res;
+        while(t < len) {
+            res.emplace_back(get_SA2Str(t));
+            if(get_LCP(t) < static_cast<int>(p.size())) break;
+            t++;
         }
-    }
-
-    void build() {
-        for(int i=0; i<=N; i++) {
-            sa[i] = i;
-            rank[i] = (i < N ? s[i] : -1);
-        }
-
-        for(k=1; k<=N; k*=2) {
-            sort(sa.begin(), sa.end(), [&](int i, int j) {
-                return compare_sa(i, j);
-            });
-
-            vector<int> tmp(N+1, 0);
-            tmp[ sa[0] ] = 0;
-            for(int i=1; i<=N; i++) {
-                tmp[ sa[i] ] = tmp[ sa[i-1] ] + (compare_sa(sa[i-1], sa[i]) ? 1 : 0);
-            }
-
-            swap(rank, tmp);
-        }
-    }
-
-    string get_substr(int idx) {
-        return s.substr(sa[idx]);
-    }
-
-    void output() {
-        for(int i=0; i<=N; i++) {
-            fprintf(stderr, "idx = %3d, str = %s\n", i, get_substr(i).c_str());
-        }
-    }
-
-    int operator[](int idx) const {
-        return sa[idx];
+        sort(res.begin(), res.end());
+        return res;
     }
 };
-*/
 
 ```
 {% endraw %}

@@ -223,8 +223,8 @@ layout: default
 * :warning: <a href="library/string/str_003_replace.cpp.html">string/str_003_replace.cpp</a>
 * :warning: <a href="library/string/str_004_trie.cpp.html">string/str_004_trie.cpp</a>
 * :warning: <a href="library/string/str_005_ahocorasick.cpp.html">string/str_005_ahocorasick.cpp</a>
-* :warning: <a href="library/string/str_006_suffixarray.cpp.html">string/str_006_suffixarray.cpp</a>
-* :warning: <a href="library/string/str_007_kmp.cpp.html">string/str_007_kmp.cpp</a>
+* :warning: <a href="library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
+* :warning: <a href="library/string/str_007_kmp.cpp.html">KMP 法 (Knuth-Morris-Pratt Algorithm) <small>(string/str_007_kmp.cpp)</small></a>
 * :warning: <a href="library/string/str_008_shift_and_or.cpp.html">string/str_008_shift_and_or.cpp</a>
 * :warning: <a href="library/string/str_009_manacher.cpp.html">string/str_009_manacher.cpp</a>
 * :warning: <a href="library/string/str_010_z_algorithm.cpp.html">string/str_010_z_algorithm.cpp</a>
