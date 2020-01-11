@@ -25,19 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp
+# :heavy_check_mark: verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-11 16:25:32+09:00
+    - Last commit date: 2020-01-11 16:26:51+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../../library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../../library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
 
 
 ## Code
@@ -45,6 +46,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
@@ -106,6 +109,8 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
@@ -355,7 +360,7 @@ public:
         return res;
     }
 };
-#line 42 "verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp"
+#line 44 "verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp"
 
 char buf[1 << 20];
 int main() {

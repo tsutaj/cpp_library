@@ -223,7 +223,7 @@ layout: default
 * :warning: <a href="library/string/str_003_replace.cpp.html">string/str_003_replace.cpp</a>
 * :warning: <a href="library/string/str_004_trie.cpp.html">string/str_004_trie.cpp</a>
 * :warning: <a href="library/string/str_005_ahocorasick.cpp.html">string/str_005_ahocorasick.cpp</a>
-* :x: <a href="library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
+* :heavy_check_mark: <a href="library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
 * :warning: <a href="library/string/str_007_kmp.cpp.html">KMP 法 (Knuth-Morris-Pratt Algorithm) <small>(string/str_007_kmp.cpp)</small></a>
 * :warning: <a href="library/string/str_008_shift_and_or.cpp.html">string/str_008_shift_and_or.cpp</a>
 * :warning: <a href="library/string/str_009_manacher.cpp.html">string/str_009_manacher.cpp</a>
@@ -303,7 +303,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html">$\left\[ l, r \right\]$ にある整数の中で $D$ に最も近いものを求める <small>(verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp)</small></a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html">矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める <small>(verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp)</small></a>
-* :x: <a href="verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (01)</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (02)</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html">ソートを行う (小さいものから $k$ 番目を求められることを利用) <small>(verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp)</small></a>

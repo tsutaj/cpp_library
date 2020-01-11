@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small>
+# :heavy_check_mark: Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -46,7 +46,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
 
 
 ## Code
