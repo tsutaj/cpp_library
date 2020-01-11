@@ -1,3 +1,5 @@
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+
 // #define _GLIBCXX_DEBUG // for STL debug (optional)
 #include <iostream>
 #include <iomanip>
