@@ -30,14 +30,14 @@ layout: default
 <a href="../../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-11 16:23:09+09:00
+    - Last commit date: 2020-01-11 16:25:32+09:00
 
 
 
 
 ## Depends on
 
-* :x: <a href="../../../../library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
+* :x: <a href="../../../../library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
 
 
 ## Code
@@ -147,7 +147,7 @@ const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
 #line 1 "verifying_test/AOJ/ALDS1_14_B/../../../string/str_006_suffixarray.cpp"
-// @brief Suffix Array: $O(N log N)$
+// @brief Suffix Array: $O(N \log N)$
 template <typename ArrayTp, typename ElemTp>
 struct SuffixArray {
 private:
