@@ -1,4 +1,4 @@
-// @brief Suffix Array: $O(N log N)$
+// @brief Suffix Array: $O(N \log N)$
 template <typename ArrayTp, typename ElemTp>
 struct SuffixArray {
 private:
