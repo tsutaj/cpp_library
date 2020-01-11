@@ -1,26 +1,26 @@
-// KMP 法 (Knuth-Morris-Pratt Algorithm)
+// @brief KMP 法 (Knuth-Morris-Pratt Algorithm)
+template <typename Tp>
 struct KMP {
-    string p; int len;
+    Tp p; int len;
     vector<int> fail;
     KMP() {}
-    KMP(string p_) : p(p_), len(p_.length()) {
-        // 文字列 p[0:i-1] の接頭辞と接尾辞は最大何文字一致する？
-        // ただし、|p[0:i-1]| 文字未満のみ考慮
-        // MP 法に比べ、失敗時の遷移が log 回に改善されている
-        // see also: http://www-igm.univ-mlv.fr/~lecroq/string/node8.html
+    KMP(Tp p_) : p(p_), len(p_.size()) {
+        // @brief 文字列 $p[0:i-1]$ の接頭辞と接尾辞は最大何文字一致する？ (ただし、$|p[0:i-1]|$ 文字未満のみ考慮)
+        // @brief MP 法に比べ、失敗時の遷移が log 回に改善されている
+        // @see http://www-igm.univ-mlv.fr/~lecroq/string/node8.html
         fail.resize(len + 1, -1);
-        for(int i=1, j=-1; i<=len; i++) {
+        for(int i=0, j=-1; i<len; i++) {
             // その時点で一致しなければ fail[j] 文字以下の一致となる
             // j を fail[j] に変更
-            int step = 0;
-            while(j >= 0 and p[j] != p[i-1]) j = fail[j], step++;
-            fail[i] = (p[i] == p[++j] ? fail[j] : j);
+            while(j >= 0 and p[j] != p[i]) j = fail[j];
+            j++;
+            fail[i+1] = (i+1 < len and p[i+1] == p[j] ? fail[j] : j);
         }
     }
 
-    // 文字列 s における p の出現位置 (開始位置) のリスト
-    vector<int> match(string s) {
-        int N = s.length();
+    // @brief 文字列 $s$ における $p$ の出現位置 (開始位置) のリスト
+    vector<int> match(Tp s) {
+        int N = s.size();
         vector<int> occur;
         for(int i=0, k=0; i<N; i++) {
             while(k >= 0 and s[i] != p[k]) k = fail[k];
