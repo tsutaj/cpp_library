@@ -11,7 +11,7 @@ private:
 public:
     // @brief dummy は、t のどの要素よりも小さい
     SuffixArray(ArrayTp s_, ElemTp dummy_ = '$') : s(s_), dummy(dummy_) {
-        s.emplace_back(dummy);
+        s.push_back(dummy);
         len = s.size();
 
         vector<ElemTp> seq;
@@ -189,7 +189,7 @@ public:
     // - LCP が十分大きい限り順番に降りていく？
     vector<int> match(const ArrayTp &p) const {
         int t = binary_search_less(p) + 1;
-        int k = get_SA2Str(t);
+        int k = (t < len ? get_SA2Str(t) : len + 1);
 
         int N = p.size();
         bool match_first = (k+N <= len);
