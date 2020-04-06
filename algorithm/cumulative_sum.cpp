@@ -2,10 +2,7 @@
 
 /**
  * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
- * @brief - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
- * @brief - 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
- * @brief - 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
- * @brief   - `subseq` は逆演算が存在するときのみ可能
+ * @docs ./docs/cumulative_sum.md
  */
 
 #include <functional>

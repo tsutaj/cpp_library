@@ -1,10 +1,8 @@
 # pragma once
 
 /**
- * @brief 2 次元 累積和 (2 Dimension Cumulative Sum)
- * @brief - `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
- * @brief - `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
- * @brief   - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
+ * @brief 2 次元累積和 (2 Dimension Cumulative Sum)
+ * @docs ./docs/cumulative_sum_2d.md
  */
 
 #include <functional>
