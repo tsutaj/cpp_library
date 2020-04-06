@@ -41,8 +41,10 @@ const int INF = 1LL << 29;
 const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
+#define call_from_test
 #include "../../../structure/strc_023_compact_bitvector.cpp"
 #include "../../../structure/strc_024_static_wavelet_matrix.cpp"
+#endif
 
 int main() {
     int N, M; scanf("%d%d", &N, &M);

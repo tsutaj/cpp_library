@@ -1,8 +1,11 @@
 # pragma once
 
-// 二次元累積演算 (0-indexed)
-// 単位元と二項演算・その逆演算を与える
-// 二次元 imos にも対応
+/**
+ * @brief 2 次元 累積和 (2 Dimension Cumulative Sum)
+ * @brief - `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
+ * @brief - `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
+ * @brief   - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
+ */
 
 #include <functional>
 #include <vector>
@@ -50,7 +53,7 @@ struct CumulativeSum2D {
     }
 
     // [lx, rx), [ly, ry) の矩形領域に val を適用
-    void range_add(int lx, int ly, int rx, int ry, MonoidType val) {
+    void range_apply(int lx, int ly, int rx, int ry, MonoidType val) {
         if(lx < 0 or ly < 0 or rx > n or ry > m) return;
         lx++, ly++; rx++; ry++;
         acc[lx][ly] = op(acc[lx][ly], val);
