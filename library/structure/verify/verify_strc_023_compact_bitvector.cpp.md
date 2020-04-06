@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#8a42e2f360efd149dd1f7c64fba9767e">structure/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_023_compact_bitvector.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 17:27:28+09:00
+    - Last commit date: 2020-04-07 00:18:26+09:00
 
 
 
@@ -116,7 +116,8 @@ int main() {
 #include <vector>
 #include <algorithm>
 using namespace std;
-#line 1 "structure/verify/../strc_023_compact_bitvector.cpp"
+#line 2 "structure/strc_023_compact_bitvector.cpp"
+
 // @title 簡潔ビットベクトル (compact bit vector)
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)

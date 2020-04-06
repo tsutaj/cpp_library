@@ -184,7 +184,7 @@ int main() {
 #include <iostream>
 #include <cstdio>
 using namespace std;
-#line 1 "string/verify/../str_009_manacher.cpp"
+#line 1 "string/str_009_manacher.cpp"
 // Manacher のアルゴリズム
 // 各インデックスについて回文半径を線形時間で求める
 // ダミー文字を挟むことにより偶数長回文にも対応
@@ -234,7 +234,7 @@ struct Manacher {
         return rad[idx] >= len;
     }
 };
-#line 1 "string/verify/../../structure/strc_008_abst_segtree.cpp"
+#line 1 "structure/strc_008_abst_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title セグメント木 (Segment Tree)
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)

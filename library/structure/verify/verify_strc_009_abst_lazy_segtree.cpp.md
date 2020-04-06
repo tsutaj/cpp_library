@@ -354,7 +354,7 @@ int main() {
 #include <map>
 #include <utility>
 using namespace std;
-#line 1 "structure/verify/../strc_009_abst_lazy_segtree.cpp"
+#line 1 "structure/strc_009_abst_lazy_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 遅延伝播セグメント木 (Lazy Segment Tree)
 template <typename MonoidType, typename OperatorType>

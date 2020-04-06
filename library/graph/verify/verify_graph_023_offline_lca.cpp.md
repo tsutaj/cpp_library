@@ -136,7 +136,7 @@ int main() {
 #include <utility>
 #include <functional>
 using namespace std;
-#line 1 "graph/verify/../graph_000_basic.cpp"
+#line 1 "graph/graph_000_basic.cpp"
 // 移動元と行先と辺のコストを記録する構造体
 template <typename T = int>
 struct Edge {
@@ -155,7 +155,7 @@ struct Edge {
 
 template <typename T = int>
 using Graph = vector< vector< Edge<T> > >;
-#line 1 "graph/verify/../graph_023_offline_lca.cpp"
+#line 1 "graph/graph_023_offline_lca.cpp"
 // Tarjan's off-line LCA algorithm
 // 依存ライブラリ
 // ・グラフ辺構造体 (graph_000_basic.cpp)

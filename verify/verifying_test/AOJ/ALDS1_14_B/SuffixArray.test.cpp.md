@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#c2873089493205737193c22d215828ae">verifying_test/AOJ/ALDS1_14_B</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-01-11 16:26:51+09:00
 
@@ -151,7 +152,7 @@ const int INF = 1LL << 29;
 const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
-#line 1 "verifying_test/AOJ/ALDS1_14_B/../../../string/str_006_suffixarray.cpp"
+#line 1 "string/str_006_suffixarray.cpp"
 // @brief Suffix Array: $O(N \log N)$
 template <typename ArrayTp, typename ElemTp>
 struct SuffixArray {

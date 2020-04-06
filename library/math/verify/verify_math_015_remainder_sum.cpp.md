@@ -95,7 +95,7 @@ int main() {
 #include <vector>
 #include <algorithm>
 using namespace std;
-#line 1 "math/verify/../math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;
@@ -157,7 +157,7 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 }
 
 // ModInt end
-#line 1 "math/verify/../math_015_remainder_sum.cpp"
+#line 1 "math/math_015_remainder_sum.cpp"
 // F(i) := P (mod 1) + P (mod 2) + ... + P (mod i) を計算
 // 答えは NumType 型で返ってくる
 template <typename NumType, int K = 10000000>

@@ -89,7 +89,7 @@ int main() {
 #include <algorithm>
 #include <iostream>
 using namespace std;
-#line 1 "structure/verify/../strc_002_bit.cpp"
+#line 1 "structure/strc_002_bit.cpp"
 // Binary Indexed Tree (BIT)
 // Verified: AOJ DSL_2_B: Range Sum Query (intのみ)
 
@@ -129,7 +129,7 @@ public:
         }
     }
 };
-#line 1 "structure/verify/../strc_004_bit_sec.cpp"
+#line 1 "structure/strc_004_bit_sec.cpp"
 // 次の2つのクエリに対応するBIT
 // ・[a, b) の要素全てに x を加えるクエリ
 // ・[a, b) の和を計算するクエリ

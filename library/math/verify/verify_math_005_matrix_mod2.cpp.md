@@ -127,7 +127,7 @@ int main() {
 #include <iostream>
 #include <cassert>
 using namespace std;
-#line 1 "math/verify/../math_005_matrix_mod2.cpp"
+#line 1 "math/math_005_matrix_mod2.cpp"
 // mod2 行列ライブラリ (bitset を使って高速化、横は SIZE 固定とする)
 // TODO: 乗算の verify
 struct BinaryMatrix {

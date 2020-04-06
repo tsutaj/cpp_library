@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 二次元平面における点集合 $P$ の凸包を求める <small>(verifying_test/AOJ/CGL_4_A/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_4_A/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#40ee7ef16b634c4efa24f7126d8d597d">verifying_test/AOJ/CGL_4_A</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_4_A/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -147,7 +148,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_4_A/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

@@ -276,7 +276,7 @@ int main() {
 #include <cassert>
 #include <valarray>
 using namespace std;
-#line 1 "graph/verify/../graph_020_HLDecomposition.cpp"
+#line 1 "graph/graph_020_HLDecomposition.cpp"
 // HL 分解 (Heavy-Light Decomposition)
 // 頂点 v を根とする部分木: [ in[v], out[v] )
 // 頂点 v から見た heavy edge chain の頭: head[v]
@@ -371,7 +371,7 @@ struct HLD {
         return proceed(u, v, E, f, m, true);
     }
 };
-#line 1 "graph/verify/../../structure/strc_008_abst_segtree.cpp"
+#line 1 "structure/strc_008_abst_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title セグメント木 (Segment Tree)
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)
@@ -432,7 +432,7 @@ struct SegmentTree {
         return cmb_f(vl, vr);
     }
 };
-#line 1 "graph/verify/../../structure/strc_009_abst_lazy_segtree.cpp"
+#line 1 "structure/strc_009_abst_lazy_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 遅延伝播セグメント木 (Lazy Segment Tree)
 template <typename MonoidType, typename OperatorType>
@@ -549,7 +549,7 @@ struct LazySegmentTree {
         fprintf(stderr, "\n");
     }
 };
-#line 1 "graph/verify/../../math/math_004_matrix.cpp"
+#line 1 "math/math_004_matrix.cpp"
 // 行列ライブラリ
 
 // size(): 行数を返す (列数は mat[0].size() で)
@@ -655,7 +655,7 @@ ostream& operator<< (ostream& out, Matrix<T> mat) {
     out << "]" << endl;
     return out;
 }
-#line 1 "graph/verify/../../math/math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;
@@ -717,7 +717,7 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 }
 
 // ModInt end
-#line 1 "graph/verify/../../math/math_024_fixed_matrix.cpp"
+#line 1 "math/math_024_fixed_matrix.cpp"
 // 行列ライブラリ
 
 // 演算子: 複合代入 (+=, -=), 単項 (-), 二項 (+, -, *, ==)

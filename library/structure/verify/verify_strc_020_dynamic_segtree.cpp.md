@@ -150,7 +150,7 @@ int main() {
 #include <climits>
 #include <utility>
 using namespace std;
-#line 1 "structure/verify/../strc_020_dynamic_segtree.cpp"
+#line 1 "structure/strc_020_dynamic_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 動的セグメント木 (Dynamic Segment Tree)
 // 動的セグメント木 (必要なノードだけ作る)

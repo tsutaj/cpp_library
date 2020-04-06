@@ -184,7 +184,7 @@ int main() {
 #include <tuple>
 #include <algorithm>
 using namespace std;
-#line 1 "graph/verify/../graph_000_basic.cpp"
+#line 1 "graph/graph_000_basic.cpp"
 // 移動元と行先と辺のコストを記録する構造体
 template <typename T = int>
 struct Edge {
@@ -203,7 +203,7 @@ struct Edge {
 
 template <typename T = int>
 using Graph = vector< vector< Edge<T> > >;
-#line 1 "graph/verify/../graph_010_scc.cpp"
+#line 1 "graph/graph_010_scc.cpp"
 // 強連結成分分解
 // Verified: AOJ GRL_3_C (Strongly Connected Components)
 // Verified: ARC030 C (有向グラフ) ← 強連結を潰したグラフの構築の検証
@@ -289,7 +289,7 @@ public:
         return make_pair(cmp, k);
     }
 };
-#line 1 "graph/verify/../graph_025_2SAT.cpp"
+#line 1 "graph/graph_025_2SAT.cpp"
 // クロージャ内にあるリテラルの数が高々 2 であるときの充足可能性問題 (2-SAT)
 // 依存ライブラリ: SCC (graph_010_scc.cpp)
 struct TwoSAT {

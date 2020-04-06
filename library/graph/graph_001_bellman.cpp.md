@@ -196,6 +196,7 @@ vector<T> bellman(vector< vector< Edge<T> > > &G, int s) {
     }
     return d;
 }
+
 ```
 {% endraw %}
 

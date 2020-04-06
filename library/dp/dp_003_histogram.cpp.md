@@ -104,6 +104,7 @@ int histArea(vector<int> h) {
     }
     return ans;
 }
+
 ```
 {% endraw %}
 

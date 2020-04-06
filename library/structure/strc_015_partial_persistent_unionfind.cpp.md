@@ -110,6 +110,7 @@ struct PartialPersistentUnionFind {
         return -prev(lower_bound(history[x].begin(), history[x].end(), make_pair(t, (int)0)))->second;
     }
 };
+
 ```
 {% endraw %}
 

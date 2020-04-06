@@ -106,7 +106,7 @@ int main() {
 #include <algorithm>
 #include <random>
 using namespace std;
-#line 1 "math/verify/../math_016_mod_sqrt.cpp"
+#line 1 "math/math_016_mod_sqrt.cpp"
 // Tonelli-Shanks Algorithm
 // 素数 p を法とし、n が与えられたとき、
 // r^2 = n (mod p) を満たす r を求める

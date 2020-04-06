@@ -131,7 +131,7 @@ int main() {
 #include <cmath>
 #include <iomanip>
 using namespace std;
-#line 1 "math/verify/../math_004_matrix.cpp"
+#line 1 "math/math_004_matrix.cpp"
 // 行列ライブラリ
 
 // size(): 行数を返す (列数は mat[0].size() で)
@@ -237,7 +237,7 @@ ostream& operator<< (ostream& out, Matrix<T> mat) {
     out << "]" << endl;
     return out;
 }
-#line 1 "math/verify/../math_022_matrix_utils_real.cpp"
+#line 1 "math/math_022_matrix_utils_real.cpp"
 // 実数行列に対する主要な操作
 
 // ガウスの消去法 (元の行列を参照で変形、ランクを返す)

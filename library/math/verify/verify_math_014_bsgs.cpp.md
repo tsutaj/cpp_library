@@ -126,7 +126,7 @@ int main() {
 #include <iostream>
 #include <cmath>
 using namespace std;
-#line 1 "math/verify/../math_014_bsgs.cpp"
+#line 1 "math/math_014_bsgs.cpp"
 // 離散対数問題 (Discrete Logarithm Problem) を解く
 // a^x = b (mod p, p は素数) を満たすような x (1 <= x <= p-1) を求める
 template <typename NumType>

@@ -110,6 +110,7 @@ void solve() {
     int ans = (dp[(1<<V)-1][0] == INF ? -1 : dp[(1<<V)-1][0]);
     cout << ans << endl;
 }
+
 ```
 {% endraw %}
 

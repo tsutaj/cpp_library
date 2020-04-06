@@ -168,6 +168,7 @@ struct LazySegtree {
         return vl + vr;
     }
 };
+
 ```
 {% endraw %}
 

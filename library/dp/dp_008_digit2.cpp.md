@@ -106,6 +106,7 @@ int main() {
     }
     cout << max(dp[N][0], dp[N][1]) << endl;
 }
+
 ```
 {% endraw %}
 

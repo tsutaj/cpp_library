@@ -133,7 +133,7 @@ int main() {
 #include <algorithm>
 #include <functional>
 using namespace std;
-#line 1 "graph/verify/../graph_012_maxflow_ford.cpp"
+#line 1 "graph/graph_012_maxflow_ford.cpp"
 // Ford-Fulkerson 法による 最大流 O( F |E| )
 // Bellman-Ford 法による 最小費用流 O( F |V| |E| )
 // [条件に注意] Dijkstra 法による 最小費用流 O( F |E| log |V| )

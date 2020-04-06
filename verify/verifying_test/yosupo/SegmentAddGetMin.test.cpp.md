@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#1acce4ff7ac967d2c4837407fb51acd6">verifying_test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/yosupo/SegmentAddGetMin.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-01-07 01:10:06+09:00
 
@@ -178,7 +179,7 @@ int dx[] = {0, 0, 1, -1};
 int dy[] = {1, -1, 0, 0};
 const ll MOD = 1000000007LL;
 
-#line 1 "verifying_test/yosupo/../../math/math_010_convexhulltrick.cpp"
+#line 1 "math/math_010_convexhulltrick.cpp"
 // @brief Convex Hull Trick (Li-Chao Tree) 
 template <typename X_Tp, typename Y_Tp>
 struct LiChaoTree {

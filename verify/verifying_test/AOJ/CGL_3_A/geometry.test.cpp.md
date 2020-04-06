@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 凸とは限らない多角形の面積を計算する <small>(verifying_test/AOJ/CGL_3_A/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_3_A/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#e5bf064ce119ce646241cf3c25fbe510">verifying_test/AOJ/CGL_3_A</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_A/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-24 18:06:16+09:00
 
@@ -142,7 +143,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_3_A/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

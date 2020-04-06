@@ -324,6 +324,7 @@ int main() {
     printf("%lld\n", (val * mul) % MOD);
     return 0;
 }
+
 ```
 {% endraw %}
 

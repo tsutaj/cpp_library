@@ -312,7 +312,7 @@ int main() {
 #include <climits>
 #include <functional>
 using namespace std;
-#line 1 "structure/verify/../strc_021_dynamic_lazy_segtree.cpp"
+#line 1 "structure/strc_021_dynamic_lazy_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 動的遅延セグメント木 (Dynamic Lazy Segment Tree)
 // 動的遅延セグメント木 (必要なところだけノードを作る)

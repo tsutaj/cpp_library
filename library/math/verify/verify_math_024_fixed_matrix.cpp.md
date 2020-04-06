@@ -126,7 +126,7 @@ int main() {
 #include <vector>
 #include <functional>
 using namespace std;
-#line 1 "math/verify/../math_024_fixed_matrix.cpp"
+#line 1 "math/math_024_fixed_matrix.cpp"
 // 行列ライブラリ
 
 // 演算子: 複合代入 (+=, -=), 単項 (-), 二項 (+, -, *, ==)
@@ -225,7 +225,7 @@ ostream& operator<< (ostream& out, FixedMatrix<T, h, w> mat) {
     out << "]" << endl;
     return out;
 }
-#line 1 "math/verify/../math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;
@@ -287,7 +287,7 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 }
 
 // ModInt end
-#line 1 "math/verify/../../structure/strc_009_abst_lazy_segtree.cpp"
+#line 1 "structure/strc_009_abst_lazy_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 遅延伝播セグメント木 (Lazy Segment Tree)
 template <typename MonoidType, typename OperatorType>

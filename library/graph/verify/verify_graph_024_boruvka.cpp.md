@@ -153,7 +153,7 @@ int main() {
 #include <cstdio>
 #include <tuple>
 using namespace std;
-#line 1 "graph/verify/../../structure/strc_001_unionfind.cpp"
+#line 1 "structure/strc_001_unionfind.cpp"
 // Union-Find 木 (Verified: AtCoder Typical Contest 001 B)
 struct UnionFind {
 private:
@@ -181,7 +181,7 @@ public:
         return true;
     }
 };
-#line 1 "graph/verify/../graph_024_boruvka.cpp"
+#line 1 "graph/graph_024_boruvka.cpp"
 // Boruvka's algorithm (最小全域木を求める)
 // その時点で存在するそれぞれの木について、それに接続している辺で重み最小のものを探す関数が必要
 // 依存ライブラリ: UnionFind

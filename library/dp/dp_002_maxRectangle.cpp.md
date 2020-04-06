@@ -80,6 +80,7 @@ int maxRectangle(vector< vector<int> > board) {
     rep(i,0,H) chmax(ret, histArea(sum[i]));
     return ret;
 }
+
 ```
 {% endraw %}
 

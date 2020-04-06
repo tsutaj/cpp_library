@@ -104,6 +104,7 @@ void solve() {
     }
     cout << *max_element(dp, dp+W+1) << endl;
 }
+
 ```
 {% endraw %}
 

@@ -124,6 +124,7 @@ struct PersistentUnionFind {
         return *this;
     }
 };
+
 ```
 {% endraw %}
 

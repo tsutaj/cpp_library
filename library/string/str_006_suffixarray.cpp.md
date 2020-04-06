@@ -34,14 +34,6 @@ layout: default
     - Last commit date: 2020-01-11 16:25:32+09:00
 
 
-* dummy は、t のどの要素よりも小さい
-* get_SA2Str: SA 配列の idx 番目は元の文字列の何番目？
-* get_Str2SA: 元の文字列の idx 番目は SA 配列の何番目？
-* get_LCP: SA 配列上の idx, idx+1 番目の要素の LCP はいくらか？
-* SA 配列上の、パターン文字列を超える最小インデックス: $O(|T| \log |S|)$
-* SA 配列上の、パターン文字列未満最大インデックス: $O(|T| \log |S|)$
-* LCP (SA 配列上の i 番目と i+1 番目の最長共通接頭辞): $O(|S|)$
-* 文字列検索: $O(|T| \log |S|)$
 
 
 ## Verified with

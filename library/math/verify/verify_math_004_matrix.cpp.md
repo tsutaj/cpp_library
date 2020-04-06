@@ -105,7 +105,7 @@ int main() {
 #include <iostream>
 #include <cassert>
 using namespace std;
-#line 1 "math/verify/../math_004_matrix.cpp"
+#line 1 "math/math_004_matrix.cpp"
 // 行列ライブラリ
 
 // size(): 行数を返す (列数は mat[0].size() で)
@@ -211,7 +211,7 @@ ostream& operator<< (ostream& out, Matrix<T> mat) {
     out << "]" << endl;
     return out;
 }
-#line 1 "math/verify/../math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;

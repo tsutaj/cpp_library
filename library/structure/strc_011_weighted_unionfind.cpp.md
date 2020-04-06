@@ -168,6 +168,7 @@ struct QuickFind {
         return weight[v] - weight[u];
     }
 };
+
 ```
 {% endraw %}
 

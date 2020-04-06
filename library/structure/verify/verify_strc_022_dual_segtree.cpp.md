@@ -165,7 +165,7 @@ int main() {
 #include <climits>
 #include <map>
 using namespace std;
-#line 1 "structure/verify/../strc_022_dual_segtree.cpp"
+#line 1 "structure/strc_022_dual_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title 双対セグメント木 (Dual Segment Tree)
 // 双対セグメント木 (Dual Segment Tree)

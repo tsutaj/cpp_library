@@ -88,6 +88,7 @@ int maxSquare(vector< vector<int> > board) {
     }
     return ret;
 }
+
 ```
 {% endraw %}
 

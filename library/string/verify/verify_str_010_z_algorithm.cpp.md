@@ -106,7 +106,7 @@ int main() {
 #include <iostream>
 #include <vector>
 using namespace std;
-#line 1 "string/verify/../str_010_z_algorithm.cpp"
+#line 1 "string/str_010_z_algorithm.cpp"
 // Z-algorithm
 // 各 Suffix と元の文字列との LCP を求める
 template <typename ArrayType>

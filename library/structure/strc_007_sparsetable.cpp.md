@@ -132,6 +132,7 @@ struct SparseTable_max {
         else return x;
     }
 };
+
 ```
 {% endraw %}
 

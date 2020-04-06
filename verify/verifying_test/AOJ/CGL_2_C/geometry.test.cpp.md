@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 線分 $s_1, s_2$ の交点の座標を求める <small>(verifying_test/AOJ/CGL_2_C/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_2_C/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#3b9bc01b5a938c54e464989e8b93ee8e">verifying_test/AOJ/CGL_2_C</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_2_C/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -144,7 +145,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_2_C/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

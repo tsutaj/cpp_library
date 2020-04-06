@@ -137,7 +137,7 @@ int main() {
 #include <vector>
 #include <algorithm>
 using namespace std;
-#line 1 "math/verify/../math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;
@@ -199,7 +199,7 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 }
 
 // ModInt end
-#line 1 "math/verify/../math_018_ragrange_polynomial.cpp"
+#line 1 "math/math_018_ragrange_polynomial.cpp"
 ll mod_pow(ll n, ll k, ll mod) {
     ll res = 1;
     for(; k>0; k>>=1) {

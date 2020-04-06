@@ -114,6 +114,7 @@ vector<string> split(string s, string c) {
     while(ss >> temp) ret.pb(temp);
     return ret;
 }
+
 ```
 {% endraw %}
 

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/strc_023_compact_bitvector.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-09 17:27:28+09:00
+    - Last commit date: 2020-04-07 00:18:26+09:00
 
 
 
@@ -45,13 +45,13 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html">$\left\[ l, r \right\]$ にある整数の中で $D$ に最も近いものを求める <small>(verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp)</small></a>
-* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html">矩形 $x_{i1} \leq x \leq x_{i2}, y_{i1} \leq y \leq y_{i2}$ 内に属する点の個数を求める <small>(verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp)</small></a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (01)</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (02)</a>
-* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html">ソートを行う (小さいものから $k$ 番目を求められることを利用) <small>(verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp)</small></a>
-* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">連続部分列中の最小の要素を答える <small>(verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp)</small></a>
-* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">与えられた数列を逆順に出力 <small>(verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp)</small></a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
 
 
 ## Code
@@ -59,6 +59,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 // @title 簡潔ビットベクトル (compact bit vector)
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)
@@ -255,7 +257,8 @@ int CompactBitVector<value_type, ln_big, ln_sml>::operator[](size_t k) const {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "structure/strc_023_compact_bitvector.cpp"
+#line 2 "structure/strc_023_compact_bitvector.cpp"
+
 // @title 簡潔ビットベクトル (compact bit vector)
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)

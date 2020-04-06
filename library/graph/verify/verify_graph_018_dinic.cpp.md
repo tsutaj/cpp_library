@@ -109,7 +109,7 @@ int main() {
 #include <algorithm>
 #include <functional>
 using namespace std;
-#line 1 "graph/verify/../graph_018_dinic.cpp"
+#line 1 "graph/graph_018_dinic.cpp"
 // Dinic を信じろ
 
 template <typename CapTp=int, typename CostTp=int>

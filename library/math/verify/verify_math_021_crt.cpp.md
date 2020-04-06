@@ -114,7 +114,7 @@ int main() {
 #include <cassert>
 #include <tuple>
 using namespace std;
-#line 1 "math/verify/../math_021_crt.cpp"
+#line 1 "math/math_021_crt.cpp"
 // 中国剰余定理
 // x = b_1 (mod_1), ..., x = b_k (mod_k), ... を満たす x を
 // 0 <= x < lcm(mod_1, mod_2, ..., mod_k, ...) の範囲で求める

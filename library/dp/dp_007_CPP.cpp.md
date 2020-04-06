@@ -142,6 +142,7 @@ void solve() {
     }
     cout << total + dp[(1<<M)-1] << endl;
 }
+
 ```
 {% endraw %}
 

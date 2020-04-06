@@ -146,6 +146,7 @@ long long int Carmichael(long long int n, long long int prime=0, int pow_cnt=0) 
         return ans;
     }
 }
+
 ```
 {% endraw %}
 

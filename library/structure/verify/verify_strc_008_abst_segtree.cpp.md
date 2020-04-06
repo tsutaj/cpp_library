@@ -129,7 +129,7 @@ int main() {
 #include <iostream>
 #include <climits>
 using namespace std;
-#line 1 "structure/verify/../strc_008_abst_segtree.cpp"
+#line 1 "structure/strc_008_abst_segtree.cpp"
 // @category セグメント木 (Segment Tree)
 // @title セグメント木 (Segment Tree)
 // 抽象 SegmentTree (0-indexed・一点更新・区間取得)

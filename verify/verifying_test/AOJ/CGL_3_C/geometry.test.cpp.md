@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 多角形 $g$ と点 $p$ について、$p$ が $g$ に含まれるか・辺上にあるかを判定 <small>(verifying_test/AOJ/CGL_3_C/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_3_C/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#17b89b20d8310124d886076417cdf91b">verifying_test/AOJ/CGL_3_C</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_3_C/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -153,7 +154,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_3_C/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

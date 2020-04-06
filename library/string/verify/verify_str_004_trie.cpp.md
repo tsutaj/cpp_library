@@ -87,7 +87,7 @@ int main() {
 #include <cassert>
 #include <functional>
 using namespace std;
-#line 1 "string/verify/../str_004_trie.cpp"
+#line 1 "string/str_004_trie.cpp"
 // トライ木
 // Vefiried: 天下一プログラマーコンテスト 2016 本戦 C: たんごたくさん
 

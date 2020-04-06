@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 円 $c$ と直線 $l$ の交点を求める <small>(verifying_test/AOJ/CGL_7_D/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_7_D/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#68128d92bc81eff81a1469cb0722476a">verifying_test/AOJ/CGL_7_D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_7_D/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -153,7 +154,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_7_D/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

@@ -34,9 +34,6 @@ layout: default
     - Last commit date: 2020-01-11 16:10:37+09:00
 
 
-* 文字列 $p[0:i-1]$ の接頭辞と接尾辞は最大何文字一致する？ (ただし、$|p[0:i-1]|$ 文字未満のみ考慮)
-* MP 法に比べ、失敗時の遷移が log 回に改善されている
-* 文字列 $s$ における $p$ の出現位置 (開始位置) のリスト
 * see: <a href="http://www-igm.univ-mlv.fr/~lecroq/string/node8.html">http://www-igm.univ-mlv.fr/~lecroq/string/node8.html</a>
 
 

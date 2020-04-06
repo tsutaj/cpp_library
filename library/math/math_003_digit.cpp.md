@@ -94,6 +94,7 @@ int numIndex(T_numIndex n, int k) {
     rep(i,0,k) n /= 10;
     return n % 10;
 }
+
 ```
 {% endraw %}
 

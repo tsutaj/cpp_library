@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 直線 $p_1 p_2$ に対する点 $p$ の射影を求める <small>(verifying_test/AOJ/CGL_1_A/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_1_A/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#7ead1a3bd30e65b5d7b493d957b01f03">verifying_test/AOJ/CGL_1_A</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_1_A/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -148,7 +149,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_1_A/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

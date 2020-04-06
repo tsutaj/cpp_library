@@ -151,7 +151,7 @@ int main() {
 #include <map>
 #include <climits>
 using namespace std;
-#line 1 "graph/verify/../graph_000_basic.cpp"
+#line 1 "graph/graph_000_basic.cpp"
 // 移動元と行先と辺のコストを記録する構造体
 template <typename T = int>
 struct Edge {
@@ -170,7 +170,7 @@ struct Edge {
 
 template <typename T = int>
 using Graph = vector< vector< Edge<T> > >;
-#line 1 "graph/verify/../graph_022_max_independent_set.cpp"
+#line 1 "graph/graph_022_max_independent_set.cpp"
 // 無向非連結グラフの最大独立集合 (maximal independent set)
 // 頂点の集合 V であって、V の任意の 2 つをつなぐ辺が存在しない場合
 // 次数 1 であれば必ず採用・そうでなければ次数が大きいものから試す、

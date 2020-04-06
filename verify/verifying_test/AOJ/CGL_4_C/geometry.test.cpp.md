@@ -25,10 +25,11 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 凸多角形 $g$ を直線 $p_1 p_2$ で切断したときの、その左側にできる凸多角形の面積 (Convex Cut) を求める <small>(verifying_test/AOJ/CGL_4_C/geometry.test.cpp)</small>
+# :heavy_check_mark: verifying_test/AOJ/CGL_4_C/geometry.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
+* category: <a href="../../../../index.html#d815f101ba8bc5b9c33cb1f4cc4d634d">verifying_test/AOJ/CGL_4_C</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/CGL_4_C/geometry.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-11-25 23:59:53+09:00
 
@@ -153,7 +154,7 @@ using namespace std;
 using ll = long long int;
 using int64 = long long int;
 
-#line 1 "verifying_test/AOJ/CGL_4_C/../../../geometry/geometry_2D.cpp"
+#line 1 "geometry/geometry_2D.cpp"
 /***** 基本的準備 *****/
 
 // xy平面上の点(ベクトル)を表現するには、complex型を利用するとよい

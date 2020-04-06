@@ -116,6 +116,7 @@ DBL_MIN ～ DBL_MAX
 [long double]
 LDBL_MIN ～ LDBL_MAX
 環境によって変化するが、double型よりも精度が良い場合がほとんど。
+
 ```
 {% endraw %}
 

@@ -133,7 +133,7 @@ int main() {
 #include <vector>
 #include <algorithm>
 using namespace std;
-#line 1 "math/verify/../math_017_modint.cpp"
+#line 1 "math/math_017_modint.cpp"
 // ModInt begin
 
 using ll = long long;
@@ -195,7 +195,7 @@ istream& operator>> (istream& in, ModInt<mod>& a) {
 }
 
 // ModInt end
-#line 1 "math/verify/../math_020_combination.cpp"
+#line 1 "math/math_020_combination.cpp"
 // 各種組み合わせを求めるライブラリ
 template <typename NumType>
 struct Combination {
@@ -291,7 +291,7 @@ struct Partition {
         return dp[n][k];
     }
 };
-#line 1 "math/verify/../math_019_specific_ragrange_polynomial.cpp"
+#line 1 "math/math_019_specific_ragrange_polynomial.cpp"
 ll mod_pow(ll n, ll k, ll mod) {
     ll res = 1;
     for(; k>0; k>>=1) {

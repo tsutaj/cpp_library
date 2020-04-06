@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/algo_002_accumulation.cpp
+# :heavy_check_mark: algorithm/cumulative_sum.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
-* <a href="{{ site.github.repository_url }}/blob/master/algorithm/algo_002_accumulation.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/cumulative_sum.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-07 00:08:06+09:00
 
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="verify/verify_algo_002_accumulation.cpp.html">algorithm/verify/verify_algo_002_accumulation.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/0516/cumulative_sum.test.cpp.html">verifying_test/AOJ/0516/cumulative_sum.test.cpp</a>
 
 
 ## Code
@@ -46,11 +46,15 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
+
 // 累積演算 (0-indexed・prefix, suffix, 任意連続部分列)
 // 任意連続部分列は逆演算があるときのみできる？
 
+#include <functional>
+#include <vector>
 template <typename MonoidType>
-struct Accumulation {
+struct CumulativeSum {
     int n;
     vector<MonoidType> pre, suf;
     MonoidType E;
@@ -58,7 +62,7 @@ struct Accumulation {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;
     MMtoM op, rop;
 
-    void build(int m, vector<MonoidType> vec) {
+    void accumulate(int m, vector<MonoidType> vec) {
         pre = suf = vector<MonoidType>(m+1, E);
         for(int i=0; i<m; i++) {
             pre[i+1] = op(pre[i], vec[i]);
@@ -68,12 +72,13 @@ struct Accumulation {
         }
     }
 
-    Accumulation() {}
-    Accumulation(vector<MonoidType> val_array, MonoidType E_,
-                 MMtoM op_, MMtoM rop_ = MMtoM()) :
+    CumulativeSum() {}
+    CumulativeSum(vector<MonoidType> val_array, MonoidType E_,
+                  MMtoM op_, MMtoM rop_ = MMtoM(),
+                  bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
         n = val_array.size();
-        build(n, val_array);
+        if(need_accumulate) accumulate(n, val_array);
     }
 
     // [0, k)
@@ -92,12 +97,15 @@ struct Accumulation {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "algorithm/algo_002_accumulation.cpp"
+#line 2 "algorithm/cumulative_sum.cpp"
+
 // 累積演算 (0-indexed・prefix, suffix, 任意連続部分列)
 // 任意連続部分列は逆演算があるときのみできる？
 
+#include <functional>
+#include <vector>
 template <typename MonoidType>
-struct Accumulation {
+struct CumulativeSum {
     int n;
     vector<MonoidType> pre, suf;
     MonoidType E;
@@ -105,7 +113,7 @@ struct Accumulation {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;
     MMtoM op, rop;
 
-    void build(int m, vector<MonoidType> vec) {
+    void accumulate(int m, vector<MonoidType> vec) {
         pre = suf = vector<MonoidType>(m+1, E);
         for(int i=0; i<m; i++) {
             pre[i+1] = op(pre[i], vec[i]);
@@ -115,12 +123,13 @@ struct Accumulation {
         }
     }
 
-    Accumulation() {}
-    Accumulation(vector<MonoidType> val_array, MonoidType E_,
-                 MMtoM op_, MMtoM rop_ = MMtoM()) :
+    CumulativeSum() {}
+    CumulativeSum(vector<MonoidType> val_array, MonoidType E_,
+                  MMtoM op_, MMtoM rop_ = MMtoM(),
+                  bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
         n = val_array.size();
-        build(n, val_array);
+        if(need_accumulate) accumulate(n, val_array);
     }
 
     // [0, k)

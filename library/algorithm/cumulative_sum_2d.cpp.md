@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: algorithm/algo_003_2D_accumulation.cpp
+# :heavy_check_mark: algorithm/cumulative_sum_2d.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
-* <a href="{{ site.github.repository_url }}/blob/master/algorithm/algo_003_2D_accumulation.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/algorithm/cumulative_sum_2d.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-07 00:08:06+09:00
 
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="verify/verify_algo_003_2D_accumulation.cpp.html">algorithm/verify/verify_algo_003_2D_accumulation.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp.html">verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp</a>
 
 
 ## Code
@@ -46,12 +46,17 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+# pragma once
+
 // 二次元累積演算 (0-indexed)
 // 単位元と二項演算・その逆演算を与える
 // 二次元 imos にも対応
 
+#include <functional>
+#include <vector>
+#include <cassert>
 template <typename MonoidType>
-struct Accumulation2D {
+struct CumulativeSum2D {
     // 持つ矩形領域のサイズ
     // 縦横とも、acc はこれより 2 大きくしておく
     int n, m;
@@ -60,7 +65,7 @@ struct Accumulation2D {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;
     MMtoM op, rop;
 
-    void build() {
+    void accumulate() {
         for(int i=0; i<=n; i++) {
             for(int j=0; j<m; j++) {
                 acc[i][j+1] = op(acc[i][j+1], acc[i][j]);
@@ -73,13 +78,13 @@ struct Accumulation2D {
         }
     }
 
-    Accumulation2D() {}
-    Accumulation2D(int n_, int m_, int E_, MMtoM op_, MMtoM rop_) :
+    CumulativeSum2D() {}
+    CumulativeSum2D(int n_, int m_, int E_, MMtoM op_, MMtoM rop_) :
         n(n_), m(m_), E(E_), acc(n_+2, vector<MonoidType>(m_+2, E_)),
         op(op_), rop(rop_) {}
-    Accumulation2D(vector< vector<MonoidType> > mat, int E_,
-                   MMtoM op_, MMtoM rop_,
-                   bool need_build = true) :
+    CumulativeSum2D(vector< vector<MonoidType> > mat, int E_,
+                    MMtoM op_, MMtoM rop_,
+                    bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
         assert(mat.size() > 0);
         n = mat.size(), m = mat[0].size();
@@ -89,7 +94,7 @@ struct Accumulation2D {
                 acc[i+1][j+1] = mat[i][j];
             }
         }
-        if(need_build) build();
+        if(need_accumulate) accumulate();
     }
 
     // [lx, rx), [ly, ry) の矩形領域に val を適用
@@ -120,13 +125,17 @@ struct Accumulation2D {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "algorithm/algo_003_2D_accumulation.cpp"
+#line 2 "algorithm/cumulative_sum_2d.cpp"
+
 // 二次元累積演算 (0-indexed)
 // 単位元と二項演算・その逆演算を与える
 // 二次元 imos にも対応
 
+#include <functional>
+#include <vector>
+#include <cassert>
 template <typename MonoidType>
-struct Accumulation2D {
+struct CumulativeSum2D {
     // 持つ矩形領域のサイズ
     // 縦横とも、acc はこれより 2 大きくしておく
     int n, m;
@@ -135,7 +144,7 @@ struct Accumulation2D {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;
     MMtoM op, rop;
 
-    void build() {
+    void accumulate() {
         for(int i=0; i<=n; i++) {
             for(int j=0; j<m; j++) {
                 acc[i][j+1] = op(acc[i][j+1], acc[i][j]);
@@ -148,13 +157,13 @@ struct Accumulation2D {
         }
     }
 
-    Accumulation2D() {}
-    Accumulation2D(int n_, int m_, int E_, MMtoM op_, MMtoM rop_) :
+    CumulativeSum2D() {}
+    CumulativeSum2D(int n_, int m_, int E_, MMtoM op_, MMtoM rop_) :
         n(n_), m(m_), E(E_), acc(n_+2, vector<MonoidType>(m_+2, E_)),
         op(op_), rop(rop_) {}
-    Accumulation2D(vector< vector<MonoidType> > mat, int E_,
-                   MMtoM op_, MMtoM rop_,
-                   bool need_build = true) :
+    CumulativeSum2D(vector< vector<MonoidType> > mat, int E_,
+                    MMtoM op_, MMtoM rop_,
+                    bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
         assert(mat.size() > 0);
         n = mat.size(), m = mat[0].size();
@@ -164,7 +173,7 @@ struct Accumulation2D {
                 acc[i+1][j+1] = mat[i][j];
             }
         }
-        if(need_build) build();
+        if(need_accumulate) accumulate();
     }
 
     // [lx, rx), [ly, ry) の矩形領域に val を適用
