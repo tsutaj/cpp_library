@@ -41,7 +41,8 @@ const int INF = 1LL << 29;
 const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
-#include "../../../structure/strc_023_compact_bitvector.cpp"
+// comment
+#define rep(i, n) for(int (i)=0; (i)<(n); (i)++)
 #include "../../../structure/strc_024_static_wavelet_matrix.cpp"
 
 int main() {
