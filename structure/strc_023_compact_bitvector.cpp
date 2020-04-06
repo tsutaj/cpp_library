@@ -1,3 +1,5 @@
+#pragma once
+
 // @title 簡潔ビットベクトル (compact bit vector)
 // 簡潔ビットベクトル (数列の長さを N とする)
 // n_big <- log^2(N)   (N = 2^32 としたとき、n_big = 32^2 = 1024 = 2^10)
