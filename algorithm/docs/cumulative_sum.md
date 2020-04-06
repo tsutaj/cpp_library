@@ -1,4 +1,4 @@
 - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
-- 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
-- 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
+- `get_suffix`: 半開区間 $\left[ k, N \right)$ に関して値を求める
+- `get_subseq`: 半開区間 $\left[ l, r \right)$ に関して値を求める
   - `subseq` は逆演算が存在するときのみ可能
