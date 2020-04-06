@@ -47,7 +47,7 @@ layout: default
 
 * :warning: <a href="library/algorithm/algo_001_mo.cpp.html">algorithm/algo_001_mo.cpp</a>
 * :heavy_check_mark: <a href="library/algorithm/cumulative_sum.cpp.html">1 次元累積和 (1 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum.cpp)</small></a>
-* :heavy_check_mark: <a href="library/algorithm/cumulative_sum_2d.cpp.html">2 次元 累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small></a>
+* :heavy_check_mark: <a href="library/algorithm/cumulative_sum_2d.cpp.html">2 次元累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small></a>
 
 
 <div id="95687afb5d9a2a9fa39038f991640b0c"></div>

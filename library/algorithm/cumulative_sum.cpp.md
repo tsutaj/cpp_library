@@ -31,9 +31,15 @@ layout: default
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/cumulative_sum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 01:30:23+09:00
+    - Last commit date: 2020-04-07 01:41:06+09:00
 
 
+
+
+- `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
+- 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
+- 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
+  - `subseq` は逆演算が存在するときのみ可能
 
 
 ## Verified with
@@ -50,10 +56,7 @@ layout: default
 
 /**
  * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
- * @brief - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
- * @brief - 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
- * @brief - 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
- * @brief   - `subseq` は逆演算が存在するときのみ可能
+ * @docs ./docs/cumulative_sum.md
  */
 
 #include <functional>
@@ -115,10 +118,7 @@ struct CumulativeSum {
 
 /**
  * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
- * @brief - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
- * @brief - 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
- * @brief - 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
- * @brief   - `subseq` は逆演算が存在するときのみ可能
+ * @docs ./docs/cumulative_sum.md
  */
 
 #include <functional>

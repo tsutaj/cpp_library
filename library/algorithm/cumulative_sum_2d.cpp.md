@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 2 次元 累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small>
+# :heavy_check_mark: 2 次元累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ed469618898d75b149e5c7c4b6a1c415">algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/algorithm/cumulative_sum_2d.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 01:30:23+09:00
+    - Last commit date: 2020-04-07 01:41:06+09:00
 
 
+
+
+- `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
+- `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
+  - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
 
 
 ## Verified with
@@ -49,10 +54,8 @@ layout: default
 # pragma once
 
 /**
- * @brief 2 次元 累積和 (2 Dimension Cumulative Sum)
- * @brief - `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
- * @brief - `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
- * @brief   - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
+ * @brief 2 次元累積和 (2 Dimension Cumulative Sum)
+ * @docs ./docs/cumulative_sum_2d.md
  */
 
 #include <functional>
@@ -131,10 +134,8 @@ struct CumulativeSum2D {
 #line 2 "algorithm/cumulative_sum_2d.cpp"
 
 /**
- * @brief 2 次元 累積和 (2 Dimension Cumulative Sum)
- * @brief - `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
- * @brief - `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
- * @brief   - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
+ * @brief 2 次元累積和 (2 Dimension Cumulative Sum)
+ * @docs ./docs/cumulative_sum_2d.md
  */
 
 #include <functional>

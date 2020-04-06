@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#e9a8f9879edfa1d3b6a1cdfdbac78c62">verifying_test/AOJ/0516</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/0516/cumulative_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 01:30:23+09:00
+    - Last commit date: 2020-04-07 01:41:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516</a>
@@ -93,10 +93,7 @@ using namespace std;
 
 /**
  * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
- * @brief - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
- * @brief - 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
- * @brief - 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
- * @brief   - `subseq` は逆演算が存在するときのみ可能
+ * @docs ./docs/cumulative_sum.md
  */
 
 #include <functional>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#6f20d5565f4cdcb69c10131dfaabf555">verifying_test/AOJ/0560</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 01:30:23+09:00
+    - Last commit date: 2020-04-07 01:41:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../../library/algorithm/cumulative_sum_2d.cpp.html">2 次元 累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../../library/algorithm/cumulative_sum_2d.cpp.html">2 次元累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small></a>
 
 
 ## Code
@@ -94,10 +94,8 @@ using namespace std;
 #line 2 "algorithm/cumulative_sum_2d.cpp"
 
 /**
- * @brief 2 次元 累積和 (2 Dimension Cumulative Sum)
- * @brief - `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
- * @brief - `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
- * @brief   - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
+ * @brief 2 次元累積和 (2 Dimension Cumulative Sum)
+ * @docs ./docs/cumulative_sum_2d.md
  */
 
 #include <functional>
