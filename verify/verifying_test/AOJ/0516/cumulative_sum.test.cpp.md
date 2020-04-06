@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#e9a8f9879edfa1d3b6a1cdfdbac78c62">verifying_test/AOJ/0516</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/0516/cumulative_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 00:08:06+09:00
+    - Last commit date: 2020-04-07 01:30:23+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../../library/algorithm/cumulative_sum.cpp.html">algorithm/cumulative_sum.cpp</a>
+* :heavy_check_mark: <a href="../../../../library/algorithm/cumulative_sum.cpp.html">1 次元累積和 (1 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum.cpp)</small></a>
 
 
 ## Code
@@ -91,8 +91,13 @@ int main() {
 using namespace std;
 #line 2 "algorithm/cumulative_sum.cpp"
 
-// 累積演算 (0-indexed・prefix, suffix, 任意連続部分列)
-// 任意連続部分列は逆演算があるときのみできる？
+/**
+ * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
+ * @brief - `get_prefix`: 半開区間 $\left[ 0, k \right)$ に関して値を求める
+ * @brief - 'get_suffix': 半開区間 $\left[ k, N \right)$ に関して値を求める
+ * @brief - 'get_subseq': 半開区間 $\left[ l, r \right)$ に関して値を求める
+ * @brief   - `subseq` は逆演算が存在するときのみ可能
+ */
 
 #include <functional>
 #include <vector>
@@ -105,13 +110,13 @@ struct CumulativeSum {
     using MMtoM = function< MonoidType(MonoidType, MonoidType) >;
     MMtoM op, rop;
 
-    void accumulate(int m, vector<MonoidType> vec) {
-        pre = suf = vector<MonoidType>(m+1, E);
-        for(int i=0; i<m; i++) {
-            pre[i+1] = op(pre[i], vec[i]);
+    void accumulate() {
+        int m = pre.size();
+        for(int i=0; i+1<m; i++) {
+            pre[i+1] = op(pre[i+1], pre[i]);
         }
-        for(int i=m-1; i>=0; i--) {
-            suf[i] = op(suf[i+1], vec[i]);
+        for(int i=m-2; i>=0; i--) {
+            suf[i] = op(suf[i], suf[i+1]);
         }
     }
 
@@ -120,14 +125,23 @@ struct CumulativeSum {
                   MMtoM op_, MMtoM rop_ = MMtoM(),
                   bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
-        n = val_array.size();
-        if(need_accumulate) accumulate(n, val_array);
+        n = val_array.size() + 2;
+        pre = suf = vector<MonoidType>(n, E);
+        for(int i=0; i<n; i++) pre[i+1] = suf[i+1] = val_array[i];
+        if(need_accumulate) accumulate();
+    }
+
+    void range_apply(int l, int r, MonoidType val) {
+        pre[l+1] = op(pre[l+1], val);
+        pre[r+1] = rop(pre[r+1], val);
+        suf[r] = op(suf[r], val);
+        suf[l] = rop(suf[l], val);
     }
 
     // [0, k)
-    inline MonoidType get_prefix(int k) { return 0 <= k and k <= n ? pre[k] : E; }
+    inline MonoidType get_prefix(int k) { return 0 <= k and k <= n ? pre[k+1] : E; }
     // [k, n)
-    inline MonoidType get_suffix(int k) { return 0 <= k and k <= n ? suf[k] : E; }
+    inline MonoidType get_suffix(int k) { return 0 <= k and k <= n ? suf[k+1] : E; }
     // [l, r) (rop が定義されてるときのみ)
     inline MonoidType get_subseq(int l, int r) {
         return rop(get_prefix(r), get_prefix(l));

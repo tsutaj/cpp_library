@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#bfdd613ab18618e8cf529c800f33a1d9">verifying_test/AOJ/2426</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 00:46:27+09:00
+    - Last commit date: 2020-04-07 01:34:12+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2426</a>
@@ -91,8 +91,10 @@ const int INF = 1LL << 29;
 const ll LONGINF = 1LL << 60;
 const ll MOD = 1000000007LL;
 
+#define call_from_test
 #include "../../../structure/strc_023_compact_bitvector.cpp"
 #include "../../../structure/strc_024_static_wavelet_matrix.cpp"
+#undef call_from_test
 
 int main() {
     int N, M; scanf("%d%d", &N, &M);
