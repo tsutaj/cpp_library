@@ -44,7 +44,7 @@ const ll MOD = 1000000007LL;
 #define call_from_test
 #include "../../../structure/strc_023_compact_bitvector.cpp"
 #include "../../../structure/strc_024_static_wavelet_matrix.cpp"
-#endif
+#undef call_from_test
 
 int main() {
     int N, M; scanf("%d%d", &N, &M);
