@@ -1,7 +1,6 @@
 // @title Wavelet 行列 (wavelet matrix)
 #define DOCS "./docs/strc_024_static_wavelet_matrix.md"
-#define REQUIRES "./strc_023_compact_bitvector.cpp"
-#undef REQUIRES
+#include "./strc_023_compact_bitvector.cpp"
 
 // ウェーブレット行列 (Wavelet Matrix)
 // w は ビット幅, 30 bit で表現できる整数なら 30
