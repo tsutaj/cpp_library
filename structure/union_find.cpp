@@ -1,4 +1,13 @@
-// Union-Find 木 (Verified: AtCoder Typical Contest 001 B)
+#pragma once
+
+/**
+ * @brief Union-Find
+ * @docs ./docs/union_find.md
+ */
+
+#include <algorithm>
+#include <vector>
+
 struct UnionFind {
 private:
     const int n;
