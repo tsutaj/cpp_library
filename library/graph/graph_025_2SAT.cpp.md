@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="verify/verify_graph_025_2SAT.cpp.html">graph/verify/verify_graph_025_2SAT.cpp</a>
-
-
 ## Code
 
 <a id="unbundled"></a>

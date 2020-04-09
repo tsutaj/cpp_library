@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="verify/verify_graph_024_boruvka.cpp.html">graph/verify/verify_graph_024_boruvka.cpp</a>
-
-
 ## Code
 
 <a id="unbundled"></a>

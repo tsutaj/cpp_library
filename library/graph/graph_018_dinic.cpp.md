@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="verify/verify_graph_018_dinic.cpp.html">graph/verify/verify_graph_018_dinic.cpp</a>
-
-
 ## Code
 
 <a id="unbundled"></a>

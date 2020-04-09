@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="verify/verify_graph_012_maxflow_ford.cpp.html">graph/verify/verify_graph_012_maxflow_ford.cpp</a>
-
-
 ## Code
 
 <a id="unbundled"></a>

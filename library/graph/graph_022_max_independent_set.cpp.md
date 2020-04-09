@@ -36,11 +36,6 @@ layout: default
 
 
 
-## Required by
-
-* :warning: <a href="verify/verify_graph_022_max_independent_set.cpp.html">graph/verify/verify_graph_022_max_independent_set.cpp</a>
-
-
 ## Code
 
 <a id="unbundled"></a>

@@ -131,19 +131,6 @@ layout: default
 * :warning: <a href="library/graph/graph_025_2SAT.cpp.html">graph/graph_025_2SAT.cpp</a>
 
 
-<div id="18777f84943a96e2bda3d93e0ed91d5c"></div>
-
-### graph/verify
-
-* :warning: <a href="library/graph/verify/verify_graph_012_maxflow_ford.cpp.html">graph/verify/verify_graph_012_maxflow_ford.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_018_dinic.cpp.html">graph/verify/verify_graph_018_dinic.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_020_HLDecomposition.cpp.html">graph/verify/verify_graph_020_HLDecomposition.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_022_max_independent_set.cpp.html">graph/verify/verify_graph_022_max_independent_set.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_023_offline_lca.cpp.html">graph/verify/verify_graph_023_offline_lca.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_024_boruvka.cpp.html">graph/verify/verify_graph_024_boruvka.cpp</a>
-* :warning: <a href="library/graph/verify/verify_graph_025_2SAT.cpp.html">graph/verify/verify_graph_025_2SAT.cpp</a>
-
-
 <div id="faaaac9cb18c500a97c03eec92d6b8fc"></div>
 
 ### marathon
@@ -231,7 +218,6 @@ layout: default
 
 ### structure
 
-* :warning: <a href="library/structure/strc_001_unionfind.cpp.html">structure/strc_001_unionfind.cpp</a>
 * :warning: <a href="library/structure/strc_002_bit.cpp.html">structure/strc_002_bit.cpp</a>
 * :warning: <a href="library/structure/strc_003_twodimbit.cpp.html">structure/strc_003_twodimbit.cpp</a>
 * :warning: <a href="library/structure/strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
@@ -250,6 +236,7 @@ layout: default
 * :warning: <a href="library/structure/strc_019_intervalset.cpp.html">structure/strc_019_intervalset.cpp</a>
 * :heavy_check_mark: <a href="library/structure/strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
 * :heavy_check_mark: <a href="library/structure/strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
+* :heavy_check_mark: <a href="library/structure/union_find.cpp.html">Union-Find <small>(structure/union_find.cpp)</small></a>
 
 
 <div id="ea7b7b53f881f37feb2f447585bbcf5b"></div>
@@ -314,8 +301,12 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_E/geometry.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_F/geometry.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_G/geometry.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_1_A/union_find.test.cpp.html">verifying_test/AOJ/DSL_1_A/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp.html">verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/aplusb/cstdio.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp</a>
 
 

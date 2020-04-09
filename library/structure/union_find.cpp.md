@@ -25,20 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: structure/strc_001_unionfind.cpp
+# :heavy_check_mark: Union-Find <small>(structure/union_find.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/structure/strc_001_unionfind.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-11-22 21:50:52+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/structure/union_find.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-10 01:41:38+09:00
 
 
 
 
-## Required by
+経路圧縮とサイズ比較をどちらも行っているため、クエリあたりの計算量は $O(\alpha(N))$ になっているはず。
 
-* :warning: <a href="../graph/verify/verify_graph_024_boruvka.cpp.html">graph/verify/verify_graph_024_boruvka.cpp</a>
+- `find(x)`: $x$ が属する集合の代表元を返す
+- `same(x, y)`: $x$ と $y$ が同じ集合に属するかどうかの bool 値を返す
+- `size(x)`: $x$ が属する集合の濃度 (要素数) を返す
+- `size()`: 素集合がいくつ存在するかを返す
+- `unite(x, y)`: $x$ と $y$ が同じ集合に属するなら `false` を返す。そうでなければ `true` を返すとともに、$x$ が属する集合と $y$ が属する集合を併合する
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/verifying_test/AOJ/DSL_1_A/union_find.test.cpp.html">verifying_test/AOJ/DSL_1_A/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp.html">verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp</a>
 
 
 ## Code
@@ -46,7 +56,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-// Union-Find 木 (Verified: AtCoder Typical Contest 001 B)
+#pragma once
+
+/**
+ * @brief Union-Find
+ * @docs ./docs/union_find.md
+ */
+
+#include <algorithm>
+#include <vector>
+
 struct UnionFind {
 private:
     const int n;
@@ -80,8 +99,16 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "structure/strc_001_unionfind.cpp"
-// Union-Find 木 (Verified: AtCoder Typical Contest 001 B)
+#line 2 "structure/union_find.cpp"
+
+/**
+ * @brief Union-Find
+ * @docs ./docs/union_find.md
+ */
+
+#include <algorithm>
+#include <vector>
+
 struct UnionFind {
 private:
     const int n;
