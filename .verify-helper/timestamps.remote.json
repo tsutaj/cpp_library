@@ -28,6 +28,7 @@
 "verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp": "2020-04-07 00:46:27 +0900",
 "verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp": "2020-04-07 00:46:27 +0900",
 "verifying_test/yosupo/SegmentAddGetMin.test.cpp": "2020-01-07 01:10:06 +0900",
+"verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp": "2020-06-20 01:16:29 +0900",
 "verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp": "2020-04-10 01:41:38 +0900",
 "verifying_test/yosupo/sample/aplusb/cstdio.test.cpp": "2020-04-10 01:41:38 +0900",
 "verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp": "2020-04-10 01:41:38 +0900"
