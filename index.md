@@ -307,6 +307,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp.html">verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp.html">verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/aplusb/cstdio.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp</a>

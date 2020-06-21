@@ -21,25 +21,25 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: verifying_test/AOJ/0516/cumulative_sum.test.cpp
+# :heavy_check_mark: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../../../../index.html">Back to top page</a>
 
-* category: <a href="../../../../index.html#e9a8f9879edfa1d3b6a1cdfdbac78c62">verifying_test/AOJ/0516</a>
-* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/0516/cumulative_sum.test.cpp">View this file on GitHub</a>
+* category: <a href="../../../../../index.html#1a823b70107b4403d17260d22304db20">verifying_test/yosupo/data_structure/static_range_sum</a>
+* <a href="{{ site.github.repository_url }}/blob/master/verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-21 23:39:53+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516</a>
+* see: <a href="https://judge.yosupo.jp/problem/static_range_sum">https://judge.yosupo.jp/problem/static_range_sum</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../../library/algorithm/cumulative_sum.cpp.html">1 次元累積和 (1 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum.cpp)</small></a>
+* :heavy_check_mark: <a href="../../../../../library/algorithm/cumulative_sum.cpp.html">1 次元累積和 (1 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum.cpp)</small></a>
 
 
 ## Code
@@ -47,34 +47,30 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516"
-
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
 #include <cstdio>
-using namespace std;
-#include "../../../algorithm/cumulative_sum.cpp"
+#include <vector>
+#include <algorithm>
+#include <functional>
 using ll = long long int;
+using namespace std;
 
-int solve() {
-    int N, K; scanf("%d%d", &N, &K);
-    if(N == 0 and K == 0) return 1;
-    
-    vector<ll> A(N);
-    for(int i=0; i<N; i++) scanf("%lld", &A[i]);
-
-    CumulativeSum<ll> cs(A, 0LL,
-                         [](ll a, ll b) { return a + b; },
-                         [](ll a, ll b) { return a - b; });
-
-    ll ans = -(1LL << 60);
-    for(int i=0; i<N-K+1; i++) {
-        ans = max(ans, cs.get_subseq(i, i+K));
-    }
-    printf("%lld\n", ans);
-    return 0;
-}
+#define call_from_test
+#include "../../../../algorithm/cumulative_sum.cpp"
+#undef call_from_test
 
 int main() {
-    while(!solve());
+    int N, Q; scanf("%d%d", &N, &Q);
+    vector<ll> A(N);
+    for(auto &e : A) scanf("%lld", &e);
+
+    CumulativeSum<ll> cumsum(A, 0,
+                             [](ll a, ll b) { return a + b; },
+                             [](ll a, ll b) { return a - b; });
+    while(Q--) {
+        int l, r; scanf("%d%d", &l, &r);
+        printf("%lld\n", cumsum.get_subseq(l, r));
+    }
     return 0;
 }
 
@@ -84,11 +80,16 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "verifying_test/AOJ/0516/cumulative_sum.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516"
-
+#line 1 "verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
 #include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <functional>
+using ll = long long int;
 using namespace std;
+
+#define call_from_test
 #line 2 "algorithm/cumulative_sum.cpp"
 
 /**
@@ -96,8 +97,7 @@ using namespace std;
  * @docs ./docs/cumulative_sum.md
  */
 
-#include <functional>
-#include <vector>
+#line 10 "algorithm/cumulative_sum.cpp"
 template <typename MonoidType>
 struct CumulativeSum {
     int n;
@@ -144,35 +144,26 @@ struct CumulativeSum {
         return rop(get_prefix(r), get_prefix(l));
     }
 };
-#line 6 "verifying_test/AOJ/0516/cumulative_sum.test.cpp"
-using ll = long long int;
-
-int solve() {
-    int N, K; scanf("%d%d", &N, &K);
-    if(N == 0 and K == 0) return 1;
-    
-    vector<ll> A(N);
-    for(int i=0; i<N; i++) scanf("%lld", &A[i]);
-
-    CumulativeSum<ll> cs(A, 0LL,
-                         [](ll a, ll b) { return a + b; },
-                         [](ll a, ll b) { return a - b; });
-
-    ll ans = -(1LL << 60);
-    for(int i=0; i<N-K+1; i++) {
-        ans = max(ans, cs.get_subseq(i, i+K));
-    }
-    printf("%lld\n", ans);
-    return 0;
-}
+#line 11 "verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp"
+#undef call_from_test
 
 int main() {
-    while(!solve());
+    int N, Q; scanf("%d%d", &N, &Q);
+    vector<ll> A(N);
+    for(auto &e : A) scanf("%lld", &e);
+
+    CumulativeSum<ll> cumsum(A, 0,
+                             [](ll a, ll b) { return a + b; },
+                             [](ll a, ll b) { return a - b; });
+    while(Q--) {
+        int l, r; scanf("%d%d", &l, &r);
+        printf("%lld\n", cumsum.get_subseq(l, r));
+    }
     return 0;
 }
 
 ```
 {% endraw %}
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../../../../index.html">Back to top page</a>
 
