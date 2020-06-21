@@ -31,8 +31,8 @@ struct CumulativeSum {
                   MMtoM op_, MMtoM rop_ = MMtoM(),
                   bool need_accumulate = true) :
         E(E_), op(op_), rop(rop_) {
-        n = val_array.size() + 2;
-        pre = suf = vector<MonoidType>(n, E);
+        n = val_array.size();
+        pre = suf = vector<MonoidType>(n+2, E);
         for(int i=0; i<n; i++) pre[i+1] = suf[i+1] = val_array[i];
         if(need_accumulate) accumulate();
     }
@@ -45,9 +45,9 @@ struct CumulativeSum {
     }
 
     // [0, k)
-    inline MonoidType get_prefix(int k) { return 0 <= k and k <= n ? pre[k+1] : E; }
+    inline MonoidType get_prefix(int k) { return 0 <= k and k <= n ? pre[k] : E; }
     // [k, n)
-    inline MonoidType get_suffix(int k) { return 0 <= k and k <= n ? suf[k+1] : E; }
+    inline MonoidType get_suffix(int k) { return 0 <= k+1 and k+1 <= n ? suf[k+1] : E; }
     // [l, r) (rop が定義されてるときのみ)
     inline MonoidType get_subseq(int l, int r) {
         return rop(get_prefix(r), get_prefix(l));
