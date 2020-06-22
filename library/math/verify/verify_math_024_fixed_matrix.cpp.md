@@ -40,7 +40,7 @@ layout: default
 
 * :warning: <a href="../math_017_modint.cpp.html">math/math_017_modint.cpp</a>
 * :warning: <a href="../math_024_fixed_matrix.cpp.html">math/math_024_fixed_matrix.cpp</a>
-* :warning: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
+* :x: <a href="../../structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code

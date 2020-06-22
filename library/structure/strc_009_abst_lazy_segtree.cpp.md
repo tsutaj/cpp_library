@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: 遅延伝播セグメント木 (Lazy Segment Tree)
+# :x: 遅延伝播セグメント木 (Lazy Segment Tree)
 
 <a href="../../index.html">Back to top page</a>
 
@@ -40,6 +40,11 @@ layout: default
 
 * :warning: <a href="../math/verify/verify_math_024_fixed_matrix.cpp.html">math/verify/verify_math_024_fixed_matrix.cpp</a>
 * :warning: <a href="verify/verify_strc_009_abst_lazy_segtree.cpp.html">structure/verify/verify_strc_009_abst_lazy_segtree.cpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
 
 
 ## Code

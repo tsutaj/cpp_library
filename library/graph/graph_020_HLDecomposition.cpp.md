@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graph/graph_020_HLDecomposition.cpp
+# :x: graph/graph_020_HLDecomposition.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2019-11-22 21:50:52+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
 
 
 ## Code
