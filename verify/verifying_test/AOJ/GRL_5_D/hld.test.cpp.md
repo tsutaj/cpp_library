@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: verifying_test/AOJ/GRL_5_D/hld.test.cpp
+# :heavy_check_mark: verifying_test/AOJ/GRL_5_D/hld.test.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2635c77cc4ff07f49346a24e71bb0668">verifying_test/AOJ/GRL_5_D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/GRL_5_D/hld.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-22 23:54:50+09:00
+    - Last commit date: 2020-07-13 08:30:33+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../../library/graph/graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
-* :x: <a href="../../../../library/structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
+* :heavy_check_mark: <a href="../../../../library/graph/graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
+* :heavy_check_mark: <a href="../../../../library/structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code
@@ -47,6 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D"
 #include <cstdio>
 #include <vector>
 #include <functional>
@@ -107,6 +109,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "verifying_test/AOJ/GRL_5_D/hld.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D"
 #include <cstdio>
 #include <vector>
 #include <functional>
@@ -326,7 +329,7 @@ struct LazySegmentTree {
         fprintf(stderr, "\n");
     }
 };
-#line 10 "verifying_test/AOJ/GRL_5_D/hld.test.cpp"
+#line 11 "verifying_test/AOJ/GRL_5_D/hld.test.cpp"
 #undef call_from_test
 
 int main() {

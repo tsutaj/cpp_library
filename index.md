@@ -124,7 +124,7 @@ layout: default
 * :warning: <a href="library/graph/graph_017_bipartite.cpp.html">graph/graph_017_bipartite.cpp</a>
 * :warning: <a href="library/graph/graph_018_dinic.cpp.html">graph/graph_018_dinic.cpp</a>
 * :warning: <a href="library/graph/graph_019_eulertour.cpp.html">graph/graph_019_eulertour.cpp</a>
-* :x: <a href="library/graph/graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
+* :heavy_check_mark: <a href="library/graph/graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
 * :warning: <a href="library/graph/graph_021_centroid.cpp.html">graph/graph_021_centroid.cpp</a>
 * :warning: <a href="library/graph/graph_022_max_independent_set.cpp.html">graph/graph_022_max_independent_set.cpp</a>
 * :warning: <a href="library/graph/graph_023_offline_lca.cpp.html">graph/graph_023_offline_lca.cpp</a>
@@ -269,7 +269,7 @@ layout: default
 ### セグメント木 (Segment Tree)
 
 * :warning: <a href="library/structure/strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
-* :x: <a href="library/structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
+* :heavy_check_mark: <a href="library/structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 * :warning: <a href="library/structure/strc_020_dynamic_segtree.cpp.html">動的セグメント木 (Dynamic Segment Tree)</a>
 * :warning: <a href="library/structure/strc_021_dynamic_lazy_segtree.cpp.html">動的遅延セグメント木 (Dynamic Lazy Segment Tree)</a>
 * :warning: <a href="library/structure/strc_022_dual_segtree.cpp.html">双対セグメント木 (Dual Segment Tree)</a>
@@ -304,7 +304,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_G/geometry.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_1_A/union_find.test.cpp.html">verifying_test/AOJ/DSL_1_A/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp</a>
-* :x: <a href="verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp.html">verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp</a>

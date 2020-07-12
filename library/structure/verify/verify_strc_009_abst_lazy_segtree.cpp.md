@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
+* :heavy_check_mark: <a href="../strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
 
 
 ## Code
