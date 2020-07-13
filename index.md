@@ -224,7 +224,7 @@ layout: default
 * :warning: <a href="library/structure/strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
 * :warning: <a href="library/structure/strc_005_bit_zero_indexed.cpp.html">structure/strc_005_bit_zero_indexed.cpp</a>
 * :warning: <a href="library/structure/strc_006_twodimbit_zero_indexed.cpp.html">structure/strc_006_twodimbit_zero_indexed.cpp</a>
-* :warning: <a href="library/structure/strc_007_sparsetable.cpp.html">structure/strc_007_sparsetable.cpp</a>
+* :heavy_check_mark: <a href="library/structure/strc_007_sparsetable.cpp.html">Sparse Table <small>(structure/strc_007_sparsetable.cpp)</small></a>
 * :warning: <a href="library/structure/strc_010_abst_sqrtdecomp.cpp.html">structure/strc_010_abst_sqrtdecomp.cpp</a>
 * :warning: <a href="library/structure/strc_011_weighted_unionfind.cpp.html">structure/strc_011_weighted_unionfind.cpp</a>
 * :warning: <a href="library/structure/strc_012_kd_tree.cpp.html">structure/strc_012_kd_tree.cpp</a>
@@ -303,6 +303,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_F/geometry.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_G/geometry.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_1_A/union_find.test.cpp.html">verifying_test/AOJ/DSL_1_A/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp.html">verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
