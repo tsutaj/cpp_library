@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#8a42e2f360efd149dd1f7c64fba9767e">structure/verify</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/verify/verify_strc_024_static_wavelet_matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 00:46:27+09:00
+    - Last commit date: 2020-07-13 09:29:06+09:00
 
 
 

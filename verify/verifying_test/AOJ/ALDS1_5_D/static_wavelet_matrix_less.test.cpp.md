@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#40d36e2e10fd54eca589538ee53c8292">verifying_test/AOJ/ALDS1_5_D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 01:30:23+09:00
+    - Last commit date: 2020-07-13 09:29:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja</a>

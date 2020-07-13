@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#89efefd1f922c5c91b78ccaab1b53a96">verifying_test/AOJ/DSL_3_D</a>
 * <a href="{{ site.github.repository_url }}/blob/master/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-07 00:46:27+09:00
+    - Last commit date: 2020-07-13 09:29:06+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D&lang=ja</a>
