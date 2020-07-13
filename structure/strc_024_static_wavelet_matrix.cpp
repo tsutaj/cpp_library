@@ -1,7 +1,7 @@
 #pragma once
 
 // @title Wavelet 行列 (wavelet matrix)
-#define DOCS "./docs/strc_024_static_wavelet_matrix.md"
+// @docs ./docs/strc_024_static_wavelet_matrix.md
 
 #ifndef call_from_test
 #include "strc_023_compact_bitvector.cpp"
