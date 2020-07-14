@@ -10,7 +10,7 @@
 
 template <typename Tp>
 struct DisjointSparseTable {
-    size_t N, LN;
+    int N, LN;
     vector<Tp> A;
     vector< vector<Tp> > seg_l, seg_r;
     function<Tp(Tp, Tp)> cmb_f;
@@ -44,8 +44,8 @@ struct DisjointSparseTable {
         }
     }
 
-    Tp query(size_t l, size_t r) {
-        assert(l < r and r <= N); r--;
+    Tp query(int l, int r) {
+        assert(0 <= l and l < r and r <= N); r--;
         if(l == r) return A[l];
         int k = 31 - __builtin_clz((unsigned int)(l ^ r));
         return cmb_f(seg_l[k][l], seg_r[k][r]);
