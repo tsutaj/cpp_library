@@ -219,6 +219,7 @@ layout: default
 
 ### structure
 
+* :question: <a href="library/structure/disjoint_sparse_table.cpp.html">Disjoint Sparse Table <small>(structure/disjoint_sparse_table.cpp)</small></a>
 * :warning: <a href="library/structure/strc_002_bit.cpp.html">structure/strc_002_bit.cpp</a>
 * :warning: <a href="library/structure/strc_003_twodimbit.cpp.html">structure/strc_003_twodimbit.cpp</a>
 * :warning: <a href="library/structure/strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
@@ -310,6 +311,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp.html">verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp</a>
+* :x: <a href="verify/verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp</a>
+* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp.html">verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/aplusb/cstdio.test.cpp</a>
 * :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp</a>
