@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: Disjoint Sparse Table <small>(structure/disjoint_sparse_table.cpp)</small>
+# :heavy_check_mark: Disjoint Sparse Table <small>(structure/disjoint_sparse_table.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#07414f4e15ca943e6cde032dec85d92f">structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structure/disjoint_sparse_table.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 08:51:51+09:00
+    - Last commit date: 2020-07-15 08:57:57+09:00
 
 
 * see: <a href="https://noshi91.hatenablog.com/entry/2018/05/08/183946">https://noshi91.hatenablog.com/entry/2018/05/08/183946</a>
@@ -44,7 +44,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp</a>
 
 
@@ -65,7 +65,7 @@ layout: default
 
 template <typename Tp>
 struct DisjointSparseTable {
-    size_t N, LN;
+    int N, LN;
     vector<Tp> A;
     vector< vector<Tp> > seg_l, seg_r;
     function<Tp(Tp, Tp)> cmb_f;
@@ -99,8 +99,8 @@ struct DisjointSparseTable {
         }
     }
 
-    Tp query(size_t l, size_t r) {
-        assert(l < r and r <= N); r--;
+    Tp query(int l, int r) {
+        assert(0 <= l and l < r and r <= N); r--;
         if(l == r) return A[l];
         int k = 31 - __builtin_clz((unsigned int)(l ^ r));
         return cmb_f(seg_l[k][l], seg_r[k][r]);
@@ -125,7 +125,7 @@ struct DisjointSparseTable {
 
 template <typename Tp>
 struct DisjointSparseTable {
-    size_t N, LN;
+    int N, LN;
     vector<Tp> A;
     vector< vector<Tp> > seg_l, seg_r;
     function<Tp(Tp, Tp)> cmb_f;
@@ -159,8 +159,8 @@ struct DisjointSparseTable {
         }
     }
 
-    Tp query(size_t l, size_t r) {
-        assert(l < r and r <= N); r--;
+    Tp query(int l, int r) {
+        assert(0 <= l and l < r and r <= N); r--;
         if(l == r) return A[l];
         int k = 31 - __builtin_clz((unsigned int)(l ^ r));
         return cmb_f(seg_l[k][l], seg_r[k][r]);
