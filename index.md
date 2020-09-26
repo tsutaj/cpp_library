@@ -1,320 +1,677 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: algorithm
+    pages:
+    - icon: ':warning:'
+      path: algorithm/algo_001_mo.cpp
+      title: algorithm/algo_001_mo.cpp
+    - icon: ':heavy_check_mark:'
+      path: algorithm/coordinate_compression.cpp
+      title: "\u5EA7\u6A19\u5727\u7E2E (Coordinate Compression)"
+    - icon: ':heavy_check_mark:'
+      path: algorithm/cumulative_sum.cpp
+      title: "1 \u6B21\u5143\u7D2F\u7A4D\u548C (1 Dimension Cumulative Sum)"
+    - icon: ':heavy_check_mark:'
+      path: algorithm/cumulative_sum_2d.cpp
+      title: "2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)"
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: basic_000_template.cpp
+      title: basic_000_template.cpp
+    - icon: ':warning:'
+      path: topcoder.cpp
+      title: topcoder.cpp
+  - name: dp
+    pages:
+    - icon: ':warning:'
+      path: dp/dp_000_lis_dim2.cpp
+      title: dp/dp_000_lis_dim2.cpp
+    - icon: ':warning:'
+      path: dp/dp_001_maxSquare.cpp
+      title: dp/dp_001_maxSquare.cpp
+    - icon: ':warning:'
+      path: dp/dp_002_maxRectangle.cpp
+      title: dp/dp_002_maxRectangle.cpp
+    - icon: ':warning:'
+      path: dp/dp_003_histogram.cpp
+      title: dp/dp_003_histogram.cpp
+    - icon: ':warning:'
+      path: dp/dp_004_editDistance.cpp
+      title: dp/dp_004_editDistance.cpp
+    - icon: ':warning:'
+      path: dp/dp_005_limitKnapsack.cpp
+      title: dp/dp_005_limitKnapsack.cpp
+    - icon: ':warning:'
+      path: dp/dp_006_TSP.cpp
+      title: dp/dp_006_TSP.cpp
+    - icon: ':warning:'
+      path: dp/dp_007_CPP.cpp
+      title: dp/dp_007_CPP.cpp
+    - icon: ':warning:'
+      path: dp/dp_008_digit.cpp
+      title: dp/dp_008_digit.cpp
+    - icon: ':warning:'
+      path: dp/dp_008_digit2.cpp
+      title: dp/dp_008_digit2.cpp
+  - name: etc
+    pages:
+    - icon: ':warning:'
+      path: etc/etc_000_date.cpp
+      title: etc/etc_000_date.cpp
+    - icon: ':warning:'
+      path: etc/etc_001_dice.cpp
+      title: etc/etc_001_dice.cpp
+  - name: geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: geometry/geometry_2D.cpp
+      title: geometry/geometry_2D.cpp
+  - name: geometry/old
+    pages:
+    - icon: ':warning:'
+      path: geometry/old/gmtr_000_basic.cpp
+      title: geometry/old/gmtr_000_basic.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_001_orthogonal_parallel.cpp
+      title: geometry/old/gmtr_001_orthogonal_parallel.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_002_intersection.cpp
+      title: geometry/old/gmtr_002_intersection.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_003_distance.cpp
+      title: geometry/old/gmtr_003_distance.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_004_circle_dist.cpp
+      title: geometry/old/gmtr_004_circle_dist.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_005_circle_crossp.cpp
+      title: geometry/old/gmtr_005_circle_crossp.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_006_circle_tangent.cpp
+      title: geometry/old/gmtr_006_circle_tangent.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_007_circle_intersection.cpp
+      title: geometry/old/gmtr_007_circle_intersection.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_008_circle_points.cpp
+      title: geometry/old/gmtr_008_circle_points.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_009_poly.cpp
+      title: geometry/old/gmtr_009_poly.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_010_rotate.cpp
+      title: geometry/old/gmtr_010_rotate.cpp
+    - icon: ':warning:'
+      path: geometry/old/gmtr_100_basic_threedim.cpp
+      title: geometry/old/gmtr_100_basic_threedim.cpp
+  - name: graph
+    pages:
+    - icon: ':warning:'
+      path: graph/graph_000_basic.cpp
+      title: graph/graph_000_basic.cpp
+    - icon: ':warning:'
+      path: graph/graph_001_bellman.cpp
+      title: graph/graph_001_bellman.cpp
+    - icon: ':warning:'
+      path: graph/graph_002_dijkstra.cpp
+      title: graph/graph_002_dijkstra.cpp
+    - icon: ':warning:'
+      path: graph/graph_003_warshall.cpp
+      title: graph/graph_003_warshall.cpp
+    - icon: ':warning:'
+      path: graph/graph_004_prim.cpp
+      title: graph/graph_004_prim.cpp
+    - icon: ':warning:'
+      path: graph/graph_005_kruskal.cpp
+      title: graph/graph_005_kruskal.cpp
+    - icon: ':warning:'
+      path: graph/graph_006_bridge_points.cpp
+      title: graph/graph_006_bridge_points.cpp
+    - icon: ':warning:'
+      path: graph/graph_007_tree_dfs.cpp
+      title: graph/graph_007_tree_dfs.cpp
+    - icon: ':warning:'
+      path: graph/graph_008_treeheight.cpp
+      title: graph/graph_008_treeheight.cpp
+    - icon: ':warning:'
+      path: graph/graph_009_tpsort.cpp
+      title: graph/graph_009_tpsort.cpp
+    - icon: ':warning:'
+      path: graph/graph_010_scc.cpp
+      title: graph/graph_010_scc.cpp
+    - icon: ':warning:'
+      path: graph/graph_011_lca.cpp
+      title: graph/graph_011_lca.cpp
+    - icon: ':warning:'
+      path: graph/graph_012_maxflow_ford.cpp
+      title: graph/graph_012_maxflow_ford.cpp
+    - icon: ':warning:'
+      path: graph/graph_013_rootedtreeiso.cpp
+      title: graph/graph_013_rootedtreeiso.cpp
+    - icon: ':warning:'
+      path: graph/graph_014_treecenters.cpp
+      title: graph/graph_014_treecenters.cpp
+    - icon: ':warning:'
+      path: graph/graph_015_forest2trees.cpp
+      title: graph/graph_015_forest2trees.cpp
+    - icon: ':warning:'
+      path: graph/graph_016_SPFA.cpp
+      title: graph/graph_016_SPFA.cpp
+    - icon: ':warning:'
+      path: graph/graph_017_bipartite.cpp
+      title: graph/graph_017_bipartite.cpp
+    - icon: ':warning:'
+      path: graph/graph_018_dinic.cpp
+      title: graph/graph_018_dinic.cpp
+    - icon: ':warning:'
+      path: graph/graph_019_eulertour.cpp
+      title: graph/graph_019_eulertour.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/graph_020_HLDecomposition.cpp
+      title: graph/graph_020_HLDecomposition.cpp
+    - icon: ':warning:'
+      path: graph/graph_021_centroid.cpp
+      title: graph/graph_021_centroid.cpp
+    - icon: ':warning:'
+      path: graph/graph_022_max_independent_set.cpp
+      title: graph/graph_022_max_independent_set.cpp
+    - icon: ':warning:'
+      path: graph/graph_023_offline_lca.cpp
+      title: graph/graph_023_offline_lca.cpp
+    - icon: ':warning:'
+      path: graph/graph_024_boruvka.cpp
+      title: graph/graph_024_boruvka.cpp
+    - icon: ':warning:'
+      path: graph/graph_025_2SAT.cpp
+      title: graph/graph_025_2SAT.cpp
+  - name: marathon
+    pages:
+    - icon: ':warning:'
+      path: marathon/rand.cpp
+      title: marathon/rand.cpp
+    - icon: ':warning:'
+      path: marathon/timer.cpp
+      title: marathon/timer.cpp
+  - name: math
+    pages:
+    - icon: ':warning:'
+      path: math/math_000_limits.cpp
+      title: math/math_000_limits.cpp
+    - icon: ':warning:'
+      path: math/math_001_mod.cpp
+      title: math/math_001_mod.cpp
+    - icon: ':warning:'
+      path: math/math_002_prime.cpp
+      title: math/math_002_prime.cpp
+    - icon: ':warning:'
+      path: math/math_003_digit.cpp
+      title: math/math_003_digit.cpp
+    - icon: ':warning:'
+      path: math/math_004_matrix.cpp
+      title: math/math_004_matrix.cpp
+    - icon: ':warning:'
+      path: math/math_005_matrix_mod2.cpp
+      title: math/math_005_matrix_mod2.cpp
+    - icon: ':warning:'
+      path: math/math_006_eulerphi.cpp
+      title: math/math_006_eulerphi.cpp
+    - icon: ':warning:'
+      path: math/math_007_fraction.cpp
+      title: math/math_007_fraction.cpp
+    - icon: ':warning:'
+      path: math/math_008_miller_rabin_rho.cpp
+      title: math/math_008_miller_rabin_rho.cpp
+    - icon: ':warning:'
+      path: math/math_009_kitamasa.cpp
+      title: math/math_009_kitamasa.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/math_010_convexhulltrick.cpp
+      title: Convex Hull Trick (Li-Chao Tree)
+    - icon: ':warning:'
+      path: math/math_011_fft.cpp
+      title: math/math_011_fft.cpp
+    - icon: ':warning:'
+      path: math/math_012_garner.cpp
+      title: math/math_012_garner.cpp
+    - icon: ':warning:'
+      path: math/math_013_ntt.cpp
+      title: math/math_013_ntt.cpp
+    - icon: ':warning:'
+      path: math/math_014_bsgs.cpp
+      title: math/math_014_bsgs.cpp
+    - icon: ':warning:'
+      path: math/math_015_remainder_sum.cpp
+      title: math/math_015_remainder_sum.cpp
+    - icon: ':warning:'
+      path: math/math_016_mod_sqrt.cpp
+      title: math/math_016_mod_sqrt.cpp
+    - icon: ':warning:'
+      path: math/math_017_modint.cpp
+      title: math/math_017_modint.cpp
+    - icon: ':warning:'
+      path: math/math_018_ragrange_polynomial.cpp
+      title: math/math_018_ragrange_polynomial.cpp
+    - icon: ':warning:'
+      path: math/math_019_specific_ragrange_polynomial.cpp
+      title: math/math_019_specific_ragrange_polynomial.cpp
+    - icon: ':warning:'
+      path: math/math_020_combination.cpp
+      title: math/math_020_combination.cpp
+    - icon: ':warning:'
+      path: math/math_021_crt.cpp
+      title: math/math_021_crt.cpp
+    - icon: ':warning:'
+      path: math/math_022_matrix_utils_real.cpp
+      title: math/math_022_matrix_utils_real.cpp
+    - icon: ':warning:'
+      path: math/math_023_matrix_utils_modp.cpp
+      title: math/math_023_matrix_utils_modp.cpp
+    - icon: ':warning:'
+      path: math/math_024_fixed_matrix.cpp
+      title: math/math_024_fixed_matrix.cpp
+  - name: math/verify
+    pages:
+    - icon: ':warning:'
+      path: math/verify/verify_math_004_matrix.cpp
+      title: math/verify/verify_math_004_matrix.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_005_matrix_mod2.cpp
+      title: math/verify/verify_math_005_matrix_mod2.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_014_bsgs.cpp
+      title: math/verify/verify_math_014_bsgs.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_015_remainder_sum.cpp
+      title: math/verify/verify_math_015_remainder_sum.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_016_mod_sqrt.cpp
+      title: math/verify/verify_math_016_mod_sqrt.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_018_ragrange_polynomial.cpp
+      title: math/verify/verify_math_018_ragrange_polynomial.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_019_specific_ragrange_polynomial.cpp
+      title: math/verify/verify_math_019_specific_ragrange_polynomial.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_020_combination.cpp
+      title: math/verify/verify_math_020_combination.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_021_crt.cpp
+      title: math/verify/verify_math_021_crt.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_022_matrix_utils_real.cpp
+      title: math/verify/verify_math_022_matrix_utils_real.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_023_matrix_utils_modp.cpp
+      title: math/verify/verify_math_023_matrix_utils_modp.cpp
+    - icon: ':warning:'
+      path: math/verify/verify_math_024_fixed_matrix.cpp
+      title: math/verify/verify_math_024_fixed_matrix.cpp
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/str_000_split.cpp
+      title: string/str_000_split.cpp
+    - icon: ':warning:'
+      path: string/str_001_technique.cpp
+      title: string/str_001_technique.cpp
+    - icon: ':warning:'
+      path: string/str_002_rollinghash.cpp
+      title: string/str_002_rollinghash.cpp
+    - icon: ':warning:'
+      path: string/str_003_replace.cpp
+      title: string/str_003_replace.cpp
+    - icon: ':warning:'
+      path: string/str_004_trie.cpp
+      title: string/str_004_trie.cpp
+    - icon: ':warning:'
+      path: string/str_005_ahocorasick.cpp
+      title: string/str_005_ahocorasick.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/str_006_suffixarray.cpp
+      title: 'Suffix Array: $O(N \log N)$'
+    - icon: ':warning:'
+      path: string/str_007_kmp.cpp
+      title: "KMP \u6CD5 (Knuth-Morris-Pratt Algorithm)"
+    - icon: ':warning:'
+      path: string/str_008_shift_and_or.cpp
+      title: string/str_008_shift_and_or.cpp
+    - icon: ':warning:'
+      path: string/str_009_manacher.cpp
+      title: string/str_009_manacher.cpp
+    - icon: ':warning:'
+      path: string/str_010_z_algorithm.cpp
+      title: string/str_010_z_algorithm.cpp
+  - name: string/verify
+    pages:
+    - icon: ':warning:'
+      path: string/verify/verify_str_004_trie.cpp
+      title: string/verify/verify_str_004_trie.cpp
+    - icon: ':warning:'
+      path: string/verify/verify_str_009_manacher.cpp
+      title: string/verify/verify_str_009_manacher.cpp
+    - icon: ':warning:'
+      path: string/verify/verify_str_010_z_algorithm.cpp
+      title: string/verify/verify_str_010_z_algorithm.cpp
+  - name: structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: structure/disjoint_sparse_table.cpp
+      title: Disjoint Sparse Table
+    - icon: ':warning:'
+      path: structure/strc_002_bit.cpp
+      title: structure/strc_002_bit.cpp
+    - icon: ':warning:'
+      path: structure/strc_003_twodimbit.cpp
+      title: structure/strc_003_twodimbit.cpp
+    - icon: ':warning:'
+      path: structure/strc_004_bit_sec.cpp
+      title: structure/strc_004_bit_sec.cpp
+    - icon: ':warning:'
+      path: structure/strc_005_bit_zero_indexed.cpp
+      title: structure/strc_005_bit_zero_indexed.cpp
+    - icon: ':warning:'
+      path: structure/strc_006_twodimbit_zero_indexed.cpp
+      title: structure/strc_006_twodimbit_zero_indexed.cpp
+    - icon: ':heavy_check_mark:'
+      path: structure/strc_007_sparsetable.cpp
+      title: Sparse Table
+    - icon: ':warning:'
+      path: structure/strc_008_abst_segtree.cpp
+      title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Segment Tree)"
+    - icon: ':heavy_check_mark:'
+      path: structure/strc_009_abst_lazy_segtree.cpp
+      title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
+        \ Tree)"
+    - icon: ':warning:'
+      path: structure/strc_010_abst_sqrtdecomp.cpp
+      title: structure/strc_010_abst_sqrtdecomp.cpp
+    - icon: ':warning:'
+      path: structure/strc_011_weighted_unionfind.cpp
+      title: structure/strc_011_weighted_unionfind.cpp
+    - icon: ':warning:'
+      path: structure/strc_012_kd_tree.cpp
+      title: structure/strc_012_kd_tree.cpp
+    - icon: ':warning:'
+      path: structure/strc_013_treap.cpp
+      title: structure/strc_013_treap.cpp
+    - icon: ':warning:'
+      path: structure/strc_014_rbst.cpp
+      title: structure/strc_014_rbst.cpp
+    - icon: ':warning:'
+      path: structure/strc_015_partial_persistent_unionfind.cpp
+      title: structure/strc_015_partial_persistent_unionfind.cpp
+    - icon: ':warning:'
+      path: structure/strc_016_persistent_unionfind.cpp
+      title: structure/strc_016_persistent_unionfind.cpp
+    - icon: ':warning:'
+      path: structure/strc_017_persistent_array.cpp
+      title: structure/strc_017_persistent_array.cpp
+    - icon: ':warning:'
+      path: structure/strc_018_binarytrie.cpp
+      title: structure/strc_018_binarytrie.cpp
+    - icon: ':warning:'
+      path: structure/strc_019_intervalset.cpp
+      title: structure/strc_019_intervalset.cpp
+    - icon: ':warning:'
+      path: structure/strc_020_dynamic_segtree.cpp
+      title: "\u52D5\u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Dynamic Segment Tree)"
+    - icon: ':warning:'
+      path: structure/strc_021_dynamic_lazy_segtree.cpp
+      title: "\u52D5\u7684\u9045\u5EF6\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Dynamic\
+        \ Lazy Segment Tree)"
+    - icon: ':warning:'
+      path: structure/strc_022_dual_segtree.cpp
+      title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Dual Segment Tree)"
+    - icon: ':heavy_check_mark:'
+      path: structure/strc_023_compact_bitvector.cpp
+      title: "\u7C21\u6F54\u30D3\u30C3\u30C8\u30D9\u30AF\u30C8\u30EB (compact bit\
+        \ vector)"
+    - icon: ':heavy_check_mark:'
+      path: structure/strc_024_static_wavelet_matrix.cpp
+      title: "Wavelet \u884C\u5217 (wavelet matrix)"
+    - icon: ':heavy_check_mark:'
+      path: structure/union_find.cpp
+      title: Union-Find
+  - name: structure/old
+    pages:
+    - icon: ':warning:'
+      path: structure/old/strc_002_segment_rmq.cpp
+      title: structure/old/strc_002_segment_rmq.cpp
+    - icon: ':warning:'
+      path: structure/old/strc_003_segment_rmq_sec.cpp
+      title: structure/old/strc_003_segment_rmq_sec.cpp
+    - icon: ':warning:'
+      path: structure/old/strc_007_bit_recursion.cpp
+      title: structure/old/strc_007_bit_recursion.cpp
+    - icon: ':warning:'
+      path: structure/old/strc_011_lazysegtree.cpp
+      title: structure/old/strc_011_lazysegtree.cpp
+  - name: structure/verify
+    pages:
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_004_bit_sec.cpp
+      title: structure/verify/verify_strc_004_bit_sec.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_008_abst_segtree.cpp
+      title: structure/verify/verify_strc_008_abst_segtree.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_009_abst_lazy_segtree.cpp
+      title: structure/verify/verify_strc_009_abst_lazy_segtree.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_020_dynamic_segtree.cpp
+      title: structure/verify/verify_strc_020_dynamic_segtree.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp
+      title: structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_022_dual_segtree.cpp
+      title: structure/verify/verify_strc_022_dual_segtree.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_023_compact_bitvector.cpp
+      title: structure/verify/verify_strc_023_compact_bitvector.cpp
+    - icon: ':warning:'
+      path: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
+      title: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
+  - name: verifying_test/build-pages-pkg
+    pages:
+    - icon: ':warning:'
+      path: verifying_test/build-pages-pkg/build-pages.py
+      title: verifying_test/build-pages-pkg/build-pages.py
+  - name: verifying_test/lib
+    pages:
+    - icon: ':warning:'
+      path: verifying_test/lib/generate_readme.py
+      title: verifying_test/lib/generate_readme.py
+  verificationCategories:
+  - name: verifying_test/AOJ/0516
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/0516/cumulative_sum.test.cpp
+      title: verifying_test/AOJ/0516/cumulative_sum.test.cpp
+  - name: verifying_test/AOJ/0560
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
+      title: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
+  - name: verifying_test/AOJ/1549
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
+      title: verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
+  - name: verifying_test/AOJ/2426
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
+      title: verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
+  - name: verifying_test/AOJ/ALDS1_14_B
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp
+      title: verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp
+  - name: verifying_test/AOJ/ALDS1_5_D
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
+      title: "AOJ ALDS_1_5_D: \u53CD\u8EE2\u6570"
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
+      title: "AOJ ALDS_1_5_D: \u53CD\u8EE2\u6570"
+  - name: verifying_test/AOJ/ALDS1_6_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
+      title: verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
+  - name: verifying_test/AOJ/CGL_1_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_1_A/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_1_A/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_1_B
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_1_B/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_1_B/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_1_C
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_1_C/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_1_C/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_2_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_2_A/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_2_A/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_2_B
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_2_B/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_2_B/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_2_C
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_2_C/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_2_C/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_2_D
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_2_D/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_2_D/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_3_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_3_A/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_3_A/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_3_C
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_3_C/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_3_C/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_4_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_4_A/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_4_A/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_4_B
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_4_B/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_4_B/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_4_C
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_4_C/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_4_C/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_7_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_7_A/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_7_A/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_7_D
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_7_D/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_7_D/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_7_E
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_7_E/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_7_E/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_7_F
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_7_F/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_7_F/geometry.test.cpp
+  - name: verifying_test/AOJ/CGL_7_G
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/CGL_7_G/geometry.test.cpp
+      title: verifying_test/AOJ/CGL_7_G/geometry.test.cpp
+  - name: verifying_test/AOJ/DSL_1_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/DSL_1_A/union_find.test.cpp
+      title: verifying_test/AOJ/DSL_1_A/union_find.test.cpp
+  - name: verifying_test/AOJ/DSL_3_D
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+      title: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp
+      title: verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
+      title: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
+  - name: verifying_test/AOJ/GRL_5_D
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
+      title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
+  - name: verifying_test/AOJ/ITP1_6_A
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+      title: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+  - name: verifying_test/yosupo
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/SegmentAddGetMin.test.cpp
+      title: verifying_test/yosupo/SegmentAddGetMin.test.cpp
+  - name: verifying_test/yosupo/data_structure/associative_array
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp
+      title: verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp
+  - name: verifying_test/yosupo/data_structure/static_range_sum
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
+      title: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
+      title: verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
+  - name: verifying_test/yosupo/data_structure/static_rmq
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
+      title: verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
+  - name: verifying_test/yosupo/data_structure/unionfind
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
+      title: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
+  - name: verifying_test/yosupo/sample/aplusb
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/sample/aplusb/cstdio.test.cpp
+      title: verifying_test/yosupo/sample/aplusb/cstdio.test.cpp
+  - name: verifying_test/yosupo/sample/many_aplusb
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp
+      title: verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="5058f1af8388633f609cadb75a75dc9d"></div>
-
-### .
-
-* :warning: <a href="library/basic_000_template.cpp.html">basic_000_template.cpp</a>
-
-
-<div id="ed469618898d75b149e5c7c4b6a1c415"></div>
-
-### algorithm
-
-* :warning: <a href="library/algorithm/algo_001_mo.cpp.html">algorithm/algo_001_mo.cpp</a>
-* :heavy_check_mark: <a href="library/algorithm/coordinate_compression.cpp.html">座標圧縮 (Coordinate Compression) <small>(algorithm/coordinate_compression.cpp)</small></a>
-* :heavy_check_mark: <a href="library/algorithm/cumulative_sum.cpp.html">1 次元累積和 (1 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum.cpp)</small></a>
-* :heavy_check_mark: <a href="library/algorithm/cumulative_sum_2d.cpp.html">2 次元累積和 (2 Dimension Cumulative Sum) <small>(algorithm/cumulative_sum_2d.cpp)</small></a>
-
-
-<div id="95687afb5d9a2a9fa39038f991640b0c"></div>
-
-### dp
-
-* :warning: <a href="library/dp/dp_000_lis_dim2.cpp.html">dp/dp_000_lis_dim2.cpp</a>
-* :warning: <a href="library/dp/dp_001_maxSquare.cpp.html">dp/dp_001_maxSquare.cpp</a>
-* :warning: <a href="library/dp/dp_002_maxRectangle.cpp.html">dp/dp_002_maxRectangle.cpp</a>
-* :warning: <a href="library/dp/dp_003_histogram.cpp.html">dp/dp_003_histogram.cpp</a>
-* :warning: <a href="library/dp/dp_004_editDistance.cpp.html">dp/dp_004_editDistance.cpp</a>
-* :warning: <a href="library/dp/dp_005_limitKnapsack.cpp.html">dp/dp_005_limitKnapsack.cpp</a>
-* :warning: <a href="library/dp/dp_006_TSP.cpp.html">dp/dp_006_TSP.cpp</a>
-* :warning: <a href="library/dp/dp_007_CPP.cpp.html">dp/dp_007_CPP.cpp</a>
-* :warning: <a href="library/dp/dp_008_digit.cpp.html">dp/dp_008_digit.cpp</a>
-* :warning: <a href="library/dp/dp_008_digit2.cpp.html">dp/dp_008_digit2.cpp</a>
-
-
-<div id="e80f17310109447772dca82b45ef35a5"></div>
-
-### etc
-
-* :warning: <a href="library/etc/etc_000_date.cpp.html">etc/etc_000_date.cpp</a>
-* :warning: <a href="library/etc/etc_001_dice.cpp.html">etc/etc_001_dice.cpp</a>
-
-
-<div id="ed7daeb157cd9b31e53896ad3c771a26"></div>
-
-### geometry
-
-* :heavy_check_mark: <a href="library/geometry/geometry_2D.cpp.html">geometry/geometry_2D.cpp</a>
-
-
-<div id="ee276eb56ad4bc3f1e3c8191a9303fa9"></div>
-
-### geometry/old
-
-* :warning: <a href="library/geometry/old/gmtr_000_basic.cpp.html">geometry/old/gmtr_000_basic.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_001_orthogonal_parallel.cpp.html">geometry/old/gmtr_001_orthogonal_parallel.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_002_intersection.cpp.html">geometry/old/gmtr_002_intersection.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_003_distance.cpp.html">geometry/old/gmtr_003_distance.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_004_circle_dist.cpp.html">geometry/old/gmtr_004_circle_dist.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_005_circle_crossp.cpp.html">geometry/old/gmtr_005_circle_crossp.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_006_circle_tangent.cpp.html">geometry/old/gmtr_006_circle_tangent.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_007_circle_intersection.cpp.html">geometry/old/gmtr_007_circle_intersection.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_008_circle_points.cpp.html">geometry/old/gmtr_008_circle_points.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_009_poly.cpp.html">geometry/old/gmtr_009_poly.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_010_rotate.cpp.html">geometry/old/gmtr_010_rotate.cpp</a>
-* :warning: <a href="library/geometry/old/gmtr_100_basic_threedim.cpp.html">geometry/old/gmtr_100_basic_threedim.cpp</a>
-
-
-<div id="f8b0b924ebd7046dbfa85a856e4682c8"></div>
-
-### graph
-
-* :warning: <a href="library/graph/graph_000_basic.cpp.html">graph/graph_000_basic.cpp</a>
-* :warning: <a href="library/graph/graph_001_bellman.cpp.html">graph/graph_001_bellman.cpp</a>
-* :warning: <a href="library/graph/graph_002_dijkstra.cpp.html">graph/graph_002_dijkstra.cpp</a>
-* :warning: <a href="library/graph/graph_003_warshall.cpp.html">graph/graph_003_warshall.cpp</a>
-* :warning: <a href="library/graph/graph_004_prim.cpp.html">graph/graph_004_prim.cpp</a>
-* :warning: <a href="library/graph/graph_005_kruskal.cpp.html">graph/graph_005_kruskal.cpp</a>
-* :warning: <a href="library/graph/graph_006_bridge_points.cpp.html">graph/graph_006_bridge_points.cpp</a>
-* :warning: <a href="library/graph/graph_007_tree_dfs.cpp.html">graph/graph_007_tree_dfs.cpp</a>
-* :warning: <a href="library/graph/graph_008_treeheight.cpp.html">graph/graph_008_treeheight.cpp</a>
-* :warning: <a href="library/graph/graph_009_tpsort.cpp.html">graph/graph_009_tpsort.cpp</a>
-* :warning: <a href="library/graph/graph_010_scc.cpp.html">graph/graph_010_scc.cpp</a>
-* :warning: <a href="library/graph/graph_011_lca.cpp.html">graph/graph_011_lca.cpp</a>
-* :warning: <a href="library/graph/graph_012_maxflow_ford.cpp.html">graph/graph_012_maxflow_ford.cpp</a>
-* :warning: <a href="library/graph/graph_013_rootedtreeiso.cpp.html">graph/graph_013_rootedtreeiso.cpp</a>
-* :warning: <a href="library/graph/graph_014_treecenters.cpp.html">graph/graph_014_treecenters.cpp</a>
-* :warning: <a href="library/graph/graph_015_forest2trees.cpp.html">graph/graph_015_forest2trees.cpp</a>
-* :warning: <a href="library/graph/graph_016_SPFA.cpp.html">graph/graph_016_SPFA.cpp</a>
-* :warning: <a href="library/graph/graph_017_bipartite.cpp.html">graph/graph_017_bipartite.cpp</a>
-* :warning: <a href="library/graph/graph_018_dinic.cpp.html">graph/graph_018_dinic.cpp</a>
-* :warning: <a href="library/graph/graph_019_eulertour.cpp.html">graph/graph_019_eulertour.cpp</a>
-* :heavy_check_mark: <a href="library/graph/graph_020_HLDecomposition.cpp.html">graph/graph_020_HLDecomposition.cpp</a>
-* :warning: <a href="library/graph/graph_021_centroid.cpp.html">graph/graph_021_centroid.cpp</a>
-* :warning: <a href="library/graph/graph_022_max_independent_set.cpp.html">graph/graph_022_max_independent_set.cpp</a>
-* :warning: <a href="library/graph/graph_023_offline_lca.cpp.html">graph/graph_023_offline_lca.cpp</a>
-* :warning: <a href="library/graph/graph_024_boruvka.cpp.html">graph/graph_024_boruvka.cpp</a>
-* :warning: <a href="library/graph/graph_025_2SAT.cpp.html">graph/graph_025_2SAT.cpp</a>
-
-
-<div id="faaaac9cb18c500a97c03eec92d6b8fc"></div>
-
-### marathon
-
-* :warning: <a href="library/marathon/rand.cpp.html">marathon/rand.cpp</a>
-* :warning: <a href="library/marathon/timer.cpp.html">marathon/timer.cpp</a>
-
-
-<div id="7e676e9e663beb40fd133f5ee24487c2"></div>
-
-### math
-
-* :warning: <a href="library/math/math_000_limits.cpp.html">math/math_000_limits.cpp</a>
-* :warning: <a href="library/math/math_001_mod.cpp.html">math/math_001_mod.cpp</a>
-* :warning: <a href="library/math/math_002_prime.cpp.html">math/math_002_prime.cpp</a>
-* :warning: <a href="library/math/math_003_digit.cpp.html">math/math_003_digit.cpp</a>
-* :warning: <a href="library/math/math_004_matrix.cpp.html">math/math_004_matrix.cpp</a>
-* :warning: <a href="library/math/math_005_matrix_mod2.cpp.html">math/math_005_matrix_mod2.cpp</a>
-* :warning: <a href="library/math/math_006_eulerphi.cpp.html">math/math_006_eulerphi.cpp</a>
-* :warning: <a href="library/math/math_007_fraction.cpp.html">math/math_007_fraction.cpp</a>
-* :warning: <a href="library/math/math_008_miller_rabin_rho.cpp.html">math/math_008_miller_rabin_rho.cpp</a>
-* :warning: <a href="library/math/math_009_kitamasa.cpp.html">math/math_009_kitamasa.cpp</a>
-* :heavy_check_mark: <a href="library/math/math_010_convexhulltrick.cpp.html">Convex Hull Trick (Li-Chao Tree) <small>(math/math_010_convexhulltrick.cpp)</small></a>
-* :warning: <a href="library/math/math_011_fft.cpp.html">math/math_011_fft.cpp</a>
-* :warning: <a href="library/math/math_012_garner.cpp.html">math/math_012_garner.cpp</a>
-* :warning: <a href="library/math/math_013_ntt.cpp.html">math/math_013_ntt.cpp</a>
-* :warning: <a href="library/math/math_014_bsgs.cpp.html">math/math_014_bsgs.cpp</a>
-* :warning: <a href="library/math/math_015_remainder_sum.cpp.html">math/math_015_remainder_sum.cpp</a>
-* :warning: <a href="library/math/math_016_mod_sqrt.cpp.html">math/math_016_mod_sqrt.cpp</a>
-* :warning: <a href="library/math/math_017_modint.cpp.html">math/math_017_modint.cpp</a>
-* :warning: <a href="library/math/math_018_ragrange_polynomial.cpp.html">math/math_018_ragrange_polynomial.cpp</a>
-* :warning: <a href="library/math/math_019_specific_ragrange_polynomial.cpp.html">math/math_019_specific_ragrange_polynomial.cpp</a>
-* :warning: <a href="library/math/math_020_combination.cpp.html">math/math_020_combination.cpp</a>
-* :warning: <a href="library/math/math_021_crt.cpp.html">math/math_021_crt.cpp</a>
-* :warning: <a href="library/math/math_022_matrix_utils_real.cpp.html">math/math_022_matrix_utils_real.cpp</a>
-* :warning: <a href="library/math/math_023_matrix_utils_modp.cpp.html">math/math_023_matrix_utils_modp.cpp</a>
-* :warning: <a href="library/math/math_024_fixed_matrix.cpp.html">math/math_024_fixed_matrix.cpp</a>
-
-
-<div id="8a171886c06d04ba11b1e6cabfe6b499"></div>
-
-### math/verify
-
-* :warning: <a href="library/math/verify/verify_math_004_matrix.cpp.html">math/verify/verify_math_004_matrix.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_005_matrix_mod2.cpp.html">math/verify/verify_math_005_matrix_mod2.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_014_bsgs.cpp.html">math/verify/verify_math_014_bsgs.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_015_remainder_sum.cpp.html">math/verify/verify_math_015_remainder_sum.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_016_mod_sqrt.cpp.html">math/verify/verify_math_016_mod_sqrt.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_018_ragrange_polynomial.cpp.html">math/verify/verify_math_018_ragrange_polynomial.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_019_specific_ragrange_polynomial.cpp.html">math/verify/verify_math_019_specific_ragrange_polynomial.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_020_combination.cpp.html">math/verify/verify_math_020_combination.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_021_crt.cpp.html">math/verify/verify_math_021_crt.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_022_matrix_utils_real.cpp.html">math/verify/verify_math_022_matrix_utils_real.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_023_matrix_utils_modp.cpp.html">math/verify/verify_math_023_matrix_utils_modp.cpp</a>
-* :warning: <a href="library/math/verify/verify_math_024_fixed_matrix.cpp.html">math/verify/verify_math_024_fixed_matrix.cpp</a>
-
-
-<div id="b45cffe084dd3d20d928bee85e7b0f21"></div>
-
-### string
-
-* :warning: <a href="library/string/str_000_split.cpp.html">string/str_000_split.cpp</a>
-* :warning: <a href="library/string/str_001_technique.cpp.html">string/str_001_technique.cpp</a>
-* :warning: <a href="library/string/str_002_rollinghash.cpp.html">string/str_002_rollinghash.cpp</a>
-* :warning: <a href="library/string/str_003_replace.cpp.html">string/str_003_replace.cpp</a>
-* :warning: <a href="library/string/str_004_trie.cpp.html">string/str_004_trie.cpp</a>
-* :warning: <a href="library/string/str_005_ahocorasick.cpp.html">string/str_005_ahocorasick.cpp</a>
-* :heavy_check_mark: <a href="library/string/str_006_suffixarray.cpp.html">Suffix Array: $O(N \log N)$ <small>(string/str_006_suffixarray.cpp)</small></a>
-* :warning: <a href="library/string/str_007_kmp.cpp.html">KMP 法 (Knuth-Morris-Pratt Algorithm) <small>(string/str_007_kmp.cpp)</small></a>
-* :warning: <a href="library/string/str_008_shift_and_or.cpp.html">string/str_008_shift_and_or.cpp</a>
-* :warning: <a href="library/string/str_009_manacher.cpp.html">string/str_009_manacher.cpp</a>
-* :warning: <a href="library/string/str_010_z_algorithm.cpp.html">string/str_010_z_algorithm.cpp</a>
-
-
-<div id="26c28df84862218769fd49d15963eb43"></div>
-
-### string/verify
-
-* :warning: <a href="library/string/verify/verify_str_004_trie.cpp.html">string/verify/verify_str_004_trie.cpp</a>
-* :warning: <a href="library/string/verify/verify_str_009_manacher.cpp.html">string/verify/verify_str_009_manacher.cpp</a>
-* :warning: <a href="library/string/verify/verify_str_010_z_algorithm.cpp.html">string/verify/verify_str_010_z_algorithm.cpp</a>
-
-
-<div id="07414f4e15ca943e6cde032dec85d92f"></div>
-
-### structure
-
-* :heavy_check_mark: <a href="library/structure/disjoint_sparse_table.cpp.html">Disjoint Sparse Table <small>(structure/disjoint_sparse_table.cpp)</small></a>
-* :warning: <a href="library/structure/strc_002_bit.cpp.html">structure/strc_002_bit.cpp</a>
-* :warning: <a href="library/structure/strc_003_twodimbit.cpp.html">structure/strc_003_twodimbit.cpp</a>
-* :warning: <a href="library/structure/strc_004_bit_sec.cpp.html">structure/strc_004_bit_sec.cpp</a>
-* :warning: <a href="library/structure/strc_005_bit_zero_indexed.cpp.html">structure/strc_005_bit_zero_indexed.cpp</a>
-* :warning: <a href="library/structure/strc_006_twodimbit_zero_indexed.cpp.html">structure/strc_006_twodimbit_zero_indexed.cpp</a>
-* :heavy_check_mark: <a href="library/structure/strc_007_sparsetable.cpp.html">Sparse Table <small>(structure/strc_007_sparsetable.cpp)</small></a>
-* :warning: <a href="library/structure/strc_010_abst_sqrtdecomp.cpp.html">structure/strc_010_abst_sqrtdecomp.cpp</a>
-* :warning: <a href="library/structure/strc_011_weighted_unionfind.cpp.html">structure/strc_011_weighted_unionfind.cpp</a>
-* :warning: <a href="library/structure/strc_012_kd_tree.cpp.html">structure/strc_012_kd_tree.cpp</a>
-* :warning: <a href="library/structure/strc_013_treap.cpp.html">structure/strc_013_treap.cpp</a>
-* :warning: <a href="library/structure/strc_014_rbst.cpp.html">structure/strc_014_rbst.cpp</a>
-* :warning: <a href="library/structure/strc_015_partial_persistent_unionfind.cpp.html">structure/strc_015_partial_persistent_unionfind.cpp</a>
-* :warning: <a href="library/structure/strc_016_persistent_unionfind.cpp.html">structure/strc_016_persistent_unionfind.cpp</a>
-* :warning: <a href="library/structure/strc_017_persistent_array.cpp.html">structure/strc_017_persistent_array.cpp</a>
-* :warning: <a href="library/structure/strc_018_binarytrie.cpp.html">structure/strc_018_binarytrie.cpp</a>
-* :warning: <a href="library/structure/strc_019_intervalset.cpp.html">structure/strc_019_intervalset.cpp</a>
-* :heavy_check_mark: <a href="library/structure/strc_023_compact_bitvector.cpp.html">簡潔ビットベクトル (compact bit vector)</a>
-* :heavy_check_mark: <a href="library/structure/strc_024_static_wavelet_matrix.cpp.html">Wavelet 行列 (wavelet matrix)</a>
-* :heavy_check_mark: <a href="library/structure/union_find.cpp.html">Union-Find <small>(structure/union_find.cpp)</small></a>
-
-
-<div id="ea7b7b53f881f37feb2f447585bbcf5b"></div>
-
-### structure/old
-
-* :warning: <a href="library/structure/old/strc_002_segment_rmq.cpp.html">structure/old/strc_002_segment_rmq.cpp</a>
-* :warning: <a href="library/structure/old/strc_003_segment_rmq_sec.cpp.html">structure/old/strc_003_segment_rmq_sec.cpp</a>
-* :warning: <a href="library/structure/old/strc_007_bit_recursion.cpp.html">structure/old/strc_007_bit_recursion.cpp</a>
-* :warning: <a href="library/structure/old/strc_011_lazysegtree.cpp.html">structure/old/strc_011_lazysegtree.cpp</a>
-
-
-<div id="8a42e2f360efd149dd1f7c64fba9767e"></div>
-
-### structure/verify
-
-* :warning: <a href="library/structure/verify/verify_strc_004_bit_sec.cpp.html">structure/verify/verify_strc_004_bit_sec.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_008_abst_segtree.cpp.html">structure/verify/verify_strc_008_abst_segtree.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_009_abst_lazy_segtree.cpp.html">structure/verify/verify_strc_009_abst_lazy_segtree.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_020_dynamic_segtree.cpp.html">structure/verify/verify_strc_020_dynamic_segtree.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp.html">structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_022_dual_segtree.cpp.html">structure/verify/verify_strc_022_dual_segtree.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_023_compact_bitvector.cpp.html">structure/verify/verify_strc_023_compact_bitvector.cpp</a>
-* :warning: <a href="library/structure/verify/verify_strc_024_static_wavelet_matrix.cpp.html">structure/verify/verify_strc_024_static_wavelet_matrix.cpp</a>
-
-
-<div id="ab7b6be46d46663aa3f94309299ec2eb"></div>
-
-### セグメント木 (Segment Tree)
-
-* :warning: <a href="library/structure/strc_008_abst_segtree.cpp.html">セグメント木 (Segment Tree)</a>
-* :heavy_check_mark: <a href="library/structure/strc_009_abst_lazy_segtree.cpp.html">遅延伝播セグメント木 (Lazy Segment Tree)</a>
-* :warning: <a href="library/structure/strc_020_dynamic_segtree.cpp.html">動的セグメント木 (Dynamic Segment Tree)</a>
-* :warning: <a href="library/structure/strc_021_dynamic_lazy_segtree.cpp.html">動的遅延セグメント木 (Dynamic Lazy Segment Tree)</a>
-* :warning: <a href="library/structure/strc_022_dual_segtree.cpp.html">双対セグメント木 (Dual Segment Tree)</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/0516/cumulative_sum.test.cpp.html">verifying_test/AOJ/0516/cumulative_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp.html">verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp.html">verifying_test/AOJ/ALDS1_14_B/SuffixArray.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (01)</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp.html">AOJ ALDS_1_5_D: 反転数 (02)</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_1_A/geometry.test.cpp.html">verifying_test/AOJ/CGL_1_A/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_1_B/geometry.test.cpp.html">verifying_test/AOJ/CGL_1_B/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_1_C/geometry.test.cpp.html">verifying_test/AOJ/CGL_1_C/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_2_A/geometry.test.cpp.html">verifying_test/AOJ/CGL_2_A/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_2_B/geometry.test.cpp.html">verifying_test/AOJ/CGL_2_B/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_2_C/geometry.test.cpp.html">verifying_test/AOJ/CGL_2_C/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_2_D/geometry.test.cpp.html">verifying_test/AOJ/CGL_2_D/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_3_A/geometry.test.cpp.html">verifying_test/AOJ/CGL_3_A/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_3_C/geometry.test.cpp.html">verifying_test/AOJ/CGL_3_C/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_4_A/geometry.test.cpp.html">verifying_test/AOJ/CGL_4_A/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_4_B/geometry.test.cpp.html">verifying_test/AOJ/CGL_4_B/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_4_C/geometry.test.cpp.html">verifying_test/AOJ/CGL_4_C/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_A/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_A/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_D/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_D/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_E/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_E/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_F/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_F/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/CGL_7_G/geometry.test.cpp.html">verifying_test/AOJ/CGL_7_G/geometry.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_1_A/union_find.test.cpp.html">verifying_test/AOJ/DSL_1_A/union_find.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp.html">verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/GRL_5_D/hld.test.cpp.html">verifying_test/AOJ/GRL_5_D/hld.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp.html">verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/SegmentAddGetMin.test.cpp.html">verifying_test/yosupo/SegmentAddGetMin.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp.html">verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp.html">verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp.html">verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/aplusb/cstdio.test.cpp</a>
-* :heavy_check_mark: <a href="verify/verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp.html">verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp</a>
-
-

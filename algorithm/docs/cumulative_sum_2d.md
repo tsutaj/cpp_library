@@ -1,0 +1,3 @@
+- `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
+- `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
+  - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり
