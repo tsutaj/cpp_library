@@ -52,7 +52,7 @@ struct NTT {
 
     vector<ll> multiply(const vector<ll> &x, const vector<ll> &y) {
         if(x == y) return multiply(x);
-        int sz = x.size() + y.size() + 1;
+        int sz = x.size() + y.size() - 1;
         int N = 1, K = 0; while(N < sz) N <<= 1, K++;
         ll inv_N = mod_pow(N, mod-2);
 
@@ -70,7 +70,7 @@ struct NTT {
     }
 
     vector<ll> multiply(const vector<ll> &x) {
-        int sz = x.size() + x.size() + 1;
+        int sz = x.size() + x.size() - 1;
         int N = 1, K = 0; while(N < sz) N <<= 1, K++;
         ll inv_N = mod_pow(N, mod-2);
 

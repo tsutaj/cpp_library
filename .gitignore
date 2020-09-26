@@ -4,5 +4,6 @@
 *.pdf
 .DS_Store
 *~
+#*
 *.in
 md-output/

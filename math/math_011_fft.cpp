@@ -38,7 +38,7 @@ struct FFT {
     }
 
     vector<Tp> multiply(const vector<Tp> &x, const vector<Tp> &y) {
-        int sz = x.size() + y.size() + 1;
+        int sz = x.size() + y.size() - 1;
         int N = 1, K = 0; while(N < sz) N <<= 1, K++;
 
         vector<Tp> X(N), Y(N);
@@ -54,7 +54,7 @@ struct FFT {
     }
 
     vector<Tp> multiply(const vector<Tp> &x) {
-        int sz = x.size() + x.size() + 1;
+        int sz = x.size() + x.size() - 1;
         int N = 1, K = 0; while(N < sz) N <<= 1, K++;
 
         vector<Tp> X(N);
