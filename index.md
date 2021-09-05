@@ -478,11 +478,6 @@ data:
     - icon: ':warning:'
       path: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
       title: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
-  - name: verifying_test/AtCoder/DWANGO2016
-    pages:
-    - icon: ':warning:'
-      path: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
-      title: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
   - name: verifying_test/build-pages-pkg
     pages:
     - icon: ':warning:'
@@ -648,11 +643,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
       title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - name: verifying_test/AtCoder/ABC217
+    pages:
+    - icon: ':x:'
+      path: verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
+      title: verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
   - name: verifying_test/AtCoder/ARC070
     pages:
     - icon: ':x:'
       path: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
       title: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+  - name: verifying_test/AtCoder/DWANGO2016
+    pages:
+    - icon: ':x:'
+      path: verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
+      title: verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
   - name: verifying_test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

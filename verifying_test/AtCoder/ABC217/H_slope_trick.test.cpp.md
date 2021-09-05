@@ -11,11 +11,11 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/arc070/tasks/arc070_c
+    PROBLEM: https://atcoder.jp/contests/abc217/tasks/abc217_h
     links:
-    - https://atcoder.jp/contests/arc070/tasks/arc070_c
-  bundledCode: "#line 1 \"verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\n\n#include\
+    - https://atcoder.jp/contests/abc217/tasks/abc217_h
+  bundledCode: "#line 1 \"verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp\"\n\
+    #define PROBLEM \"https://atcoder.jp/contests/abc217/tasks/abc217_h\"\n\n#include\
     \ <cstdio>\n#include <cassert>\n#include <vector>\n#line 1 \"structure/slope_trick.cpp\"\
     \n\n\n\n#include <queue>\n#line 6 \"structure/slope_trick.cpp\"\n#include <algorithm>\n\
     #line 8 \"structure/slope_trick.cpp\"\n\n// \u533A\u5206\u7DDA\u5F62\u51F8\u95A2\
@@ -55,35 +55,37 @@ data:
     \ bool& isUbInfty) const {\n  if(ptsL.size()) {\n    lb = ptsL.top() + addL;\n\
     \    isLbInfty = false;\n  }\n  else {\n    isLbInfty = true;\n  }\n\n  if(ptsR.size())\
     \ {\n    ub = ptsR.top() + addR;\n    isUbInfty = false;\n  }\n  else {\n    isUbInfty\
-    \ = true;\n  }\n}\n\n\n#line 7 \"verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp\"\
-    \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N;\
-    \ scanf(\"%d\", &N);\n  std::vector<ll> L(N), R(N);\n  for(int i=0; i<N; i++)\
-    \ {\n    scanf(\"%lld%lld\", &L[i], &R[i]);\n    if(i == 0) {\n      slope.addAbsFunc(L[i]);\n\
-    \    }\n    else {\n      // dp[i][x] = min_{x - (R[i-1] - L[i-1]) <= j <= x +\
-    \ (R[i] - L[i])} dp[i-1][j]\n      slope.applySlidingWindow(L[i] - R[i], R[i-1]\
-    \ - L[i-1]);\n      slope.addAbsFunc(L[i]);\n    }\n  }\n  printf(\"%lld\\n\"\
+    \ = true;\n  }\n}\n\n\n#line 7 \"verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp\"\
+    \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n\n  int\
+    \ N; scanf(\"%d\", &N);\n  for(int i=0; i<2*N; i++) {\n    slope.addAbsFunc(0);\n\
+    \  }\n  ll prevT = 0;\n  for(int i=0; i<N; i++) {\n    ll t, d, x; scanf(\"%lld%lld%lld\"\
+    , &t, &d, &x);\n    // \u81EA\u7531\u306A\u6642\u9593\u304C dur \u79D2\u3042\u308B\
+    \ -> [x-dur, x+dur] \u304B\u3089 x \u306B\u3044\u3051\u308B\n    ll dur = t -\
+    \ prevT;\n    slope.applySlidingWindow(-dur, +dur);\n    if(d == 0) slope.addAmxFunc(x);\n\
+    \    if(d == 1) slope.addXmaFunc(x);\n    prevT = t;\n  }\n  printf(\"%lld\\n\"\
     , slope.getMinVal());\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\n\n\
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc217/tasks/abc217_h\"\n\n\
     #include <cstdio>\n#include <cassert>\n#include <vector>\n#include \"../../../structure/slope_trick.cpp\"\
-    \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N;\
-    \ scanf(\"%d\", &N);\n  std::vector<ll> L(N), R(N);\n  for(int i=0; i<N; i++)\
-    \ {\n    scanf(\"%lld%lld\", &L[i], &R[i]);\n    if(i == 0) {\n      slope.addAbsFunc(L[i]);\n\
-    \    }\n    else {\n      // dp[i][x] = min_{x - (R[i-1] - L[i-1]) <= j <= x +\
-    \ (R[i] - L[i])} dp[i-1][j]\n      slope.applySlidingWindow(L[i] - R[i], R[i-1]\
-    \ - L[i-1]);\n      slope.addAbsFunc(L[i]);\n    }\n  }\n  printf(\"%lld\\n\"\
+    \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n\n  int\
+    \ N; scanf(\"%d\", &N);\n  for(int i=0; i<2*N; i++) {\n    slope.addAbsFunc(0);\n\
+    \  }\n  ll prevT = 0;\n  for(int i=0; i<N; i++) {\n    ll t, d, x; scanf(\"%lld%lld%lld\"\
+    , &t, &d, &x);\n    // \u81EA\u7531\u306A\u6642\u9593\u304C dur \u79D2\u3042\u308B\
+    \ -> [x-dur, x+dur] \u304B\u3089 x \u306B\u3044\u3051\u308B\n    ll dur = t -\
+    \ prevT;\n    slope.applySlidingWindow(-dur, +dur);\n    if(d == 0) slope.addAmxFunc(x);\n\
+    \    if(d == 1) slope.addXmaFunc(x);\n    prevT = t;\n  }\n  printf(\"%lld\\n\"\
     , slope.getMinVal());\n  return 0;\n}"
   dependsOn:
   - structure/slope_trick.cpp
   isVerificationFile: true
-  path: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+  path: verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
   requiredBy: []
-  timestamp: '2021-09-05 23:10:11+09:00'
+  timestamp: '2021-09-05 23:11:35+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+documentation_of: verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
 layout: document
 redirect_from:
-- /verify/verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
-- /verify/verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp.html
-title: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+- /verify/verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
+- /verify/verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp.html
+title: verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
 ---
