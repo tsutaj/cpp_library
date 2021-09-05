@@ -27,19 +27,19 @@ SlopeTrick slope;
 - `void addConstFunc(Tp a)`
   - 定数関数 $a$ を加算
   - Time Complexity: $O(1)$
-- `void addIncreasingFunc(Tp a)`
+- `void addXmaFunc(Tp a)`
   - $f(x) = (x - a)_{+} = \max \left( 0, x - a \right)$ を加算
   - Time Complexity: $O(\log N)$
-- `void addDecreasingFunc(Tp a)`
+- `void addAmxFunc(Tp a)`
   - $f(x) = (a - x)_{+} = \max \left( 0, a - x \right)$ を加算
   - Time Complexity: $O(\log N)$
 - `void addAbsFunc(Tp a)`
   - $f(x) = \left| x - a \right| = (x - a)_{+} + (a - x)_{+}$を加算
   - Time Complexity: $O(\log N)$
-- `void cumulateLeft()`
+- `void accumulateLeft()`
   - 左側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \leq x} F(y)$ を満たすような $G(x)$ に変化させる
   - Time Complexity: $O(1)$
-- `void cumulateRight()`
+- `void accumulateRight()`
   - 右側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \geq x} F(y)$ を満たすような $G(x)$ に変化させる
   - Time Complexity: $O(1)$
 - `void applyTranslation(Tp a)`

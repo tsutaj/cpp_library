@@ -14,15 +14,15 @@ struct SlopeTrick {
   // 定数関数 a を加算: O(1)
   void addConstFunc(Tp a) { minF += a; }
   // f(x) = (x - a)+ = max(0, x - a) を加算: O(log N)
-  void addIncreasingFunc(Tp a);
+  void addXmaFunc(Tp a);
   // f(x) = (a - x)+ = max(0, a - x) を加算: O(log N)
-  void addDecreasingFunc(Tp a);
+  void addAmxFunc(Tp a);
   // f(x) = |x - a| を加算: O(log N)
   void addAbsFunc(Tp a);
-  // 左側累積 min (\min_{y \leq x} f(y)) を取る: amortize O(1)
-  void cumulateLeft() { ptsR = decltype(ptsR)(); }
-  // 右側累積 min (\min_{y \geq x} f(y)) を取る: amortize O(1)
-  void cumulateRight() { ptsL = decltype(ptsL)(); }
+  // 左側累積 min (\min_{y \leq x} f(y)) を取る: O(1)
+  void accumulateLeft() { ptsR = decltype(ptsR)(); }
+  // 右側累積 min (\min_{y \geq x} f(y)) を取る: O(1)
+  void accumulateRight() { ptsL = decltype(ptsL)(); }
   // 平行移動 すなわち g(x) = f(x - a) のように更新: O(1)
   void applyTranslation(Tp a);
   // スライド最小値 すなわち g(x) = \min_{y \in [x-b, x-a]} f(y) のように更新: O(1)
@@ -41,7 +41,7 @@ private:
 };
 
 template <typename Tp>
-void SlopeTrick<Tp>::addIncreasingFunc(Tp a) {
+void SlopeTrick<Tp>::addXmaFunc(Tp a) {
   if(ptsL.size()) {
     minF += std::max((Tp)0, (ptsL.top() + addL) - a);
   }
@@ -51,7 +51,7 @@ void SlopeTrick<Tp>::addIncreasingFunc(Tp a) {
 }
 
 template <typename Tp>
-void SlopeTrick<Tp>::addDecreasingFunc(Tp a) {
+void SlopeTrick<Tp>::addAmxFunc(Tp a) {
   if(ptsR.size()) {
     minF += std::max((Tp)0, a - (ptsR.top() + addR));
   }
@@ -62,8 +62,8 @@ void SlopeTrick<Tp>::addDecreasingFunc(Tp a) {
 
 template <typename Tp>
 void SlopeTrick<Tp>::addAbsFunc(Tp a) {
-  addIncreasingFunc(a);
-  addDecreasingFunc(a);
+  addXmaFunc(a);
+  addAmxFunc(a);
 }
 
 template <typename Tp>
