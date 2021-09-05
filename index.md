@@ -360,7 +360,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/disjoint_sparse_table.cpp
       title: Disjoint Sparse Table
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/slope_trick.cpp
       title: Slope Trick
     - icon: ':warning:'
@@ -643,6 +643,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
       title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - name: verifying_test/AtCoder/ARC070
+    pages:
+    - icon: ':x:'
+      path: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+      title: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
   - name: verifying_test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

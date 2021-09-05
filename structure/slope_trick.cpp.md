@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
     title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+    title: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structure/slope_trick.cpp\"\n\n\n\n#include <queue>\n#include\
@@ -96,9 +99,10 @@ data:
   path: structure/slope_trick.cpp
   requiredBy: []
   timestamp: '2021-09-05 19:51:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
 documentation_of: structure/slope_trick.cpp
 layout: document
 title: Slope Trick
