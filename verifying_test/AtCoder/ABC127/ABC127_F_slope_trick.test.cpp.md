@@ -25,15 +25,15 @@ data:
     \ = (x - a)+ = max(0, x - a) \u3092\u52A0\u7B97: O(log N)\n  void addIncreasingFunc(Tp\
     \ a);\n  // f(x) = (a - x)+ = max(0, a - x) \u3092\u52A0\u7B97: O(log N)\n  void\
     \ addDecreasingFunc(Tp a);\n  // f(x) = |x - a| \u3092\u52A0\u7B97: O(log N)\n\
-    \  void addAbsFunc(Tp a);  \n  // \u5DE6\u5074\u7D2F\u7A4D min (\\min_{y \\leq\
-    \ x} f(y)) \u3092\u53D6\u308B: amortize O(1)\n  void cumulateLeft(Tp x) { ptsR.clear();\
+    \  void addAbsFunc(Tp a);\n  // \u5DE6\u5074\u7D2F\u7A4D min (\\min_{y \\leq x}\
+    \ f(y)) \u3092\u53D6\u308B: amortize O(1)\n  void cumulateLeft() { ptsR = decltype(ptsR)();\
     \ }\n  // \u53F3\u5074\u7D2F\u7A4D min (\\min_{y \\geq x} f(y)) \u3092\u53D6\u308B\
-    : amortize O(1)\n  void cumulateRight(Tp x) { ptsL.clear(); }\n  // \u5E73\u884C\
-    \u79FB\u52D5 \u3059\u306A\u308F\u3061 g(x) = f(x - a) \u306E\u3088\u3046\u306B\
-    \u66F4\u65B0: O(1)\n  void applyTranslation(Tp a);\n  // \u30B9\u30E9\u30A4\u30C9\
-    \u6700\u5C0F\u5024 \u3059\u306A\u308F\u3061 g(x) = \\min_{y \\in [x-b, x-a]} f(y)\
-    \ \u306E\u3088\u3046\u306B\u66F4\u65B0: O(1)\n  void applySlidingWindow(Tp a,\
-    \ Tp b);\n\n  // \u95A2\u6570\u306E\u6700\u5C0F\u5024\u3092\u8FD4\u3059: O(1)\n\
+    : amortize O(1)\n  void cumulateRight() { ptsL = decltype(ptsL)(); }\n  // \u5E73\
+    \u884C\u79FB\u52D5 \u3059\u306A\u308F\u3061 g(x) = f(x - a) \u306E\u3088\u3046\
+    \u306B\u66F4\u65B0: O(1)\n  void applyTranslation(Tp a);\n  // \u30B9\u30E9\u30A4\
+    \u30C9\u6700\u5C0F\u5024 \u3059\u306A\u308F\u3061 g(x) = \\min_{y \\in [x-b, x-a]}\
+    \ f(y) \u306E\u3088\u3046\u306B\u66F4\u65B0: O(1)\n  void applySlidingWindow(Tp\
+    \ a, Tp b);\n\n  // \u95A2\u6570\u306E\u6700\u5C0F\u5024\u3092\u8FD4\u3059: O(1)\n\
     \  Tp getMinVal() const { return minF; }\n  // \u95A2\u6570\u306E\u5024\u304C\u6700\
     \u5C0F\u306B\u306A\u308B\u3088\u3046\u306A x \u306E\u7BC4\u56F2\u3092\u8FD4\u3059\
     : O(1)\n  void getArgminInterval(Tp& lb, bool& isLbInfty, Tp& ub, bool& isUbInfty)\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
   requiredBy: []
-  timestamp: '2021-09-05 19:04:25+09:00'
+  timestamp: '2021-09-05 19:51:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
