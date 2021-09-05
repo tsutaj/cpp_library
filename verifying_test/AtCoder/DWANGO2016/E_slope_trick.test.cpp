@@ -15,7 +15,7 @@ int main() {
     ps[t].emplace_back(p);
   }
   for(int i=0; i<100010; i++) {
-    slope.cumulateLeft();
+    slope.accumulateLeft();
     for(auto x : ps[i]) {
       slope.addAbsFunc(x);
     }
