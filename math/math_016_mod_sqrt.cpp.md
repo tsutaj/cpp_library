@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_016_mod_sqrt.cpp
     title: math/verify/verify_math_016_mod_sqrt.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

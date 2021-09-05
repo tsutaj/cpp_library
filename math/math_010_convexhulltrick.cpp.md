@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verifying_test/yosupo/SegmentAddGetMin.test.cpp
     title: verifying_test/yosupo/SegmentAddGetMin.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

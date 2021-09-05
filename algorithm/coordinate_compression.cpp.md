@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp
     title: verifying_test/yosupo/data_structure/associative_array/coordinate_compression.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

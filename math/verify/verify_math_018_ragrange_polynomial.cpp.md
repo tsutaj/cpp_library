@@ -9,6 +9,7 @@ data:
     title: math/math_018_ragrange_polynomial.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

@@ -6,6 +6,7 @@ data:
     path: structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp
     title: structure/verify/verify_strc_021_dynamic_lazy_segtree.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

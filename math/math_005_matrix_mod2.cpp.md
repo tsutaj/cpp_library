@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_005_matrix_mod2.cpp
     title: math/verify/verify_math_005_matrix_mod2.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

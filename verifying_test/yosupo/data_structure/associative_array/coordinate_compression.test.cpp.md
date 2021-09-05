@@ -6,6 +6,7 @@ data:
     title: "\u5EA7\u6A19\u5727\u7E2E (Coordinate Compression)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

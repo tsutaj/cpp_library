@@ -6,6 +6,7 @@ data:
     path: structure/verify/verify_strc_004_bit_sec.cpp
     title: structure/verify/verify_strc_004_bit_sec.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

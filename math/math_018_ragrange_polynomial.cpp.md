@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_018_ragrange_polynomial.cpp
     title: math/verify/verify_math_018_ragrange_polynomial.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

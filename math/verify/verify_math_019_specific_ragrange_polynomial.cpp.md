@@ -5,13 +5,14 @@ data:
     path: math/math_017_modint.cpp
     title: math/math_017_modint.cpp
   - icon: ':warning:'
-    path: math/math_020_combination.cpp
-    title: math/math_020_combination.cpp
-  - icon: ':warning:'
     path: math/math_019_specific_ragrange_polynomial.cpp
     title: math/math_019_specific_ragrange_polynomial.cpp
+  - icon: ':warning:'
+    path: math/math_020_combination.cpp
+    title: math/math_020_combination.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

@@ -6,6 +6,7 @@ data:
     title: string/str_010_z_algorithm.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

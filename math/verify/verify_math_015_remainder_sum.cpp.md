@@ -2,13 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: math/math_017_modint.cpp
-    title: math/math_017_modint.cpp
-  - icon: ':warning:'
     path: math/math_015_remainder_sum.cpp
     title: math/math_015_remainder_sum.cpp
+  - icon: ':warning:'
+    path: math/math_017_modint.cpp
+    title: math/math_017_modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

@@ -3,12 +3,13 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: structure/verify/verify_strc_008_abst_segtree.cpp
-    title: structure/verify/verify_strc_008_abst_segtree.cpp
-  - icon: ':warning:'
     path: string/verify/verify_str_009_manacher.cpp
     title: string/verify/verify_str_009_manacher.cpp
+  - icon: ':warning:'
+    path: structure/verify/verify_strc_008_abst_segtree.cpp
+    title: structure/verify/verify_strc_008_abst_segtree.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
@@ -70,8 +71,8 @@ data:
   isVerificationFile: false
   path: structure/strc_008_abst_segtree.cpp
   requiredBy:
-  - structure/verify/verify_strc_008_abst_segtree.cpp
   - string/verify/verify_str_009_manacher.cpp
+  - structure/verify/verify_strc_008_abst_segtree.cpp
   timestamp: '2019-12-09 17:27:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

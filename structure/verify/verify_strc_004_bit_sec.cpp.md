@@ -9,6 +9,7 @@ data:
     title: structure/strc_004_bit_sec.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

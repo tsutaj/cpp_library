@@ -4,11 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
-    title: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/0516/cumulative_sum.test.cpp
     title: verifying_test/AOJ/0516/cumulative_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
+    title: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -66,8 +67,8 @@ data:
   timestamp: '2020-06-21 23:39:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
   - verifying_test/AOJ/0516/cumulative_sum.test.cpp
+  - verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
 documentation_of: algorithm/cumulative_sum.cpp
 layout: document
 redirect_from:

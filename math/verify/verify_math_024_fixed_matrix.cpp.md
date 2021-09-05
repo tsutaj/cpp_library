@@ -2,17 +2,18 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: math/math_024_fixed_matrix.cpp
-    title: math/math_024_fixed_matrix.cpp
-  - icon: ':warning:'
     path: math/math_017_modint.cpp
     title: math/math_017_modint.cpp
+  - icon: ':warning:'
+    path: math/math_024_fixed_matrix.cpp
+    title: math/math_024_fixed_matrix.cpp
   - icon: ':heavy_check_mark:'
     path: structure/strc_009_abst_lazy_segtree.cpp
     title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
       \ Tree)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

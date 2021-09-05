@@ -4,11 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
-    title: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/DSL_1_A/union_find.test.cpp
     title: verifying_test/AOJ/DSL_1_A/union_find.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
+    title: verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -55,8 +56,8 @@ data:
   timestamp: '2020-04-10 01:41:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
   - verifying_test/AOJ/DSL_1_A/union_find.test.cpp
+  - verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
 documentation_of: structure/union_find.cpp
 layout: document
 redirect_from:

@@ -6,6 +6,7 @@ data:
     path: string/verify/verify_str_009_manacher.cpp
     title: string/verify/verify_str_009_manacher.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

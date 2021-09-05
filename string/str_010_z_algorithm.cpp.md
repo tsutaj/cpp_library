@@ -6,6 +6,7 @@ data:
     path: string/verify/verify_str_010_z_algorithm.cpp
     title: string/verify/verify_str_010_z_algorithm.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_024_fixed_matrix.cpp
     title: math/verify/verify_math_024_fixed_matrix.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

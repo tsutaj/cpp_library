@@ -2,16 +2,17 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: math/math_017_modint.cpp
-    title: math/math_017_modint.cpp
-  - icon: ':warning:'
     path: math/math_004_matrix.cpp
     title: math/math_004_matrix.cpp
+  - icon: ':warning:'
+    path: math/math_017_modint.cpp
+    title: math/math_017_modint.cpp
   - icon: ':warning:'
     path: math/math_023_matrix_utils_modp.cpp
     title: math/math_023_matrix_utils_modp.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

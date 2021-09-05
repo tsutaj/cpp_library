@@ -4,14 +4,15 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+    title: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
     title: verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
     path: verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
     title: verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
-    title: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -67,9 +68,9 @@ data:
   timestamp: '2020-07-15 08:57:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
-  - verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
   - verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
+  - verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
+  - verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
 documentation_of: structure/disjoint_sparse_table.cpp
 layout: document
 redirect_from:

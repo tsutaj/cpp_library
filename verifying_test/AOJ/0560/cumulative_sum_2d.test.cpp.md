@@ -6,6 +6,7 @@ data:
     title: "2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

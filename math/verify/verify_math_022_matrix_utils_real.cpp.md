@@ -9,6 +9,7 @@ data:
     title: math/math_022_matrix_utils_real.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

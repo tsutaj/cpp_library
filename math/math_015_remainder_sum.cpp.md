@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_015_remainder_sum.cpp
     title: math/verify/verify_math_015_remainder_sum.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

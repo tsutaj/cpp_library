@@ -6,6 +6,7 @@ data:
     path: math/verify/verify_math_014_bsgs.cpp
     title: math/verify/verify_math_014_bsgs.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

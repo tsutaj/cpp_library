@@ -10,37 +10,38 @@ data:
     title: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
-    title: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
-    title: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
     title: verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
     title: verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
+    path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
     title: "AOJ ALDS_1_5_D: \u53CD\u8EE2\u6570"
   - icon: ':heavy_check_mark:'
-    path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
+    path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
     title: "AOJ ALDS_1_5_D: \u53CD\u8EE2\u6570"
   - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
     title: verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
+    title: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+    title: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: ./docs/strc_024_static_wavelet_matrix.md
     document_title: "Wavelet \u884C\u5217 (wavelet matrix)"
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ structure/strc_024_static_wavelet_matrix.cpp: line 7: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
@@ -243,13 +244,13 @@ data:
   timestamp: '2020-07-13 09:29:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
-  - verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
-  - verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
-  - verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
-  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
   - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
+  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
+  - verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
+  - verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
+  - verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
   - verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
+  - verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
 documentation_of: structure/strc_024_static_wavelet_matrix.cpp
 layout: document
 redirect_from:
