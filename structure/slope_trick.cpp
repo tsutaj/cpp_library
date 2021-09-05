@@ -18,11 +18,11 @@ struct SlopeTrick {
   // f(x) = (a - x)+ = max(0, a - x) を加算: O(log N)
   void addDecreasingFunc(Tp a);
   // f(x) = |x - a| を加算: O(log N)
-  void addAbsFunc(Tp a);  
+  void addAbsFunc(Tp a);
   // 左側累積 min (\min_{y \leq x} f(y)) を取る: amortize O(1)
-  void cumulateLeft(Tp x) { ptsR.clear(); }
+  void cumulateLeft() { ptsR = decltype(ptsR)(); }
   // 右側累積 min (\min_{y \geq x} f(y)) を取る: amortize O(1)
-  void cumulateRight(Tp x) { ptsL.clear(); }
+  void cumulateRight() { ptsL = decltype(ptsL)(); }
   // 平行移動 すなわち g(x) = f(x - a) のように更新: O(1)
   void applyTranslation(Tp a);
   // スライド最小値 すなわち g(x) = \min_{y \in [x-b, x-a]} f(y) のように更新: O(1)

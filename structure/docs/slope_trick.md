@@ -36,10 +36,10 @@ SlopeTrick slope;
 - `void addAbsFunc(Tp a)`
   - $f(x) = \left| x - a \right| = (x - a)_{+} + (a - x)_{+}$を加算
   - Time Complexity: $O(\log N)$
-- `void cumulateLeft(Tp x)`
+- `void cumulateLeft()`
   - 左側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \leq x} F(y)$ を満たすような $G(x)$ に変化させる
   - Time Complexity: $O(1)$
-- `void cumulateRight(Tp x)`
+- `void cumulateRight()`
   - 右側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \geq x} F(y)$ を満たすような $G(x)$ に変化させる
   - Time Complexity: $O(1)$
 - `void applyTranslation(Tp a)`
@@ -55,7 +55,7 @@ SlopeTrick slope;
   - 関数の最小値を返す
   - Time Complexity: $O(1)$
 - `Tp getArgminInterval(Tp& lb, bool& isLbInfty, Tp& ub, bool& isUbInfty)`
-  - 関数の値が最小となるような $x$ の範囲を求める
+  - 関数の値が最小となるような $x$ の範囲 $\left[ \mathrm{lb}, \mathrm{ub} \right]$ を求める
   - $x$ の範囲の下限が $-\infty$ であるとき、かつそのときに限り `isLbInfty = true` となり、`lb` の値は不定
   - $x$ の範囲の上限が $\infty$ であるとき、かつそのときに限り `isUbInfty = true` となり、`ub` の値は不定
 
