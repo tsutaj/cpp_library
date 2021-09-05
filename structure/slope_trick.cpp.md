@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
+    title: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
@@ -97,7 +100,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: structure/slope_trick.cpp
-  requiredBy: []
+  requiredBy:
+  - verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
   timestamp: '2021-09-05 19:51:01+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

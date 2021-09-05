@@ -478,6 +478,11 @@ data:
     - icon: ':warning:'
       path: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
       title: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
+  - name: verifying_test/AtCoder/DWANGO2016
+    pages:
+    - icon: ':warning:'
+      path: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
+      title: verifying_test/AtCoder/DWANGO2016/E_slope_trick.cpp
   - name: verifying_test/build-pages-pkg
     pages:
     - icon: ':warning:'
