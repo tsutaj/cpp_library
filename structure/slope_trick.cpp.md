@@ -145,7 +145,7 @@ SlopeTrick slope;
   - $f(x) = (a - x)_{+} = \max \left( 0, a - x \right)$ を加算
   - Time Complexity: $O(\log N)$
 - `void addAbsFunc(Tp a)`
-  - $f(x) = \mathrm{abs} \left( x - a \right) = (x - a)_{+} + (a - x)_{+}$を加算
+  - $f(x) = \lvert x - a \rvert = (x - a)\_{+} + (a - x)\_{+}$を加算
   - Time Complexity: $O(\log N)$
 - `void accumulateLeft()`
   - 左側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \leq x} F(y)$ を満たすような $G(x)$ に変化させる
