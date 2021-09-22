@@ -16,6 +16,10 @@ private:
 public:
     // 初期化 UnionFind uni(n) のように宣言すれば良い
     UnionFind(int _n) : n(_n), size_(_n), uf(_n, -1) {}
+    void reset() {
+        size_ = n;
+        fill(uf.begin(), uf.end(), -1);
+    }
     // find (木の根を求める)
     int find(int x) {return (uf[x] < 0) ? x : uf[x] = find(uf[x]);}
     // x と y が同じ集合に属するかどうか
