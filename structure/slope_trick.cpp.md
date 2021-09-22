@@ -105,10 +105,10 @@ data:
   timestamp: '2021-09-05 23:10:11+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
-  - verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
-  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
   - verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
+  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+  - verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
 documentation_of: structure/slope_trick.cpp
 layout: document
 title: Slope Trick
@@ -145,7 +145,7 @@ SlopeTrick slope;
   - $f(x) = (a - x)_{+} = \max \left( 0, a - x \right)$ を加算
   - Time Complexity: $O(\log N)$
 - `void addAbsFunc(Tp a)`
-  - $f(x) = \left| x - a \right| = (x - a)_{+} + (a - x)_{+}$を加算
+  - $f(x) = \lvert x - a \rvert = (x - a)_{+} + (a - x)_{+}$を加算
   - Time Complexity: $O(\log N)$
 - `void accumulateLeft()`
   - 左側累積 min を取る。すなわち、持つ関数を $G(x) = \min_{y \leq x} F(y)$ を満たすような $G(x)$ に変化させる

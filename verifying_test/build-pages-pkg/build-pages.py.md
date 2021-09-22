@@ -10,9 +10,9 @@ data:
     links:
     - https://github.com/tsutaj/cpp_library)',
     - https://travis-ci.com/tsutaj/cpp_library.svg?branch=master)](https://travis-ci.com/tsutaj/cpp_library)\n\n*
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/python.py\"\
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "# -*- coding: utf-8 -*-\nimport sys, os, glob, re, urllib, shutil, markdown\n\
     import collections\n\nclass FileParser:\n    # \u30D5\u30A1\u30A4\u30EB\u30D1\u30B9\
