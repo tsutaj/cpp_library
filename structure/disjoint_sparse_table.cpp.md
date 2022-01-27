@@ -16,17 +16,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/disjoint_sparse_table.md
+    _deprecated_at_docs: docs/structure/disjoint_sparse_table.md
     document_title: Disjoint Sparse Table
     links:
     - https://noshi91.hatenablog.com/entry/2018/05/08/183946
   bundledCode: "#line 2 \"structure/disjoint_sparse_table.cpp\"\n\n// @brief Disjoint\
     \ Sparse Table\n// @see https://noshi91.hatenablog.com/entry/2018/05/08/183946\n\
-    // @docs ./docs/disjoint_sparse_table.md\n\n#include <vector>\n#include <functional>\n\
-    #include <cassert>\n\ntemplate <typename Tp>\nstruct DisjointSparseTable {\n \
-    \   int N, LN;\n    vector<Tp> A;\n    vector< vector<Tp> > seg_l, seg_r;\n  \
-    \  function<Tp(Tp, Tp)> cmb_f;\n    \n    DisjointSparseTable() = default;\n \
-    \   DisjointSparseTable(vector<Tp> A_,\n                        function<Tp(Tp,\
+    // @docs docs/structure/disjoint_sparse_table.md\n\n#include <vector>\n#include\
+    \ <functional>\n#include <cassert>\n\ntemplate <typename Tp>\nstruct DisjointSparseTable\
+    \ {\n    int N, LN;\n    vector<Tp> A;\n    vector< vector<Tp> > seg_l, seg_r;\n\
+    \    function<Tp(Tp, Tp)> cmb_f;\n    \n    DisjointSparseTable() = default;\n\
+    \    DisjointSparseTable(vector<Tp> A_,\n                        function<Tp(Tp,\
     \ Tp)> cmb_f_)\n        : A(A_), cmb_f(cmb_f_) {\n        N = A.size(), LN = 1;\n\
     \        while((1<<LN) < N) LN++;\n        seg_l.resize(LN, vector<Tp>(N));\n\
     \        seg_r.resize(LN, vector<Tp>(N));\n        build(A);\n    }\n\n    void\
@@ -42,11 +42,11 @@ data:
     \ <= N); r--;\n        if(l == r) return A[l];\n        int k = 31 - __builtin_clz((unsigned\
     \ int)(l ^ r));\n        return cmb_f(seg_l[k][l], seg_r[k][r]);\n    }\n};\n"
   code: "#pragma once\n\n// @brief Disjoint Sparse Table\n// @see https://noshi91.hatenablog.com/entry/2018/05/08/183946\n\
-    // @docs ./docs/disjoint_sparse_table.md\n\n#include <vector>\n#include <functional>\n\
-    #include <cassert>\n\ntemplate <typename Tp>\nstruct DisjointSparseTable {\n \
-    \   int N, LN;\n    vector<Tp> A;\n    vector< vector<Tp> > seg_l, seg_r;\n  \
-    \  function<Tp(Tp, Tp)> cmb_f;\n    \n    DisjointSparseTable() = default;\n \
-    \   DisjointSparseTable(vector<Tp> A_,\n                        function<Tp(Tp,\
+    // @docs docs/structure/disjoint_sparse_table.md\n\n#include <vector>\n#include\
+    \ <functional>\n#include <cassert>\n\ntemplate <typename Tp>\nstruct DisjointSparseTable\
+    \ {\n    int N, LN;\n    vector<Tp> A;\n    vector< vector<Tp> > seg_l, seg_r;\n\
+    \    function<Tp(Tp, Tp)> cmb_f;\n    \n    DisjointSparseTable() = default;\n\
+    \    DisjointSparseTable(vector<Tp> A_,\n                        function<Tp(Tp,\
     \ Tp)> cmb_f_)\n        : A(A_), cmb_f(cmb_f_) {\n        N = A.size(), LN = 1;\n\
     \        while((1<<LN) < N) LN++;\n        seg_l.resize(LN, vector<Tp>(N));\n\
     \        seg_r.resize(LN, vector<Tp>(N));\n        build(A);\n    }\n\n    void\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: false
   path: structure/disjoint_sparse_table.cpp
   requiredBy: []
-  timestamp: '2020-07-15 08:57:57+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
@@ -78,3 +78,6 @@ redirect_from:
 - /library/structure/disjoint_sparse_table.cpp.html
 title: Disjoint Sparse Table
 ---
+- 構築: $O(N \log N)$
+- クエリ: $O(1)$
+  - 普通の Sparse Table とは違い、結合則を満たすものなら乗るため、和や xor, gcd などでも OK

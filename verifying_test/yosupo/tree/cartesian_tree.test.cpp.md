@@ -20,8 +20,8 @@ data:
   bundledCode: "#line 1 \"verifying_test/yosupo/tree/cartesian_tree.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n\n#include <cstdio>\n\
     #include <queue>\n#include <cassert>\n#line 2 \"algorithm/cartesian_tree.cpp\"\
-    \n\n/**\n * @brief Cartesian Tree\n * @docs ./docs/cartesian_tree.md\n */\n\n\
-    #include <vector>\n#include <stack>\n#include <utility>\n#include <functional>\n\
+    \n\n/**\n * @brief Cartesian Tree\n * @docs docs/algorithm/cartesian_tree.md\n\
+    \ */\n\n#include <vector>\n#include <stack>\n#include <utility>\n#include <functional>\n\
     using namespace std;\n\n#line 1 \"graph/graph_000_basic.cpp\"\n// \u79FB\u52D5\
     \u5143\u3068\u884C\u5148\u3068\u8FBA\u306E\u30B3\u30B9\u30C8\u3092\u8A18\u9332\
     \u3059\u308B\u69CB\u9020\u4F53\r\ntemplate <typename T = int>\r\nstruct Edge {\r\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: verifying_test/yosupo/tree/cartesian_tree.test.cpp
   requiredBy: []
-  timestamp: '2022-01-28 01:38:14+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/yosupo/tree/cartesian_tree.test.cpp

@@ -171,7 +171,7 @@ data:
     - icon: ':warning:'
       path: graph/graph_019_eulertour.cpp
       title: graph/graph_019_eulertour.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph_020_HLDecomposition.cpp
       title: graph/graph_020_HLDecomposition.cpp
     - icon: ':warning:'
@@ -365,7 +365,7 @@ data:
       title: Disjoint Sparse Table
     - icon: ':x:'
       path: structure/slope_trick.cpp
-      title: Slope Trick
+      title: structure/slope_trick.cpp
     - icon: ':warning:'
       path: structure/strc_002_bit.cpp
       title: structure/strc_002_bit.cpp
@@ -387,7 +387,7 @@ data:
     - icon: ':warning:'
       path: structure/strc_008_abst_segtree.cpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Segment Tree)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/strc_009_abst_lazy_segtree.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
         \ Tree)"
@@ -481,16 +481,6 @@ data:
     - icon: ':warning:'
       path: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
       title: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
-  - name: verifying_test/build-pages-pkg
-    pages:
-    - icon: ':warning:'
-      path: verifying_test/build-pages-pkg/build-pages.py
-      title: verifying_test/build-pages-pkg/build-pages.py
-  - name: verifying_test/lib
-    pages:
-    - icon: ':warning:'
-      path: verifying_test/lib/generate_readme.py
-      title: verifying_test/lib/generate_readme.py
   verificationCategories:
   - name: verifying_test/AOJ/0516
     pages:
@@ -633,7 +623,7 @@ data:
       title: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
   - name: verifying_test/AOJ/GRL_5_D
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
       title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
   - name: verifying_test/AOJ/ITP1_6_A

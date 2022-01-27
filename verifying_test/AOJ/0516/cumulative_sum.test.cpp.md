@@ -18,15 +18,16 @@ data:
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0516\"\n\n\
     #include <cstdio>\nusing namespace std;\n#line 2 \"algorithm/cumulative_sum.cpp\"\
     \n\n/**\n * @brief 1 \u6B21\u5143\u7D2F\u7A4D\u548C (1 Dimension Cumulative Sum)\n\
-    \ * @docs ./docs/cumulative_sum.md\n */\n\n#include <functional>\n#include <vector>\n\
-    template <typename MonoidType>\nstruct CumulativeSum {\n    int n;\n    vector<MonoidType>\
-    \ pre, suf;\n    MonoidType E;\n    \n    using MMtoM = function< MonoidType(MonoidType,\
-    \ MonoidType) >;\n    MMtoM op, rop;\n\n    void accumulate() {\n        int m\
-    \ = pre.size();\n        for(int i=0; i+1<m; i++) {\n            pre[i+1] = op(pre[i+1],\
-    \ pre[i]);\n        }\n        for(int i=m-2; i>=0; i--) {\n            suf[i]\
-    \ = op(suf[i], suf[i+1]);\n        }\n    }\n\n    CumulativeSum() {}\n    CumulativeSum(vector<MonoidType>\
-    \ val_array, MonoidType E_,\n                  MMtoM op_, MMtoM rop_ = MMtoM(),\n\
-    \                  bool need_accumulate = true) :\n        E(E_), op(op_), rop(rop_)\
+    \ * @docs docs/algorithm/cumulative_sum.md\n */\n\n#include <functional>\n#include\
+    \ <vector>\ntemplate <typename MonoidType>\nstruct CumulativeSum {\n    int n;\n\
+    \    vector<MonoidType> pre, suf;\n    MonoidType E;\n    \n    using MMtoM =\
+    \ function< MonoidType(MonoidType, MonoidType) >;\n    MMtoM op, rop;\n\n    void\
+    \ accumulate() {\n        int m = pre.size();\n        for(int i=0; i+1<m; i++)\
+    \ {\n            pre[i+1] = op(pre[i+1], pre[i]);\n        }\n        for(int\
+    \ i=m-2; i>=0; i--) {\n            suf[i] = op(suf[i], suf[i+1]);\n        }\n\
+    \    }\n\n    CumulativeSum() {}\n    CumulativeSum(vector<MonoidType> val_array,\
+    \ MonoidType E_,\n                  MMtoM op_, MMtoM rop_ = MMtoM(),\n       \
+    \           bool need_accumulate = true) :\n        E(E_), op(op_), rop(rop_)\
     \ {\n        n = val_array.size();\n        pre = suf = vector<MonoidType>(n+2,\
     \ E);\n        for(int i=0; i<n; i++) pre[i+1] = suf[i+1] = val_array[i];\n  \
     \      if(need_accumulate) accumulate();\n    }\n\n    void range_apply(int l,\
@@ -61,7 +62,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/0516/cumulative_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-06-21 23:39:53+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/0516/cumulative_sum.test.cpp

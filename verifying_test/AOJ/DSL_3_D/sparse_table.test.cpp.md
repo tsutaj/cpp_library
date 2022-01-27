@@ -18,9 +18,9 @@ data:
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D\"\
     \n#include <cstdio>\n#include <algorithm>\nusing namespace std;\n\n#define call_from_test\n\
     #line 2 \"structure/strc_007_sparsetable.cpp\"\n\n// @brief Sparse Table\n// @docs\
-    \ ./docs/sparse_table.md\n\n#include <vector>\n#include <functional>\n#include\
-    \ <cassert>\n\ntemplate <typename Tp>\nstruct SparseTable {\n    size_t N, LN;\n\
-    \    vector<Tp> A, logs;\n    vector< vector<Tp> > node;\n    function<Tp(Tp,\
+    \ docs/structure/sparse_table.md\n\n#include <vector>\n#include <functional>\n\
+    #include <cassert>\n\ntemplate <typename Tp>\nstruct SparseTable {\n    size_t\
+    \ N, LN;\n    vector<Tp> A, logs;\n    vector< vector<Tp> > node;\n    function<Tp(Tp,\
     \ Tp)> f;\n\n    SparseTable() = default;\n    SparseTable(vector<Tp> A_, function<Tp(Tp,\
     \ Tp)> f_) :\n        A(A_), f(f_) {\n        N = LN = 1;\n        while(N < A.size())\
     \ N <<= 1, LN++;\n        N = A.size();\n        logs.resize(N+1);\n        node.resize(N,\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2020-07-13 09:25:35+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/DSL_3_D/sparse_table.test.cpp

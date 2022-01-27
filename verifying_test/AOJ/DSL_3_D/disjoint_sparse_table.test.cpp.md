@@ -19,7 +19,7 @@ data:
     \n\n#include <vector>\n#include <cstdio>\nusing namespace std;\nusing ll = long\
     \ long int;\n\n#define call_from_test\n#line 2 \"structure/disjoint_sparse_table.cpp\"\
     \n\n// @brief Disjoint Sparse Table\n// @see https://noshi91.hatenablog.com/entry/2018/05/08/183946\n\
-    // @docs ./docs/disjoint_sparse_table.md\n\n#line 8 \"structure/disjoint_sparse_table.cpp\"\
+    // @docs docs/structure/disjoint_sparse_table.md\n\n#line 8 \"structure/disjoint_sparse_table.cpp\"\
     \n#include <functional>\n#include <cassert>\n\ntemplate <typename Tp>\nstruct\
     \ DisjointSparseTable {\n    int N, LN;\n    vector<Tp> A;\n    vector< vector<Tp>\
     \ > seg_l, seg_r;\n    function<Tp(Tp, Tp)> cmb_f;\n    \n    DisjointSparseTable()\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2020-07-16 00:06:39+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp

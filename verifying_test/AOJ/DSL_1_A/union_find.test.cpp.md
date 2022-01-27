@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"verifying_test/AOJ/DSL_1_A/union_find.test.cpp\"\n#define\
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp\"\
     \n\n#include <cstdio>\nusing namespace std;\n\n#define call_from_test\n#line 2\
-    \ \"structure/union_find.cpp\"\n\r\n/**\r\n * @brief Union-Find\r\n * @docs ./docs/union_find.md\r\
+    \ \"structure/union_find.cpp\"\n\r\n/**\r\n * @brief Union-Find\r\n * @docs docs/structure/union_find.md\r\
     \n */\r\n\r\n#include <algorithm>\r\n#include <vector>\r\n\r\nstruct UnionFind\
     \ {\r\nprivate:\r\n    const int n;\r\n    int size_;\r\n    vector<int> uf;\r\
     \npublic:\r\n    // \u521D\u671F\u5316 UnionFind uni(n) \u306E\u3088\u3046\u306B\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/DSL_1_A/union_find.test.cpp
   requiredBy: []
-  timestamp: '2021-09-22 10:52:02+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/DSL_1_A/union_find.test.cpp

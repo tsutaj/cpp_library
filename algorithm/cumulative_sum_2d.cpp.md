@@ -10,11 +10,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/cumulative_sum_2d.md
+    _deprecated_at_docs: docs/algorithm/cumulative_sum_2d.md
     document_title: "2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)"
     links: []
   bundledCode: "#line 2 \"algorithm/cumulative_sum_2d.cpp\"\n\n/**\n * @brief 2 \u6B21\
-    \u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)\n * @docs ./docs/cumulative_sum_2d.md\n\
+    \u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)\n * @docs docs/algorithm/cumulative_sum_2d.md\n\
     \ */\n\n#include <functional>\n#include <vector>\n#include <cassert>\ntemplate\
     \ <typename MonoidType>\nstruct CumulativeSum2D {\n    // \u6301\u3064\u77E9\u5F62\
     \u9818\u57DF\u306E\u30B5\u30A4\u30BA\n    // \u7E26\u6A2A\u3068\u3082\u3001acc\
@@ -47,11 +47,11 @@ data:
     \        res = op(res, acc[rx][ry]);\n        res = rop(res, acc[lx][ry]);\n \
     \       res = rop(res, acc[rx][ly]);\n        return res;\n    }\n};\n"
   code: "# pragma once\n\n/**\n * @brief 2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension\
-    \ Cumulative Sum)\n * @docs ./docs/cumulative_sum_2d.md\n */\n\n#include <functional>\n\
-    #include <vector>\n#include <cassert>\ntemplate <typename MonoidType>\nstruct\
-    \ CumulativeSum2D {\n    // \u6301\u3064\u77E9\u5F62\u9818\u57DF\u306E\u30B5\u30A4\
-    \u30BA\n    // \u7E26\u6A2A\u3068\u3082\u3001acc \u306F\u3053\u308C\u3088\u308A\
-    \ 2 \u5927\u304D\u304F\u3057\u3066\u304A\u304F\n    int n, m;\n    MonoidType\
+    \ Cumulative Sum)\n * @docs docs/algorithm/cumulative_sum_2d.md\n */\n\n#include\
+    \ <functional>\n#include <vector>\n#include <cassert>\ntemplate <typename MonoidType>\n\
+    struct CumulativeSum2D {\n    // \u6301\u3064\u77E9\u5F62\u9818\u57DF\u306E\u30B5\
+    \u30A4\u30BA\n    // \u7E26\u6A2A\u3068\u3082\u3001acc \u306F\u3053\u308C\u3088\
+    \u308A 2 \u5927\u304D\u304F\u3057\u3066\u304A\u304F\n    int n, m;\n    MonoidType\
     \ E;\n    vector< vector<MonoidType> > acc;\n    using MMtoM = function< MonoidType(MonoidType,\
     \ MonoidType) >;\n    MMtoM op, rop;\n\n    void accumulate() {\n        for(int\
     \ i=0; i<=n; i++) {\n            for(int j=0; j<m; j++) {\n                acc[i][j+1]\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: algorithm/cumulative_sum_2d.cpp
   requiredBy: []
-  timestamp: '2020-04-07 01:41:06+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
@@ -93,3 +93,6 @@ redirect_from:
 - /library/algorithm/cumulative_sum_2d.cpp.html
 title: "2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)"
 ---
+- `range_val`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に関して値を求める
+- `range_apply`: 左上 $\left( lx, ly \right)$ 右下 $\left( rx, ry \right)$ となる長方形領域に属する要素全てに対して値 val を適用
+  - `range_apply` の操作が全て終了した後に手動で `accumulate` を呼ぶ必要あり

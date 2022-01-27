@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph_020_HLDecomposition.cpp
     title: graph/graph_020_HLDecomposition.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/strc_009_abst_lazy_segtree.cpp
     title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
       \ Tree)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D
@@ -127,7 +127,7 @@ data:
     \                       [](ll a, int x) { return a * x; });\n    int Q; scanf(\"\
     %d\", &Q);\n    while(Q--) {\n        int t; scanf(\"%d\", &t);\n        if(t\
     \ == 0) {\n            int v, w; scanf(\"%d%d\", &v, &w);\n            int u =\
-    \ hld.par[v];\n            hld.query_edges(u, v, [&](int l, int r) {\n       \
+    \ hld.par[v];\n            hld.apply_edges(u, v, [&](int l, int r) {\n       \
     \             seg.update(l, r, w);\n                });\n        }\n        if(t\
     \ == 1) {\n            int u; scanf(\"%d\", &u);\n            auto f = [&](int\
     \ l, int r) {\n                return seg.query(l, r);\n            };\n     \
@@ -148,7 +148,7 @@ data:
     \     [](ll a, int x) { return a * x; });\n    int Q; scanf(\"%d\", &Q);\n   \
     \ while(Q--) {\n        int t; scanf(\"%d\", &t);\n        if(t == 0) {\n    \
     \        int v, w; scanf(\"%d%d\", &v, &w);\n            int u = hld.par[v];\n\
-    \            hld.query_edges(u, v, [&](int l, int r) {\n                    seg.update(l,\
+    \            hld.apply_edges(u, v, [&](int l, int r) {\n                    seg.update(l,\
     \ r, w);\n                });\n        }\n        if(t == 1) {\n            int\
     \ u; scanf(\"%d\", &u);\n            auto f = [&](int l, int r) {\n          \
     \      return seg.query(l, r);\n            };\n            auto m = [&](ll v0,\
@@ -161,8 +161,8 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
   requiredBy: []
-  timestamp: '2022-01-28 01:38:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-01-28 02:17:51+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/GRL_5_D/hld.test.cpp
 layout: document

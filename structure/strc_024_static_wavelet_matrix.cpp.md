@@ -34,7 +34,7 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/strc_024_static_wavelet_matrix.md
+    _deprecated_at_docs: docs/structure/strc_024_static_wavelet_matrix.md
     document_title: "Wavelet \u884C\u5217 (wavelet matrix)"
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.2/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -46,15 +46,15 @@ data:
     \ structure/strc_024_static_wavelet_matrix.cpp: line 7: unable to process #include\
     \ in #if / #ifdef / #ifndef other than include guards\n"
   code: "#pragma once\n\n// @title Wavelet \u884C\u5217 (wavelet matrix)\n// @docs\
-    \ ./docs/strc_024_static_wavelet_matrix.md\n\n#ifndef call_from_test\n#include\
-    \ \"strc_023_compact_bitvector.cpp\"\n#endif\n\n// \u30A6\u30A7\u30FC\u30D6\u30EC\
-    \u30C3\u30C8\u884C\u5217 (Wavelet Matrix)\n// w \u306F \u30D3\u30C3\u30C8\u5E45\
-    , 30 bit \u3067\u8868\u73FE\u3067\u304D\u308B\u6574\u6570\u306A\u3089 30\ntemplate\
-    \ <uint64_t word_size = 30, typename value_type = int,\n          uint64_t ln_big\
-    \ = 10, uint64_t ln_sml = 4>\nstruct WaveletMatrix {\nprivate:\n    using BitVector\
-    \ = CompactBitVector<value_type, ln_big, ln_sml>;\n    array<BitVector, word_size>\
-    \ vecs;\n\n    // \u8981\u7D20\u6570\n    int n;\n    // k \u30D3\u30C3\u30C8\u76EE\
-    \u3092\u57FA\u6E96\u306B\u5B89\u5B9A\u30BD\u30FC\u30C8\n    vector<value_type>\
+    \ docs/structure/strc_024_static_wavelet_matrix.md\n\n#ifndef call_from_test\n\
+    #include \"strc_023_compact_bitvector.cpp\"\n#endif\n\n// \u30A6\u30A7\u30FC\u30D6\
+    \u30EC\u30C3\u30C8\u884C\u5217 (Wavelet Matrix)\n// w \u306F \u30D3\u30C3\u30C8\
+    \u5E45, 30 bit \u3067\u8868\u73FE\u3067\u304D\u308B\u6574\u6570\u306A\u3089 30\n\
+    template <uint64_t word_size = 30, typename value_type = int,\n          uint64_t\
+    \ ln_big = 10, uint64_t ln_sml = 4>\nstruct WaveletMatrix {\nprivate:\n    using\
+    \ BitVector = CompactBitVector<value_type, ln_big, ln_sml>;\n    array<BitVector,\
+    \ word_size> vecs;\n\n    // \u8981\u7D20\u6570\n    int n;\n    // k \u30D3\u30C3\
+    \u30C8\u76EE\u3092\u57FA\u6E96\u306B\u5B89\u5B9A\u30BD\u30FC\u30C8\n    vector<value_type>\
     \ sort_kth_bit(const vector<value_type>& vec, int k) const;\n\n    // [l, r) \u306E\
     \u7BC4\u56F2\u5185\u306B\u3042\u308B x \u3068\u7B49\u3057\u3044\u8981\u7D20\u306F\
     \u6700\u4E0B\u6BB5\u306E\u3069\u306E\u7BC4\u56F2\u306B\u76F8\u5F53\uFF1F\n   \
@@ -241,7 +241,7 @@ data:
   path: structure/strc_024_static_wavelet_matrix.cpp
   requiredBy:
   - structure/verify/verify_strc_024_static_wavelet_matrix.cpp
-  timestamp: '2020-07-13 09:29:06+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
@@ -258,3 +258,42 @@ redirect_from:
 - /library/structure/strc_024_static_wavelet_matrix.cpp.html
 title: "Wavelet \u884C\u5217 (wavelet matrix)"
 ---
+### 静的ウェーブレット行列 (Wavelet Matrix)
+
+簡潔ビットベクトルにより非負整数列に対する各種クエリを高速に処理可能
+
+#### Usage
+
+* 注釈が特にないものは 0-indexed
+* 変数について
+  * $N$: 数列の長さ
+  * $\sigma$: 値域
+* **Usage、ソースコードの中身は間違っているかもしれません: 指摘があれば教えてください**
+
+| メソッド                                                                        | 説明                                                                                                                                         | 計算量               |
+|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| `WaveletMatrix(vec)`                                        | vector から Wavelet 行列を構築                                                                                                                           | $O(N \log \sigma)$ |
+| `at(k)`                                                   | 列のインデックス $k$ 番目 (0-indexed) にアクセス                                                                                                                    | $O(\log \sigma)$   |
+| `operator[](k)`                                           | 列のインデックス $k$ 番目 (0-indexed) にアクセス                                                                                                                                         | $O(\log \sigma)$                 |
+| `rank_tuple(l, r, x)`            | インデックス $\left[ l, r \right)$ の範囲内に ($x$ 未満、$x$ と等しい、$x$ を超える) 要素がそれぞれいくつ存在するか答える                         | $O(\log \sigma)$   |
+| `rank_tuple(x)`                          | 数列全体で ($x$ 未満、$x$ と等しい、$x$ を超える) 要素がそれぞれいくつ存在するか答える                                                                                                               | $O(\log \sigma)$                 |
+| `quantile(l, r, mi, ma, k)` | インデックス $\left[ l, r \right)$ の範囲内にあって値が $\left[ \mathrm{mi}, \mathrm{ma} \right]$ に収まる要素のうち、$k$ 番目 (1-indexed) に小さいものを答える | $O(\log \sigma)$   |
+|`quantile(l, r, k)`| インデックス $\left[ l, r \right)$ の範囲内にある要素のうち、$k$ 番目 (1-indexed) に小さいものを答える | $O(\log \sigma)$ |
+|`quantile(k)`|数列全体で $k$ 番目 (1-indexed) に小さいものを答える| $O(\log \sigma)$ |
+|`freq_less(l, r, m)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $m$ 未満の要素がいくつ存在するか答える | $O(\log \sigma)$ |
+|`freq_less(m)`|数列全体に値が $m$ 未満の要素がいくつ存在するか答える|$O(\log \sigma)$|
+|`freq_greater(l, r, m)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $m$ を超える要素がいくつ存在するか答える | $O(\log \sigma)$ |
+|`freq_greater(m)`|数列全体に値が $m$ を超える要素がいくつ存在するか答える|$O(\log \sigma)$|
+|`freq(l, r, mi, ma)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $\left[ \mathrm{mi}, \mathrm{ma} \right]$ に収まる要素がいくつ存在するか答える | $O(\log \sigma)$ |
+|`freq(l, r, x)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $x$ と等しい要素がいくつ存在するか答える | $O(\log \sigma)$ |
+|`freq(mi, ma)`|数列全体に値が $\left[ \mathrm{mi}, \mathrm{ma} \right]$ に収まる要素がいくつ存在するか答える | $O(\log \sigma)$ |
+|`min_value(l, r, mi, ma)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $\left[ \mathrm{mi}, \mathrm{ma} \right]$ に収まる要素のうち最小値を答える| $O(\log \sigma)$|
+|`min_value(l, r)`|インデックス $\left[ l, r \right)$ の範囲内にある要素のうち最小値を答える| $O(\log \sigma)$|
+|`min_value()`|数列全体の要素の最小値を答える| $O(\log \sigma)$|
+|`max_value(l, r, mi, ma)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $\left[ \mathrm{mi}, \mathrm{ma} \right]$ に収まる要素のうち最大値を答える| $O(\log \sigma)$|
+|`max_value(l, r)`|インデックス $\left[ l, r \right)$ の範囲内にある要素のうち最大値を答える| $O(\log \sigma)$|
+|`max_value()`|数列全体の要素の最大値を答える| $O(\log \sigma)$|
+|`select(l, r, k, x)`|インデックス $\left[ l, r \right)$ の範囲内にある $x$ と等しい要素のうち $k$ 番目 (1-indexed) にある値のインデックスを答える| $O(\log \sigma \log N)$ |
+|`select(k, x)`|数列全体で $x$ と等しい要素のうち $k$ 番目 (1-indexed) にある値のインデックスを答える| $O(\log \sigma \log N)$ |
+|`next_val(l, r, x)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $x$ を超える要素の中で最小のものを答える| $O(\log \sigma \log N)$ |
+|`prev_val(l, r, x)`|インデックス $\left[ l, r \right)$ の範囲内にあって値が $x$ 未満の要素の中で最小のものを答える| $O(\log \sigma \log N)$ |

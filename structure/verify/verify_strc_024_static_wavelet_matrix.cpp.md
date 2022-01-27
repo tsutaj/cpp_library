@@ -39,7 +39,7 @@ data:
   isVerificationFile: false
   path: structure/verify/verify_strc_024_static_wavelet_matrix.cpp
   requiredBy: []
-  timestamp: '2020-07-13 09:29:06+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structure/verify/verify_strc_024_static_wavelet_matrix.cpp

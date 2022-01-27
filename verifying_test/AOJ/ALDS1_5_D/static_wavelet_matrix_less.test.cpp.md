@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
   requiredBy: []
-  timestamp: '2020-07-13 09:29:06+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp

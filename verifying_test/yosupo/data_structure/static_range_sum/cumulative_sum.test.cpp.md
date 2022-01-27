@@ -19,9 +19,9 @@ data:
     \ <cstdio>\n#include <vector>\n#include <algorithm>\n#include <functional>\nusing\
     \ ll = long long int;\nusing namespace std;\n\n#define call_from_test\n#line 2\
     \ \"algorithm/cumulative_sum.cpp\"\n\n/**\n * @brief 1 \u6B21\u5143\u7D2F\u7A4D\
-    \u548C (1 Dimension Cumulative Sum)\n * @docs ./docs/cumulative_sum.md\n */\n\n\
-    #line 10 \"algorithm/cumulative_sum.cpp\"\ntemplate <typename MonoidType>\nstruct\
-    \ CumulativeSum {\n    int n;\n    vector<MonoidType> pre, suf;\n    MonoidType\
+    \u548C (1 Dimension Cumulative Sum)\n * @docs docs/algorithm/cumulative_sum.md\n\
+    \ */\n\n#line 10 \"algorithm/cumulative_sum.cpp\"\ntemplate <typename MonoidType>\n\
+    struct CumulativeSum {\n    int n;\n    vector<MonoidType> pre, suf;\n    MonoidType\
     \ E;\n    \n    using MMtoM = function< MonoidType(MonoidType, MonoidType) >;\n\
     \    MMtoM op, rop;\n\n    void accumulate() {\n        int m = pre.size();\n\
     \        for(int i=0; i+1<m; i++) {\n            pre[i+1] = op(pre[i+1], pre[i]);\n\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-06-21 23:39:53+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp

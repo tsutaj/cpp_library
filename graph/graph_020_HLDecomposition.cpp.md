@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
     title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph_020_HLDecomposition.cpp\"\n// HL \u5206\u89E3\
@@ -107,7 +107,7 @@ data:
   path: graph/graph_020_HLDecomposition.cpp
   requiredBy: []
   timestamp: '2022-01-28 01:38:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/AOJ/GRL_5_D/hld.test.cpp
 documentation_of: graph/graph_020_HLDecomposition.cpp

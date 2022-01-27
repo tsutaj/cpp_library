@@ -18,12 +18,12 @@ data:
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0560\"\n\
     #include <cstdio>\nusing namespace std;\n#line 2 \"algorithm/cumulative_sum_2d.cpp\"\
     \n\n/**\n * @brief 2 \u6B21\u5143\u7D2F\u7A4D\u548C (2 Dimension Cumulative Sum)\n\
-    \ * @docs ./docs/cumulative_sum_2d.md\n */\n\n#include <functional>\n#include\
-    \ <vector>\n#include <cassert>\ntemplate <typename MonoidType>\nstruct CumulativeSum2D\
-    \ {\n    // \u6301\u3064\u77E9\u5F62\u9818\u57DF\u306E\u30B5\u30A4\u30BA\n   \
-    \ // \u7E26\u6A2A\u3068\u3082\u3001acc \u306F\u3053\u308C\u3088\u308A 2 \u5927\
-    \u304D\u304F\u3057\u3066\u304A\u304F\n    int n, m;\n    MonoidType E;\n    vector<\
-    \ vector<MonoidType> > acc;\n    using MMtoM = function< MonoidType(MonoidType,\
+    \ * @docs docs/algorithm/cumulative_sum_2d.md\n */\n\n#include <functional>\n\
+    #include <vector>\n#include <cassert>\ntemplate <typename MonoidType>\nstruct\
+    \ CumulativeSum2D {\n    // \u6301\u3064\u77E9\u5F62\u9818\u57DF\u306E\u30B5\u30A4\
+    \u30BA\n    // \u7E26\u6A2A\u3068\u3082\u3001acc \u306F\u3053\u308C\u3088\u308A\
+    \ 2 \u5927\u304D\u304F\u3057\u3066\u304A\u304F\n    int n, m;\n    MonoidType\
+    \ E;\n    vector< vector<MonoidType> > acc;\n    using MMtoM = function< MonoidType(MonoidType,\
     \ MonoidType) >;\n    MMtoM op, rop;\n\n    void accumulate() {\n        for(int\
     \ i=0; i<=n; i++) {\n            for(int j=0; j<m; j++) {\n                acc[i][j+1]\
     \ = op(acc[i][j+1], acc[i][j]);\n            }\n        }\n        for(int j=0;\
@@ -81,7 +81,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
   requiredBy: []
-  timestamp: '2020-04-07 01:41:06+09:00'
+  timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
