@@ -1,3 +1,4 @@
+#define IGNORE
 <%!
     import json
     import os
