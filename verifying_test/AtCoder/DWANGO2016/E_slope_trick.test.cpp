@@ -1,3 +1,4 @@
+#define IGNORE
 #define PROBLEM "https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e"
 
 #include <cstdio>

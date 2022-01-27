@@ -1,3 +1,4 @@
+#define IGNORE
 #define PROBLEM "https://atcoder.jp/contests/abc217/tasks/abc217_h"
 
 #include <cstdio>
