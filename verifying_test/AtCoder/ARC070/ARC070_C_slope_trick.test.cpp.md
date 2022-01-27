@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: structure/slope_trick.cpp
     title: Slope Trick
   _extendedRequiredBy: []
@@ -11,12 +11,14 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/arc070/tasks/arc070_c
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://atcoder.jp/contests/arc070/tasks/arc070_c
   bundledCode: "#line 1 \"verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\n\n#include\
-    \ <cstdio>\n#include <cassert>\n#include <vector>\n#line 1 \"structure/slope_trick.cpp\"\
+    \n#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\
+    \n\n#include <cstdio>\n#include <cassert>\n#include <vector>\n#line 1 \"structure/slope_trick.cpp\"\
     \n\n\n\n#include <queue>\n#line 6 \"structure/slope_trick.cpp\"\n#include <algorithm>\n\
     #line 8 \"structure/slope_trick.cpp\"\n\n// \u533A\u5206\u7DDA\u5F62\u51F8\u95A2\
     \u6570 f: Tp -> Tp \u3092\u7BA1\u7406\ntemplate <typename Tp = int>\nstruct SlopeTrick\
@@ -55,7 +57,7 @@ data:
     \ bool& isUbInfty) const {\n  if(ptsL.size()) {\n    lb = ptsL.top() + addL;\n\
     \    isLbInfty = false;\n  }\n  else {\n    isLbInfty = true;\n  }\n\n  if(ptsR.size())\
     \ {\n    ub = ptsR.top() + addR;\n    isUbInfty = false;\n  }\n  else {\n    isUbInfty\
-    \ = true;\n  }\n}\n\n\n#line 7 \"verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp\"\
+    \ = true;\n  }\n}\n\n\n#line 8 \"verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp\"\
     \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N;\
     \ scanf(\"%d\", &N);\n  std::vector<ll> L(N), R(N);\n  for(int i=0; i<N; i++)\
     \ {\n    scanf(\"%lld%lld\", &L[i], &R[i]);\n    if(i == 0) {\n      slope.addAbsFunc(L[i]);\n\
@@ -63,8 +65,8 @@ data:
     \ (R[i] - L[i])} dp[i-1][j]\n      slope.applySlidingWindow(L[i] - R[i], R[i-1]\
     \ - L[i-1]);\n      slope.addAbsFunc(L[i]);\n    }\n  }\n  printf(\"%lld\\n\"\
     , slope.getMinVal());\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\n\n\
-    #include <cstdio>\n#include <cassert>\n#include <vector>\n#include \"../../../structure/slope_trick.cpp\"\
+  code: "#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/arc070/tasks/arc070_c\"\
+    \n\n#include <cstdio>\n#include <cassert>\n#include <vector>\n#include \"../../../structure/slope_trick.cpp\"\
     \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N;\
     \ scanf(\"%d\", &N);\n  std::vector<ll> L(N), R(N);\n  for(int i=0; i<N; i++)\
     \ {\n    scanf(\"%lld%lld\", &L[i], &R[i]);\n    if(i == 0) {\n      slope.addAbsFunc(L[i]);\n\
@@ -77,7 +79,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
   requiredBy: []
-  timestamp: '2021-09-05 23:10:11+09:00'
+  timestamp: '2022-01-28 01:51:19+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: structure/slope_trick.cpp
     title: Slope Trick
   _extendedRequiredBy: []
@@ -11,11 +11,13 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e
   bundledCode: "#line 1 \"verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e\"\
+    \n#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e\"\
     \n\n#include <cstdio>\n#include <cassert>\n#include <vector>\n#line 1 \"structure/slope_trick.cpp\"\
     \n\n\n\n#include <queue>\n#line 6 \"structure/slope_trick.cpp\"\n#include <algorithm>\n\
     #line 8 \"structure/slope_trick.cpp\"\n\n// \u533A\u5206\u7DDA\u5F62\u51F8\u95A2\
@@ -55,14 +57,14 @@ data:
     \ bool& isUbInfty) const {\n  if(ptsL.size()) {\n    lb = ptsL.top() + addL;\n\
     \    isLbInfty = false;\n  }\n  else {\n    isLbInfty = true;\n  }\n\n  if(ptsR.size())\
     \ {\n    ub = ptsR.top() + addR;\n    isUbInfty = false;\n  }\n  else {\n    isUbInfty\
-    \ = true;\n  }\n}\n\n\n#line 7 \"verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp\"\
+    \ = true;\n  }\n}\n\n\n#line 8 \"verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp\"\
     \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N,\
     \ L; scanf(\"%d%d\", &N, &L);\n  std::vector<std::vector<int>> ps(100010);\n \
     \ for(int i=0; i<N; i++) {\n    int t, p; scanf(\"%d%d\", &t, &p); t--;\n    ps[t].emplace_back(p);\n\
     \  }\n  for(int i=0; i<100010; i++) {\n    slope.accumulateLeft();\n    for(auto\
     \ x : ps[i]) {\n      slope.addAbsFunc(x);\n    }\n  }\n  printf(\"%lld\\n\",\
     \ slope.getMinVal());\n  return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e\"\
+  code: "#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/dwango2016-prelims/tasks/dwango2016qual_e\"\
     \n\n#include <cstdio>\n#include <cassert>\n#include <vector>\n#include \"../../../structure/slope_trick.cpp\"\
     \nusing ll = long long int;\n\nint main() {\n  SlopeTrick<ll> slope;\n  int N,\
     \ L; scanf(\"%d%d\", &N, &L);\n  std::vector<std::vector<int>> ps(100010);\n \
@@ -75,7 +77,7 @@ data:
   isVerificationFile: true
   path: verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
   requiredBy: []
-  timestamp: '2021-09-05 23:11:35+09:00'
+  timestamp: '2022-01-28 01:51:19+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp

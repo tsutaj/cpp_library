@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
     title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph_020_HLDecomposition.cpp\"\n// HL \u5206\u89E3\
@@ -38,9 +38,9 @@ data:
     \ v \u30D1\u30B9\u4E0A\u306B\u5B58\u5728\u3059\u308B\u300C\u9802\u70B9\u300Dor\u300C\
     \u8FBA\u300D\u5168\u4F53\u306B f(l, r) \u3092\u4F5C\u7528\n    // l, r \u306F\
     \ SegmentTree \u3068\u304B\u306E\u30C7\u30FC\u30BF\u69CB\u9020\u4E0A\u306E\u30A4\
-    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void query_vertices(int\
+    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void apply_vertices(int\
     \ u, int v, const F& f) {\n        proceed(u, v, f, false);\n    }\n\n    template\
-    \ <typename F>\n    void query_edges(int u, int v, const F& f) {\n        proceed(u,\
+    \ <typename F>\n    void apply_edges(int u, int v, const F& f) {\n        proceed(u,\
     \ v, f, true);\n    }\n\n    template <typename T, typename F, typename M>\n \
     \   T proceed(int u, int v, T E, const F& f, const M& m, bool b) {\n        T\
     \ vl(E), vr(E);\n        for(; head[u] != head[v]; v = par[ head[v] ]) {\n   \
@@ -83,9 +83,9 @@ data:
     \ v \u30D1\u30B9\u4E0A\u306B\u5B58\u5728\u3059\u308B\u300C\u9802\u70B9\u300Dor\u300C\
     \u8FBA\u300D\u5168\u4F53\u306B f(l, r) \u3092\u4F5C\u7528\n    // l, r \u306F\
     \ SegmentTree \u3068\u304B\u306E\u30C7\u30FC\u30BF\u69CB\u9020\u4E0A\u306E\u30A4\
-    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void query_vertices(int\
+    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void apply_vertices(int\
     \ u, int v, const F& f) {\n        proceed(u, v, f, false);\n    }\n\n    template\
-    \ <typename F>\n    void query_edges(int u, int v, const F& f) {\n        proceed(u,\
+    \ <typename F>\n    void apply_edges(int u, int v, const F& f) {\n        proceed(u,\
     \ v, f, true);\n    }\n\n    template <typename T, typename F, typename M>\n \
     \   T proceed(int u, int v, T E, const F& f, const M& m, bool b) {\n        T\
     \ vl(E), vr(E);\n        for(; head[u] != head[v]; v = par[ head[v] ]) {\n   \
@@ -106,8 +106,8 @@ data:
   isVerificationFile: false
   path: graph/graph_020_HLDecomposition.cpp
   requiredBy: []
-  timestamp: '2019-11-22 21:50:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-01-28 01:38:40+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verifying_test/AOJ/GRL_5_D/hld.test.cpp
 documentation_of: graph/graph_020_HLDecomposition.cpp

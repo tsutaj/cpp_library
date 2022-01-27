@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
     title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structure/slope_trick.cpp\"\n\n\n\n#include <queue>\n#include\
@@ -103,12 +103,12 @@ data:
   path: structure/slope_trick.cpp
   requiredBy: []
   timestamp: '2021-09-05 23:10:11+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
-  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
-  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
   - verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
+  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
+  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
 documentation_of: structure/slope_trick.cpp
 layout: document
 title: Slope Trick

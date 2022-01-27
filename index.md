@@ -7,6 +7,9 @@ data:
       path: algorithm/algo_001_mo.cpp
       title: algorithm/algo_001_mo.cpp
     - icon: ':heavy_check_mark:'
+      path: algorithm/cartesian_tree.cpp
+      title: Cartesian Tree
+    - icon: ':heavy_check_mark:'
       path: algorithm/coordinate_compression.cpp
       title: "\u5EA7\u6A19\u5727\u7E2E (Coordinate Compression)"
     - icon: ':heavy_check_mark:'
@@ -20,6 +23,9 @@ data:
     - icon: ':warning:'
       path: basic_000_template.cpp
       title: basic_000_template.cpp
+    - icon: ':warning:'
+      path: oj-prepare-template.cpp
+      title: oj-prepare-template.cpp
     - icon: ':warning:'
       path: topcoder.cpp
       title: topcoder.cpp
@@ -108,7 +114,7 @@ data:
       title: geometry/old/gmtr_100_basic_threedim.cpp
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph_000_basic.cpp
       title: graph/graph_000_basic.cpp
     - icon: ':warning:'
@@ -168,7 +174,7 @@ data:
     - icon: ':warning:'
       path: graph/graph_019_eulertour.cpp
       title: graph/graph_019_eulertour.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/graph_020_HLDecomposition.cpp
       title: graph/graph_020_HLDecomposition.cpp
     - icon: ':warning:'
@@ -360,7 +366,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/disjoint_sparse_table.cpp
       title: Disjoint Sparse Table
-    - icon: ':question:'
+    - icon: ':x:'
       path: structure/slope_trick.cpp
       title: Slope Trick
     - icon: ':warning:'
@@ -384,7 +390,7 @@ data:
     - icon: ':warning:'
       path: structure/strc_008_abst_segtree.cpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Segment Tree)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: structure/strc_009_abst_lazy_segtree.cpp
       title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
         \ Tree)"
@@ -630,7 +636,7 @@ data:
       title: verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
   - name: verifying_test/AOJ/GRL_5_D
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
       title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
   - name: verifying_test/AOJ/ITP1_6_A
@@ -640,7 +646,7 @@ data:
       title: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
   - name: verifying_test/AtCoder/ABC127
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
       title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
   - name: verifying_test/AtCoder/ABC217
@@ -696,5 +702,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp
       title: verifying_test/yosupo/sample/many_aplusb/cstdio.test.cpp
+  - name: verifying_test/yosupo/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/yosupo/tree/cartesian_tree.test.cpp
+      title: verifying_test/yosupo/tree/cartesian_tree.test.cpp
 layout: toppage
 ---

@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: math/math_024_fixed_matrix.cpp
     title: math/math_024_fixed_matrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: structure/strc_009_abst_lazy_segtree.cpp
     title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
       \ Tree)"

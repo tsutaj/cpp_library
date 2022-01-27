@@ -9,12 +9,12 @@ data:
     path: structure/verify/verify_strc_009_abst_lazy_segtree.cpp
     title: structure/verify/verify_strc_009_abst_lazy_segtree.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
     title: verifying_test/AOJ/GRL_5_D/hld.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\
       \ (Lazy Segment Tree)"
@@ -124,10 +124,10 @@ data:
   isVerificationFile: false
   path: structure/strc_009_abst_lazy_segtree.cpp
   requiredBy:
-  - structure/verify/verify_strc_009_abst_lazy_segtree.cpp
   - math/verify/verify_math_024_fixed_matrix.cpp
+  - structure/verify/verify_strc_009_abst_lazy_segtree.cpp
   timestamp: '2019-12-09 17:27:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verifying_test/AOJ/GRL_5_D/hld.test.cpp
 documentation_of: structure/strc_009_abst_lazy_segtree.cpp

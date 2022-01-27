@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph_020_HLDecomposition.cpp
     title: graph/graph_020_HLDecomposition.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: structure/strc_009_abst_lazy_segtree.cpp
     title: "\u9045\u5EF6\u4F1D\u64AD\u30BB\u30B0\u30E1\u30F3\u30C8\u6728 (Lazy Segment\
       \ Tree)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_D
@@ -48,9 +48,9 @@ data:
     \ v \u30D1\u30B9\u4E0A\u306B\u5B58\u5728\u3059\u308B\u300C\u9802\u70B9\u300Dor\u300C\
     \u8FBA\u300D\u5168\u4F53\u306B f(l, r) \u3092\u4F5C\u7528\n    // l, r \u306F\
     \ SegmentTree \u3068\u304B\u306E\u30C7\u30FC\u30BF\u69CB\u9020\u4E0A\u306E\u30A4\
-    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void query_vertices(int\
+    \u30F3\u30C7\u30C3\u30AF\u30B9\n    template <typename F>\n    void apply_vertices(int\
     \ u, int v, const F& f) {\n        proceed(u, v, f, false);\n    }\n\n    template\
-    \ <typename F>\n    void query_edges(int u, int v, const F& f) {\n        proceed(u,\
+    \ <typename F>\n    void apply_edges(int u, int v, const F& f) {\n        proceed(u,\
     \ v, f, true);\n    }\n\n    template <typename T, typename F, typename M>\n \
     \   T proceed(int u, int v, T E, const F& f, const M& m, bool b) {\n        T\
     \ vl(E), vr(E);\n        for(; head[u] != head[v]; v = par[ head[v] ]) {\n   \
@@ -161,8 +161,8 @@ data:
   isVerificationFile: true
   path: verifying_test/AOJ/GRL_5_D/hld.test.cpp
   requiredBy: []
-  timestamp: '2020-07-13 08:30:33+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-01-28 01:38:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verifying_test/AOJ/GRL_5_D/hld.test.cpp
 layout: document
