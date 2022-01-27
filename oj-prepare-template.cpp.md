@@ -24,8 +24,8 @@ data:
     \ Command '['g++', '-x', 'c++', '-I', '/home/runner/work/cpp_library/cpp_library',\
     \ '-fpreprocessed', '-dD', '-E', '/home/runner/work/cpp_library/cpp_library/oj-prepare-template.cpp']'\
     \ returned non-zero exit status 1.\n"
-  code: "<%!\n    import json\n    import os\n    import platform\n    import shutil\n\
-    \    from logging import getLogger\n\n    import onlinejudge_template.generator.cplusplus\
+  code: "#define IGNORE\n<%!\n    import json\n    import os\n    import platform\n\
+    \    import shutil\n    from logging import getLogger\n\n    import onlinejudge_template.generator.cplusplus\
     \ as cplusplus\n    import onlinejudge_template.generator.topcoder as topcoder\n\
     \    import onlinejudge_template.generator.about as about\n    import onlinejudge_template.generator.hook\
     \ as hook\n%>\\\n<%\n    data['config']['scanner'] = 'scanf'\n    data['config']['printer']\
