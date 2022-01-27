@@ -10,6 +10,11 @@ using namespace std;
 // ・クエリの対象となる数列が不変
 // ・区間の伸縮にかかる計算量が小さい
 struct Mo {
+    enum DIRECTION {
+        LEFT = 1,
+        RIGHT = 2
+    };
+
     int bucket, nl, nr, ptr;
     vector<int> left, right, query_idx;
     vector<bool> state;
@@ -38,26 +43,30 @@ struct Mo {
     int proceed() {
         if(ptr == query_idx.size()) return -1;
         int id = query_idx[ptr];
-        while(nl > left[id] ) operate(--nl);
-        while(nr < right[id]) operate(nr++);
-        while(nl < left[id] ) operate(nl++);
-        while(nr > right[id]) operate(--nr);
+        while(nl > left[id] ) operate(--nl, nr, LEFT);
+        while(nr < right[id]) operate(nl, nr++, RIGHT);
+        while(nl < left[id] ) operate(nl++, nr, LEFT);
+        while(nr > right[id]) operate(nl, --nr, RIGHT);
         return query_idx[ptr++];
     }
 
-    void operate(int idx) {
+    // [l, r)
+    void operate(int l, int r, DIRECTION dir) {
+        int idx = (dir == LEFT ? l : r);
         state[idx].flip();
-        if(state[idx]) add(idx);
-        else del(idx);
+        if(state[idx]) add(l, r, dir);
+        else del(l, r, dir);
     }
 
-    void add(int idx);
-    void del(int idx);
+    // [l, r)
+    void add(int l, int r, DIRECTION dir);
+    void del(int l, int r, DIRECTION dir);
 };
 
+/*
 int A[200010], cnt[1000010];
 long long int res = 0;
-void Mo::add(int idx) {
+void Mo::add(int idx, Mo::DIRECTION dir) {
     long long int pre = cnt[ A[idx] ];
     long long int nxt = pre + 1;
     res -= pre * pre * A[idx];
@@ -65,7 +74,7 @@ void Mo::add(int idx) {
     cnt[ A[idx] ]++;
 }
 
-void Mo::del(int idx) {
+void Mo::del(int idx, Mo::DIRECTION dir) {
     long long int pre = cnt[ A[idx] ];
     long long int nxt = pre - 1;
     res -= pre * pre * A[idx];
@@ -98,3 +107,4 @@ int main() {
     }
     return 0;
 }
+*/

@@ -58,12 +58,12 @@ struct HLD {
     // u - v パス上に存在する「頂点」or「辺」全体に f(l, r) を作用
     // l, r は SegmentTree とかのデータ構造上のインデックス
     template <typename F>
-    void query_vertices(int u, int v, const F& f) {
+    void apply_vertices(int u, int v, const F& f) {
         proceed(u, v, f, false);
     }
 
     template <typename F>
-    void query_edges(int u, int v, const F& f) {
+    void apply_edges(int u, int v, const F& f) {
         proceed(u, v, f, true);
     }
 
