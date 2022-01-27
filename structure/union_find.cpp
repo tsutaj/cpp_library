@@ -2,7 +2,7 @@
 
 /**
  * @brief Union-Find
- * @docs ./docs/union_find.md
+ * @docs docs/structure/union_find.md
  */
 
 #include <algorithm>

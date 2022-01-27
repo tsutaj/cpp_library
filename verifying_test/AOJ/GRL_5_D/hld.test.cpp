@@ -33,7 +33,7 @@ int main() {
         if(t == 0) {
             int v, w; scanf("%d%d", &v, &w);
             int u = hld.par[v];
-            hld.query_edges(u, v, [&](int l, int r) {
+            hld.apply_edges(u, v, [&](int l, int r) {
                     seg.update(l, r, w);
                 });
         }

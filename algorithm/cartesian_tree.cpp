@@ -2,7 +2,7 @@
 
 /**
  * @brief Cartesian Tree
- * @docs ./docs/cartesian_tree.md
+ * @docs docs/algorithm/cartesian_tree.md
  */
 
 #include <vector>

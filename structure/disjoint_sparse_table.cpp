@@ -2,7 +2,7 @@
 
 // @brief Disjoint Sparse Table
 // @see https://noshi91.hatenablog.com/entry/2018/05/08/183946
-// @docs ./docs/disjoint_sparse_table.md
+// @docs docs/structure/disjoint_sparse_table.md
 
 #include <vector>
 #include <functional>

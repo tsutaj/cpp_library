@@ -1,7 +1,7 @@
 #pragma once
 
 // @brief Sparse Table
-// @docs ./docs/sparse_table.md
+// @docs docs/structure/sparse_table.md
 
 #include <vector>
 #include <functional>

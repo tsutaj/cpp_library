@@ -2,7 +2,7 @@
 
 /**
  * @brief 1 次元累積和 (1 Dimension Cumulative Sum)
- * @docs ./docs/cumulative_sum.md
+ * @docs docs/algorithm/cumulative_sum.md
  */
 
 #include <functional>
