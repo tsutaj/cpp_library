@@ -24,9 +24,6 @@ data:
       path: basic_000_template.cpp
       title: basic_000_template.cpp
     - icon: ':warning:'
-      path: oj-prepare-template.cpp
-      title: oj-prepare-template.cpp
-    - icon: ':warning:'
       path: topcoder.cpp
       title: topcoder.cpp
   - name: dp
