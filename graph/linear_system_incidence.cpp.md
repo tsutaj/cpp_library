@@ -84,4 +84,4 @@ title: "\u63A5\u7D9A\u884C\u5217\u3092\u4FC2\u6570\u306B\u6301\u3064\u7DDA\u5F62
 
 ## Reference
 
-- [「接続行列を係数にもつ線型方程式」の競プロでの応用](https://drive.google.com/file/d/1GYxjvoEIn_j9i9AEWP5zQ4yyCQCLysrn/view) (opt さん)
+- [「接続行列を係数にもつ線形方程式」の競プロでの応用](https://drive.google.com/file/d/1GYxjvoEIn_j9i9AEWP5zQ4yyCQCLysrn/view) (opt さん)
