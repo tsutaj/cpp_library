@@ -2,7 +2,7 @@
 
 /**
  * @brief 接続行列を係数に持つ線形方程式のソルバ
- * @docs docs/algorithm/linear_system_incidence.md
+ * @docs docs/graph/linear_system_incidence.md
  */
 
 #include <vector>
