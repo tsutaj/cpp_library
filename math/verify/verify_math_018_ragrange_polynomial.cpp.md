@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: math/math_017_modint.cpp
     title: math/math_017_modint.cpp
   - icon: ':warning:'

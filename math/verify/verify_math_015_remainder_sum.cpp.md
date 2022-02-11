@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: math/math_015_remainder_sum.cpp
     title: math/math_015_remainder_sum.cpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: math/math_017_modint.cpp
     title: math/math_017_modint.cpp
   _extendedRequiredBy: []

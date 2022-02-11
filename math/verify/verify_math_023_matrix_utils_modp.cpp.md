@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: math/math_004_matrix.cpp
     title: math/math_004_matrix.cpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: math/math_017_modint.cpp
     title: math/math_017_modint.cpp
   - icon: ':warning:'

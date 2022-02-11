@@ -189,6 +189,10 @@ data:
     - icon: ':warning:'
       path: graph/graph_025_2SAT.cpp
       title: graph/graph_025_2SAT.cpp
+    - icon: ':x:'
+      path: graph/linear_system_incidence.cpp
+      title: "\u63A5\u7D9A\u884C\u5217\u3092\u4FC2\u6570\u306B\u6301\u3064\u7DDA\u5F62\
+        \u65B9\u7A0B\u5F0F\u306E\u30BD\u30EB\u30D0"
   - name: marathon
     pages:
     - icon: ':warning:'
@@ -250,7 +254,7 @@ data:
     - icon: ':warning:'
       path: math/math_016_mod_sqrt.cpp
       title: math/math_016_mod_sqrt.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/math_017_modint.cpp
       title: math/math_017_modint.cpp
     - icon: ':warning:'
@@ -636,6 +640,11 @@ data:
     - icon: ':x:'
       path: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
       title: verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - name: verifying_test/AtCoder/ABC155
+    pages:
+    - icon: ':x:'
+      path: verifying_test/AtCoder/ABC155/linear_system_incidence.test.cpp
+      title: verifying_test/AtCoder/ABC155/linear_system_incidence.test.cpp
   - name: verifying_test/AtCoder/ABC217
     pages:
     - icon: ':x:'
