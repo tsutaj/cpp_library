@@ -73,7 +73,7 @@ see: https://kmyk.github.io/blog/blog/2020/07/27/recursion-on-cartesian-tree/
 
 ### Usage
 
-- `getCartesianTree(A, cmp)`
+- `getCartesianTree(A, cmp)`: $O(N)$
     - [Input] 数列 $A = (a_1, a_2, \ldots, a_N)$ と比較関数 $\mathrm{cmp}(x, y)$ を与える
         - 比較関数は省略可能。デフォルトでは $\min$ になっている ($x < y$ ならば `true`)
         - 以降、比較関数が $\min$ に設定されていると仮定して説明する

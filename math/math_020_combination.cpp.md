@@ -126,8 +126,8 @@ data:
   isVerificationFile: false
   path: math/math_020_combination.cpp
   requiredBy:
-  - math/verify/verify_math_020_combination.cpp
   - math/verify/verify_math_019_specific_ragrange_polynomial.cpp
+  - math/verify/verify_math_020_combination.cpp
   timestamp: '2019-11-22 21:50:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

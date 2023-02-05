@@ -71,8 +71,8 @@ data:
   isVerificationFile: false
   path: structure/strc_008_abst_segtree.cpp
   requiredBy:
-  - structure/verify/verify_strc_008_abst_segtree.cpp
   - string/verify/verify_str_009_manacher.cpp
+  - structure/verify/verify_strc_008_abst_segtree.cpp
   timestamp: '2019-12-09 17:27:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

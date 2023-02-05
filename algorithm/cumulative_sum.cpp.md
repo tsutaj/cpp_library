@@ -67,8 +67,8 @@ data:
   timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
   - verifying_test/AOJ/0516/cumulative_sum.test.cpp
+  - verifying_test/yosupo/data_structure/static_range_sum/cumulative_sum.test.cpp
 documentation_of: algorithm/cumulative_sum.cpp
 layout: document
 redirect_from:
