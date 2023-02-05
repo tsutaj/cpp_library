@@ -1,6 +1,8 @@
+#include <chrono>
+
 class Timer {
     chrono::high_resolution_clock::time_point start, end;
-    double limit;
+    double limit;  // 秒数を指定
 
 public:
     Timer() {
