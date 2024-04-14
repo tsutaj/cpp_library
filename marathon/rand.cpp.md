@@ -24,7 +24,7 @@ data:
     \ lb, int64_t ub) {\n        return std::uniform_int_distribution<int64_t>{lb,\
     \ ub}(eng);\n    }\n    int64_t NextLong() {\n        return std::uniform_int_distribution<int64_t>{0,\
     \ std::numeric_limits<int64_t>::max()}(eng);\n    }\n\n    double NextDouble(double\
-    \ lb, double ub) {\n        return std::uniform_real_distribution<double>{lb,\
+    \ lb = 0.0, double ub = 1.0) {\n        return std::uniform_real_distribution<double>{lb,\
     \ ub}(eng);\n    }\nprivate:\n    std::mt19937 eng{std::random_device{}()};\n\
     };\n"
   code: "// [lb, ub] \u306E\u9589\u533A\u9593\u5185\u306E\u5024\u3092\u30E9\u30F3\u30C0\
@@ -43,14 +43,14 @@ data:
     \ lb, int64_t ub) {\n        return std::uniform_int_distribution<int64_t>{lb,\
     \ ub}(eng);\n    }\n    int64_t NextLong() {\n        return std::uniform_int_distribution<int64_t>{0,\
     \ std::numeric_limits<int64_t>::max()}(eng);\n    }\n\n    double NextDouble(double\
-    \ lb, double ub) {\n        return std::uniform_real_distribution<double>{lb,\
+    \ lb = 0.0, double ub = 1.0) {\n        return std::uniform_real_distribution<double>{lb,\
     \ ub}(eng);\n    }\nprivate:\n    std::mt19937 eng{std::random_device{}()};\n\
     };\n"
   dependsOn: []
   isVerificationFile: false
   path: marathon/rand.cpp
   requiredBy: []
-  timestamp: '2023-02-05 21:33:14+09:00'
+  timestamp: '2024-04-14 15:27:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: marathon/rand.cpp
