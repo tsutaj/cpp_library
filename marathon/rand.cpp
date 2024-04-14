@@ -35,7 +35,7 @@ public:
         return std::uniform_int_distribution<int64_t>{0, std::numeric_limits<int64_t>::max()}(eng);
     }
 
-    double NextDouble(double lb, double ub) {
+    double NextDouble(double lb = 0.0, double ub = 1.0) {
         return std::uniform_real_distribution<double>{lb, ub}(eng);
     }
 private:
