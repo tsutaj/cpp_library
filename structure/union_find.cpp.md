@@ -58,8 +58,8 @@ data:
   timestamp: '2022-01-28 02:17:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
   - verifying_test/AOJ/DSL_1_A/union_find.test.cpp
+  - verifying_test/yosupo/data_structure/unionfind/union_find.test.cpp
 documentation_of: structure/union_find.cpp
 layout: document
 redirect_from:

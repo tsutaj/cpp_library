@@ -198,9 +198,15 @@ data:
     - icon: ':warning:'
       path: marathon/beam_search.cpp
       title: "\u30D3\u30FC\u30E0\u30B5\u30FC\u30C1"
+    - icon: ':heavy_check_mark:'
+      path: marathon/interval_heap.cpp
+      title: Interval Heap
     - icon: ':warning:'
       path: marathon/rand.cpp
       title: marathon/rand.cpp
+    - icon: ':warning:'
+      path: marathon/template.cpp
+      title: marathon/template.cpp
     - icon: ':warning:'
       path: marathon/timer.cpp
       title: marathon/timer.cpp
@@ -638,6 +644,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
       title: verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
+  - name: verifying_test/AOJ/interval_heap
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/interval_heap/0001_init.test.cpp
+      title: verifying_test/AOJ/interval_heap/0001_init.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/interval_heap/0001_init_rev.test.cpp
+      title: verifying_test/AOJ/interval_heap/0001_init_rev.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/interval_heap/0001_push.test.cpp
+      title: verifying_test/AOJ/interval_heap/0001_push.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verifying_test/AOJ/interval_heap/0001_push_rev.test.cpp
+      title: verifying_test/AOJ/interval_heap/0001_push_rev.test.cpp
   - name: verifying_test/AtCoder/ABC127
     pages:
     - icon: ':x:'
