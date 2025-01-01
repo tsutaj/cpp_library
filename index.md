@@ -198,6 +198,9 @@ data:
     - icon: ':warning:'
       path: marathon/beam_search.cpp
       title: "\u30D3\u30FC\u30E0\u30B5\u30FC\u30C1"
+    - icon: ':warning:'
+      path: marathon/chokudai_search.cpp
+      title: "chokudai \u30B5\u30FC\u30C1"
     - icon: ':heavy_check_mark:'
       path: marathon/interval_heap.cpp
       title: Interval Heap

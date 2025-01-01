@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: marathon/chokudai_search.cpp
+    title: "chokudai \u30B5\u30FC\u30C1"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/interval_heap/0001_init.test.cpp
@@ -108,7 +111,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: marathon/interval_heap.cpp
-  requiredBy: []
+  requiredBy:
+  - marathon/chokudai_search.cpp
   timestamp: '2025-01-01 22:44:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
