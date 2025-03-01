@@ -201,6 +201,9 @@ data:
     - icon: ':warning:'
       path: marathon/chokudai_search.cpp
       title: "chokudai \u30B5\u30FC\u30C1"
+    - icon: ':warning:'
+      path: marathon/index_set.cpp
+      title: Index Set
     - icon: ':heavy_check_mark:'
       path: marathon/interval_heap.cpp
       title: Interval Heap

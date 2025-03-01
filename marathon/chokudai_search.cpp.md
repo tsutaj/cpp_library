@@ -10,29 +10,25 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    _deprecated_at_docs: docs/marathon/chokudai_search.md
-    document_title: "chokudai \u30B5\u30FC\u30C1"
     links: []
-  bundledCode: "#line 1 \"marathon/chokudai_search.cpp\"\n/**\n * @brief chokudai\
-    \ \u30B5\u30FC\u30C1\n * @docs docs/marathon/chokudai_search.md\n */\n\n#line\
-    \ 1 \"marathon/interval_heap.cpp\"\ntemplate <typename Tp>\nclass IntervalHeap\
-    \ {\n   public:\n    template <class Iterator>\n    IntervalHeap(Iterator first,\
-    \ Iterator last) : data_(first, last) {\n        make_heap();\n    }\n    IntervalHeap()\
-    \ = default;\n\n    size_t size() const { return data_.size(); }\n    void clear()\
-    \ { data_.clear(); }\n    void emplace(const Tp& val) {\n        data_.push_back(val);\n\
-    \        up(size() - 1);\n    }\n    void push(const Tp& val) { emplace(val);\
-    \ }\n    const Tp& top_min() const { return data_[size() >= 2]; }\n    const Tp&\
-    \ top_max() const { return data_[0]; }\n    void pop_min() {\n        if(size()\
-    \ <= 2) {\n            data_.pop_back();\n        } else {\n            swap(data_[1],\
-    \ data_.back());\n            data_.pop_back();\n            const size_t k =\
-    \ down(1);\n            up(k);\n        }\n    }\n    void pop_max() {\n     \
-    \   if(size() <= 1) {\n            data_.pop_back();\n        } else {\n     \
-    \       swap(data_[0], data_.back());\n            data_.pop_back();\n       \
-    \     const size_t k = down(0);\n            up(k);\n        }\n    }\n\n   private:\n\
-    \    vector<Tp> data_;\n    inline size_t to_k_max(size_t k) { return k & ~1;\
-    \ }\n    inline size_t to_k_min(size_t k) { return k | 1; }\n    inline size_t\
-    \ get_parent(size_t k, bool is_max) { return (((k >> 1) - 1) & ~1) | (is_max ?\
-    \ 0 : 1); }\n\n    size_t down(size_t k) {\n        const size_t s = size();\n\
+  bundledCode: "#line 1 \"marathon/interval_heap.cpp\"\ntemplate <typename Tp>\nclass\
+    \ IntervalHeap {\n   public:\n    template <class Iterator>\n    IntervalHeap(Iterator\
+    \ first, Iterator last) : data_(first, last) {\n        make_heap();\n    }\n\
+    \    IntervalHeap() = default;\n\n    size_t size() const { return data_.size();\
+    \ }\n    void clear() { data_.clear(); }\n    void emplace(const Tp& val) {\n\
+    \        data_.push_back(val);\n        up(size() - 1);\n    }\n    void push(const\
+    \ Tp& val) { emplace(val); }\n    const Tp& top_min() const { return data_[size()\
+    \ >= 2]; }\n    const Tp& top_max() const { return data_[0]; }\n    void pop_min()\
+    \ {\n        if(size() <= 2) {\n            data_.pop_back();\n        } else\
+    \ {\n            swap(data_[1], data_.back());\n            data_.pop_back();\n\
+    \            const size_t k = down(1);\n            up(k);\n        }\n    }\n\
+    \    void pop_max() {\n        if(size() <= 1) {\n            data_.pop_back();\n\
+    \        } else {\n            swap(data_[0], data_.back());\n            data_.pop_back();\n\
+    \            const size_t k = down(0);\n            up(k);\n        }\n    }\n\
+    \n   private:\n    vector<Tp> data_;\n    inline size_t to_k_max(size_t k) { return\
+    \ k & ~1; }\n    inline size_t to_k_min(size_t k) { return k | 1; }\n    inline\
+    \ size_t get_parent(size_t k, bool is_max) { return (((k >> 1) - 1) & ~1) | (is_max\
+    \ ? 0 : 1); }\n\n    size_t down(size_t k) {\n        const size_t s = size();\n\
     \        if(k & 1) {\n            // min heap\n            while(true) {\n   \
     \             const size_t cl = (k << 1) + 1;\n                const size_t cr\
     \ = (k << 1) + 3;\n                if(cl >= s) break;\n                const size_t\
@@ -57,7 +53,7 @@ data:
     \  }\n    void make_heap() {\n        for(size_t i = size(); i--;) {\n       \
     \     if((i & 1) && data_[i - 1] < data_[i]) {\n                swap(data_[i -\
     \ 1], data_[i]);\n            }\n            size_t k = down(i);\n           \
-    \ up(k, i);\n        }\n    }\n};\n#line 7 \"marathon/chokudai_search.cpp\"\n\n\
+    \ up(k, i);\n        }\n    }\n};\n#line 2 \"marathon/chokudai_search.cpp\"\n\n\
     template <class State, class Timer>\nclass ChokudaiSearch {\n   public:\n    ChokudaiSearch()\
     \ : num_iter_(-1) {}\n    void init(int max_turns, double search_time, int time_check_iter)\
     \ {\n        states_.resize(max_turns + 1);\n        search_time_ = search_time;\n\
@@ -82,12 +78,11 @@ data:
     \ }\n\n   private:\n    double search_time_;\n    int num_iter_;\n    int time_check_iter_;\n\
     \    vector<IntervalHeap<State>> states_;\n    vector<int> max_num_states_;\n\
     };\n"
-  code: "/**\n * @brief chokudai \u30B5\u30FC\u30C1\n * @docs docs/marathon/chokudai_search.md\n\
-    \ */\n\n#include \"interval_heap.cpp\"\n\ntemplate <class State, class Timer>\n\
-    class ChokudaiSearch {\n   public:\n    ChokudaiSearch() : num_iter_(-1) {}\n\
-    \    void init(int max_turns, double search_time, int time_check_iter) {\n   \
-    \     states_.resize(max_turns + 1);\n        search_time_ = search_time;\n  \
-    \      num_iter_ = 0;\n        time_check_iter_ = time_check_iter;\n        max_num_states_.resize(max_turns,\
+  code: "#include \"interval_heap.cpp\"\n\ntemplate <class State, class Timer>\nclass\
+    \ ChokudaiSearch {\n   public:\n    ChokudaiSearch() : num_iter_(-1) {}\n    void\
+    \ init(int max_turns, double search_time, int time_check_iter) {\n        states_.resize(max_turns\
+    \ + 1);\n        search_time_ = search_time;\n        num_iter_ = 0;\n       \
+    \ time_check_iter_ = time_check_iter;\n        max_num_states_.resize(max_turns,\
     \ 1 << 30);\n    }\n    void set_max_num_states(int max_num_state) {\n       \
     \ fill(max_num_states_.begin(), max_num_states_.end(), max_num_state);\n    }\n\
     \    void set_max_num_states(const vector<int> &max_num_states) {\n        assert(max_num_states.size()\
@@ -112,16 +107,14 @@ data:
   isVerificationFile: false
   path: marathon/chokudai_search.cpp
   requiredBy: []
-  timestamp: '2025-01-01 23:36:48+09:00'
+  timestamp: '2025-03-01 10:35:42+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: marathon/chokudai_search.cpp
 layout: document
-redirect_from:
-- /library/marathon/chokudai_search.cpp
-- /library/marathon/chokudai_search.cpp.html
 title: "chokudai \u30B5\u30FC\u30C1"
 ---
+
 - `add_next_states` で状態遷移を定義する
     - 状態およびそのターン数が与えられるので、次の状態およびそのターン数を決定し、 `register_state` を使って状態を登録
 - メモリ制約に引っかからないように、各ターンで持つ状態数に上限を設けることが可能

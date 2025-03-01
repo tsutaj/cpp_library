@@ -116,9 +116,9 @@ data:
   timestamp: '2025-01-01 22:44:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verifying_test/AOJ/interval_heap/0001_init_rev.test.cpp
   - verifying_test/AOJ/interval_heap/0001_push_rev.test.cpp
   - verifying_test/AOJ/interval_heap/0001_init.test.cpp
-  - verifying_test/AOJ/interval_heap/0001_init_rev.test.cpp
   - verifying_test/AOJ/interval_heap/0001_push.test.cpp
 documentation_of: marathon/interval_heap.cpp
 layout: document

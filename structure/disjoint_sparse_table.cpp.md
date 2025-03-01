@@ -69,8 +69,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/AOJ/DSL_3_D/disjoint_sparse_table.test.cpp
-  - verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
   - verifying_test/yosupo/data_structure/static_rmq/disjoint_sparse_table.test.cpp
+  - verifying_test/yosupo/data_structure/static_range_sum/disjoint_sparse_table.test.cpp
 documentation_of: structure/disjoint_sparse_table.cpp
 layout: document
 redirect_from:
