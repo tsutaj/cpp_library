@@ -1,8 +1,3 @@
-/**
- * @brief chokudai サーチ
- * @docs docs/marathon/chokudai_search.md
- */
-
 #include "interval_heap.cpp"
 
 template <class State, class Timer>
