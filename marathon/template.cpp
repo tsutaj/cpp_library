@@ -75,9 +75,24 @@ bool chmax(Tp& a, const Tp& b) {
 #include "/home/tsutaj/Documents/compro/cpp_library/marathon/rand.cpp"
 Rand rnd(35023503980LL);
 Timer timer;
+using Answer = vector<int>; // TODO
+
+void input() {
+
+}
+
+void output(const Answer& answer, bool is_final = false) {
+
+}
+
+void solve() {
+    // auto ans = get_answer();
+    // output(ans, true);
+}
 
 int main() {
     timer.setStart();
-
+    input();
+    solve();
     return 0;
 }
