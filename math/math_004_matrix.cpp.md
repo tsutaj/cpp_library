@@ -100,9 +100,9 @@ data:
   isVerificationFile: false
   path: math/math_004_matrix.cpp
   requiredBy:
+  - math/verify/verify_math_004_matrix.cpp
   - math/verify/verify_math_023_matrix_utils_modp.cpp
   - math/verify/verify_math_022_matrix_utils_real.cpp
-  - math/verify/verify_math_004_matrix.cpp
   timestamp: '2019-11-22 21:50:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

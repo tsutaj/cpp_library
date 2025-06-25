@@ -58,56 +58,65 @@ data:
     \ : num_iter_(-1) {}\n    void init(int max_turns, double search_time, int time_check_iter)\
     \ {\n        states_.resize(max_turns + 1);\n        search_time_ = search_time;\n\
     \        num_iter_ = 0;\n        time_check_iter_ = time_check_iter;\n       \
-    \ max_num_states_.resize(max_turns, 1 << 30);\n    }\n    void set_max_num_states(int\
+    \ max_num_states_.resize(max_turns + 1, 1 << 30);\n    }\n    void set_max_num_states(int\
     \ max_num_state) {\n        fill(max_num_states_.begin(), max_num_states_.end(),\
     \ max_num_state);\n    }\n    void set_max_num_states(const vector<int> &max_num_states)\
     \ {\n        assert(max_num_states.size() == max_num_states_.size());\n      \
     \  max_num_states_ = max_num_states;\n    }\n    void register_state(int turns,\
     \ const State &state) {\n        states_[turns].emplace(state);\n        while(states_[turns].size()\
     \ > max_num_states_[turns]) {\n            states_[turns].pop_max();\n       \
-    \ }\n    }\n    void search(Timer &timer, const auto &add_next_states) {\n   \
-    \     assert(num_iter_ >= 0);\n        const double start_time = timer.getTime();\n\
-    \        for(num_iter_ = 0;; num_iter_++) {\n            for(int turns = 0; turns\
-    \ + 1 < (int)states_.size(); turns++) {\n                if(timer.getTime() -\
-    \ start_time > search_time_) {\n                    goto TIME_OVER;\n        \
-    \        }\n                if(states_[turns].size() == 0) continue;\n       \
-    \         State state = states_[turns].top_min();\n                states_[turns].pop_min();\n\
-    \                add_next_states(turns, state);\n            }\n        }\n  \
-    \  TIME_OVER:;\n        fprintf(stderr, \"chokudai search: num_iter = %d\\n\"\
-    , num_iter_);\n    }\n    const State &get_best_state() const { return states_.back().top_min();\
-    \ }\n\n   private:\n    double search_time_;\n    int num_iter_;\n    int time_check_iter_;\n\
+    \ }\n    }\n    size_t size(int turns) const {\n        return states_[turns].size();\n\
+    \    }\n    const State& worst_state(int turns) const {\n        assert(states_[turns].size()\
+    \ > 0);\n        return states_[turns].top_max();\n    }\n    void search(Timer\
+    \ &timer, const auto &add_next_states) {\n        assert(num_iter_ >= 0);\n  \
+    \      const double start_time = timer.getTime();\n        for(num_iter_ = 0;;\
+    \ num_iter_++) {\n            for(int turns = 0; turns + 1 < (int)states_.size();\
+    \ turns++) {\n                if(timer.getTime() - start_time > search_time_)\
+    \ {\n                    goto TIME_OVER;\n                }\n                if(states_[turns].size()\
+    \ == 0) continue;\n                State state = states_[turns].top_min();\n \
+    \               states_[turns].pop_min();\n                add_next_states(turns,\
+    \ state);\n            }\n        }\n    TIME_OVER:;\n        fprintf(stderr,\
+    \ \"chokudai search: num_iter = %d\\n\", num_iter_);\n    }\n    const State &get_best_state()\
+    \ const {\n        if (states_.back().empty()) {\n            throw runtime_error(\"\
+    No states are registered.\");\n        }\n        return states_.back().top_min();\n\
+    \    }\n\n   private:\n    double search_time_;\n    int num_iter_;\n    int time_check_iter_;\n\
     \    vector<IntervalHeap<State>> states_;\n    vector<int> max_num_states_;\n\
     };\n"
   code: "#include \"interval_heap.cpp\"\n\ntemplate <class State, class Timer>\nclass\
     \ ChokudaiSearch {\n   public:\n    ChokudaiSearch() : num_iter_(-1) {}\n    void\
     \ init(int max_turns, double search_time, int time_check_iter) {\n        states_.resize(max_turns\
     \ + 1);\n        search_time_ = search_time;\n        num_iter_ = 0;\n       \
-    \ time_check_iter_ = time_check_iter;\n        max_num_states_.resize(max_turns,\
-    \ 1 << 30);\n    }\n    void set_max_num_states(int max_num_state) {\n       \
-    \ fill(max_num_states_.begin(), max_num_states_.end(), max_num_state);\n    }\n\
-    \    void set_max_num_states(const vector<int> &max_num_states) {\n        assert(max_num_states.size()\
-    \ == max_num_states_.size());\n        max_num_states_ = max_num_states;\n   \
-    \ }\n    void register_state(int turns, const State &state) {\n        states_[turns].emplace(state);\n\
-    \        while(states_[turns].size() > max_num_states_[turns]) {\n           \
-    \ states_[turns].pop_max();\n        }\n    }\n    void search(Timer &timer, const\
-    \ auto &add_next_states) {\n        assert(num_iter_ >= 0);\n        const double\
-    \ start_time = timer.getTime();\n        for(num_iter_ = 0;; num_iter_++) {\n\
-    \            for(int turns = 0; turns + 1 < (int)states_.size(); turns++) {\n\
-    \                if(timer.getTime() - start_time > search_time_) {\n         \
-    \           goto TIME_OVER;\n                }\n                if(states_[turns].size()\
+    \ time_check_iter_ = time_check_iter;\n        max_num_states_.resize(max_turns\
+    \ + 1, 1 << 30);\n    }\n    void set_max_num_states(int max_num_state) {\n  \
+    \      fill(max_num_states_.begin(), max_num_states_.end(), max_num_state);\n\
+    \    }\n    void set_max_num_states(const vector<int> &max_num_states) {\n   \
+    \     assert(max_num_states.size() == max_num_states_.size());\n        max_num_states_\
+    \ = max_num_states;\n    }\n    void register_state(int turns, const State &state)\
+    \ {\n        states_[turns].emplace(state);\n        while(states_[turns].size()\
+    \ > max_num_states_[turns]) {\n            states_[turns].pop_max();\n       \
+    \ }\n    }\n    size_t size(int turns) const {\n        return states_[turns].size();\n\
+    \    }\n    const State& worst_state(int turns) const {\n        assert(states_[turns].size()\
+    \ > 0);\n        return states_[turns].top_max();\n    }\n    void search(Timer\
+    \ &timer, const auto &add_next_states) {\n        assert(num_iter_ >= 0);\n  \
+    \      const double start_time = timer.getTime();\n        for(num_iter_ = 0;;\
+    \ num_iter_++) {\n            for(int turns = 0; turns + 1 < (int)states_.size();\
+    \ turns++) {\n                if(timer.getTime() - start_time > search_time_)\
+    \ {\n                    goto TIME_OVER;\n                }\n                if(states_[turns].size()\
     \ == 0) continue;\n                State state = states_[turns].top_min();\n \
     \               states_[turns].pop_min();\n                add_next_states(turns,\
     \ state);\n            }\n        }\n    TIME_OVER:;\n        fprintf(stderr,\
     \ \"chokudai search: num_iter = %d\\n\", num_iter_);\n    }\n    const State &get_best_state()\
-    \ const { return states_.back().top_min(); }\n\n   private:\n    double search_time_;\n\
-    \    int num_iter_;\n    int time_check_iter_;\n    vector<IntervalHeap<State>>\
-    \ states_;\n    vector<int> max_num_states_;\n};\n"
+    \ const {\n        if (states_.back().empty()) {\n            throw runtime_error(\"\
+    No states are registered.\");\n        }\n        return states_.back().top_min();\n\
+    \    }\n\n   private:\n    double search_time_;\n    int num_iter_;\n    int time_check_iter_;\n\
+    \    vector<IntervalHeap<State>> states_;\n    vector<int> max_num_states_;\n\
+    };\n"
   dependsOn:
   - marathon/interval_heap.cpp
   isVerificationFile: false
   path: marathon/chokudai_search.cpp
   requiredBy: []
-  timestamp: '2025-03-01 10:35:42+09:00'
+  timestamp: '2025-06-25 11:24:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: marathon/chokudai_search.cpp
