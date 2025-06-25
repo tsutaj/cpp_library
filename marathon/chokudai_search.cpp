@@ -9,7 +9,7 @@ class ChokudaiSearch {
         search_time_ = search_time;
         num_iter_ = 0;
         time_check_iter_ = time_check_iter;
-        max_num_states_.resize(max_turns, 1 << 30);
+        max_num_states_.resize(max_turns + 1, 1 << 30);
     }
     void set_max_num_states(int max_num_state) {
         fill(max_num_states_.begin(), max_num_states_.end(), max_num_state);
@@ -23,6 +23,13 @@ class ChokudaiSearch {
         while(states_[turns].size() > max_num_states_[turns]) {
             states_[turns].pop_max();
         }
+    }
+    size_t size(int turns) const {
+        return states_[turns].size();
+    }
+    const State& worst_state(int turns) const {
+        assert(states_[turns].size() > 0);
+        return states_[turns].top_max();
     }
     void search(Timer &timer, const auto &add_next_states) {
         assert(num_iter_ >= 0);
@@ -41,7 +48,12 @@ class ChokudaiSearch {
     TIME_OVER:;
         fprintf(stderr, "chokudai search: num_iter = %d\n", num_iter_);
     }
-    const State &get_best_state() const { return states_.back().top_min(); }
+    const State &get_best_state() const {
+        if (states_.back().empty()) {
+            throw runtime_error("No states are registered.");
+        }
+        return states_.back().top_min();
+    }
 
    private:
     double search_time_;
