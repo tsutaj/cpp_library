@@ -77,6 +77,10 @@ Rand rnd(35023503980LL);
 Timer timer;
 using Answer = vector<int>; // TODO
 
+enum Dir { U, R, D, L };
+const int dr[4] = {-1, 0, 1, 0};
+const int dc[4] = {0, 1, 0, -1};
+
 void input() {
 
 }
