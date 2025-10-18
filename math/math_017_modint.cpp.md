@@ -89,13 +89,13 @@ data:
   isVerificationFile: false
   path: math/math_017_modint.cpp
   requiredBy:
+  - math/verify/verify_math_023_matrix_utils_modp.cpp
   - math/verify/verify_math_019_specific_ragrange_polynomial.cpp
   - math/verify/verify_math_024_fixed_matrix.cpp
   - math/verify/verify_math_015_remainder_sum.cpp
-  - math/verify/verify_math_004_matrix.cpp
   - math/verify/verify_math_020_combination.cpp
-  - math/verify/verify_math_023_matrix_utils_modp.cpp
   - math/verify/verify_math_018_ragrange_polynomial.cpp
+  - math/verify/verify_math_004_matrix.cpp
   timestamp: '2020-01-06 07:57:20+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:

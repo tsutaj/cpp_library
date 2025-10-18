@@ -124,8 +124,8 @@ data:
   isVerificationFile: false
   path: structure/strc_009_abst_lazy_segtree.cpp
   requiredBy:
-  - structure/verify/verify_strc_009_abst_lazy_segtree.cpp
   - math/verify/verify_math_024_fixed_matrix.cpp
+  - structure/verify/verify_strc_009_abst_lazy_segtree.cpp
   timestamp: '2019-12-09 17:27:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
