@@ -216,7 +216,7 @@ data:
     - icon: ':warning:'
       path: marathon/timer.cpp
       title: marathon/timer.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: marathon/trace.cpp
       title: "Trace\uFF08\u7D4C\u8DEF\u5FA9\u5143\uFF09"
   - name: math
@@ -514,6 +514,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
       title: verifying_test/AOJ/0560/cumulative_sum_2d.test.cpp
+  - name: verifying_test/AOJ/1227
+    pages:
+    - icon: ':x:'
+      path: verifying_test/AOJ/1227/trace.test.cpp
+      title: verifying_test/AOJ/1227/trace.test.cpp
   - name: verifying_test/AOJ/1549
     pages:
     - icon: ':heavy_check_mark:'
