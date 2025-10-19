@@ -216,6 +216,9 @@ data:
     - icon: ':warning:'
       path: marathon/timer.cpp
       title: marathon/timer.cpp
+    - icon: ':warning:'
+      path: marathon/trace.cpp
+      title: "Trace\uFF08\u7D4C\u8DEF\u5FA9\u5143\uFF09"
   - name: math
     pages:
     - icon: ':warning:'
