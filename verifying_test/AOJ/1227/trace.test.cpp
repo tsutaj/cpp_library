@@ -43,13 +43,20 @@ int solve_testcases() {
         }
     };
     go(go, 0, -1);
+    vector<string> answers;
     for(int id : terminals) {
         vector<string> words = trace.get(id);
+        string answer = "";
         for(int i=0; i<(int)words.size(); i++) {
-            cout << words[i];
-            if (i + 1 < (int)words.size()) cout << " ";
-            else cout << ".\n";
+            answer += words[i];
+            if (i + 1 < (int)words.size()) answer += " ";
+            else answer += ".";
         }
+        answers.emplace_back(answer);
+    }
+    sort(answers.begin(), answers.end());
+    for(auto answer : answers) {
+        cout << answer << endl;
     }
     cout << "--" << endl;
     return 0;
