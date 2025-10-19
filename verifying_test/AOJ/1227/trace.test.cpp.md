@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: marathon/trace.cpp
     title: "Trace\uFF08\u7D4C\u8DEF\u5FA9\u5143\uFF09"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1227
@@ -38,12 +38,15 @@ data:
     \ > seq.size()) continue;\n            if (seq.substr(pos, word_digits[i].size())\
     \ == word_digits[i]) {\n                int nxt = pos + word_digits[i].size();\n\
     \                self(self, nxt, trace.add(words[i], id));\n            }\n  \
-    \      }\n    };\n    go(go, 0, -1);\n    for(int id : terminals) {\n        vector<string>\
-    \ words = trace.get(id);\n        for(int i=0; i<(int)words.size(); i++) {\n \
-    \           cout << words[i];\n            if (i + 1 < (int)words.size()) cout\
-    \ << \" \";\n            else cout << \".\\n\";\n        }\n    }\n    cout <<\
-    \ \"--\" << endl;\n    return 0;\n}\n\nint main() {\n    while(!solve_testcases());\n\
-    \    return 0;\n}\n"
+    \      }\n    };\n    go(go, 0, -1);\n    vector<string> answers;\n    for(int\
+    \ id : terminals) {\n        vector<string> words = trace.get(id);\n        string\
+    \ answer = \"\";\n        for(int i=0; i<(int)words.size(); i++) {\n         \
+    \   answer += words[i];\n            if (i + 1 < (int)words.size()) answer +=\
+    \ \" \";\n            else answer += \".\";\n        }\n        answers.emplace_back(answer);\n\
+    \    }\n    sort(answers.begin(), answers.end());\n    for(auto answer : answers)\
+    \ {\n        cout << answer << endl;\n    }\n    cout << \"--\" << endl;\n   \
+    \ return 0;\n}\n\nint main() {\n    while(!solve_testcases());\n    return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1227\"\
     \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace\
     \ std;\n\n#define call_from_test\n#include \"../../../marathon/trace.cpp\"\n#undef\
@@ -60,19 +63,22 @@ data:
     \ > seq.size()) continue;\n            if (seq.substr(pos, word_digits[i].size())\
     \ == word_digits[i]) {\n                int nxt = pos + word_digits[i].size();\n\
     \                self(self, nxt, trace.add(words[i], id));\n            }\n  \
-    \      }\n    };\n    go(go, 0, -1);\n    for(int id : terminals) {\n        vector<string>\
-    \ words = trace.get(id);\n        for(int i=0; i<(int)words.size(); i++) {\n \
-    \           cout << words[i];\n            if (i + 1 < (int)words.size()) cout\
-    \ << \" \";\n            else cout << \".\\n\";\n        }\n    }\n    cout <<\
-    \ \"--\" << endl;\n    return 0;\n}\n\nint main() {\n    while(!solve_testcases());\n\
-    \    return 0;\n}\n"
+    \      }\n    };\n    go(go, 0, -1);\n    vector<string> answers;\n    for(int\
+    \ id : terminals) {\n        vector<string> words = trace.get(id);\n        string\
+    \ answer = \"\";\n        for(int i=0; i<(int)words.size(); i++) {\n         \
+    \   answer += words[i];\n            if (i + 1 < (int)words.size()) answer +=\
+    \ \" \";\n            else answer += \".\";\n        }\n        answers.emplace_back(answer);\n\
+    \    }\n    sort(answers.begin(), answers.end());\n    for(auto answer : answers)\
+    \ {\n        cout << answer << endl;\n    }\n    cout << \"--\" << endl;\n   \
+    \ return 0;\n}\n\nint main() {\n    while(!solve_testcases());\n    return 0;\n\
+    }\n"
   dependsOn:
   - marathon/trace.cpp
   isVerificationFile: true
   path: verifying_test/AOJ/1227/trace.test.cpp
   requiredBy: []
-  timestamp: '2025-10-19 18:29:28+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-10-19 18:34:23+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verifying_test/AOJ/1227/trace.test.cpp
 layout: document

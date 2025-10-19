@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verifying_test/AOJ/1227/trace.test.cpp
     title: verifying_test/AOJ/1227/trace.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"marathon/trace.cpp\"\ntemplate <typename Tp>\nclass Trace\
@@ -31,7 +31,7 @@ data:
   path: marathon/trace.cpp
   requiredBy: []
   timestamp: '2025-10-19 18:25:59+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verifying_test/AOJ/1227/trace.test.cpp
 documentation_of: marathon/trace.cpp
