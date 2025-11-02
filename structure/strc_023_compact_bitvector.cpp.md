@@ -231,19 +231,19 @@ data:
   isVerificationFile: false
   path: structure/strc_023_compact_bitvector.cpp
   requiredBy:
+  - structure/strc_024_static_wavelet_matrix.cpp
   - structure/verify/verify_strc_024_static_wavelet_matrix.cpp
   - structure/verify/verify_strc_023_compact_bitvector.cpp
-  - structure/strc_024_static_wavelet_matrix.cpp
   timestamp: '2020-04-07 00:18:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
   - verifying_test/AOJ/DSL_3_D/static_wavelet_matrix.test.cpp
   - verifying_test/AOJ/1549/static_wavelet_matrix.test.cpp
   - verifying_test/AOJ/ITP1_6_A/static_wavelet_matrix.test.cpp
-  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
-  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
   - verifying_test/AOJ/ALDS1_6_A/static_wavelet_matrix.test.cpp
+  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_less.test.cpp
+  - verifying_test/AOJ/ALDS1_5_D/static_wavelet_matrix_more.test.cpp
+  - verifying_test/AOJ/2426/static_wavelet_matrix.test.cpp
 documentation_of: structure/strc_023_compact_bitvector.cpp
 layout: document
 redirect_from:

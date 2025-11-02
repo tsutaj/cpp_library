@@ -105,10 +105,10 @@ data:
   timestamp: '2021-09-05 23:10:11+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
-  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
   - verifying_test/AtCoder/DWANGO2016/E_slope_trick.test.cpp
   - verifying_test/AtCoder/ABC217/H_slope_trick.test.cpp
+  - verifying_test/AtCoder/ABC127/ABC127_F_slope_trick.test.cpp
+  - verifying_test/AtCoder/ARC070/ARC070_C_slope_trick.test.cpp
 documentation_of: structure/slope_trick.cpp
 layout: document
 redirect_from:
