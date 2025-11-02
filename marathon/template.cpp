@@ -20,6 +20,7 @@
 #include <set>
 #include <numeric>
 #include <map>
+#include <unistd.h>
 using namespace std;
 using ll = long long int;
 
@@ -41,14 +42,49 @@ using ll = long long int;
 void assert_with_backtrace(bool condition, std::string error_msg="") {
     if(!condition) {
         void* callstack[256];
-        int i, frames = backtrace(callstack, 256);
-        char** strs = backtrace_symbols(callstack, frames);
-        for (i = 0; i < frames; ++i) {
-            fprintf(stderr, "%s\n", strs[i]);
+        int frames = backtrace(callstack, 256);
+
+        // get executable path
+        char exec_path[1024] = {0};
+        ssize_t len = readlink("/proc/self/exe", exec_path, sizeof(exec_path) - 1);
+        if (len == -1) {
+            strcpy(exec_path, "./a.out");
+        } else {
+            exec_path[len] = '\0';
         }
-        free(strs);
-        fprintf(stderr, "%s\n", error_msg.c_str());
-        ASSERT(false);
+
+        // build addr2line command
+        std::string cmd = "addr2line -e ";
+        cmd += exec_path;
+        cmd += " -f -C"; // -f for function names, -C for demangling
+
+        for (int i = 0; i < frames; ++i) {
+            char addr_str[32];
+            sprintf(addr_str, " %p", callstack[i]);
+            cmd += addr_str;
+        }
+
+        fprintf(stderr, "Assertion failed. Stack trace:\n");
+        FILE* pipe = popen(cmd.c_str(), "r");
+        if (!pipe) {
+            fprintf(stderr, "Failed to run addr2line. Falling back to backtrace_symbols.\n");
+            char** strs = backtrace_symbols(callstack, frames);
+            for (int i = 0; i < frames; ++i) {
+                fprintf(stderr, "%s\n", strs[i]);
+            }
+            free(strs);
+        } else {
+            char buffer[512];
+            while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+                fprintf(stderr, "%s", buffer);
+            }
+            pclose(pipe);
+        }
+
+        if (!error_msg.empty()) {
+            fprintf(stderr, "\nError: %s\n", error_msg.c_str());
+        }
+        exit(1);
     }
 }
 
