@@ -196,6 +196,9 @@ data:
   - name: marathon
     pages:
     - icon: ':warning:'
+      path: marathon/annealing_parameters.cpp
+      title: marathon/annealing_parameters.cpp
+    - icon: ':warning:'
       path: marathon/beam_search.cpp
       title: "\u30D3\u30FC\u30E0\u30B5\u30FC\u30C1"
     - icon: ':warning:'
