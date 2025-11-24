@@ -214,6 +214,9 @@ data:
       path: marathon/rand.cpp
       title: marathon/rand.cpp
     - icon: ':warning:'
+      path: marathon/rand_xorshift.cpp
+      title: marathon/rand_xorshift.cpp
+    - icon: ':warning:'
       path: marathon/template.cpp
       title: marathon/template.cpp
     - icon: ':warning:'

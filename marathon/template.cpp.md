@@ -60,13 +60,14 @@ data:
     \   } else {\n        return false;\n    }\n}\ntemplate <typename Tp>\nbool chmax(Tp&\
     \ a, const Tp& b) {\n    if(a < b) {\n        a = b;\n        return true;\n \
     \   } else {\n        return false;\n    }\n}\n\n#include \"/home/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp\"\
-    \n#include \"/home/tsutaj/Documents/compro/cpp_library/marathon/rand.cpp\"\nRand\
-    \ rnd(35023503980LL);\nTimer timer;\nusing Answer = vector<int>; // TODO\n\nenum\
-    \ Dir { U, R, D, L };\nconst int dr[4] = {-1, 0, 1, 0};\nconst int dc[4] = {0,\
-    \ 1, 0, -1};\n\nvoid input() {\n\n}\n\nvoid output(const Answer& answer, bool\
-    \ is_final = false) {\n\n}\n\nvoid solve() {\n    // auto ans = get_answer();\n\
+    \n#include \"/home/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp\"\
+    \nRand rnd(35023503980LL);\nTimer timer;\nusing Answer = vector<int>; // TODO\n\
+    \nenum Dir { U, R, D, L };\nconst int dr[4] = {-1, 0, 1, 0};\nconst int dc[4]\
+    \ = {0, 1, 0, -1};\n\nvoid input() {\n\n}\n\nvoid output(const Answer& answer,\
+    \ bool is_final = false) {\n\n}\n\nvoid solve() {\n    // auto ans = get_answer();\n\
     \    // output(ans, true);\n}\n\nint main() {\n    timer.setStart();\n    input();\n\
-    \    solve();\n    return 0;\n}\n"
+    \    solve();\n    fprintf(stderr, \"end time = %.3f\\n\", timer.getTime());\n\
+    \    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: marathon/template.cpp
