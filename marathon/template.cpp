@@ -108,7 +108,7 @@ bool chmax(Tp& a, const Tp& b) {
 }
 
 #include "/home/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp"
-#include "/home/tsutaj/Documents/compro/cpp_library/marathon/rand.cpp"
+#include "/home/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp"
 Rand rnd(35023503980LL);
 Timer timer;
 using Answer = vector<int>; // TODO
@@ -134,5 +134,6 @@ int main() {
     timer.setStart();
     input();
     solve();
+    fprintf(stderr, "end time = %.3f\n", timer.getTime());
     return 0;
 }
