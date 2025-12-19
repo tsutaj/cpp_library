@@ -1,9 +1,9 @@
 
-#ifndef DEBUG
-#pragma GCC target("avx2")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-#endif
+// #ifndef DEBUG
+// #pragma GCC target("avx2")
+// #pragma GCC optimize("O3")
+// #pragma GCC optimize("unroll-loops")
+// #endif
 
 #include <cstdio>
 #include <cassert>
@@ -107,8 +107,8 @@ bool chmax(Tp& a, const Tp& b) {
     }
 }
 
-#include "/home/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp"
-#include "/home/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp"
+#include "/Users/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp"
+#include "/Users/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp"
 Rand rnd(35023503980LL);
 Timer timer;
 using Answer = vector<int>; // TODO
