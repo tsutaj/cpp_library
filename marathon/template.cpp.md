@@ -8,50 +8,51 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.14.0/x64/lib/python3.14/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.14.0/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n    ~~~~~~~~~~~~~~^^^^^^\n  File\
-    \ \"/opt/hostedtoolcache/Python/3.14.0/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \ \"/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
     \                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.14.0/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \ File \"/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: /home/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: /Users/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp:\
     \ line -1: no such header\n"
-  code: "\n#ifndef DEBUG\n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\"\
-    )\n#pragma GCC optimize(\"unroll-loops\")\n#endif\n\n#include <cstdio>\n#include\
-    \ <cassert>\n#include <cmath>\n#include <cstring>\n#include <string>\n#include\
-    \ <functional>\n#include <stack>\n#include <utility>\n#include <queue>\n#include\
-    \ <algorithm>\n#include <execinfo.h>\n#include <iostream>\n#include <set>\n#include\
-    \ <numeric>\n#include <map>\n#include <unistd.h>\nusing namespace std;\nusing\
-    \ ll = long long int;\n\n#ifdef DEBUG\n#define STDERR(...) fprintf(stderr, __VA_ARGS__);\n\
-    #define ASSERT_OVERLOAD(e1,e2,NAME,...) NAME\n#define ASSERT_1(x) assert_with_backtrace((x))\n\
-    #define ASSERT_2(x, y) assert_with_backtrace((x), (y))\n#define ASSERT(...) ASSERT_OVERLOAD(__VA_ARGS__,\
-    \ ASSERT_2, ASSERT_1)(__VA_ARGS__)\n#define DEBUG_PRINT(...) fprintf(stderr, __VA_ARGS__),\
-    \ printf(__VA_ARGS__)\n#else\n#define STDERR(...)\n#define ASSERT(...)\n#define\
-    \ DEBUG_PRINT(...)\n#endif\n\n// assert \u3067\u843D\u3061\u305F\u3068\u304D\u306B\
-    \u30D0\u30C3\u30AF\u30C8\u30EC\u30FC\u30B9\u3059\u308B (`-g -rdynamic` \u304C\u5FC5\
-    \u8981)\n// \u30C7\u30D0\u30C3\u30B0\u30E2\u30FC\u30C9\u3067\u306E\u307F\u6709\
-    \u52B9\nvoid assert_with_backtrace(bool condition, std::string error_msg=\"\"\
-    ) {\n    if(!condition) {\n        void* callstack[256];\n        int frames =\
-    \ backtrace(callstack, 256);\n\n        // get executable path\n        char exec_path[1024]\
-    \ = {0};\n        ssize_t len = readlink(\"/proc/self/exe\", exec_path, sizeof(exec_path)\
-    \ - 1);\n        if (len == -1) {\n            strcpy(exec_path, \"./a.out\");\n\
-    \        } else {\n            exec_path[len] = '\\0';\n        }\n\n        //\
-    \ build addr2line command\n        std::string cmd = \"addr2line -e \";\n    \
-    \    cmd += exec_path;\n        cmd += \" -f -C\"; // -f for function names, -C\
-    \ for demangling\n\n        for (int i = 0; i < frames; ++i) {\n            char\
-    \ addr_str[32];\n            sprintf(addr_str, \" %p\", callstack[i]);\n     \
-    \       cmd += addr_str;\n        }\n\n        fprintf(stderr, \"Assertion failed.\
-    \ Stack trace:\\n\");\n        FILE* pipe = popen(cmd.c_str(), \"r\");\n     \
-    \   if (!pipe) {\n            fprintf(stderr, \"Failed to run addr2line. Falling\
-    \ back to backtrace_symbols.\\n\");\n            char** strs = backtrace_symbols(callstack,\
-    \ frames);\n            for (int i = 0; i < frames; ++i) {\n                fprintf(stderr,\
-    \ \"%s\\n\", strs[i]);\n            }\n            free(strs);\n        } else\
-    \ {\n            char buffer[512];\n            while (fgets(buffer, sizeof(buffer),\
+  code: "\n// #ifndef DEBUG\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"\
+    O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n// #endif\n\n#include <cstdio>\n\
+    #include <cassert>\n#include <cmath>\n#include <cstring>\n#include <string>\n\
+    #include <functional>\n#include <stack>\n#include <utility>\n#include <queue>\n\
+    #include <algorithm>\n#include <execinfo.h>\n#include <iostream>\n#include <set>\n\
+    #include <numeric>\n#include <map>\n#include <unistd.h>\nusing namespace std;\n\
+    using ll = long long int;\n\n#ifdef DEBUG\n#define STDERR(...) fprintf(stderr,\
+    \ __VA_ARGS__);\n#define ASSERT_OVERLOAD(e1,e2,NAME,...) NAME\n#define ASSERT_1(x)\
+    \ assert_with_backtrace((x))\n#define ASSERT_2(x, y) assert_with_backtrace((x),\
+    \ (y))\n#define ASSERT(...) ASSERT_OVERLOAD(__VA_ARGS__, ASSERT_2, ASSERT_1)(__VA_ARGS__)\n\
+    #define DEBUG_PRINT(...) fprintf(stderr, __VA_ARGS__), printf(__VA_ARGS__)\n#else\n\
+    #define STDERR(...)\n#define ASSERT(...)\n#define DEBUG_PRINT(...)\n#endif\n\n\
+    // assert \u3067\u843D\u3061\u305F\u3068\u304D\u306B\u30D0\u30C3\u30AF\u30C8\u30EC\
+    \u30FC\u30B9\u3059\u308B (`-g -rdynamic` \u304C\u5FC5\u8981)\n// \u30C7\u30D0\u30C3\
+    \u30B0\u30E2\u30FC\u30C9\u3067\u306E\u307F\u6709\u52B9\nvoid assert_with_backtrace(bool\
+    \ condition, std::string error_msg=\"\") {\n    if(!condition) {\n        void*\
+    \ callstack[256];\n        int frames = backtrace(callstack, 256);\n\n       \
+    \ // get executable path\n        char exec_path[1024] = {0};\n        ssize_t\
+    \ len = readlink(\"/proc/self/exe\", exec_path, sizeof(exec_path) - 1);\n    \
+    \    if (len == -1) {\n            strcpy(exec_path, \"./a.out\");\n        }\
+    \ else {\n            exec_path[len] = '\\0';\n        }\n\n        // build addr2line\
+    \ command\n        std::string cmd = \"addr2line -e \";\n        cmd += exec_path;\n\
+    \        cmd += \" -f -C\"; // -f for function names, -C for demangling\n\n  \
+    \      for (int i = 0; i < frames; ++i) {\n            char addr_str[32];\n  \
+    \          sprintf(addr_str, \" %p\", callstack[i]);\n            cmd += addr_str;\n\
+    \        }\n\n        fprintf(stderr, \"Assertion failed. Stack trace:\\n\");\n\
+    \        FILE* pipe = popen(cmd.c_str(), \"r\");\n        if (!pipe) {\n     \
+    \       fprintf(stderr, \"Failed to run addr2line. Falling back to backtrace_symbols.\\\
+    n\");\n            char** strs = backtrace_symbols(callstack, frames);\n     \
+    \       for (int i = 0; i < frames; ++i) {\n                fprintf(stderr, \"\
+    %s\\n\", strs[i]);\n            }\n            free(strs);\n        } else {\n\
+    \            char buffer[512];\n            while (fgets(buffer, sizeof(buffer),\
     \ pipe) != nullptr) {\n                fprintf(stderr, \"%s\", buffer);\n    \
     \        }\n            pclose(pipe);\n        }\n\n        if (!error_msg.empty())\
     \ {\n            fprintf(stderr, \"\\nError: %s\\n\", error_msg.c_str());\n  \
@@ -59,8 +60,8 @@ data:
     \ a, const Tp& b) {\n    if(a > b) {\n        a = b;\n        return true;\n \
     \   } else {\n        return false;\n    }\n}\ntemplate <typename Tp>\nbool chmax(Tp&\
     \ a, const Tp& b) {\n    if(a < b) {\n        a = b;\n        return true;\n \
-    \   } else {\n        return false;\n    }\n}\n\n#include \"/home/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp\"\
-    \n#include \"/home/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp\"\
+    \   } else {\n        return false;\n    }\n}\n\n#include \"/Users/tsutaj/Documents/compro/cpp_library/marathon/timer.cpp\"\
+    \n#include \"/Users/tsutaj/Documents/compro/cpp_library/marathon/rand_xorshift.cpp\"\
     \nRand rnd(35023503980LL);\nTimer timer;\nusing Answer = vector<int>; // TODO\n\
     \nenum Dir { U, R, D, L };\nconst int dr[4] = {-1, 0, 1, 0};\nconst int dc[4]\
     \ = {0, 1, 0, -1};\n\nvoid input() {\n\n}\n\nvoid output(const Answer& answer,\
